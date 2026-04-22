@@ -267,6 +267,55 @@
     opacity:.7;
   }
 
+  
+  .translation-ko{
+    color:var(--ink);
+    margin-bottom:10px;
+    padding-bottom:8px;
+    border-bottom:1px dashed rgba(201,169,92,.15);
+  }
+  .translation-esv, .translation-kjv{
+    font-family:'EB Garamond', serif;
+    font-size:13px;
+    line-height:1.6;
+    margin-top:7px;
+    padding-left:50px;
+    position:relative;
+    text-align:left;
+    text-indent:-50px;
+  }
+  .translation-esv{
+    color:var(--ink);
+    opacity:0.9;
+  }
+  .translation-kjv{
+    font-style:italic;
+    color:var(--gold);
+    opacity:0.8;
+  }
+  .version-label{
+    display:inline-block;
+    font-family:'Cormorant Garamond', serif;
+    font-size:10px;
+    font-weight:600;
+    font-style:normal;
+    letter-spacing:2px;
+    padding:2px 7px;
+    border-radius:2px;
+    margin-right:8px;
+    vertical-align:2px;
+  }
+  .translation-esv .version-label{
+    background:rgba(111,184,111,.15);
+    color:var(--success);
+    border:1px solid rgba(111,184,111,.3);
+  }
+  .translation-kjv .version-label{
+    background:rgba(201,169,92,.15);
+    color:var(--gold);
+    border:1px solid rgba(201,169,92,.3);
+  }
+
   .translation{
     margin-top:18px;
     padding-top:14px;
@@ -602,6 +651,161 @@
     .modal{padding:25px 22px}
     .modal-greek{font-size:40px}
   }
+
+  .more-chapters{
+    margin-top:50px;
+    padding-top:30px;
+    border-top:1px solid rgba(201,169,92,.15);
+  }
+  .more-chapters-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:25px;
+    text-align:center;
+    position:relative;
+  }
+  .more-chapters-title::before, .more-chapters-title::after{
+    content:"";
+    display:inline-block;
+    width:40px;
+    height:1px;
+    background:rgba(201,169,92,.3);
+    vertical-align:middle;
+    margin:0 18px;
+  }
+  .chapters-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:15px;
+  }
+  .chapter-card{
+    background:linear-gradient(145deg, #2d2319 0%, #241c14 100%);
+    border:1px solid rgba(201,169,92,.15);
+    border-radius:3px;
+    padding:22px 18px;
+    cursor:pointer;
+    transition:all .3s cubic-bezier(.4,0,.2,1);
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    position:relative;
+    overflow:hidden;
+  }
+  .chapter-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:0;
+    transition:opacity .3s;
+  }
+  .chapter-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    box-shadow:0 15px 35px rgba(201,169,92,.15);
+  }
+  .chapter-card:hover::before{opacity:1}
+  .chapter-card.current{
+    border-color:var(--rose);
+    background:linear-gradient(145deg, #332018 0%, #2a1c16 100%);
+  }
+  .chapter-card.current::after{
+    content:"현재";
+    position:absolute;
+    top:8px;right:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:10px;
+    letter-spacing:2px;
+    color:var(--love);
+    padding:2px 8px;
+    border:1px solid var(--rose);
+    border-radius:2px;
+  }
+  .chapter-card.coming-soon{
+    opacity:0.5;
+    cursor:not-allowed;
+  }
+  .chapter-card.coming-soon::after{
+    content:"준비중";
+    position:absolute;
+    top:8px;right:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:10px;
+    letter-spacing:2px;
+    color:var(--ink-dim);
+    padding:2px 8px;
+    border:1px solid rgba(201,169,92,.2);
+    border-radius:2px;
+  }
+  .chapter-card.coming-soon:hover{
+    transform:none;
+    border-color:rgba(201,169,92,.15);
+    box-shadow:none;
+  }
+  .chapter-card.coming-soon:hover::before{opacity:0}
+  .card-icon{
+    font-size:32px;
+    margin-bottom:8px;
+    display:block;
+  }
+  .card-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:19px;
+    color:var(--parchment);
+    margin-bottom:3px;
+    letter-spacing:1px;
+  }
+  .card-subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--rose);
+    font-size:13px;
+    margin-bottom:10px;
+  }
+  .card-description{
+    font-family:'Noto Serif KR', serif;
+    color:var(--ink);
+    font-size:12px;
+    line-height:1.5;
+    opacity:0.85;
+  }
+  
+  .card-title-en{
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--gold);
+    margin-bottom:6px;
+    letter-spacing:0.5px;
+    opacity:0.85;
+  }
+  .desc-en{
+    display:inline-block;
+    margin-top:4px;
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--ink-dim);
+    opacity:0.9;
+    line-height:1.4;
+  }
+  /* a 태그로 바뀌었으므로 링크 스타일 제거 */
+  a.chapter-card{
+    text-decoration:none !important;
+    color:inherit;
+  }
+
+  @media (max-width:640px){
+    .chapters-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .chapter-card{padding:15px 12px}
+    .card-title{font-size:16px}
+    .card-icon{font-size:26px}
+    .card-description{font-size:11px}
+  }
+
 </style>
 </head>
 <body>
@@ -743,9 +947,83 @@
     </div>
   </div>
 
+
+  <div class="more-chapters">
+    <div class="more-chapters-title">📖 다른 중요 성경 본문 · Other Important Passages</div>
+    <div class="chapters-grid">
+      <a href="index.html" class="chapter-card current">
+        <span class="card-icon">🌹</span>
+        <div class="card-title">고린도전서 13장</div>
+        <div class="card-title-en">1 Corinthians 13</div>
+        <div class="card-subtitle">사랑장 · The Love Chapter</div>
+        <div class="card-description">믿음·소망·사랑, 그 중 제일은 사랑<br><span class="desc-en">Faith, Hope, Love — the greatest is Love</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">✝️</span>
+        <div class="card-title">요한복음 1:1-14</div>
+        <div class="card-title-en">John 1:1-14</div>
+        <div class="card-subtitle">로고스 · The Logos</div>
+        <div class="card-description">태초에 말씀이 계시니라<br><span class="desc-en">In the beginning was the Word</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">🐑</span>
+        <div class="card-title">시편 23편</div>
+        <div class="card-title-en">Psalm 23</div>
+        <div class="card-subtitle">선한 목자 · The Good Shepherd</div>
+        <div class="card-description">여호와는 나의 목자시니<br><span class="desc-en">The LORD is my shepherd</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">👑</span>
+        <div class="card-title">로마서 8장</div>
+        <div class="card-title-en">Romans 8</div>
+        <div class="card-subtitle">성령과 생명 · Spirit and Life</div>
+        <div class="card-description">그리스도 안에 정죄함이 없나니<br><span class="desc-en">No condemnation in Christ Jesus</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">🕊️</span>
+        <div class="card-title">마태복음 5-7장</div>
+        <div class="card-title-en">Matthew 5-7</div>
+        <div class="card-subtitle">산상수훈 · Sermon on the Mount</div>
+        <div class="card-description">심령이 가난한 자는 복이 있나니<br><span class="desc-en">Blessed are the poor in spirit</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">📜</span>
+        <div class="card-title">에베소서 3:14-21</div>
+        <div class="card-title-en">Ephesians 3:14-21</div>
+        <div class="card-subtitle">바울의 기도 · Paul's Prayer</div>
+        <div class="card-description">사랑에 뿌리박고 터가 굳어져서<br><span class="desc-en">Rooted and grounded in love</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">✨</span>
+        <div class="card-title">요한복음 3:16</div>
+        <div class="card-title-en">John 3:16</div>
+        <div class="card-subtitle">하나님의 사랑 · God's Love</div>
+        <div class="card-description">하나님이 세상을 이처럼 사랑하사<br><span class="desc-en">For God so loved the world</span></div>
+      </a>
+      <a href="#" class="chapter-card coming-soon" target="_blank" rel="noopener" onclick="return false">
+        <span class="card-icon">🌟</span>
+        <div class="card-title">빌립보서 2:5-11</div>
+        <div class="card-title-en">Philippians 2:5-11</div>
+        <div class="card-subtitle">그리스도 찬가 · Christ Hymn</div>
+        <div class="card-description">그리스도 예수의 마음을 품으라<br><span class="desc-en">Have this mind in Christ Jesus</span></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:25px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--ink-dim);letter-spacing:1px;opacity:0.7">
+      더 많은 본문은 순차적으로 추가될 예정입니다<br>
+      <span style="font-size:10px;opacity:0.8">More passages will be added progressively</span>
+    </div>
+  </div>
+
+
   <div class="hint-footer">
     ❦ "Νυνὶ δὲ μένει πίστις, ἐλπίς, ἀγάπη· τὰ τρία ταῦτα· μείζων δὲ τούτων ἡ ἀγάπη." ❦<br>
     <span style="opacity:.6">이제 믿음, 소망, 사랑, 이 세 가지는 항상 있을 것인데 그 중의 제일은 사랑이라</span>
+  </div>
+
+  <div style="text-align:center;margin-top:30px;font-family:'EB Garamond', serif;font-size:10px;color:var(--ink-dim);opacity:0.5;line-height:1.6;padding:0 20px">
+    Scripture quotations marked ESV are from The ESV® Bible (The Holy Bible, English Standard Version®),<br>
+    copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.<br>
+    <span style="opacity:0.8">KJV (King James Version) is in the public domain.</span>
   </div>
 
 </div>
@@ -785,6 +1063,8 @@ const verses = {
   1: {
     reference: "고린도전서 13:1",
     translation: "내가 사람의 방언과 천사의 말을 할지라도 사랑이 없으면 소리 나는 구리와 울리는 꽹과리가 되고",
+    english: "Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.",
+    esv: "If I speak in the tongues of men and of angels, but have not love, I am a noisy gong or a clanging cymbal.",
     words: [
       {greek:"Ἐὰν", ko:"에안", gloss:"if", pos:"접속사", parsing:"조건 접속사", lemma:"ἐάν", strongs:"G1437", meaning:"만일 ~이라면. 가정법과 함께 쓰여 3급 조건문(미래/일반 조건)을 형성.", note:"1~3절은 모두 ἐάν으로 시작하여 '만일 ~한다 해도 사랑이 없으면'이라는 병렬 구조."},
       {greek:"ταῖς", ko:"타이스", gloss:"with the", pos:"관사", parsing:"정관사 · 여성 · 복수 · 여격", lemma:"ὁ", strongs:"G3588", meaning:"그 (여성 복수 여격)."},
@@ -810,6 +1090,8 @@ const verses = {
   2: {
     reference: "고린도전서 13:2",
     translation: "내가 예언하는 능력이 있어 모든 비밀과 모든 지식을 알고 또 산을 옮길 만한 모든 믿음이 있을지라도 사랑이 없으면 내가 아무것도 아니요",
+    english: "And though I have the gift of prophecy, and understand all mysteries, and all knowledge; and though I have all faith, so that I could remove mountains, and have not charity, I am nothing.",
+    esv: "And if I have prophetic powers, and understand all mysteries and all knowledge, and if I have all faith, so as to remove mountains, but have not love, I am nothing.",
     words: [
       {greek:"καὶ", ko:"카이", gloss:"and", pos:"접속사", parsing:"등위접속사", lemma:"καί", strongs:"G2532", meaning:"그리고."},
       {greek:"ἐὰν", ko:"에안", gloss:"if", pos:"접속사", parsing:"조건 접속사", lemma:"ἐάν", strongs:"G1437", meaning:"만일."},
@@ -844,6 +1126,8 @@ const verses = {
   3: {
     reference: "고린도전서 13:3",
     translation: "내가 내게 있는 모든 것으로 구제하고 또 내 몸을 불사르게 내줄지라도 사랑이 없으면 내게 아무 유익이 없느니라",
+    english: "And though I bestow all my goods to feed the poor, and though I give my body to be burned, and have not charity, it profiteth me nothing.",
+    esv: "If I give away all I have, and if I deliver up my body to be burned, but have not love, I gain nothing.",
     words: [
       {greek:"κἂν", ko:"칸", gloss:"and if", pos:"접속사", parsing:"축약형 (καὶ + ἐάν)", lemma:"κἄν", strongs:"G2579", meaning:"~라 할지라도."},
       {greek:"ψωμίσω", ko:"프소미소", gloss:"I give away", pos:"동사", parsing:"부정과거 · 능동 · 가정법 · 1인칭 단수", lemma:"ψωμίζω", strongs:"G5595", meaning:"조금씩 나누어 먹이다, 구제하다.", note:"문자적으로 '입에 작은 빵조각을 넣어주다'. 자선의 구체적 이미지."},
@@ -870,6 +1154,8 @@ const verses = {
   4: {
     reference: "고린도전서 13:4",
     translation: "사랑은 오래 참고 사랑은 온유하며 시기하지 아니하며 사랑은 자랑하지 아니하며 교만하지 아니하며",
+    english: "Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up,",
+    esv: "Love is patient and kind; love does not envy or boast; it is not arrogant",
     words: [
       {greek:"Ἡ", ko:"헤", gloss:"the", pos:"관사", parsing:"정관사 · 여성 · 단수 · 주격", lemma:"ὁ", strongs:"G3588", meaning:"그, 이."},
       {greek:"ἀγάπη", ko:"아가페", gloss:"love", pos:"명사", parsing:"명사 · 여성 · 단수 · 주격", lemma:"ἀγάπη", strongs:"G26", meaning:"하나님의 사랑, 무조건적이고 희생적인 사랑.", note:"신약에서 116회 사용. 최상위 사랑 단어.", isKey:true},
@@ -888,6 +1174,8 @@ const verses = {
   5: {
     reference: "고린도전서 13:5",
     translation: "무례히 행하지 아니하며 자기의 유익을 구하지 아니하며 성내지 아니하며 악한 것을 생각하지 아니하며",
+    english: "Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil;",
+    esv: "or rude. It does not insist on its own way; it is not irritable or resentful;",
     words: [
       {greek:"οὐκ", ko:"우크", gloss:"not", pos:"부사", parsing:"부정부사 (모음 앞)", lemma:"οὐ", strongs:"G3756", meaning:"~아니다."},
       {greek:"ἀσχημονεῖ,", ko:"아스케모네이", gloss:"is not rude", pos:"동사", parsing:"현재 · 능동 · 직설법 · 3인칭 단수", lemma:"ἀσχημονέω", strongs:"G807", meaning:"무례하게 행동하다.", note:"σχῆμα(형태, 적절함)에서 유래."},
@@ -906,6 +1194,8 @@ const verses = {
   6: {
     reference: "고린도전서 13:6",
     translation: "불의를 기뻐하지 아니하며 진리와 함께 기뻐하고",
+    english: "Rejoiceth not in iniquity, but rejoiceth in the truth;",
+    esv: "it does not rejoice at wrongdoing, but rejoices with the truth.",
     words: [
       {greek:"οὐ", ko:"우", gloss:"not", pos:"부사", parsing:"부정부사", lemma:"οὐ", strongs:"G3756", meaning:"~아니다."},
       {greek:"χαίρει", ko:"카이레이", gloss:"rejoices", pos:"동사", parsing:"현재 · 능동 · 직설법 · 3인칭 단수", lemma:"χαίρω", strongs:"G5463", meaning:"기뻐하다.", note:"χαρά(기쁨)와 χάρις(은혜)의 어원."},
@@ -921,6 +1211,8 @@ const verses = {
   7: {
     reference: "고린도전서 13:7",
     translation: "모든 것을 참으며 모든 것을 믿으며 모든 것을 바라며 모든 것을 견디느니라",
+    english: "Beareth all things, believeth all things, hopeth all things, endureth all things.",
+    esv: "Love bears all things, believes all things, hopes all things, endures all things.",
     words: [
       {greek:"πάντα", ko:"판타", gloss:"all things", pos:"형용사", parsing:"형용사 · 중성 · 복수 · 대격", lemma:"πᾶς", strongs:"G3956", meaning:"모든 것.", note:"이 절에서 πάντα가 네 번 반복되어 수사적 강조.", isKey:true},
       {greek:"στέγει,", ko:"스테게이", gloss:"bears", pos:"동사", parsing:"현재 · 능동 · 직설법 · 3인칭 단수", lemma:"στέγω", strongs:"G4722", meaning:"참다, 덮다.", note:"원래 '지붕으로 덮다'. 비판받을 일을 덮어주고 참아준다."},
@@ -935,6 +1227,8 @@ const verses = {
   8: {
     reference: "고린도전서 13:8",
     translation: "사랑은 언제까지나 떨어지지 아니하되 예언도 폐하고 방언도 그치고 지식도 폐하리라",
+    english: "Charity never faileth: but whether there be prophecies, they shall fail; whether there be tongues, they shall cease; whether there be knowledge, it shall vanish away.",
+    esv: "Love never ends. As for prophecies, they will pass away; as for tongues, they will cease; as for knowledge, it will pass away.",
     words: [
       {greek:"Ἡ", ko:"헤", gloss:"the", pos:"관사", parsing:"정관사 · 여성 · 단수 · 주격", lemma:"ὁ", strongs:"G3588", meaning:"그."},
       {greek:"ἀγάπη", ko:"아가페", gloss:"love", pos:"명사", parsing:"명사 · 여성 · 단수 · 주격", lemma:"ἀγάπη", strongs:"G26", meaning:"사랑.", isKey:true},
@@ -955,6 +1249,8 @@ const verses = {
   9: {
     reference: "고린도전서 13:9",
     translation: "우리는 부분적으로 알고 부분적으로 예언하니",
+    english: "For we know in part, and we prophesy in part.",
+    esv: "For we know in part and we prophesy in part,",
     words: [
       {greek:"ἐκ", ko:"에크", gloss:"in part", pos:"전치사", parsing:"전치사 + 속격", lemma:"ἐκ", strongs:"G1537", meaning:"~로부터. (ἐκ μέρους = 부분적으로)"},
       {greek:"μέρους", ko:"메루스", gloss:"of part", pos:"명사", parsing:"명사 · 중성 · 단수 · 속격", lemma:"μέρος", strongs:"G3313", meaning:"부분.", note:"9~12절의 핵심 어구. 현세의 불완전함과 장차의 완전함의 대조."},
@@ -969,6 +1265,8 @@ const verses = {
   10: {
     reference: "고린도전서 13:10",
     translation: "온전한 것이 올 때에는 부분적으로 하던 것이 폐하리라",
+    english: "But when that which is perfect is come, then that which is in part shall be done away.",
+    esv: "but when the perfect comes, the partial will pass away.",
     words: [
       {greek:"ὅταν", ko:"호탄", gloss:"when", pos:"접속사", parsing:"시간접속사 + 가정법", lemma:"ὅταν", strongs:"G3752", meaning:"~할 때."},
       {greek:"δὲ", ko:"데", gloss:"but", pos:"접속사", parsing:"후치 접속사", lemma:"δέ", strongs:"G1161", meaning:"그러나."},
@@ -984,6 +1282,8 @@ const verses = {
   11: {
     reference: "고린도전서 13:11",
     translation: "내가 어렸을 때에는 말하는 것이 어린 아이와 같고 깨닫는 것이 어린 아이와 같고 생각하는 것이 어린 아이와 같다가 장성한 사람이 되어서는 어린 아이의 일을 버렸노라",
+    english: "When I was a child, I spake as a child, I understood as a child, I thought as a child: but when I became a man, I put away childish things.",
+    esv: "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways.",
     words: [
       {greek:"ὅτε", ko:"호테", gloss:"when", pos:"접속사", parsing:"시간접속사", lemma:"ὅτε", strongs:"G3753", meaning:"~할 때."},
       {greek:"ἤμην", ko:"에멘", gloss:"I was", pos:"동사", parsing:"미완료 · 능동 · 직설법 · 1인칭 단수", lemma:"εἰμί", strongs:"G1510", meaning:"~이었다."},
@@ -1009,6 +1309,8 @@ const verses = {
   12: {
     reference: "고린도전서 13:12",
     translation: "우리가 지금은 거울로 보는 것 같이 희미하나 그 때에는 얼굴과 얼굴을 대하여 볼 것이요 지금은 내가 부분적으로 아나 그 때에는 주께서 나를 아신 것 같이 내가 온전히 알리라",
+    english: "For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.",
+    esv: "For now we see in a mirror dimly, but then face to face. Now I know in part; then I shall know fully, even as I have been fully known.",
     words: [
       {greek:"βλέπομεν", ko:"블레포멘", gloss:"we see", pos:"동사", parsing:"현재 · 능동 · 직설법 · 1인칭 복수", lemma:"βλέπω", strongs:"G991", meaning:"보다, 주의 깊게 보다."},
       {greek:"γὰρ", ko:"가르", gloss:"for", pos:"접속사", parsing:"후치 인과접속사", lemma:"γάρ", strongs:"G1063", meaning:"왜냐하면."},
@@ -1037,6 +1339,8 @@ const verses = {
   13: {
     reference: "고린도전서 13:13",
     translation: "그런즉 믿음, 소망, 사랑, 이 세 가지는 항상 있을 것인데 그 중의 제일은 사랑이라",
+    english: "And now abideth faith, hope, charity, these three; but the greatest of these is charity.",
+    esv: "So now faith, hope, and love abide, these three; but the greatest of these is love.",
     words: [
       {greek:"Νυνὶ", ko:"뉘니", gloss:"now", pos:"부사", parsing:"강조형 시간부사", lemma:"νυνί", strongs:"G3570", meaning:"이제, 지금. νῦν의 강조형.", note:"결론적 도입부. 12절과 대조되는 영원한 현재."},
       {greek:"δὲ", ko:"데", gloss:"but", pos:"접속사", parsing:"후치 접속사", lemma:"δέ", strongs:"G1161", meaning:"그러나, 그런즉."},
