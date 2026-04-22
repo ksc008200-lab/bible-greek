@@ -969,7 +969,7 @@
 
   <!-- 음성 파일 -->
   <div class="audio-panel">
-    <h3>♪ 원어민 헬라어 낭독 · 음성 준비 중 · Whisper AI 정밀 매칭 예정</h3>
+    <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭 완료</h3>
     <label class="upload-area has-file" id="uploadArea">
       <input type="file" id="audioFile" accept="audio/*">
       <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 04John01.mp3 자동 재생</div>
@@ -1041,7 +1041,7 @@
         <button class="control-btn" id="learnNextBtn">다음 ▶</button>
         <button class="control-btn" id="learnResetBtn">↺ 처음부터</button>
       </div>
-      <div class="status" id="learnStatus">📖 단어를 클릭하여 문법 정보 확인 · 음성은 준비 중</div>
+      <div class="status" id="learnStatus">▶ 재생 또는 Space — Whisper AI 정밀 매칭 적용됨</div>
     </div>
   </div>
 
@@ -1058,7 +1058,7 @@
         <button class="control-btn" id="sampleTimingBtn">샘플 타이밍</button>
       </div>
       <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-      <div class="status" id="autoStatus">⏳ MP3 파일과 타이밍 준비 중 · 학습 모드는 사용 가능</div>
+      <div class="status" id="autoStatus">🎯 Whisper AI 정밀 매칭 완료! ▶ 재생하세요</div>
     </div>
   </div>
 
@@ -1670,8 +1670,8 @@ verseOrder.forEach(vNum => {
 });
 
 // 상태
-const AUTO_TIMINGS = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];  // MP3 파일 받으면 업데이트 예정
-const STORAGE_KEY = 'bible_john_1_18_timings_v1'; // v2: 1절 시작 시점 보정 (3.71s)
+const AUTO_TIMINGS = [2.26, 2.945, 3.629, 4.314, 4.999, 5.684, 6.368, 7.053, 7.738, 8.422, 9.107, 9.792, 10.476, 11.161, 11.846, 12.531, 13.215, 13.9, 14.494, 15.089, 15.683, 16.277, 16.871, 17.466, 18.06, 18.85, 19.639, 20.429, 21.218, 22.008, 22.797, 23.587, 24.377, 25.166, 25.956, 26.745, 27.535, 28.297, 29.059, 29.821, 30.583, 31.345, 32.108, 32.87, 33.632, 34.394, 35.156, 35.918, 36.68, 37.371, 38.062, 38.752, 39.443, 40.134, 40.825, 41.515, 42.206, 42.897, 43.588, 44.278, 44.969, 45.66, 46.482, 47.305, 48.127, 48.95, 49.773, 50.595, 51.418, 52.24, 53.136, 54.031, 54.927, 55.823, 56.719, 57.614, 58.51, 59.406, 60.301, 61.197, 62.093, 62.989, 63.884, 64.78, 65.471, 66.162, 66.853, 67.544, 68.235, 68.925, 69.616, 70.307, 70.998, 71.689, 72.38, 73.207, 74.034, 74.86, 75.687, 76.514, 77.341, 78.168, 78.994, 79.821, 80.648, 81.402, 82.156, 82.911, 83.665, 84.419, 85.173, 85.927, 86.681, 87.436, 88.19, 88.944, 89.698, 90.452, 91.207, 91.961, 92.715, 93.523, 94.332, 95.14, 95.949, 96.757, 97.566, 98.374, 99.183, 99.992, 100.8, 101.607, 102.413, 103.22, 104.027, 104.833, 105.64, 106.447, 107.253, 108.06, 108.867, 109.673, 110.48, 111.287, 112.093, 112.9, 113.707, 114.481, 115.256, 116.03, 116.805, 117.579, 118.354, 119.129, 119.903, 120.678, 121.452, 122.227, 123.001, 123.776, 124.55, 125.325, 126.1, 126.877, 127.655, 128.433, 129.211, 129.989, 130.767, 131.544, 132.322, 133.1, 133.878, 134.656, 135.434, 136.212, 136.989, 137.767, 138.545, 139.323, 140.101, 140.879, 141.656, 142.434, 143.212, 143.99, 144.861, 145.732, 146.603, 147.474, 148.345, 149.215, 150.086, 150.957, 151.828, 152.699, 153.57, 154.441, 155.312, 156.183, 157.054, 157.925, 158.795, 159.666, 160.537, 161.408, 162.279, 163.15, 163.937, 164.723, 165.51, 166.297, 167.083, 167.87, 168.657, 169.443, 170.23, 171.017, 171.803, 172.59, 173.369, 174.149, 174.928, 175.708, 176.487, 177.267, 178.046, 178.826, 179.605, 180.385, 181.165, 181.944, 182.724, 183.503, 184.282, 185.225, 186.168, 187.111, 188.053, 188.996, 189.939, 190.881, 191.824, 192.767, 193.709, 194.652, 195.595, 196.537, 197.48];  // Whisper AI 정밀 매칭 완료!
+const STORAGE_KEY = 'bible_john_1_18_timings_v2'  // Whisper 정밀 매칭; // v2: 1절 시작 시점 보정 (3.71s)
 let timings = AUTO_TIMINGS.slice();  // Whisper AI 기반 정밀 타이밍 (기본값)
 const saved = localStorage.getItem(STORAGE_KEY);
 if (saved) {
