@@ -274,7 +274,7 @@
     padding-bottom:8px;
     border-bottom:1px dashed rgba(201,169,92,.15);
   }
-  .translation-esv, .translation-kjv{
+  .translation-esv, .translation-kjv, .translation-nkjv{
     font-family:'EB Garamond', serif;
     font-size:13px;
     line-height:1.6;
@@ -283,6 +283,15 @@
     position:relative;
     text-align:left;
     text-indent:-50px;
+  }
+  .translation-nkjv{
+    color:var(--parchment);
+    opacity:0.9;
+  }
+  .translation-nkjv .version-label{
+    background:rgba(216,168,184,.15);
+    color:var(--love);
+    border:1px solid rgba(216,168,184,.3);
   }
   .translation-esv{
     color:var(--ink);
@@ -806,6 +815,137 @@
     .card-description{font-size:11px}
   }
 
+
+  /* 환영 안내 배너 */
+  .hero-banner{
+    background:linear-gradient(135deg, rgba(216,168,184,.08) 0%, rgba(201,169,92,.05) 100%);
+    border:1px solid rgba(216,168,184,.2);
+    border-radius:4px;
+    padding:22px 25px;
+    margin-bottom:25px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-banner::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, transparent, var(--love), var(--gold), var(--love), transparent);
+  }
+  .hero-main{
+    font-family:'Noto Serif KR', serif;
+    font-size:16px;
+    font-weight:500;
+    color:var(--parchment);
+    margin-bottom:4px;
+    letter-spacing:0.5px;
+  }
+  .hero-main-en{
+    font-family:'EB Garamond', serif;
+    font-size:13px;
+    color:var(--gold);
+    margin-bottom:12px;
+    letter-spacing:0.3px;
+    opacity:0.9;
+  }
+  .hero-sub{
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+    color:var(--ink);
+    line-height:1.6;
+    margin-bottom:3px;
+  }
+  .hero-sub-en{
+    font-family:'EB Garamond', serif;
+    font-size:11px;
+    color:var(--ink-dim);
+    letter-spacing:0.3px;
+  }
+  .hero-highlight{
+    color:var(--love);
+    font-weight:600;
+    padding:1px 6px;
+    background:rgba(216,168,184,.15);
+    border-radius:3px;
+    border:1px solid rgba(216,168,184,.3);
+  }
+  @media (max-width:640px){
+    .hero-banner{padding:16px 14px}
+    .hero-main{font-size:14px}
+    .hero-main-en{font-size:12px}
+    .hero-sub{font-size:12px}
+  }
+
+
+  .recording-display{
+    background:linear-gradient(145deg, rgba(216,168,184,.08) 0%, rgba(201,169,92,.04) 100%);
+    border:2px solid rgba(216,168,184,.4);
+    border-radius:6px;
+    padding:25px 30px;
+    margin-bottom:15px;
+    text-align:center;
+    position:relative;
+    animation:recordingPulse 2s ease-in-out infinite;
+  }
+  @keyframes recordingPulse{
+    0%,100%{border-color:rgba(216,168,184,.4)}
+    50%{border-color:rgba(216,168,184,.8);box-shadow:0 0 20px rgba(216,168,184,.2)}
+  }
+  .recording-label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin-bottom:12px;
+  }
+  .recording-dot{
+    animation:blink 1s ease-in-out infinite;
+    font-size:10px;
+  }
+  @keyframes blink{
+    0%,100%{opacity:1}
+    50%{opacity:0.3}
+  }
+  .recording-word{
+    font-family:'Cardo', serif;
+    font-size:56px;
+    color:var(--gold-bright);
+    text-shadow:0 0 30px rgba(232,200,120,.4);
+    line-height:1.1;
+    margin-bottom:12px;
+    font-weight:400;
+  }
+  .recording-hint{
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+    color:var(--ink-dim);
+    margin-bottom:14px;
+  }
+  .recording-hint .next-word{
+    color:var(--love);
+    font-family:'Cardo', serif;
+    font-size:18px;
+  }
+  .recording-meter{
+    height:4px;
+    background:rgba(0,0,0,.3);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .recording-meter-bar{
+    height:100%;
+    background:linear-gradient(90deg, var(--rose), var(--love), var(--gold));
+    width:0%;
+    transition:width .15s ease-out;
+    box-shadow:0 0 10px rgba(216,168,184,.6);
+  }
+
 </style>
 </head>
 <body>
@@ -817,6 +957,14 @@
     <h1>ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Αʹ ΙΓʹ</h1>
     <div class="reference">고린도전서 13장 1~13절 · 완전판 (NA28)</div>
   </header>
+
+  <!-- 환영 안내 -->
+  <div class="hero-banner">
+    <div class="hero-main">✨ 성경 핵심 구절을 원어로 공부하고 느끼세요! ✨</div>
+    <div class="hero-main-en" style="font-style:italic">Study and experience key Bible passages in the original languages!</div>
+    <div class="hero-sub">⬇ 아래의 <span class="hero-highlight">다른 중요 성경 본문</span> 카드를 클릭하면 볼 수 있습니다</div>
+    <div class="hero-sub-en" style="font-style:italic;opacity:0.7">Click the cards below to explore more passages</div>
+  </div>
 
   <!-- 음성 파일 -->
   <div class="audio-panel">
@@ -933,17 +1081,37 @@
   <!-- 타이밍 기록 -->
   <div class="mode-panel" id="recordPanel">
     <div class="instructions">
-      <strong>⏺ 타이밍 기록</strong> — 음성 재생 중 단어가 들리는 순간마다 <kbd>Space</kbd>를 누르세요.<br>
-      ▸ 기록한 타이밍은 브라우저에 자동 저장됩니다
+      <strong>⏺ 수동 타이밍 녹화</strong> — 각 단어가 들리는 정확한 순간마다 <kbd>Space</kbd>를 누르세요<br>
+      ▸ <strong>"⏺ 시작"</strong> 클릭 → 음성이 재생되고 첫 단어가 나타남<br>
+      ▸ 단어가 들리는 순간 <kbd>Space</kbd> → 다음 단어로 자동 이동<br>
+      ▸ 실수했으면 <kbd>Backspace</kbd>로 이전 단어로 돌아가기<br>
+      ▸ 완료 후 반드시 <strong>"💾 저장"</strong> 클릭 (영구 저장)
     </div>
+    
+    <div class="recording-display" id="recordingDisplay" style="display:none">
+      <div class="recording-label">
+        <span class="recording-dot">🔴</span>
+        녹화 중 · <span id="recordingProgress">0 / 194</span>
+      </div>
+      <div class="recording-word" id="recordingWord">-</div>
+      <div class="recording-hint" id="recordingHint">-</div>
+      <div class="recording-meter">
+        <div class="recording-meter-bar" id="recordingMeterBar"></div>
+      </div>
+    </div>
+    
     <div class="controls">
       <div class="btn-group">
         <button class="control-btn primary" id="recordStartBtn">⏺ 시작</button>
+        <button class="control-btn" id="recordPauseBtn">❚❚ 일시정지</button>
+        <button class="control-btn" id="recordUndoBtn">⏮ 뒤로</button>
         <button class="control-btn danger" id="recordStopBtn">■ 중단</button>
-        <button class="control-btn" id="recordSaveBtn">💾 저장</button>
-        <button class="control-btn danger" id="recordClearBtn">🗑 초기화</button>
       </div>
-      <div class="status" id="recordStatus">"⏺ 시작"을 누르세요</div>
+      <div class="btn-group" style="margin-top:10px">
+        <button class="control-btn" id="recordSaveBtn">💾 저장</button>
+        <button class="control-btn danger" id="recordClearBtn">↺ 자동타이밍 복원</button>
+      </div>
+      <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
     </div>
   </div>
 
@@ -1021,9 +1189,10 @@
   </div>
 
   <div style="text-align:center;margin-top:30px;font-family:'EB Garamond', serif;font-size:10px;color:var(--ink-dim);opacity:0.5;line-height:1.6;padding:0 20px">
-    Scripture quotations marked ESV are from The ESV® Bible (The Holy Bible, English Standard Version®),<br>
+    Scripture quotations marked <strong>ESV</strong> are from The ESV® Bible (The Holy Bible, English Standard Version®),<br>
     copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.<br>
-    <span style="opacity:0.8">KJV (King James Version) is in the public domain.</span>
+    Scripture taken from the <strong>New King James Version®</strong>. Copyright © 1982 by Thomas Nelson. Used by permission. All rights reserved.<br>
+    <span style="opacity:0.8"><strong>KJV</strong> (King James Version) is in the public domain.</span>
   </div>
 
 </div>
@@ -1064,6 +1233,7 @@ const verses = {
     reference: "고린도전서 13:1",
     translation: "내가 사람의 방언과 천사의 말을 할지라도 사랑이 없으면 소리 나는 구리와 울리는 꽹과리가 되고",
     english: "Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.",
+    nkjv: "Though I speak with the tongues of men and of angels, but have not love, I have become sounding brass or a clanging cymbal.",
     esv: "If I speak in the tongues of men and of angels, but have not love, I am a noisy gong or a clanging cymbal.",
     words: [
       {greek:"Ἐὰν", ko:"에안", gloss:"if", pos:"접속사", parsing:"조건 접속사", lemma:"ἐάν", strongs:"G1437", meaning:"만일 ~이라면. 가정법과 함께 쓰여 3급 조건문(미래/일반 조건)을 형성.", note:"1~3절은 모두 ἐάν으로 시작하여 '만일 ~한다 해도 사랑이 없으면'이라는 병렬 구조."},
@@ -1091,6 +1261,7 @@ const verses = {
     reference: "고린도전서 13:2",
     translation: "내가 예언하는 능력이 있어 모든 비밀과 모든 지식을 알고 또 산을 옮길 만한 모든 믿음이 있을지라도 사랑이 없으면 내가 아무것도 아니요",
     english: "And though I have the gift of prophecy, and understand all mysteries, and all knowledge; and though I have all faith, so that I could remove mountains, and have not charity, I am nothing.",
+    nkjv: "And though I have the gift of prophecy, and understand all mysteries and all knowledge, and though I have all faith, so that I could remove mountains, but have not love, I am nothing.",
     esv: "And if I have prophetic powers, and understand all mysteries and all knowledge, and if I have all faith, so as to remove mountains, but have not love, I am nothing.",
     words: [
       {greek:"καὶ", ko:"카이", gloss:"and", pos:"접속사", parsing:"등위접속사", lemma:"καί", strongs:"G2532", meaning:"그리고."},
@@ -1127,6 +1298,7 @@ const verses = {
     reference: "고린도전서 13:3",
     translation: "내가 내게 있는 모든 것으로 구제하고 또 내 몸을 불사르게 내줄지라도 사랑이 없으면 내게 아무 유익이 없느니라",
     english: "And though I bestow all my goods to feed the poor, and though I give my body to be burned, and have not charity, it profiteth me nothing.",
+    nkjv: "And though I bestow all my goods to feed the poor, and though I give my body to be burned, but have not love, it profits me nothing.",
     esv: "If I give away all I have, and if I deliver up my body to be burned, but have not love, I gain nothing.",
     words: [
       {greek:"κἂν", ko:"칸", gloss:"and if", pos:"접속사", parsing:"축약형 (καὶ + ἐάν)", lemma:"κἄν", strongs:"G2579", meaning:"~라 할지라도."},
@@ -1155,6 +1327,7 @@ const verses = {
     reference: "고린도전서 13:4",
     translation: "사랑은 오래 참고 사랑은 온유하며 시기하지 아니하며 사랑은 자랑하지 아니하며 교만하지 아니하며",
     english: "Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up,",
+    nkjv: "Love suffers long and is kind; love does not envy; love does not parade itself, is not puffed up;",
     esv: "Love is patient and kind; love does not envy or boast; it is not arrogant",
     words: [
       {greek:"Ἡ", ko:"헤", gloss:"the", pos:"관사", parsing:"정관사 · 여성 · 단수 · 주격", lemma:"ὁ", strongs:"G3588", meaning:"그, 이."},
@@ -1175,6 +1348,7 @@ const verses = {
     reference: "고린도전서 13:5",
     translation: "무례히 행하지 아니하며 자기의 유익을 구하지 아니하며 성내지 아니하며 악한 것을 생각하지 아니하며",
     english: "Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil;",
+    nkjv: "does not behave rudely, does not seek its own, is not provoked, thinks no evil;",
     esv: "or rude. It does not insist on its own way; it is not irritable or resentful;",
     words: [
       {greek:"οὐκ", ko:"우크", gloss:"not", pos:"부사", parsing:"부정부사 (모음 앞)", lemma:"οὐ", strongs:"G3756", meaning:"~아니다."},
@@ -1195,6 +1369,7 @@ const verses = {
     reference: "고린도전서 13:6",
     translation: "불의를 기뻐하지 아니하며 진리와 함께 기뻐하고",
     english: "Rejoiceth not in iniquity, but rejoiceth in the truth;",
+    nkjv: "does not rejoice in iniquity, but rejoices in the truth;",
     esv: "it does not rejoice at wrongdoing, but rejoices with the truth.",
     words: [
       {greek:"οὐ", ko:"우", gloss:"not", pos:"부사", parsing:"부정부사", lemma:"οὐ", strongs:"G3756", meaning:"~아니다."},
@@ -1212,6 +1387,7 @@ const verses = {
     reference: "고린도전서 13:7",
     translation: "모든 것을 참으며 모든 것을 믿으며 모든 것을 바라며 모든 것을 견디느니라",
     english: "Beareth all things, believeth all things, hopeth all things, endureth all things.",
+    nkjv: "bears all things, believes all things, hopes all things, endures all things.",
     esv: "Love bears all things, believes all things, hopes all things, endures all things.",
     words: [
       {greek:"πάντα", ko:"판타", gloss:"all things", pos:"형용사", parsing:"형용사 · 중성 · 복수 · 대격", lemma:"πᾶς", strongs:"G3956", meaning:"모든 것.", note:"이 절에서 πάντα가 네 번 반복되어 수사적 강조.", isKey:true},
@@ -1228,6 +1404,7 @@ const verses = {
     reference: "고린도전서 13:8",
     translation: "사랑은 언제까지나 떨어지지 아니하되 예언도 폐하고 방언도 그치고 지식도 폐하리라",
     english: "Charity never faileth: but whether there be prophecies, they shall fail; whether there be tongues, they shall cease; whether there be knowledge, it shall vanish away.",
+    nkjv: "Love never fails. But whether there are prophecies, they will fail; whether there are tongues, they will cease; whether there is knowledge, it will vanish away.",
     esv: "Love never ends. As for prophecies, they will pass away; as for tongues, they will cease; as for knowledge, it will pass away.",
     words: [
       {greek:"Ἡ", ko:"헤", gloss:"the", pos:"관사", parsing:"정관사 · 여성 · 단수 · 주격", lemma:"ὁ", strongs:"G3588", meaning:"그."},
@@ -1250,6 +1427,7 @@ const verses = {
     reference: "고린도전서 13:9",
     translation: "우리는 부분적으로 알고 부분적으로 예언하니",
     english: "For we know in part, and we prophesy in part.",
+    nkjv: "For we know in part and we prophesy in part.",
     esv: "For we know in part and we prophesy in part,",
     words: [
       {greek:"ἐκ", ko:"에크", gloss:"in part", pos:"전치사", parsing:"전치사 + 속격", lemma:"ἐκ", strongs:"G1537", meaning:"~로부터. (ἐκ μέρους = 부분적으로)"},
@@ -1266,6 +1444,7 @@ const verses = {
     reference: "고린도전서 13:10",
     translation: "온전한 것이 올 때에는 부분적으로 하던 것이 폐하리라",
     english: "But when that which is perfect is come, then that which is in part shall be done away.",
+    nkjv: "But when that which is perfect has come, then that which is in part will be done away.",
     esv: "but when the perfect comes, the partial will pass away.",
     words: [
       {greek:"ὅταν", ko:"호탄", gloss:"when", pos:"접속사", parsing:"시간접속사 + 가정법", lemma:"ὅταν", strongs:"G3752", meaning:"~할 때."},
@@ -1283,6 +1462,7 @@ const verses = {
     reference: "고린도전서 13:11",
     translation: "내가 어렸을 때에는 말하는 것이 어린 아이와 같고 깨닫는 것이 어린 아이와 같고 생각하는 것이 어린 아이와 같다가 장성한 사람이 되어서는 어린 아이의 일을 버렸노라",
     english: "When I was a child, I spake as a child, I understood as a child, I thought as a child: but when I became a man, I put away childish things.",
+    nkjv: "When I was a child, I spoke as a child, I understood as a child, I thought as a child; but when I became a man, I put away childish things.",
     esv: "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways.",
     words: [
       {greek:"ὅτε", ko:"호테", gloss:"when", pos:"접속사", parsing:"시간접속사", lemma:"ὅτε", strongs:"G3753", meaning:"~할 때."},
@@ -1310,6 +1490,7 @@ const verses = {
     reference: "고린도전서 13:12",
     translation: "우리가 지금은 거울로 보는 것 같이 희미하나 그 때에는 얼굴과 얼굴을 대하여 볼 것이요 지금은 내가 부분적으로 아나 그 때에는 주께서 나를 아신 것 같이 내가 온전히 알리라",
     english: "For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.",
+    nkjv: "For now we see in a mirror, dimly, but then face to face. Now I know in part, but then I shall know just as I also am known.",
     esv: "For now we see in a mirror dimly, but then face to face. Now I know in part; then I shall know fully, even as I have been fully known.",
     words: [
       {greek:"βλέπομεν", ko:"블레포멘", gloss:"we see", pos:"동사", parsing:"현재 · 능동 · 직설법 · 1인칭 복수", lemma:"βλέπω", strongs:"G991", meaning:"보다, 주의 깊게 보다."},
@@ -1340,6 +1521,7 @@ const verses = {
     reference: "고린도전서 13:13",
     translation: "그런즉 믿음, 소망, 사랑, 이 세 가지는 항상 있을 것인데 그 중의 제일은 사랑이라",
     english: "And now abideth faith, hope, charity, these three; but the greatest of these is charity.",
+    nkjv: "And now abide faith, hope, love, these three; but the greatest of these is love.",
     esv: "So now faith, hope, and love abide, these three; but the greatest of these is love.",
     words: [
       {greek:"Νυνὶ", ko:"뉘니", gloss:"now", pos:"부사", parsing:"강조형 시간부사", lemma:"νυνί", strongs:"G3570", meaning:"이제, 지금. νῦν의 강조형.", note:"결론적 도입부. 12절과 대조되는 영원한 현재."},
@@ -1370,15 +1552,25 @@ verseOrder.forEach(vNum => {
 });
 
 // 상태
-const AUTO_TIMINGS = [0.2, 1.022, 1.844, 2.666, 3.488, 4.311, 5.133, 5.955, 6.777, 7.599, 8.421, 9.243, 10.065, 10.887, 11.709, 12.532, 13.354, 14.176, 14.998, 15.82, 16.404, 16.989, 17.573, 18.157, 18.741, 19.326, 19.91, 20.494, 21.079, 21.663, 22.247, 22.831, 23.416, 24.0, 24.584, 25.169, 25.753, 26.337, 26.921, 27.506, 28.09, 28.674, 29.259, 29.843, 30.427, 31.011, 31.596, 32.18, 32.793, 33.406, 34.019, 34.632, 35.245, 35.858, 36.471, 37.084, 37.697, 38.31, 38.923, 39.536, 40.149, 40.762, 41.375, 41.988, 42.601, 43.214, 43.827, 44.44, 45.204, 45.969, 46.733, 47.497, 48.262, 49.026, 49.791, 50.555, 51.319, 52.084, 52.848, 53.612, 54.377, 55.141, 55.905, 56.67, 57.434, 58.199, 58.963, 59.727, 60.492, 61.256, 62.02, 62.785, 63.549, 64.313, 65.078, 65.842, 66.607, 67.371, 68.135, 68.9, 69.664, 70.428, 71.193, 71.957, 72.721, 73.486, 74.25, 75.015, 75.779, 76.543, 77.308, 78.072, 78.836, 79.601, 80.365, 81.129, 81.894, 82.658, 83.423, 84.187, 84.951, 85.716, 86.48, 87.562, 88.645, 89.728, 90.81, 91.892, 92.975, 94.058, 95.14, 96.061, 96.983, 97.904, 98.826, 99.747, 100.668, 101.59, 102.511, 103.433, 104.041, 104.65, 105.259, 105.868, 106.477, 107.085, 107.694, 108.303, 108.912, 109.521, 110.129, 110.738, 111.347, 111.956, 112.565, 113.174, 113.782, 114.391, 115.0, 115.76, 116.52, 117.28, 118.04, 118.8, 119.56, 120.32, 121.08, 121.84, 122.6, 123.36, 124.12, 124.88, 125.64, 126.4, 127.16, 127.92, 128.68, 129.44, 130.2, 130.96, 131.72, 132.34, 132.961, 133.581, 134.201, 134.821, 135.442, 136.062, 136.682, 137.303, 137.923, 138.543, 139.163, 139.784];
-const STORAGE_KEY = 'bible_1cor_13_full_timings';
-let timings = AUTO_TIMINGS.slice();  // Whisper AI 기반 정밀 타이밍
+const AUTO_TIMINGS = [3.71, 4.347, 4.985, 5.622, 6.259, 6.897, 7.534, 8.172, 8.809, 9.446, 10.084, 10.721, 11.358, 11.996, 12.633, 13.271, 13.908, 14.545, 15.183, 15.82, 16.404, 16.989, 17.573, 18.157, 18.741, 19.326, 19.91, 20.494, 21.079, 21.663, 22.247, 22.831, 23.416, 24.0, 24.584, 25.169, 25.753, 26.337, 26.921, 27.506, 28.09, 28.674, 29.259, 29.843, 30.427, 31.011, 31.596, 32.18, 32.793, 33.406, 34.019, 34.632, 35.245, 35.858, 36.471, 37.084, 37.697, 38.31, 38.923, 39.536, 40.149, 40.762, 41.375, 41.988, 42.601, 43.214, 43.827, 44.44, 45.204, 45.969, 46.733, 47.497, 48.262, 49.026, 49.791, 50.555, 51.319, 52.084, 52.848, 53.612, 54.377, 55.141, 55.905, 56.67, 57.434, 58.199, 58.963, 59.727, 60.492, 61.256, 62.02, 62.785, 63.549, 64.313, 65.078, 65.842, 66.607, 67.371, 68.135, 68.9, 69.664, 70.428, 71.193, 71.957, 72.721, 73.486, 74.25, 75.015, 75.779, 76.543, 77.308, 78.072, 78.836, 79.601, 80.365, 81.129, 81.894, 82.658, 83.423, 84.187, 84.951, 85.716, 86.48, 87.562, 88.645, 89.728, 90.81, 91.892, 92.975, 94.058, 95.14, 96.061, 96.983, 97.904, 98.826, 99.747, 100.668, 101.59, 102.511, 103.433, 104.041, 104.65, 105.259, 105.868, 106.477, 107.085, 107.694, 108.303, 108.912, 109.521, 110.129, 110.738, 111.347, 111.956, 112.565, 113.174, 113.782, 114.391, 115.0, 115.76, 116.52, 117.28, 118.04, 118.8, 119.56, 120.32, 121.08, 121.84, 122.6, 123.36, 124.12, 124.88, 125.64, 126.4, 127.16, 127.92, 128.68, 129.44, 130.2, 130.96, 131.72, 132.34, 132.961, 133.581, 134.201, 134.821, 135.442, 136.062, 136.682, 137.303, 137.923, 138.543, 139.163, 139.784];
+const STORAGE_KEY = 'bible_1cor_13_full_timings_v3'; // v2: 1절 시작 시점 보정 (3.71s)
+let timings = AUTO_TIMINGS.slice();  // Whisper AI 기반 정밀 타이밍 (기본값)
 const saved = localStorage.getItem(STORAGE_KEY);
 if (saved) {
   try {
     const parsed = JSON.parse(saved);
-    if (Array.isArray(parsed) && parsed.length === allWords.length) timings = parsed;
-  } catch(e){}
+    // 유효성 검사: 배열이고, 길이 맞고, 유효한 값이 하나라도 있을 때만 사용
+    if (Array.isArray(parsed) && 
+        parsed.length === allWords.length && 
+        parsed.some(t => typeof t === 'number' && t >= 0)) {
+      timings = parsed;
+    } else {
+      // 유효하지 않으면 저장소 정리
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch(e) {
+    localStorage.removeItem(STORAGE_KEY);
+  }
 }
 
 let currentIdx = 0;
@@ -1449,7 +1641,12 @@ function renderScripture() {
     });
     block.appendChild(verseEl);
     block.insertAdjacentHTML('beforeend', `
-      <div class="translation">${vData.translation}</div>
+      <div class="translation">
+        <div class="translation-ko">${vData.translation}</div>
+        ${vData.esv ? `<div class="translation-esv"><span class="version-label">ESV</span> ${vData.esv}</div>` : ''}
+        ${vData.nkjv ? `<div class="translation-nkjv"><span class="version-label">NKJV</span> ${vData.nkjv}</div>` : ''}
+        ${vData.english ? `<div class="translation-kjv"><span class="version-label">KJV</span> ${vData.english}</div>` : ''}
+      </div>
     `);
     scriptureCard.appendChild(block);
   });
@@ -1681,18 +1878,82 @@ let isRecording = false;
 let recordingIdx = 0;
 const recordStatus = document.getElementById('recordStatus');
 
+// === 개선된 수동 녹화 모드 ===
+const recordingDisplay = document.getElementById('recordingDisplay');
+const recordingWord = document.getElementById('recordingWord');
+const recordingHint = document.getElementById('recordingHint');
+const recordingProgress = document.getElementById('recordingProgress');
+const recordingMeterBar = document.getElementById('recordingMeterBar');
+
+function updateRecordingDisplay() {
+  if (!recordingDisplay) return;
+  if (recordingIdx < allWords.length) {
+    const current = allWords[recordingIdx];
+    const next = allWords[recordingIdx + 1];
+    recordingWord.textContent = current.greek;
+    recordingProgress.textContent = `${recordingIdx + 1} / ${allWords.length}`;
+    if (next) {
+      recordingHint.innerHTML = `현재: <strong>${current.ko}</strong> · 다음: <span class="next-word">${next.greek}</span>`;
+    } else {
+      recordingHint.innerHTML = '<span style="color:var(--success)">마지막 단어!</span>';
+    }
+    recordingMeterBar.style.width = (recordingIdx / allWords.length * 100) + '%';
+  } else {
+    recordingWord.textContent = '🎉';
+    recordingHint.innerHTML = '<span style="color:var(--success)">모든 단어 녹화 완료!</span>';
+    recordingMeterBar.style.width = '100%';
+  }
+}
+
 document.getElementById('recordStartBtn').addEventListener('click', () => {
   if (!audio.src) { recordStatus.textContent = '⚠ 음성 파일을 먼저 올려주세요'; return; }
+  if (!isRecording && recordingIdx === 0) {
+    timings = new Array(allWords.length).fill(null);
+    audio.currentTime = 0;
+    setActive(0);
+    renderScripture();
+  }
   isRecording = true;
-  recordingIdx = 0;
-  timings = new Array(allWords.length).fill(null);
-  setActive(0);
-  audio.currentTime = 0;
+  if (recordingDisplay) recordingDisplay.style.display = 'block';
+  updateRecordingDisplay();
   audio.play();
-  recordStatus.textContent = `🔴 녹화 중 · Space로 단어 1 (${allWords[0].greek}) 타이밍 기록`;
+  recordStatus.innerHTML = '🔴 <strong>녹화 중</strong> — 단어 들릴 때 Space 누르세요';
 });
 
-document.getElementById('recordStopBtn').addEventListener('click', stopRecord);
+document.getElementById('recordPauseBtn').addEventListener('click', () => {
+  if (isRecording) {
+    isRecording = false;
+    audio.pause();
+    recordStatus.textContent = `❚❚ 일시정지 (${recordingIdx}/${allWords.length}) — "⏺ 시작"으로 재개`;
+  } else if (recordingIdx > 0) {
+    isRecording = true;
+    audio.play();
+    recordStatus.innerHTML = '🔴 <strong>녹화 재개</strong>';
+  }
+});
+
+document.getElementById('recordUndoBtn').addEventListener('click', () => {
+  if (recordingIdx > 0) {
+    recordingIdx--;
+    timings[recordingIdx] = null;
+    setActive(recordingIdx);
+    if (recordingIdx > 0 && timings[recordingIdx - 1] !== null) {
+      audio.currentTime = Math.max(0, timings[recordingIdx - 1] - 0.3);
+    } else {
+      audio.currentTime = Math.max(0, audio.currentTime - 2);
+    }
+    updateRecordingDisplay();
+    recordStatus.textContent = `⏮ 뒤로 · 현재: ${allWords[recordingIdx].greek}`;
+  }
+});
+
+document.getElementById('recordStopBtn').addEventListener('click', () => {
+  if (confirm('녹화를 완전히 중단하시겠습니까?')) {
+    stopRecord();
+    recordingIdx = 0;
+    if (recordingDisplay) recordingDisplay.style.display = 'none';
+  }
+});
 
 function stopRecord() {
   if (isRecording) {
@@ -1705,15 +1966,26 @@ function stopRecord() {
 function recordCurrentTime() {
   if (!isRecording || recordingIdx >= allWords.length) return;
   timings[recordingIdx] = audio.currentTime;
-  setActive(recordingIdx);
+  
+  const wordEl = document.querySelector(`.word[data-global-idx="${recordingIdx}"]`);
+  if (wordEl) {
+    wordEl.classList.add('has-timing');
+    const existingTs = wordEl.querySelector('.timestamp');
+    const tsText = audio.currentTime.toFixed(2) + 's';
+    if (existingTs) existingTs.textContent = tsText;
+    else wordEl.insertAdjacentHTML('beforeend', `<span class="timestamp">${tsText}</span>`);
+  }
+  
   recordingIdx++;
+  setActive(recordingIdx < allWords.length ? recordingIdx : recordingIdx - 1);
+  updateRecordingDisplay();
+  
   if (recordingIdx >= allWords.length) {
     isRecording = false;
     audio.pause();
-    recordStatus.textContent = `✅ 모든 타이밍 기록 완료! "💾 저장"을 누르세요`;
-  } else {
-    recordStatus.textContent = `🔴 다음: ${allWords[recordingIdx].greek} (${recordingIdx + 1}/${allWords.length})`;
+    recordStatus.innerHTML = '✅ <strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "💾 저장"을 누르세요';
   }
+}
 }
 
 document.getElementById('recordSaveBtn').addEventListener('click', () => {
@@ -1723,11 +1995,13 @@ document.getElementById('recordSaveBtn').addEventListener('click', () => {
 });
 
 document.getElementById('recordClearBtn').addEventListener('click', () => {
-  if (confirm('모든 타이밍을 삭제할까요?')) {
-    timings = new Array(allWords.length).fill(null);
-    saveTimings();
+  if (confirm('자동 타이밍(Whisper AI 기반)으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
+    timings = AUTO_TIMINGS.slice();
+    localStorage.removeItem(STORAGE_KEY);
+    recordingIdx = 0;
+    if (recordingDisplay) recordingDisplay.style.display = 'none';
     renderScripture();
-    recordStatus.textContent = '초기화되었습니다';
+    recordStatus.textContent = '✓ Whisper AI 자동 타이밍으로 복원됨';
   }
 });
 
@@ -1751,6 +2025,10 @@ document.addEventListener('keydown', (e) => {
       if (audio.paused) document.getElementById('autoPlayBtn').click();
       else stopAuto();
     } else if (currentMode === 'dictation') document.getElementById('dictationPlayBtn').click();
+  }
+  else if (e.code === 'Backspace' && currentMode === 'record' && (isRecording || recordingIdx > 0)) {
+    e.preventDefault();
+    document.getElementById('recordUndoBtn').click();
   } else if (e.key === 'ArrowRight') {
     if (currentIdx < allWords.length - 1) setActive(currentIdx + 1);
   } else if (e.key === 'ArrowLeft') {
