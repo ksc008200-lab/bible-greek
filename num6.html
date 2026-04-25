@@ -315,13 +315,17 @@
         <button class="control-btn" style="border-color:rgba(232,168,120,.4);color:var(--warn)" id="recordClearBtn">초기화</button>
       </div>
       <div class="btn-group" style="margin-top:10px">
+        <label class="control-btn" style="border-color:rgba(201,169,92,.5);color:var(--gold);cursor:pointer;text-align:center">
+          📄 SRT 가져오기<input type="file" id="srtFile" accept=".srt,.txt" style="display:none">
+        </label>
         <button class="control-btn" id="autoDetectBtn" style="border-color:rgba(232,200,120,.5);color:var(--gold)">🔍 자동 감지</button>
       </div>
+      <div class="status" id="srtStatus" style="display:none;margin-top:6px"></div>
       <div style="margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 4px">
-        <label style="font-size:12px;color:var(--ink-dim)">감도</label>
-        <input type="range" id="silenceThreshold" min="1" max="30" value="8" style="flex:1;min-width:80px;accent-color:var(--gold)">
-        <span id="thresholdValue" style="font-size:12px;color:var(--gold);min-width:24px;text-align:right">8</span>
-        <span style="font-size:11px;color:var(--ink-dim)">(낮을수록 민감)</span>
+        <label style="font-size:12px;color:var(--ink-dim)">자동감지 감도</label>
+        <input type="range" id="silenceThreshold" min="5" max="50" value="20" style="flex:1;min-width:80px;accent-color:var(--gold)">
+        <span id="thresholdValue" style="font-size:12px;color:var(--gold);min-width:24px;text-align:right">20</span>
+        <span style="font-size:11px;color:var(--ink-dim)">% (최대볼륨 기준)</span>
       </div>
       <div class="status" id="autoDetectStatus" style="display:none;margin-top:6px"></div>
       <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
@@ -735,38 +739,62 @@ style.textContent=`.dictation-mode .word .hebrew{filter:blur(8px);transition:fil
 document.head.appendChild(style);
 
 document.getElementById("silenceThreshold").oninput = function() { document.getElementById("thresholdValue").textContent=this.value; };
+
+// SRT 가져오기
+function parseSrtTimestamp(ts) { const [hms,ms]=ts.replace(',','.').split('.'); const [h,m,s]=hms.split(':').map(Number); return h*3600+m*60+s+parseFloat('0.'+(ms||'0')); }
+document.getElementById("srtFile").addEventListener("change", e => {
+  const file=e.target.files[0]; if (!file) return;
+  const statusEl=document.getElementById("srtStatus");
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const blocks=ev.target.result.trim().split(/\r?\n\s*\r?\n/);
+    const entries=[];
+    for (const block of blocks) { const lines=block.trim().split(/\r?\n/); const tl=lines.find(l=>l.includes('-->')); if(!tl) continue; const m=tl.match(/(\d{2}:\d{2}:\d{2}[,\.]\d{3})/); if(m) entries.push(parseSrtTimestamp(m[1])); }
+    if (entries.length===0) { statusEl.style.display="block"; statusEl.textContent="⚠ SRT 파싱 실패"; return; }
+    if (entries.length>=allWords.length) { for(let i=0;i<allWords.length;i++) timings[i]=entries[i]; }
+    else { timings=allWords.map((_,i)=>{ const r=i/Math.max(allWords.length-1,1),si=r*(entries.length-1),lo=Math.floor(si),hi=Math.min(lo+1,entries.length-1); return entries[lo]+(entries[hi]-entries[lo])*(si-lo); }); }
+    saveTimings(); renderScripture();
+    statusEl.style.display="block";
+    const ratio=entries.length/allWords.length;
+    statusEl.innerHTML=`<strong style="color:var(--gold)">SRT 가져오기 완료!</strong> ${entries.length}개 → ${allWords.length}개 매핑${ratio<0.8?' · <span style="color:var(--warn)">△ 수동 조정 권장</span>':''}`;
+  };
+  reader.readAsText(file,'UTF-8');
+});
+
+// 자동 타이밍 감지 (개선판)
 document.getElementById("autoDetectBtn").onclick = async () => {
   const statusEl=document.getElementById("autoDetectStatus");
-  statusEl.style.display="block"; statusEl.textContent="오디오 분석 중...";
+  statusEl.style.display="block"; statusEl.textContent="오디오 분석 중... (수초 소요)";
   const src=audio.src||audio.currentSrc;
   if (!src) { statusEl.textContent="오디오 파일을 먼저 로드하세요"; return; }
   try {
-    const response=await fetch(src);
-    const arrayBuffer=await response.arrayBuffer();
+    const response=await fetch(src); const arrayBuffer=await response.arrayBuffer();
     const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
     const audioBuffer=await audioCtx.decodeAudioData(arrayBuffer);
-    const channelData=audioBuffer.getChannelData(0);
-    const sampleRate=audioBuffer.sampleRate;
-    const frameSize=Math.floor(sampleRate*0.02);
-    const threshold=parseFloat(document.getElementById("silenceThreshold").value)/1000;
-    const minSilenceFrames=Math.floor(0.12/0.02);
-    const frames=[];
-    for (let i=0;i<channelData.length;i+=frameSize) { let sum=0; const end=Math.min(i+frameSize,channelData.length); for(let j=i;j<end;j++) sum+=channelData[j]*channelData[j]; frames.push(Math.sqrt(sum/(end-i))); }
-    const onsets=[];
-    let inSpeech=false,silenceCount=0;
-    for (let i=0;i<frames.length;i++) {
-      if (!inSpeech&&frames[i]>threshold) { onsets.push(i*frameSize/sampleRate); inSpeech=true; silenceCount=0; }
-      else if (inSpeech&&frames[i]<=threshold) { silenceCount++; if(silenceCount>=minSilenceFrames){inSpeech=false;silenceCount=0;} }
+    const numCh=audioBuffer.numberOfChannels,len=audioBuffer.length,sampleRate=audioBuffer.sampleRate;
+    const mixed=new Float32Array(len);
+    for (let c=0;c<numCh;c++) { const ch=audioBuffer.getChannelData(c); for(let i=0;i<len;i++) mixed[i]+=ch[i]/numCh; }
+    const frameSize=Math.floor(sampleRate*0.02); const frames=[];
+    for (let i=0;i<mixed.length;i+=frameSize) { let sum=0; const end=Math.min(i+frameSize,mixed.length); for(let j=i;j<end;j++) sum+=mixed[j]*mixed[j]; frames.push(Math.sqrt(sum/(end-i))); }
+    const sw=3; const smoothed=frames.map((_,i)=>{ let s=0,cnt=0; for(let j=Math.max(0,i-sw);j<=Math.min(frames.length-1,i+sw);j++){s+=frames[j];cnt++;} return s/cnt; });
+    const maxRMS=Math.max(...smoothed); const pct=parseFloat(document.getElementById("silenceThreshold").value); const threshold=maxRMS*(pct/100);
+    const minGapFrames=Math.floor(0.15/0.02),minSilenceFrames=Math.floor(0.08/0.02);
+    const onsets=[]; let inSpeech=false,silenceCount=0,lastOnsetFrame=-minGapFrames;
+    for (let i=0;i<smoothed.length;i++) {
+      if (!inSpeech&&smoothed[i]>threshold&&(i-lastOnsetFrame)>=minGapFrames) { onsets.push(i*frameSize/sampleRate); lastOnsetFrame=i; inSpeech=true; silenceCount=0; }
+      else if (inSpeech&&smoothed[i]<=threshold) { silenceCount++; if(silenceCount>=minSilenceFrames){inSpeech=false;silenceCount=0;} }
       else if (inSpeech) silenceCount=0;
     }
     audioCtx.close();
-    statusEl.textContent=`감지된 발화 ${onsets.length}개 / 단어 ${allWords.length}개`;
-    if (onsets.length===0) { statusEl.textContent="감지 실패 — 감도 수치를 낮춰보세요"; return; }
+    const ratio=onsets.length/allWords.length;
+    const qm=ratio>=0.85&&ratio<=1.2?`<span style="color:var(--success)">✓ 양호</span>`:ratio<0.5?`<span style="color:var(--warn)">⚠ 감도 높이세요</span>`:ratio>1.5?`<span style="color:var(--warn)">⚠ 감도 낮추세요</span>`:`<span style="color:var(--warn)">△ 수동 조정 권장</span>`;
+    statusEl.innerHTML=`감지 ${onsets.length}개 / 단어 ${allWords.length}개 · ${qm}`;
+    if (onsets.length===0) { statusEl.textContent="감지 실패 — 감도를 높여보세요"; return; }
     if (onsets.length>=allWords.length) { for(let i=0;i<allWords.length;i++) timings[i]=onsets[i]; }
-    else { timings=allWords.map((_,i)=>{ const ratio=i/Math.max(allWords.length-1,1),srcIdx=ratio*(onsets.length-1),lo=Math.floor(srcIdx),hi=Math.min(lo+1,onsets.length-1); return onsets[lo]+(onsets[hi]-onsets[lo])*(srcIdx-lo); }); }
+    else { timings=allWords.map((_,i)=>{ const r=i/Math.max(allWords.length-1,1),si=r*(onsets.length-1),lo=Math.floor(si),hi=Math.min(lo+1,onsets.length-1); return onsets[lo]+(onsets[hi]-onsets[lo])*(si-lo); }); }
     saveTimings(); renderScripture();
-    statusEl.innerHTML=`<strong style="color:var(--gold)">자동 감지 완료!</strong> ⏺ 수동 녹화로 미세 조정 가능`;
-  } catch(err) { statusEl.textContent="오류: "+err.message; }
+    statusEl.innerHTML+=`<br><strong style="color:var(--gold)">저장 완료!</strong> ⏺ 수동 녹화로 미세 조정 가능`;
+  } catch(err) { statusEl.textContent=err.name==='TypeError'?"⚠ 로컬 파일 제한 — GitHub Pages에서 실행하세요":"오류: "+err.message; }
 };
 
 renderScripture();
