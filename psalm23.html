@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>תְּהִלִּים כ״ג — 시편 23편 · 선한 목자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Noto+Serif+Hebrew:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121a14;
+    --bg-2:#1a2419;
+    --ink:#e8ead3;
+    --ink-dim:#8a9070;
+    --gold:#c9a95c;
+    --gold-bright:#e8c878;
+    --green:#4a8c5c;
+    --green-bright:#6ab87a;
+    --teal:#3a7a6a;
+    --rose:#9ac8a0;
+    --parchment:#f3ead5;
+    --shadow:rgba(0,0,0,.5);
+    --success:#6fb86f;
+    --warn:#e8a878;
+    --sky:#a8c8d8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'EB Garamond','Noto Serif KR',serif;
+    background:
+      radial-gradient(ellipse at top,#1a2d1e 0%,var(--bg) 60%),
+      var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    padding:25px 15px;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%,rgba(74,140,92,.05) 0%,transparent 40%),
+      radial-gradient(circle at 80% 80%,rgba(201,169,92,.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    opacity:.4;pointer-events:none;z-index:1;
+  }
+  .container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+
+  header{
+    text-align:center;
+    margin-bottom:25px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(74,140,92,.3);
+    position:relative;
+  }
+  header::after{
+    content:"✦";
+    position:absolute;
+    bottom:-13px;left:50%;transform:translateX(-50%);
+    background:var(--bg);
+    color:var(--green);
+    padding:0 15px;
+    font-size:16px;
+  }
+  .subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin-bottom:8px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(24px,3.8vw,38px);
+    color:var(--parchment);
+    letter-spacing:2px;
+    direction:rtl;
+    font-family:'Noto Serif Hebrew','EB Garamond',serif;
+  }
+  .h1-ko{
+    font-family:'Noto Serif KR',serif;
+    font-size:clamp(16px,2vw,22px);
+    color:var(--green-bright);
+    letter-spacing:1px;
+    margin-top:6px;
+  }
+  .reference{
+    font-family:'Noto Serif KR',serif;
+    color:var(--ink-dim);
+    font-size:14px;
+    margin-top:6px;
+  }
+
+  /* 절 선택 탭 */
+  .verse-nav{
+    display:flex;gap:6px;justify-content:center;
+    margin-bottom:20px;flex-wrap:wrap;
+  }
+  .verse-nav button{
+    font-family:'Cormorant Garamond',serif;
+    background:rgba(0,0,0,.25);
+    border:1px solid rgba(74,140,92,.25);
+    color:var(--ink);padding:8px 16px;
+    font-size:14px;cursor:pointer;
+    transition:all .3s;border-radius:2px;letter-spacing:1px;
+  }
+  .verse-nav button:hover{border-color:var(--green);background:rgba(74,140,92,.1);color:var(--green-bright)}
+  .verse-nav button.active{
+    background:linear-gradient(180deg,rgba(154,200,160,.3),rgba(74,140,92,.1));
+    border-color:var(--rose);color:var(--parchment);
+  }
+
+  /* 음성 패널 */
+  .audio-panel{
+    background:linear-gradient(145deg,#1e2d1e 0%,#162214 100%);
+    border:1px solid rgba(74,140,92,.2);
+    border-radius:2px;padding:15px 22px;margin-bottom:18px;
+    box-shadow:0 10px 30px var(--shadow);
+  }
+  .audio-panel h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:10px;font-weight:500;
+  }
+  .upload-area{
+    border:2px dashed rgba(74,140,92,.35);border-radius:4px;
+    padding:15px;text-align:center;cursor:pointer;
+    transition:all .3s;background:rgba(0,0,0,.2);display:block;
+  }
+  .upload-area:hover{border-color:var(--green);background:rgba(74,140,92,.05)}
+  .upload-area.has-file{border-style:solid;border-color:var(--success);background:rgba(111,184,111,.05)}
+  .upload-area input{display:none}
+  .upload-text{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:14px}
+  .upload-hint{font-size:11px;color:var(--ink-dim);margin-top:3px}
+  .file-info{margin-top:5px;font-size:12px;color:var(--success)}
+  audio{width:100%;margin-top:10px;filter:sepia(.4) hue-rotate(60deg) saturate(.8)}
+
+  /* 성경 본문 카드 */
+  .scripture-card{
+    background:linear-gradient(145deg,#1e2d1e 0%,#162214 100%);
+    border:1px solid rgba(74,140,92,.2);
+    border-radius:2px;padding:40px 30px;
+    box-shadow:0 20px 60px var(--shadow),inset 0 1px 0 rgba(255,255,255,.03);
+    margin-bottom:18px;position:relative;
+  }
+  .scripture-card::before{
+    content:"";position:absolute;
+    top:8px;left:8px;right:8px;bottom:8px;
+    border:1px solid rgba(74,140,92,.08);pointer-events:none;
+  }
+  .verse-block{
+    margin-bottom:35px;padding-bottom:25px;
+    border-bottom:1px dashed rgba(74,140,92,.15);
+  }
+  .verse-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .verse-label{
+    text-align:center;font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--rose);margin-bottom:18px;opacity:.85;
+  }
+
+  /* 히브리어 전체 절 (RTL) */
+  .heb-line{
+    font-family:'Noto Serif Hebrew','Times New Roman',serif;
+    font-size:28px;text-align:center;direction:rtl;
+    color:var(--parchment);line-height:1.8;
+    margin-bottom:18px;letter-spacing:1px;
+  }
+
+  /* 단어 카드 그리드 */
+  .verse{
+    display:flex;flex-wrap:wrap;gap:22px 18px;
+    justify-content:center;align-items:flex-start;
+    margin-bottom:10px;
+  }
+  .word{
+    display:inline-flex;flex-direction:column;align-items:center;
+    text-align:center;padding:10px 8px 8px;border-radius:4px;
+    cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);
+    position:relative;min-width:70px;
+  }
+  .word:hover{background:rgba(74,140,92,.1);transform:translateY(-2px)}
+  .word.active{
+    background:linear-gradient(180deg,rgba(154,200,160,.22),rgba(74,140,92,.1));
+    transform:translateY(-4px);
+    box-shadow:0 8px 24px rgba(74,140,92,.3),inset 0 0 0 1px rgba(154,200,160,.4);
+  }
+  .word.active .hebrew{color:var(--green-bright);text-shadow:0 0 20px rgba(106,184,122,.6)}
+  .word.active .korean{color:var(--parchment)}
+  .word.read{opacity:.5}
+  .word.key-word{
+    background:rgba(201,169,92,.06);border:1px solid rgba(201,169,92,.25);
+  }
+  .word.key-word .hebrew{color:var(--gold)}
+
+  .hebrew{
+    font-family:'Noto Serif Hebrew','SBL Hebrew','Times New Roman',serif;
+    font-size:34px;font-weight:400;
+    color:var(--parchment);
+    transition:color .3s,text-shadow .3s;
+    line-height:1.3;direction:rtl;
+  }
+  .korean{
+    font-family:'Noto Serif KR',serif;
+    font-size:11px;color:var(--ink-dim);
+    margin-top:5px;letter-spacing:1px;
+  }
+  .gloss{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:10px;
+    color:rgba(201,169,92,.55);margin-top:2px;
+  }
+
+  /* 번역 */
+  .translation{
+    margin-top:18px;padding-top:14px;
+    border-top:1px solid rgba(74,140,92,.1);
+    text-align:center;font-family:'Noto Serif KR',serif;
+    font-size:14px;color:var(--ink);line-height:1.75;
+    font-style:italic;opacity:.9;
+  }
+  .translation-ko{color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px dashed rgba(74,140,92,.15)}
+  .translation-esv,.translation-kjv{
+    font-family:'EB Garamond',serif;font-size:13px;
+    line-height:1.6;margin-top:7px;
+    padding-left:50px;position:relative;
+    text-align:left;text-indent:-50px;
+  }
+  .translation-esv{color:var(--ink);opacity:.9}
+  .translation-kjv{font-style:italic;color:var(--gold);opacity:.8}
+  .version-label{
+    display:inline-block;font-family:'Cormorant Garamond',serif;
+    font-size:10px;font-weight:600;font-style:normal;
+    letter-spacing:2px;padding:2px 7px;border-radius:2px;
+    margin-right:8px;vertical-align:2px;
+  }
+  .translation-esv .version-label{
+    background:rgba(111,184,111,.15);color:var(--success);
+    border:1px solid rgba(111,184,111,.3);
+  }
+  .translation-kjv .version-label{
+    background:rgba(201,169,92,.15);color:var(--gold);
+    border:1px solid rgba(201,169,92,.3);
+  }
+
+  /* 문법 정보 모달 */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.75);
+    backdrop-filter:blur(6px);display:none;
+    align-items:center;justify-content:center;
+    z-index:100;padding:20px;animation:fadeIn .25s;
+  }
+  .modal-overlay.show{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .modal{
+    background:linear-gradient(145deg,#1e2d1e 0%,#162214 100%);
+    border:1px solid rgba(154,200,160,.35);
+    border-radius:4px;padding:35px 38px;
+    max-width:560px;width:100%;max-height:85vh;
+    overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7);
+    position:relative;animation:slideUp .3s;
+  }
+  .modal-close{
+    position:absolute;top:15px;right:20px;
+    background:none;border:none;color:var(--ink-dim);
+    font-size:24px;cursor:pointer;transition:color .2s;
+    line-height:1;padding:5px;
+  }
+  .modal-close:hover{color:var(--green-bright)}
+  .modal-hebrew{
+    font-family:'Noto Serif Hebrew','Times New Roman',serif;
+    font-size:56px;text-align:center;
+    color:var(--gold-bright);margin-bottom:6px;
+    font-weight:400;text-shadow:0 0 25px rgba(232,200,120,.3);
+    direction:rtl;line-height:1.3;
+  }
+  .modal-transliteration{
+    text-align:center;font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:16px;
+    color:var(--rose);margin-bottom:6px;
+  }
+  .modal-korean{
+    text-align:center;font-family:'Noto Serif KR',serif;
+    font-size:18px;color:var(--parchment);margin-bottom:20px;
+  }
+  .modal-divider{border:none;border-top:1px solid rgba(74,140,92,.2);margin:18px 0}
+  .modal-section{margin-bottom:16px}
+  .modal-section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--rose);margin-bottom:8px;font-weight:500;
+  }
+  .grammar-grid{
+    display:grid;grid-template-columns:auto 1fr;
+    gap:8px 18px;font-family:'Noto Serif KR',serif;font-size:14px;
+  }
+  .grammar-grid .label{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1px}
+  .grammar-grid .value{color:var(--ink)}
+  .modal-meaning{
+    font-family:'Noto Serif KR',serif;font-size:15px;
+    line-height:1.7;color:var(--ink);
+    padding:12px 15px;background:rgba(0,0,0,.25);
+    border-left:3px solid var(--green);border-radius:2px;
+  }
+  .modal-note{
+    font-family:'Noto Serif KR',serif;font-size:13px;
+    line-height:1.7;color:var(--ink-dim);
+    margin-top:10px;padding:10px 14px;
+    background:rgba(154,200,160,.05);
+    border-radius:2px;font-style:italic;
+  }
+  .strongs{
+    display:inline-block;background:rgba(201,169,92,.15);
+    color:var(--gold);padding:2px 10px;border-radius:2px;
+    font-family:monospace;font-size:12px;letter-spacing:1px;
+  }
+
+  /* 모드 탭 */
+  .mode-tabs{
+    display:flex;background:rgba(0,0,0,.3);
+    border:1px solid rgba(74,140,92,.25);
+    border-radius:2px;margin-bottom:15px;overflow:hidden;flex-wrap:wrap;
+  }
+  .mode-tab{
+    flex:1;min-width:110px;padding:12px;text-align:center;cursor:pointer;
+    font-family:'Cormorant Garamond',serif;font-size:13px;
+    letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);
+    transition:all .3s;border-right:1px solid rgba(74,140,92,.1);
+  }
+  .mode-tab:last-child{border-right:none}
+  .mode-tab:hover{color:var(--ink);background:rgba(74,140,92,.05)}
+  .mode-tab.active{
+    background:linear-gradient(180deg,rgba(154,200,160,.2),rgba(74,140,92,.05));
+    color:var(--rose);box-shadow:inset 0 -2px 0 var(--green);
+  }
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  /* 컨트롤 */
+  .controls{
+    background:linear-gradient(145deg,#1e2d1e 0%,#162214 100%);
+    border:1px solid rgba(74,140,92,.2);
+    border-radius:2px;padding:20px 22px;box-shadow:0 10px 30px var(--shadow);
+  }
+  .btn-group{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  button.control-btn{
+    font-family:'Cormorant Garamond',serif;
+    background:transparent;border:1px solid rgba(74,140,92,.35);
+    color:var(--parchment);padding:9px 16px;
+    font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+    cursor:pointer;transition:all .3s;border-radius:2px;min-width:90px;
+  }
+  button.control-btn:hover:not(:disabled){
+    background:rgba(74,140,92,.1);border-color:var(--green);color:var(--green-bright);
+  }
+  button.control-btn:disabled{opacity:.35;cursor:not-allowed}
+  button.control-btn.primary{
+    background:linear-gradient(180deg,rgba(154,200,160,.25),rgba(74,140,92,.1));
+    border-color:var(--rose);color:var(--parchment);
+  }
+  .instructions{
+    padding:14px 18px;background:rgba(0,0,0,.25);
+    border-left:3px solid var(--green);margin-bottom:15px;
+    font-family:'Noto Serif KR',serif;font-size:13px;
+    line-height:1.8;color:var(--ink);
+  }
+  .instructions strong{color:var(--rose)}
+  .instructions kbd{
+    background:rgba(154,200,160,.15);border:1px solid rgba(154,200,160,.3);
+    padding:2px 7px;border-radius:2px;color:var(--rose);
+    margin:0 2px;font-family:inherit;font-size:11px;
+  }
+  .status{
+    text-align:center;font-family:'Cormorant Garamond',serif;
+    font-style:italic;color:var(--ink-dim);
+    margin-top:12px;font-size:13px;min-height:18px;
+  }
+  .speed-control{
+    display:flex;align-items:center;gap:10px;
+    margin-top:12px;justify-content:center;flex-wrap:wrap;
+  }
+  .speed-label{
+    font-family:'Cormorant Garamond',serif;font-size:11px;
+    letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  }
+  .speed-buttons{
+    display:flex;gap:4px;background:rgba(0,0,0,.3);
+    padding:3px;border-radius:2px;border:1px solid rgba(74,140,92,.15);
+  }
+  .speed-btn{
+    padding:5px 11px;font-size:11px;min-width:auto;border:none;
+    background:transparent;color:var(--ink-dim);cursor:pointer;
+    border-radius:2px;font-family:'Cormorant Garamond',serif;
+  }
+  .speed-btn.active{background:rgba(74,140,92,.2);color:var(--green-bright)}
+  .stats-bar{
+    display:flex;justify-content:center;gap:20px;margin-bottom:15px;
+    font-family:'Cormorant Garamond',serif;font-size:12px;
+    color:var(--ink-dim);letter-spacing:1px;flex-wrap:wrap;
+  }
+  .stats-bar span strong{color:var(--gold);font-size:14px}
+  .hint-footer{
+    text-align:center;margin-top:25px;
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:12px;color:var(--ink-dim);padding:15px;
+  }
+
+  /* 자동 재생 */
+  .auto-current{
+    font-family:'Noto Serif Hebrew','Times New Roman',serif;
+    font-size:52px;text-align:center;direction:rtl;
+    color:var(--gold-bright);text-shadow:0 0 30px rgba(232,200,120,.4);
+    line-height:1.3;margin-bottom:12px;
+  }
+  .auto-ko{
+    text-align:center;font-family:'Noto Serif KR',serif;
+    font-size:18px;color:var(--parchment);margin-bottom:6px;
+  }
+  .auto-gloss{
+    text-align:center;font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:15px;color:var(--rose);
+  }
+  .progress{height:3px;background:rgba(0,0,0,.4);border-radius:2px;margin-top:12px;overflow:hidden}
+  .progress-bar{
+    height:100%;background:linear-gradient(90deg,var(--green),var(--rose));
+    width:0%;transition:width .1s linear;box-shadow:0 0 10px rgba(154,200,160,.5);
+  }
+
+  /* 다른 성경 본문 */
+  .more-chapters{margin-top:50px;padding-top:30px;border-top:1px solid rgba(74,140,92,.15)}
+  .more-chapters-title{
+    font-family:'Cormorant Garamond',serif;font-size:13px;
+    letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:25px;text-align:center;position:relative;
+  }
+  .more-chapters-title::before,.more-chapters-title::after{
+    content:"";display:inline-block;width:40px;height:1px;
+    background:rgba(74,140,92,.3);vertical-align:middle;margin:0 18px;
+  }
+  .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+  .chapter-card{
+    background:linear-gradient(145deg,#1e2d1e 0%,#162214 100%);
+    border:1px solid rgba(74,140,92,.18);border-radius:3px;
+    padding:22px 18px;cursor:pointer;transition:all .3s;
+    text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;
+  }
+  .chapter-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .chapter-card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 15px 35px rgba(74,140,92,.15)}
+  .chapter-card:hover::before{opacity:1}
+  .chapter-card.current{border-color:var(--green);background:linear-gradient(145deg,#233220 0%,#1a2a1a 100%)}
+  .chapter-card.current::after{
+    content:"현재";position:absolute;top:8px;right:10px;
+    font-family:'Cormorant Garamond',serif;font-size:10px;
+    letter-spacing:2px;color:var(--rose);
+    padding:2px 8px;border:1px solid var(--green);border-radius:2px;
+  }
+  .chapter-card.coming-soon{opacity:.5;cursor:not-allowed}
+  .chapter-card.coming-soon::after{
+    content:"준비중";position:absolute;top:8px;right:10px;
+    font-family:'Cormorant Garamond',serif;font-size:10px;
+    letter-spacing:2px;color:var(--ink-dim);
+    padding:2px 8px;border:1px solid rgba(74,140,92,.2);border-radius:2px;
+  }
+  .chapter-card.coming-soon:hover{transform:none;border-color:rgba(74,140,92,.18);box-shadow:none}
+  .card-icon{font-size:32px;margin-bottom:8px;display:block}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--parchment);margin-bottom:3px;letter-spacing:1px}
+  .card-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;margin-bottom:10px}
+  .card-description{font-family:'Noto Serif KR',serif;color:var(--ink);font-size:12px;line-height:1.5;opacity:.85}
+  a.chapter-card{text-decoration:none!important;color:inherit}
+
+  @media(max-width:640px){
+    .scripture-card{padding:30px 18px}
+    .hebrew{font-size:28px}
+    .heb-line{font-size:22px}
+    .verse{gap:16px 12px}
+    .modal{padding:25px 22px}
+    .modal-hebrew{font-size:44px}
+    .chapters-grid{grid-template-columns:1fr 1fr}
+    .chapter-card{padding:15px 12px}
+  }
+
+  /* 타이밍 표시 */
+  .word.has-timing{border-bottom:1px solid rgba(74,140,92,.4)}
+  .timestamp{
+    font-family:monospace;font-size:8px;
+    color:rgba(74,140,92,.6);margin-top:2px;
+    letter-spacing:0;
+  }
+
+  /* 녹화 디스플레이 */
+  .recording-display{
+    background:linear-gradient(145deg,rgba(154,200,160,.08) 0%,rgba(74,140,92,.04) 100%);
+    border:2px solid rgba(154,200,160,.4);
+    border-radius:6px;padding:25px 30px;
+    margin-bottom:15px;text-align:center;position:relative;
+    animation:recordingPulse 2s ease-in-out infinite;
+  }
+  @keyframes recordingPulse{
+    0%,100%{border-color:rgba(154,200,160,.4)}
+    50%{border-color:rgba(154,200,160,.8);box-shadow:0 0 20px rgba(154,200,160,.2)}
+  }
+  .recording-label{
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--rose);margin-bottom:12px;
+  }
+  .recording-dot{animation:blink 1s ease-in-out infinite;font-size:10px}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+  .recording-word{
+    font-family:'Noto Serif Hebrew','Times New Roman',serif;
+    font-size:52px;color:var(--gold-bright);
+    text-shadow:0 0 30px rgba(232,200,120,.4);
+    line-height:1.2;margin-bottom:12px;direction:rtl;
+  }
+  .recording-hint{
+    font-family:'Noto Serif KR',serif;font-size:13px;
+    color:var(--ink-dim);margin-bottom:14px;
+  }
+  .recording-hint .next-word{
+    color:var(--rose);font-family:'Noto Serif Hebrew',serif;font-size:18px;
+  }
+  .recording-meter{height:4px;background:rgba(0,0,0,.3);border-radius:2px;overflow:hidden}
+  .recording-meter-bar{
+    height:100%;
+    background:linear-gradient(90deg,var(--green),var(--rose),var(--gold));
+    width:0%;transition:width .15s ease-out;
+    box-shadow:0 0 10px rgba(154,200,160,.6);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="subtitle">The Shepherd Psalm · 선한 목자 시편</div>
+    <h1>תְּהִלִּים כ״ג</h1>
+    <div class="h1-ko">시편 23편</div>
+    <div class="reference">다윗의 시 · 마소라 본문 (BHS) 기반 · 히브리어 원어 분석</div>
+  </header>
+
+  <!-- 음성 파일 -->
+  <div class="audio-panel">
+    <h3>♪ 히브리어 원어 낭독 · 타이밍 기록 지원</h3>
+    <label class="upload-area has-file" id="uploadArea">
+      <input type="file" id="audioFile" accept="audio/*">
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 audio-hb-psalms-ch023.mp3 자동 재생</div>
+      <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 · "⏺ 타이밍" 탭에서 단어별 타이밍 녹화 가능</div>
+      <div class="file-info" id="fileInfo"></div>
+    </label>
+    <audio id="audio" controls src="audio-hb-psalms-ch023.mp3" preload="auto" style="width:100%;margin-top:10px;filter:sepia(.4) hue-rotate(60deg) saturate(.8)"></audio>
+  </div>
+
+  <!-- 절 선택 -->
+  <div class="verse-nav" id="verseNav">
+    <button data-verse="all" class="active">전체</button>
+    <button data-verse="1">1절</button>
+    <button data-verse="2">2절</button>
+    <button data-verse="3">3절</button>
+    <button data-verse="4">4절</button>
+    <button data-verse="5">5절</button>
+    <button data-verse="6">6절</button>
+  </div>
+
+  <div class="stats-bar" id="statsBar"></div>
+
+  <!-- 성경 본문 -->
+  <div class="scripture-card" id="scriptureCard"></div>
+
+  <!-- 속도 조절 -->
+  <div style="text-align:center;margin-bottom:15px">
+    <div class="speed-control">
+      <span class="speed-label">재생 속도</span>
+      <div class="speed-buttons">
+        <button class="speed-btn" data-speed="0.5">0.5×</button>
+        <button class="speed-btn" data-speed="0.75">0.75×</button>
+        <button class="speed-btn active" data-speed="1.0">1.0×</button>
+        <button class="speed-btn" data-speed="1.25">1.25×</button>
+        <button class="speed-btn" data-speed="1.5">1.5×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모드 탭 -->
+  <div class="mode-tabs">
+    <div class="mode-tab active" data-mode="learn">📖 학습</div>
+    <div class="mode-tab" data-mode="auto">▶ 자동</div>
+    <div class="mode-tab" data-mode="dictation">✍ 가리기</div>
+    <div class="mode-tab" data-mode="record">⏺ 타이밍</div>
+  </div>
+
+  <!-- 학습 모드 -->
+  <div class="mode-panel active" id="learnPanel">
+    <div class="instructions">
+      <strong>📖 학습 모드</strong> — <strong>단어를 클릭하면 히브리어 문법 정보</strong>가 팝업으로 나타납니다.<br>
+      ▸ <kbd>Space</kbd> 재생/정지 · <kbd>→</kbd>/<kbd>←</kbd> 단어 이동 · <kbd>R</kbd> 처음부터 · <kbd>Esc</kbd> 팝업 닫기
+    </div>
+    <div class="controls">
+      <div class="btn-group">
+        <button class="control-btn primary" id="learnPlayBtn">▶ 재생/정지</button>
+        <button class="control-btn" id="learnPrevBtn">◀ 이전</button>
+        <button class="control-btn" id="learnNextBtn">다음 ▶</button>
+        <button class="control-btn" id="learnResetBtn">↺ 처음</button>
+      </div>
+      <div class="status" id="learnStatus">단어를 클릭하거나 ▶ 재생하세요</div>
+    </div>
+  </div>
+
+  <!-- 자동 재생 모드 -->
+  <div class="mode-panel" id="autoPanel">
+    <div class="instructions">
+      <strong>▶ 자동 모드</strong> — 저장된 타이밍으로 음성과 단어가 동기화됩니다.<br>
+      ▸ 먼저 "⏺ 타이밍" 탭에서 기록하거나, "샘플 타이밍"으로 균등 분배 테스트
+    </div>
+    <div class="controls">
+      <div id="autoDisplay" style="min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0">
+        <div class="auto-current" id="autoWord">—</div>
+        <div class="auto-ko" id="autoKo"></div>
+        <div class="auto-gloss" id="autoGloss"></div>
+      </div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="btn-group" style="margin-top:12px">
+        <button class="control-btn primary" id="autoPlayBtn">▶ 재생</button>
+        <button class="control-btn" id="autoStopBtn">■ 정지</button>
+        <button class="control-btn" id="autoResetBtn">↺ 처음</button>
+        <button class="control-btn" id="sampleTimingBtn">샘플 타이밍</button>
+      </div>
+      <div class="status" id="autoStatus">타이밍을 기록하거나 샘플 타이밍을 적용하세요</div>
+    </div>
+  </div>
+
+  <!-- 가리기 모드 -->
+  <div class="mode-panel" id="dictationPanel">
+    <div class="instructions">
+      <strong>✍ 가리기 모드</strong> — 히브리어 단어가 흐려집니다. 마우스를 올리면 보입니다.<br>
+      ▸ 뜻을 먼저 생각하고 확인하세요
+    </div>
+    <div class="controls">
+      <div class="btn-group">
+        <button class="control-btn primary" id="dictStartBtn">✍ 가리기 시작</button>
+        <button class="control-btn" id="dictRevealBtn">전체 보기</button>
+      </div>
+      <div class="status" id="dictStatus">버튼을 눌러 학습을 시작하세요</div>
+    </div>
+  </div>
+
+  <!-- 타이밍 기록 모드 -->
+  <div class="mode-panel" id="recordPanel">
+    <div class="instructions">
+      <strong>⏺ 수동 타이밍 녹화</strong> — 각 단어가 들리는 순간 <kbd>Space</kbd>를 누르세요<br>
+      ▸ <strong>"시작"</strong> 클릭 → 음성 재생 → 단어 들릴 때 <kbd>Space</kbd> → 다음 단어 자동 이동<br>
+      ▸ 실수했으면 <kbd>Backspace</kbd>로 이전 단어로 돌아가기<br>
+      ▸ 완료 후 반드시 <strong>"저장"</strong> 클릭 (브라우저에 영구 저장)
+    </div>
+
+    <div class="recording-display" id="recordingDisplay" style="display:none">
+      <div class="recording-label">
+        <span class="recording-dot">🔴</span>
+        녹화 중 · <span id="recordingProgress">0 / 57</span>
+      </div>
+      <div class="recording-word" id="recordingWord">—</div>
+      <div class="recording-hint" id="recordingHint">—</div>
+      <div class="recording-meter">
+        <div class="recording-meter-bar" id="recordingMeterBar"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="btn-group">
+        <button class="control-btn primary" id="recordStartBtn">⏺ 시작</button>
+        <button class="control-btn" id="recordPauseBtn">❚❚ 일시정지</button>
+        <button class="control-btn" id="recordUndoBtn">⏮ 뒤로</button>
+        <button class="control-btn" style="border-color:rgba(232,168,120,.4);color:var(--warn)" id="recordStopBtn">■ 중단</button>
+      </div>
+      <div class="btn-group" style="margin-top:10px">
+        <button class="control-btn" id="recordSaveBtn">저장</button>
+        <button class="control-btn" style="border-color:rgba(232,168,120,.4);color:var(--warn)" id="recordClearBtn">초기화</button>
+      </div>
+      <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
+    </div>
+  </div>
+
+  <div class="hint-footer">
+    ✦ 각 단어를 클릭하면 히브리어 문법 분석 · 어근 · 신학적 의미가 나타납니다 ✦
+  </div>
+
+  <!-- 다른 본문 -->
+  <div class="more-chapters">
+    <div class="more-chapters-title">다른 성경 본문</div>
+    <div class="chapters-grid">
+      <a class="chapter-card" href="index.html">
+        <span class="card-icon">✝</span>
+        <div class="card-title">고린도전서 13장</div>
+        <div class="card-subtitle">ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Αʹ ΙΓʹ</div>
+        <div class="card-description">사랑장 전체 · 헬라어 원어 분석 · 음성 매칭</div>
+      </a>
+      <a class="chapter-card" href="john1.html">
+        <span class="card-icon">🕊</span>
+        <div class="card-title">요한복음 1장</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Αʹ</div>
+        <div class="card-description">태초에 말씀 · 헬라어 원어 분석</div>
+      </a>
+      <div class="chapter-card current">
+        <span class="card-icon">🌿</span>
+        <div class="card-title">시편 23편</div>
+        <div class="card-subtitle">תְּהִלִּים כ״ג</div>
+        <div class="card-description">선한 목자 · 히브리어 원어 분석</div>
+      </div>
+      <div class="chapter-card coming-soon">
+        <span class="card-icon">🌟</span>
+        <div class="card-title">시편 1편</div>
+        <div class="card-subtitle">תְּהִלִּים א׳</div>
+        <div class="card-description">준비 중</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- 문법 정보 모달 -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-hebrew" id="modalHebrew"></div>
+    <div class="modal-transliteration" id="modalTranslit"></div>
+    <div class="modal-korean" id="modalKorean"></div>
+    <hr class="modal-divider">
+    <div class="modal-section">
+      <div class="modal-section-title">📖 문법 정보 · Parsing</div>
+      <div class="grammar-grid" id="modalGrammar"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">🔗 어근 · Lexical Info</div>
+      <div class="grammar-grid" id="modalLexical"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">💡 기본 뜻</div>
+      <div class="modal-meaning" id="modalMeaning"></div>
+    </div>
+    <div id="modalNoteSection" class="modal-section" style="display:none">
+      <div class="modal-section-title">📝 신학적/문법적 주석</div>
+      <div class="modal-note" id="modalNote"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// 시편 23편 (BHS 마소라 본문 기반)
+// ============================================================
+const verses = {
+  1:{
+    reference:"시편 23:1",
+    heb:"מִזְמוֹר לְדָוִד יְהוָה רֹעִי לֹא אֶחְסָר",
+    translation:"여호와는 나의 목자시니 내게 부족함이 없으리로다",
+    kjv:"The LORD is my shepherd; I shall not want.",
+    esv:"The LORD is my shepherd; I shall not want.",
+    words:[
+      {heb:"מִזְמוֹר",translit:"mizmor",ko:"미즈모르",gloss:"a psalm",pos:"명사",parsing:"남성 단수 주격",lemma:"זָמַר",strongs:"H4210",
+       meaning:"악기 반주와 함께 부르는 노래, 시편. 어근 זמר(zamar)는 '악기를 연주하다'.",
+       note:"시편에 57회 등장하는 표제어. 다윗의 시에 특히 많이 사용됨. 히브리 예배의 음악적 성격을 보여줌."},
+      {heb:"לְדָוִד",translit:"leDavid",ko:"레다비드",gloss:"of David",pos:"전치사+고유명사",parsing:"레(ל) + 다윗(דָּוִד)",lemma:"דָּוִד",strongs:"H1732",
+       meaning:"다윗을 위한, 다윗에 관한, 다윗이 지은. 전치사 ל은 다양한 관계를 나타냄.",
+       note:"저자를 나타내거나 다윗의 예배 악대를 위한 것임을 나타낼 수 있음. 목동 출신 다윗이 쓴 목자 시편."},
+      {heb:"יְהוָה",translit:"Adonai",ko:"아도나이",gloss:"LORD",pos:"고유명사",parsing:"테트라그라마톤 (4자음 성호)",lemma:"יהוה",strongs:"H3068",
+       meaning:"나는 스스로 있는 자(I AM WHO I AM). 출애굽기 3:14에서 계시된 하나님의 고유명. 히브리어로는 아도나이(主)로 발음.",
+       isKey:true,
+       note:"가장 거룩한 하나님의 이름. 유대인들은 이 이름을 직접 발음하지 않고 '아도나이(주님)'로 읽음. 신약에서는 κύριος(퀴리오스=주님)으로 번역됨."},
+      {heb:"רֹעִי",translit:"ro'i",ko:"로이",gloss:"my shepherd",pos:"동사+접미사",parsing:"칼(Qal) 능동 분사 남성 단수 + 1인칭 단수 소유 접미사",lemma:"רָעָה",strongs:"H7462",
+       meaning:"나의 목자. 어근 רעה는 '먹이다, 목양하다'. 분사형으로 '목자이신 분'을 뜻함.",
+       isKey:true,
+       note:"고대 근동에서 왕을 '목자'로 부르는 전통이 있음. 하나님을 목자로 묘사한 이 구절은 전 성경의 핵심 은유. 요한복음 10장의 '선한 목자' 예수님과 연결됨."},
+      {heb:"לֹא",translit:"lo",ko:"로",gloss:"not",pos:"부정부사",parsing:"완전 부정",lemma:"לֹא",strongs:"H3808",
+       meaning:"아니다. 히브리어의 절대적 부정. 미래·현재·습관적 상태 모두 부정 가능."},
+      {heb:"אֶחְסָר",translit:"echsar",ko:"에흐사르",gloss:"I shall want",pos:"동사",parsing:"칼(Qal) 미완료 1인칭 남성 단수",lemma:"חָסֵר",strongs:"H2637",
+       meaning:"부족하다, 결핍되다. 미완료형은 현재 혹은 미래의 지속 상태를 나타냄.",
+       isKey:true,
+       note:"목자이신 하나님과 함께하면 아무것도 부족하지 않다는 절대 신뢰의 선언. 빌립보서 4:19 '나의 하나님이 너희 모든 필요를 채우시리라'와 연결됨."}
+    ]
+  },
+  2:{
+    reference:"시편 23:2",
+    heb:"בִּנְאוֹת דֶּשֶׁא יַרְבִּיצֵנִי עַל מֵי מְנֻחוֹת יְנַהֲלֵנִי",
+    translation:"그가 나를 푸른 풀밭에 누이시며 쉴만한 물가로 인도하시는도다",
+    kjv:"He maketh me to lie down in green pastures: he leadeth me beside the still waters.",
+    esv:"He makes me lie down in green pastures. He leads me beside still waters.",
+    words:[
+      {heb:"בִּנְאוֹת",translit:"bin'ot",ko:"빈오트",gloss:"in pastures",pos:"전치사+명사",parsing:"ב(in) + נָאוָה 복수 연계형",lemma:"נָאוָה",strongs:"H4999",
+       meaning:"목초지, 아름다운 거처. 전치사 ב는 '~안에, ~에서'.",
+       note:"팔레스타인의 목초지는 봄철 단기간만 푸름. 목자는 이 소중한 초지로 양 떼를 이끌어야 함."},
+      {heb:"דֶּשֶׁא",translit:"deshe",ko:"데쉐",gloss:"of green grass",pos:"명사",parsing:"남성 단수",lemma:"דֶּשֶׁא",strongs:"H1877",
+       meaning:"새로 돋은 풀, 연한 초목. 창세기 1:11에서 하나님이 창조하신 첫 식물."},
+      {heb:"יַרְבִּיצֵנִי",translit:"yarbitzeni",ko:"야르비체니",gloss:"he makes me lie down",pos:"동사",parsing:"히필(Hifil) 미완료 3인칭 남성 단수 + 1인칭 접미사",lemma:"רָבַץ",strongs:"H7257",
+       meaning:"누이다, 눕히다. 히필(사역형)으로 '~하게 만들다'. 즉 '그가 나를 눕히신다'.",
+       isKey:true,
+       note:"양은 네 가지 조건이 갖춰져야 눕는다: 두려움이 없을 때, 다른 양과 마찰이 없을 때, 기생충이 없을 때, 배가 부를 때. 목자가 이 모두를 해결해 줌."},
+      {heb:"עַל",translit:"al",ko:"알",gloss:"beside",pos:"전치사",parsing:"위치/방향 전치사",lemma:"עַל",strongs:"H5921",
+       meaning:"~곁에, ~위에, ~을 향해. 여기서는 '강가 옆에'의 의미."},
+      {heb:"מֵי",translit:"mei",ko:"메이",gloss:"waters of",pos:"명사",parsing:"남성 복수 연계형",lemma:"מַיִם",strongs:"H4325",
+       meaning:"물. 히브리어의 복수형으로만 존재하는 단어(쌍수명사)."},
+      {heb:"מְנֻחוֹת",translit:"menuchot",ko:"메누홋",gloss:"rest/still",pos:"명사",parsing:"여성 복수",lemma:"מְנוּחָה",strongs:"H4496",
+       meaning:"쉼, 안식, 고요한 곳. 어근 נוח(누아흐)는 '쉬다, 정착하다'.",
+       isKey:true,
+       note:"'쉴만한 물가'는 잔잔하고 조용한 물을 의미. 양은 흐르는 물을 무서워해 직접 마시지 못함. 목자가 물을 고여 있게 만들어 줌. 영적으로 하나님이 주시는 안식(히 4장)과 연결."},
+      {heb:"יְנַהֲלֵנִי",translit:"yenahaleini",ko:"예나할레니",gloss:"he leads me",pos:"동사",parsing:"피엘(Piel) 미완료 3인칭 남성 단수 + 1인칭 접미사",lemma:"נָהַל",strongs:"H5095",
+       meaning:"부드럽게 인도하다, 이끌다. 피엘(강조/반복)형으로 '조심스럽게 이끌다'의 뉘앙스.",
+       isKey:true,
+       note:"출애굽기 15:13에도 같은 단어가 사용됨: '주의 인자하심으로 이 구속한 백성을 인도하시되'. 강요가 아닌 부드러운 이끄심."}
+    ]
+  },
+  3:{
+    reference:"시편 23:3",
+    heb:"נַפְשִׁי יְשׁוֹבֵב יַנְחֵנִי בְמַעְגְּלֵי צֶדֶק לְמַעַן שְׁמוֹ",
+    translation:"내 영혼을 소생시키시고 자기 이름을 위하여 의의 길로 인도하시는도다",
+    kjv:"He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.",
+    esv:"He restores my soul. He leads me in paths of righteousness for his name's sake.",
+    words:[
+      {heb:"נַפְשִׁי",translit:"nafshi",ko:"나프쉬",gloss:"my soul",pos:"명사+접미사",parsing:"여성 단수 + 1인칭 소유 접미사",lemma:"נֶפֶשׁ",strongs:"H5315",
+       meaning:"나의 생명, 영혼, 자아 전체. נֶפֶשׁ는 단순한 '영혼'이 아닌 전인격·생명력을 가리킴.",
+       isKey:true,
+       note:"창세기 2:7 '생기를 그 코에 불어넣으시니 생령(נֶפֶשׁ חַיָּה)이 되니라'. 영, 혼, 몸을 아우르는 히브리적 전인 개념. 헬라어 ψυχή(프쉬케)와 대응."},
+      {heb:"יְשׁוֹבֵב",translit:"yeshovev",ko:"예쇼베브",gloss:"he restores",pos:"동사",parsing:"폴렐(Polel) 미완료 3인칭 남성 단수",lemma:"שׁוּב",strongs:"H7725",
+       meaning:"회복시키다, 소생시키다. 폴렐(강조 반복형)으로 '완전히 돌이키다, 새롭게 하다'.",
+       isKey:true,
+       note:"어근 שוב(슈브)는 '돌아오다, 회개하다'의 기본 단어. 잃어버린 양을 찾아 회복시키는 목자 이미지와 완벽히 일치. 누가복음 15장 잃은 양 비유와 연결."},
+      {heb:"יַנְחֵנִי",translit:"yancheni",ko:"얀헤니",gloss:"he leads me",pos:"동사",parsing:"칼(Qal) 히필 미완료 3인칭 남성 단수 + 1인칭 접미사",lemma:"נָחָה",strongs:"H5148",
+       meaning:"인도하다, 이끌다. 출애굽기의 광야 인도와 같은 맥락의 단어."},
+      {heb:"בְמַעְגְּלֵי",translit:"b'magelei",ko:"베마글레이",gloss:"in paths of",pos:"전치사+명사",parsing:"ב + 남성 복수 연계형",lemma:"מַעְגָּל",strongs:"H4570",
+       meaning:"바퀴자국, 길, 궤도. 수레바퀴가 지나가며 만든 곧고 뚜렷한 길."},
+      {heb:"צֶדֶק",translit:"tzedek",ko:"체데크",gloss:"righteousness",pos:"명사",parsing:"남성 단수",lemma:"צֶדֶק",strongs:"H6664",
+       meaning:"의로움, 공의, 올바름. 하나님의 성품에서 나오는 올바른 기준.",
+       isKey:true,
+       note:"'의의 길'은 단순한 윤리적 바름이 아니라 하나님의 성품에 맞는 삶의 방향. 목자가 양을 올바른 길로 이끄는 것처럼 하나님이 우리의 삶을 이끄심."},
+      {heb:"לְמַעַן",translit:"l'ma'an",ko:"레마안",gloss:"for the sake of",pos:"전치사적 접속사",parsing:"목적/이유 표현",lemma:"מַעַן",strongs:"H4616",
+       meaning:"~을 위하여, ~때문에. 목적의 이유를 나타냄."},
+      {heb:"שְׁמוֹ",translit:"shmo",ko:"쉬모",gloss:"his name",pos:"명사+접미사",parsing:"남성 단수 + 3인칭 남성 단수 접미사",lemma:"שֵׁם",strongs:"H8034",
+       meaning:"그의 이름. 히브리어에서 '이름'은 그 존재의 본질과 성품을 나타냄.",
+       isKey:true,
+       note:"하나님이 인도하시는 궁극적 이유는 우리의 공로나 행위가 아니라 하나님 자신의 이름(성품)을 위해서임. 에스겔 36:22 '내 거룩한 이름을 위하여 행하노라'."}
+    ]
+  },
+  4:{
+    reference:"시편 23:4",
+    heb:"גַּם כִּי אֵלֵךְ בְּגֵיא צַלְמָוֶת לֹא אִירָא רָע כִּי אַתָּה עִמָּדִי שִׁבְטְךָ וּמִשְׁעַנְתֶּךָ הֵמָּה יְנַחֲמֻנִי",
+    translation:"내가 사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라 주의 지팡이와 막대기가 나를 안위하시나이다",
+    kjv:"Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",
+    esv:"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+    words:[
+      {heb:"גַּם",translit:"gam",ko:"감",gloss:"even/yea",pos:"부사",parsing:"강조 부사",lemma:"גַּם",strongs:"H1571",
+       meaning:"심지어, 또한, 비록. 강조 또는 양보를 나타냄."},
+      {heb:"כִּי",translit:"ki",ko:"키",gloss:"though",pos:"접속사",parsing:"양보 접속사",lemma:"כִּי",strongs:"H3588",
+       meaning:"비록 ~일지라도, 왜냐하면. 문맥에 따라 이유/강조/양보 의미."},
+      {heb:"אֵלֵךְ",translit:"eilech",ko:"에일레흐",gloss:"I walk",pos:"동사",parsing:"칼(Qal) 미완료 1인칭 남성 단수",lemma:"הָלַךְ",strongs:"H1980",
+       meaning:"걷다, 가다, 살아가다. 미완료형으로 '계속 걸을지라도'의 진행 의미."},
+      {heb:"בְּגֵיא",translit:"b'gei",ko:"베게이",gloss:"in the valley",pos:"전치사+명사",parsing:"ב + 남성 단수 연계형",lemma:"גַּיְא",strongs:"H1516",
+       meaning:"골짜기, 낮은 땅. 팔레스타인의 실제 깊고 어두운 협곡."},
+      {heb:"צַלְמָוֶת",translit:"tzalmavet",ko:"찰마베트",gloss:"shadow of death",pos:"명사",parsing:"남성 단수",lemma:"צַלְמָוֶת",strongs:"H6757",
+       meaning:"사망의 그늘, 짙은 어둠. צֵל(그늘)+מָוֶת(죽음)의 복합어 또는 '극도로 어두운 것'을 뜻하는 단일어.",
+       isKey:true,
+       note:"가장 깊고 위험한 어둠의 상징. 실제로 팔레스타인 목자들이 지나야 하는 위험한 골짜기. 동시에 인생의 가장 어두운 순간들(질병·죽음·고통)을 상징. 욥기 10:21에도 등장."},
+      {heb:"לֹא",translit:"lo",ko:"로",gloss:"not",pos:"부정부사",parsing:"절대 부정",lemma:"לֹא",strongs:"H3808",
+       meaning:"아니다. 절대적 부정."},
+      {heb:"אִירָא",translit:"ira",ko:"이라",gloss:"I will fear",pos:"동사",parsing:"칼(Qal) 미완료 1인칭 남성 단수",lemma:"יָרֵא",strongs:"H3372",
+       meaning:"두려워하다. '두려워하지 않겠다'는 강한 의지의 선언.",
+       isKey:true,
+       note:"'두려워하다'와 '경외하다'가 같은 어근. 하나님을 경외하는 자는 다른 것을 두려워하지 않음. 이사야 43:1 '두려워하지 말라 내가 너를 구속하였고'."},
+      {heb:"רָע",translit:"ra",ko:"라",gloss:"evil/harm",pos:"형용사/명사",parsing:"남성 단수",lemma:"רַע",strongs:"H7451",
+       meaning:"악, 해로움, 재난. 두려워하지 않을 대상."},
+      {heb:"כִּי",translit:"ki",ko:"키",gloss:"for",pos:"접속사",parsing:"이유 접속사",lemma:"כִּי",strongs:"H3588",
+       meaning:"왜냐하면. 두려워하지 않는 이유를 설명."},
+      {heb:"אַתָּה",translit:"atah",ko:"아타",gloss:"you",pos:"대명사",parsing:"2인칭 남성 단수",lemma:"אַתָּה",strongs:"H859",
+       meaning:"당신(하나님). 3인칭에서 2인칭으로 전환 — 추상적 서술에서 직접 대화로.",
+       isKey:true,
+       note:"이 절에서 갑자기 '그'에서 '당신'으로 인칭이 바뀜. 가장 어두운 순간에 하나님을 직접 대면하는 친밀감의 표현. 고난 속에서 하나님과의 개인적 만남."},
+      {heb:"עִמָּדִי",translit:"imadi",ko:"이마디",gloss:"with me",pos:"전치사+접미사",parsing:"עִם(함께) + 1인칭 단수 접미사",lemma:"עִם",strongs:"H5978",
+       meaning:"나와 함께. '임마누엘(하나님이 우리와 함께)'과 같은 어근.",
+       isKey:true,
+       note:"이사야 7:14, 마태복음 1:23의 임마누엘(עִמָּנוּ אֵל, Immanuel). 예수님의 이름의 신학적 뿌리가 여기 있음."},
+      {heb:"שִׁבְטְךָ",translit:"shivtecha",ko:"쉬브테하",gloss:"your rod",pos:"명사+접미사",parsing:"남성 단수 + 2인칭 남성 단수 접미사",lemma:"שֵׁבֶט",strongs:"H7626",
+       meaning:"당신의 막대기(몽둥이). 목자가 맹수를 쫓고 길을 세는 도구. 권위와 보호의 상징.",
+       isKey:true,
+       note:"막대기는 ① 포식자로부터 양을 보호 ② 길을 잃은 양을 인도 ③ 양의 상태를 검사(레 27:32)하는 데 사용. 권위와 보호의 두 기능."},
+      {heb:"וּמִשְׁעַנְתֶּךָ",translit:"umish'antecha",ko:"우미쉬안테하",gloss:"and your staff",pos:"접속사+명사+접미사",parsing:"ו(and) + 여성 단수 + 2인칭 접미사",lemma:"מִשְׁעֶנֶת",strongs:"H4938",
+       meaning:"당신의 지팡이. 목자가 의지하고 걷는 긴 지팡이. 지지와 안정의 상징.",
+       note:"지팡이는 험한 길에서 목자 자신의 지팡이이며, 동시에 양을 험한 길에서 안전하게 이끄는 도구. 두 도구 = 보호(막대기) + 지원(지팡이)."},
+      {heb:"הֵמָּה",translit:"hemah",ko:"헤마",gloss:"they",pos:"대명사",parsing:"3인칭 남성 복수",lemma:"הֵם",strongs:"H1992",
+       meaning:"그것들이. 막대기와 지팡이를 가리키는 강조 대명사."},
+      {heb:"יְנַחֲמֻנִי",translit:"yenachamuni",ko:"예나하무니",gloss:"they comfort me",pos:"동사",parsing:"피엘(Piel) 미완료 3인칭 남성 복수 + 1인칭 접미사",lemma:"נָחַם",strongs:"H5162",
+       meaning:"나를 위로하다, 안위하다. 피엘 강조형으로 '충분히, 완전히 위로하다'.",
+       isKey:true,
+       note:"נחם(나함)은 '위로하다'의 어근. 이사야 40:1 '위로하라 내 백성을 위로하라'의 같은 단어. 성령님의 이름 '보혜사(παράκλητος, Paraclete)'와 같은 기능."}
+    ]
+  },
+  5:{
+    reference:"시편 23:5",
+    heb:"תַּעֲרֹךְ לְפָנַי שֻׁלְחָן נֶגֶד צֹרְרָי דִּשַּׁנְתָּ בַשֶּׁמֶן רֹאשִׁי כּוֹסִי רְוָיָה",
+    translation:"주께서 내 원수의 목전에서 내게 상을 차려 주시고 기름을 내 머리에 부으셨으니 내 잔이 넘치나이다",
+    kjv:"Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.",
+    esv:"You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.",
+    words:[
+      {heb:"תַּעֲרֹךְ",translit:"ta'aroch",ko:"타아로흐",gloss:"you prepare",pos:"동사",parsing:"칼(Qal) 미완료 2인칭 남성 단수",lemma:"עָרַךְ",strongs:"H6186",
+       meaning:"차리다, 준비하다, 배열하다. 식탁을 차리는 행위.",
+       note:"군사적 의미로는 '전열을 갖추다'도 됨. 원수 앞에서 잔치를 준비함 = 완전한 승리와 안전을 의미."},
+      {heb:"לְפָנַי",translit:"l'fanai",ko:"레파나이",gloss:"before me",pos:"전치사+명사+접미사",parsing:"לְ + פָנִים(얼굴/앞) + 1인칭 접미사",lemma:"פָּנִים",strongs:"H6440",
+       meaning:"내 앞에, 나의 면전에."},
+      {heb:"שֻׁלְחָן",translit:"shulchan",ko:"슐한",gloss:"a table",pos:"명사",parsing:"남성 단수",lemma:"שֻׁלְחָן",strongs:"H7979",
+       meaning:"식탁, 상. 고대 근동에서 식탁을 나누는 것은 언약과 보호의 상징.",
+       isKey:true,
+       note:"성막의 진설병 상(출 25:23~30)과 같은 단어. 하나님 앞의 식탁 = 언약의 교제. 성찬식의 원형. 원수 앞에서 이 식탁에 앉는다는 것 = 완전한 하나님의 보호."},
+      {heb:"נֶגֶד",translit:"neged",ko:"네게드",gloss:"in the presence of",pos:"전치사",parsing:"~맞은편, ~앞에서",lemma:"נֶגֶד",strongs:"H5048",
+       meaning:"~앞에서, ~맞은편에. 원수들이 보는 앞에서."},
+      {heb:"צֹרְרָי",translit:"tzorerai",ko:"초레라이",gloss:"my enemies",pos:"동사+접미사",parsing:"칼 분사 남성 복수 + 1인칭 접미사",lemma:"צָרַר",strongs:"H6887",
+       meaning:"나의 원수들, 대적들. 어근 צרר는 '대적하다, 에워싸다'."},
+      {heb:"דִּשַּׁנְתָּ",translit:"dishanta",ko:"디샨타",gloss:"you anoint",pos:"동사",parsing:"피엘(Piel) 완료 2인칭 남성 단수",lemma:"דָּשֵׁן",strongs:"H1878",
+       meaning:"기름으로 적시다, 윤택하게 하다. 피엘 강조형으로 '풍성하게 기름 붓다'.",
+       isKey:true,
+       note:"목자는 양의 머리에 올리브 기름을 발라 파리와 기생충으로부터 보호함. 동시에 왕과 제사장과 선지자를 기름 부어 구별하는 성경의 핵심 행위. 메시아(히) = 기름 부음 받은 자."},
+      {heb:"בַשֶּׁמֶן",translit:"vashemen",ko:"바쉐멘",gloss:"with oil",pos:"전치사+명사",parsing:"ב + 남성 단수",lemma:"שֶׁמֶן",strongs:"H8081",
+       meaning:"기름, 올리브 오일. 성별, 치유, 기쁨의 상징."},
+      {heb:"רֹאשִׁי",translit:"roshi",ko:"로쉬",gloss:"my head",pos:"명사+접미사",parsing:"남성 단수 + 1인칭 접미사",lemma:"רֹאשׁ",strongs:"H7218",
+       meaning:"나의 머리. 전체 인격과 존엄성을 나타냄."},
+      {heb:"כּוֹסִי",translit:"kosi",ko:"코시",gloss:"my cup",pos:"명사+접미사",parsing:"여성 단수 + 1인칭 접미사",lemma:"כּוֹס",strongs:"H3563",
+       meaning:"나의 잔. 운명이나 몫을 상징하기도 함.",
+       isKey:true,
+       note:"'잔'은 성경에서 하나님이 주시는 운명의 몫(시 116:13 '구원의 잔'). 예수님의 겟세마네 '이 잔을 내게서 지나가게 하옵소서'와 성찬의 잔으로 연결됨."},
+      {heb:"רְוָיָה",translit:"revayah",ko:"레바야",gloss:"overflows",pos:"명사/형용사",parsing:"여성 단수",lemma:"רְוָיָה",strongs:"H7310",
+       meaning:"넘침, 충만함. 잔이 가득 차서 넘치는 상태.",
+       isKey:true,
+       note:"문자적으로 '흠뻑 젖은, 넘치도록 가득한'. 하나님의 복이 필요를 훨씬 초월함을 표현. 에베소서 3:20 '우리가 구하거나 생각하는 것에 더 넘치도록'."}
+    ]
+  },
+  6:{
+    reference:"시편 23:6",
+    heb:"אַךְ טוֹב וָחֶסֶד יִרְדְּפוּנִי כָּל יְמֵי חַיַּי וְשַׁבְתִּי בְּבֵית יְהוָה לְאֹרֶךְ יָמִים",
+    translation:"내 평생에 선하심과 인자하심이 반드시 나를 따르리니 내가 여호와의 집에 영원히 살리로다",
+    kjv:"Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever.",
+    esv:"Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the LORD forever.",
+    words:[
+      {heb:"אַךְ",translit:"ach",ko:"아흐",gloss:"surely",pos:"부사",parsing:"강조 부사",lemma:"אַךְ",strongs:"H389",
+       meaning:"진실로, 반드시, 오직. 강한 확신의 표현."},
+      {heb:"טוֹב",translit:"tov",ko:"토브",gloss:"goodness",pos:"형용사/명사",parsing:"남성 단수",lemma:"טוֹב",strongs:"H2896",
+       meaning:"선함, 좋음, 아름다움. 창세기 1장의 '보시기에 좋았더라'와 같은 단어.",
+       note:"하나님의 본성적 선하심. 시편 34:8 '주의 선하심을 맛보아 알지어다'."},
+      {heb:"וָחֶסֶד",translit:"vachesed",ko:"바헤세드",gloss:"and mercy/lovingkindness",pos:"접속사+명사",parsing:"ו(and) + 남성 단수",lemma:"חֶסֶד",strongs:"H2617",
+       meaning:"언약적 사랑, 인자하심, 충성된 사랑. 히브리어에서 가장 중요한 신학 용어 중 하나.",
+       isKey:true,
+       note:"חֶסֶד(헤세드)는 한 단어로 번역하기 어려운 히브리어 최고의 개념. '언약에 근거한 충성된 사랑'. 영어로는 lovingkindness, steadfast love, mercy 등으로 번역. 하나님의 성품의 핵심(출 34:6-7). 신약의 ἀγάπη(아가페)와 연결됨."},
+      {heb:"יִרְדְּפוּנִי",translit:"yirdefuni",ko:"이르데푸니",gloss:"shall follow me",pos:"동사",parsing:"칼(Qal) 미완료 3인칭 남성 복수 + 1인칭 접미사",lemma:"רָדַף",strongs:"H7291",
+       meaning:"뒤따르다, 추적하다. 보통 '원수가 쫓다'는 부정적 의미이나 여기서는 긍정적으로 반전.",
+       isKey:true,
+       note:"'원수가 쫓는다'에서 '선하심과 인자하심이 쫓는다'로의 놀라운 역전. 원수가 쫓던 자리에 하나님의 사랑이 대신 쫓아옴. 사망의 골짜기를 지난 자가 얻는 놀라운 선물."},
+      {heb:"כָּל",translit:"kol",ko:"콜",gloss:"all",pos:"형용사",parsing:"남성 단수 연계형",lemma:"כֹּל",strongs:"H3605",
+       meaning:"모든, 전체."},
+      {heb:"יְמֵי",translit:"yemei",ko:"예메이",gloss:"days of",pos:"명사",parsing:"남성 복수 연계형",lemma:"יוֹם",stronds:"H3117",
+       meaning:"날들의, 평생의."},
+      {heb:"חַיַּי",translit:"chayai",ko:"하야이",gloss:"my life",pos:"명사+접미사",parsing:"남성 복수 + 1인칭 접미사",lemma:"חַיִּים",strongs:"H2416",
+       meaning:"나의 삶, 나의 생명. חַיִּים은 히브리어에서 복수형으로만 존재 — '풍성한 삶'."},
+      {heb:"וְשַׁבְתִּי",translit:"veshavti",ko:"베샤브티",gloss:"and I shall dwell",pos:"동사",parsing:"칼(Qal) 완료 1인칭 남성 단수 (예언적 완료)",lemma:"שׁוּב / יָשַׁב",strongs:"H7725/H3427",
+       meaning:"'돌아오다'(שוב) 또는 '거하다'(ישב). 두 가지 독법이 모두 가능. KJV는 '거하다'로 번역.",
+       isKey:true,
+       note:"히브리어 문법적으로 ישב(거하다)의 변형으로 볼 수도 있고 שוב(돌아오다)로 볼 수도 있음. 두 의미 모두 신학적으로 중요: ① 하나님의 집에 '영원히 거하다' ② 방랑 후 '돌아오다'. 탕자의 귀환(눅 15장)과 연결."},
+      {heb:"בְּבֵית",translit:"b'veit",ko:"베베이트",gloss:"in the house of",pos:"전치사+명사",parsing:"ב + 남성 단수 연계형",lemma:"בַּיִת",strongs:"H1004",
+       meaning:"집에서, 집 안에."},
+      {heb:"יְהוָה",translit:"Adonai",ko:"아도나이",gloss:"the LORD",pos:"고유명사",parsing:"테트라그라마톤",lemma:"יהוה",strongs:"H3068",
+       meaning:"여호와, 주님. 시편은 여호와의 이름으로 시작하여(1절) 여호와의 집으로 마침(6절).",
+       isKey:true,
+       note:"시편 23편의 완전한 원환 구조: 1절 '여호와는 나의 목자' → 6절 '여호와의 집'. 목자이신 하나님의 집에 영원히 머무는 것이 최종 목적지. 요한복음 14:2 '내 아버지 집에 거할 곳이 많도다'."},
+      {heb:"לְאֹרֶךְ",translit:"l'orech",ko:"레오레흐",gloss:"forever/for length of",pos:"전치사+명사",parsing:"לְ + 남성 단수",lemma:"אֹרֶךְ",strongs:"H753",
+       meaning:"길이, 오랜 기간. לְאֹרֶךְ יָמִים = '날들의 길이' = 영원히."},
+      {heb:"יָמִים",translit:"yamim",ko:"야밈",gloss:"days",pos:"명사",parsing:"남성 복수",lemma:"יוֹם",strongs:"H3117",
+       meaning:"날들. לְאֹרֶךְ יָמִים = 오랜 날들 = 영원히.",
+       isKey:true,
+       note:"시편 23편의 대결론: 사망의 골짜기를 지나 여호와의 집에서 영원히 사는 것. 이것이 목자이신 하나님을 신뢰하는 삶의 최종 목적지. 요한계시록 21:3 '하나님이 그들과 함께 계시리니'."}
+    ]
+  }
+};
+
+// ============================================================
+// 상태 & 타이밍 시스템
+// ============================================================
+const STORAGE_KEY = 'bible_ps23_timings_v1';
+
+// 전체 단어 목록 (필터 무관, 항상 전체 57단어)
+const allWords = [];
+Object.keys(verses).forEach(k => {
+  verses[k].words.forEach((w, i) => {
+    allWords.push({ verseKey: k, wordIdx: i, ...w });
+  });
+});
+
+// 타이밍 배열 (null = 미설정)
+let timings = new Array(allWords.length).fill(null);
+(function() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  try {
+    const parsed = JSON.parse(saved);
+    if (Array.isArray(parsed) && parsed.length === allWords.length &&
+        parsed.some(t => typeof t === 'number' && t >= 0)) {
+      timings = parsed;
+    }
+  } catch(e) {}
+})();
+
+let currentVerse = "all";
+let currentWordIdx = 0;
+let autoSyncRAF = null;
+let isDictation = false;
+let isRecording = false;
+let recordingIdx = 0;
+const audio = document.getElementById("audio");
+
+// ============================================================
+// 렌더링
+// ============================================================
+function renderScripture() {
+  const card = document.getElementById("scriptureCard");
+  const keys = currentVerse === "all"
+    ? Object.keys(verses)
+    : [String(currentVerse)];
+
+  card.innerHTML = keys.filter(k => verses[k]).map(k => {
+    const v = verses[k];
+    const wordsHtml = v.words.map((w, wi) => {
+      const globalIdx = allWords.findIndex(a => a.verseKey === k && a.wordIdx === wi);
+      const keyClass = w.isKey ? " key-word" : "";
+      const hasTiming = timings[globalIdx] !== null && timings[globalIdx] !== undefined;
+      return `<div class="word${keyClass}${hasTiming ? ' has-timing' : ''}" data-global="${globalIdx}" onclick="clickWord(${globalIdx})">
+        <span class="hebrew">${w.heb}</span>
+        <span class="korean">${w.ko}</span>
+        <span class="gloss">${w.gloss}</span>
+        ${hasTiming ? `<span class="timestamp">${timings[globalIdx].toFixed(2)}s</span>` : ''}
+      </div>`;
+    }).join("");
+
+    return `<div class="verse-block" id="verse-block-${k}">
+      <div class="verse-label">— ${v.reference} —</div>
+      <div class="heb-line">${v.heb}</div>
+      <div class="verse" id="verse-${k}">${wordsHtml}</div>
+      <div class="translation">
+        <div class="translation-ko">${v.translation}</div>
+        <div class="translation-kjv"><span class="version-label">KJV</span>${v.kjv}</div>
+        <div class="translation-esv"><span class="version-label">ESV</span>${v.esv}</div>
+      </div>
+    </div>`;
+  }).join("");
+
+  if (isDictation) card.classList.add("dictation-mode");
+  else card.classList.remove("dictation-mode");
+
+  updateStats();
+  setActive(currentWordIdx);
+}
+
+function updateStats() {
+  const bar = document.getElementById("statsBar");
+  const keyCount = allWords.filter(w => w.isKey).length;
+  const timingsSet = timings.filter(t => t !== null).length;
+  bar.innerHTML = `
+    <span>단어 <strong>${allWords.length}</strong></span>
+    <span>핵심 어휘 <strong>${keyCount}</strong></span>
+    <span>타이밍 <strong>${timingsSet}/${allWords.length}</strong></span>
+  `;
+}
+
+// ============================================================
+// 단어 강조 (setActive)
+// ============================================================
+function setActive(idx) {
+  currentWordIdx = idx;
+  document.querySelectorAll(".word").forEach(el => {
+    const i = parseInt(el.dataset.global);
+    el.classList.remove("active", "read");
+    if (i < idx) el.classList.add("read");
+    if (i === idx) {
+      el.classList.add("active");
+      el.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    }
+  });
+  const w = allWords[idx];
+  if (w) {
+    document.getElementById("learnStatus").textContent =
+      `${w.heb}  ·  ${w.translit}  ·  ${w.ko}  ·  ${w.gloss}`;
+    document.getElementById("autoWord").textContent = w.heb;
+    document.getElementById("autoKo").textContent = w.ko + "  /  " + w.translit;
+    document.getElementById("autoGloss").textContent = w.gloss;
+    document.getElementById("progressBar").style.width =
+      ((idx + 1) / allWords.length * 100) + "%";
+  }
+}
+
+// ============================================================
+// 단어 클릭
+// ============================================================
+function clickWord(idx) {
+  currentWordIdx = idx;
+  setActive(idx);
+  if (timings[idx] !== null && audio.src) {
+    audio.currentTime = timings[idx];
+  }
+  const activeMode = document.querySelector('.mode-tab.active')?.dataset.mode;
+  if (activeMode === 'dictation') {
+    const el = document.querySelector(`[data-global="${idx}"]`);
+    if (el) el.classList.toggle('revealed');
+    return;
+  }
+  if (activeMode !== 'record') openModal(allWords[idx]);
+}
+
+function openModal(w) {
+  if (!w) return;
+  document.getElementById("modalHebrew").textContent = w.heb;
+  document.getElementById("modalTranslit").textContent = w.translit;
+  document.getElementById("modalKorean").textContent = w.ko + " — " + w.gloss;
+
+  const grammar = document.getElementById("modalGrammar");
+  grammar.innerHTML = `
+    <span class="label">품사</span><span class="value">${w.pos || "—"}</span>
+    <span class="label">분석</span><span class="value">${w.parsing || "—"}</span>
+    <span class="label">강조어</span><span class="value">${w.isKey ? "✦ 핵심 어휘" : "—"}</span>
+  `;
+
+  const lexical = document.getElementById("modalLexical");
+  lexical.innerHTML = `
+    <span class="label">어근</span><span class="value">${w.lemma || "—"}</span>
+    <span class="label">Strong's</span><span class="value"><span class="strongs">${w.strongs || "—"}</span></span>
+  `;
+
+  document.getElementById("modalMeaning").textContent = w.meaning || "";
+  const noteSection = document.getElementById("modalNoteSection");
+  if (w.note) {
+    noteSection.style.display = "block";
+    document.getElementById("modalNote").textContent = w.note;
+  } else {
+    noteSection.style.display = "none";
+  }
+  document.getElementById("modal").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("show");
+}
+
+document.getElementById("modalClose").onclick = closeModal;
+document.getElementById("modal").onclick = e => {
+  if (e.target === document.getElementById("modal")) closeModal();
+};
+
+// ============================================================
+// 절 선택 탭
+// ============================================================
+document.getElementById("verseNav").addEventListener("click", e => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  document.querySelectorAll(".verse-nav button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentVerse = btn.dataset.verse === "all" ? "all" : parseInt(btn.dataset.verse);
+  currentWordIdx = 0;
+  stopAuto();
+  renderScripture();
+});
+
+// ============================================================
+// 학습 모드 컨트롤
+// ============================================================
+document.getElementById("learnPlayBtn").onclick = () => {
+  if (audio.paused) { audio.play().catch(() => {}); syncAudio(); }
+  else audio.pause();
+};
+document.getElementById("learnPrevBtn").onclick = () => {
+  if (currentWordIdx > 0) setActive(currentWordIdx - 1);
+};
+document.getElementById("learnNextBtn").onclick = () => {
+  if (currentWordIdx < allWords.length - 1) setActive(currentWordIdx + 1);
+};
+document.getElementById("learnResetBtn").onclick = () => {
+  setActive(0); audio.currentTime = 0;
+};
+
+// ============================================================
+// 오디오 동기화 (RAF 기반)
+// ============================================================
+function syncAudio() {
+  const t = audio.currentTime;
+  const dur = audio.duration || 1;
+  document.getElementById("progressBar").style.width = `${(t / dur * 100)}%`;
+
+  let activeIdx = currentWordIdx;
+  for (let i = 0; i < allWords.length; i++) {
+    if (timings[i] !== null && t >= timings[i]) activeIdx = i;
+    else if (timings[i] !== null && t < timings[i]) break;
+  }
+  if (activeIdx !== currentWordIdx) setActive(activeIdx);
+  if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
+}
+
+function stopSync() {
+  if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF = null; }
+}
+
+// ============================================================
+// 자동 재생 모드 (타이밍 기반)
+// ============================================================
+function startAuto() {
+  if (!timings.some(t => t !== null)) {
+    document.getElementById("autoStatus").textContent =
+      "⚠ 타이밍 없음 — '샘플 타이밍' 또는 '⏺ 타이밍' 탭에서 먼저 기록하세요";
+    return;
+  }
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+  document.getElementById("autoStatus").textContent = "▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다";
+  syncAudio();
+}
+
+function stopAuto() {
+  stopSync();
+  if (audio.src && !audio.paused) audio.pause();
+  document.getElementById("autoStatus").textContent = "정지됨";
+}
+
+document.getElementById("autoPlayBtn").onclick = startAuto;
+document.getElementById("autoStopBtn").onclick = stopAuto;
+document.getElementById("autoResetBtn").onclick = () => {
+  stopAuto(); setActive(0); audio.currentTime = 0;
+  document.getElementById("autoStatus").textContent = "처음으로 돌아왔습니다";
+};
+document.getElementById("sampleTimingBtn").onclick = () => {
+  if (!audio.duration) {
+    document.getElementById("autoStatus").textContent = "⚠ 음성 파일을 먼저 올려주세요";
+    return;
+  }
+  const step = audio.duration / allWords.length;
+  timings = allWords.map((_, i) => i * step);
+  saveTimings();
+  renderScripture();
+  document.getElementById("autoStatus").textContent =
+    `✓ 샘플 타이밍 ${allWords.length}개 적용됨 (균등 분배)`;
+};
+
+// ============================================================
+// 가리기 모드
+// ============================================================
+document.getElementById("dictStartBtn").onclick = () => {
+  isDictation = true;
+  document.getElementById("scriptureCard").classList.add("dictation-mode");
+  document.getElementById("dictStatus").textContent = "히브리어가 가려졌습니다. 마우스를 올리면 보입니다.";
+};
+document.getElementById("dictRevealBtn").onclick = () => {
+  isDictation = false;
+  document.getElementById("scriptureCard").classList.remove("dictation-mode");
+  document.querySelectorAll(".word").forEach(el => el.classList.remove("revealed"));
+  document.getElementById("dictStatus").textContent = "전체 보기 모드";
+};
+
+// ============================================================
+// 타이밍 기록 모드
+// ============================================================
+const recordingDisplay = document.getElementById("recordingDisplay");
+const recordingWordEl = document.getElementById("recordingWord");
+const recordingHintEl = document.getElementById("recordingHint");
+const recordingProgressEl = document.getElementById("recordingProgress");
+const recordingMeterBar = document.getElementById("recordingMeterBar");
+const recordStatus = document.getElementById("recordStatus");
+
+function updateRecordingDisplay() {
+  if (recordingIdx < allWords.length) {
+    const cur = allWords[recordingIdx];
+    const nxt = allWords[recordingIdx + 1];
+    recordingWordEl.textContent = cur.heb;
+    recordingProgressEl.textContent = `${recordingIdx + 1} / ${allWords.length}`;
+    recordingHintEl.innerHTML = nxt
+      ? `현재: <strong>${cur.ko}</strong> · 다음: <span class="next-word">${nxt.heb}</span>`
+      : '<span style="color:var(--success)">마지막 단어!</span>';
+    recordingMeterBar.style.width = (recordingIdx / allWords.length * 100) + '%';
+  } else {
+    recordingWordEl.textContent = '완료';
+    recordingHintEl.innerHTML = '<span style="color:var(--success)">모든 단어 녹화 완료!</span>';
+    recordingMeterBar.style.width = '100%';
+  }
+}
+
+document.getElementById("recordStartBtn").onclick = () => {
+  if (!audio.currentSrc && !audio.src) {
+    recordStatus.textContent = '⚠ 음성 파일을 먼저 올려주세요'; return;
+  }
+  if (!isRecording && recordingIdx === 0) {
+    timings = new Array(allWords.length).fill(null);
+    audio.currentTime = 0;
+    setActive(0);
+    renderScripture();
+  }
+  isRecording = true;
+  recordingDisplay.style.display = 'block';
+  updateRecordingDisplay();
+  audio.play().catch(() => {});
+  recordStatus.innerHTML = '🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
+};
+
+document.getElementById("recordPauseBtn").onclick = () => {
+  if (isRecording) {
+    isRecording = false;
+    audio.pause();
+    recordStatus.textContent = `❚❚ 일시정지 (${recordingIdx}/${allWords.length}) — "시작"으로 재개`;
+  } else if (recordingIdx > 0) {
+    isRecording = true;
+    audio.play().catch(() => {});
+    recordStatus.innerHTML = '🔴 <strong>녹화 재개</strong>';
+  }
+};
+
+document.getElementById("recordUndoBtn").onclick = () => {
+  if (recordingIdx > 0) {
+    recordingIdx--;
+    timings[recordingIdx] = null;
+    setActive(recordingIdx);
+    audio.currentTime = recordingIdx > 0 && timings[recordingIdx - 1] !== null
+      ? Math.max(0, timings[recordingIdx - 1] - 0.3)
+      : Math.max(0, audio.currentTime - 2);
+    updateRecordingDisplay();
+    recordStatus.textContent = `⏮ 뒤로 · 현재: ${allWords[recordingIdx].heb}`;
+  }
+};
+
+document.getElementById("recordStopBtn").onclick = () => {
+  if (confirm('녹화를 완전히 중단하시겠습니까?')) {
+    isRecording = false;
+    if (!audio.paused) audio.pause();
+    recordingIdx = 0;
+    recordingDisplay.style.display = 'none';
+    recordStatus.textContent = '⏹ 중단됨';
+  }
+};
+
+document.getElementById("recordSaveBtn").onclick = () => {
+  saveTimings();
+  renderScripture();
+  recordStatus.textContent = '저장되었습니다';
+};
+
+document.getElementById("recordClearBtn").onclick = () => {
+  if (confirm('모든 타이밍을 초기화할까요?')) {
+    timings = new Array(allWords.length).fill(null);
+    localStorage.removeItem(STORAGE_KEY);
+    recordingIdx = 0;
+    recordingDisplay.style.display = 'none';
+    renderScripture();
+    recordStatus.textContent = '타이밍이 초기화되었습니다';
+  }
+};
+
+function recordCurrentTime() {
+  if (!isRecording || recordingIdx >= allWords.length) return;
+  timings[recordingIdx] = audio.currentTime;
+  const wordEl = document.querySelector(`.word[data-global="${recordingIdx}"]`);
+  if (wordEl) {
+    wordEl.classList.add('has-timing');
+    const existing = wordEl.querySelector('.timestamp');
+    const ts = audio.currentTime.toFixed(2) + 's';
+    if (existing) existing.textContent = ts;
+    else wordEl.insertAdjacentHTML('beforeend', `<span class="timestamp">${ts}</span>`);
+  }
+  recordingIdx++;
+  setActive(recordingIdx < allWords.length ? recordingIdx : recordingIdx - 1);
+  updateRecordingDisplay();
+  if (recordingIdx >= allWords.length) {
+    isRecording = false;
+    audio.pause();
+    recordStatus.innerHTML = '<strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "저장" 버튼을 누르세요';
+  }
+}
+
+function saveTimings() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(timings));
+}
+
+// ============================================================
+// 모드 탭
+// ============================================================
+document.querySelectorAll(".mode-tab").forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll(".mode-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".mode-panel").forEach(p => p.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.mode + "Panel").classList.add("active");
+    if (tab.dataset.mode !== "auto") stopAuto();
+    if (tab.dataset.mode !== "record") isRecording = false;
+  };
+});
+
+// ============================================================
+// 속도 조절
+// ============================================================
+document.querySelectorAll(".speed-btn").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".speed-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    audio.playbackRate = parseFloat(btn.dataset.speed);
+  };
+});
+
+// ============================================================
+// 파일 업로드
+// ============================================================
+document.getElementById("audioFile").addEventListener("change", e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  audio.src = URL.createObjectURL(file);
+  const area = document.getElementById("uploadArea");
+  area.classList.add("has-file");
+  area.querySelector(".upload-text").innerHTML = `<span style="color:var(--success)">✓ ${file.name}</span>`;
+  document.getElementById("fileInfo").textContent = "음성 파일 로드 완료";
+});
+
+// ============================================================
+// 키보드 단축키
+// ============================================================
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (document.getElementById("modal").classList.contains("show")) {
+    if (e.key === "Escape") closeModal();
+    return;
+  }
+  if (e.code === "Space") {
+    e.preventDefault();
+    if (isRecording) recordCurrentTime();
+    else { if (audio.paused) { audio.play().catch(() => {}); syncAudio(); } else audio.pause(); }
+    return;
+  }
+  if (e.code === "Backspace" && isRecording) {
+    e.preventDefault();
+    document.getElementById("recordUndoBtn").click();
+    return;
+  }
+  switch(e.key) {
+    case "ArrowRight": case "l":
+      if (currentWordIdx < allWords.length - 1) setActive(currentWordIdx + 1); break;
+    case "ArrowLeft": case "h":
+      if (currentWordIdx > 0) setActive(currentWordIdx - 1); break;
+    case "r": case "R": setActive(0); audio.currentTime = 0; break;
+    case "Escape": closeModal(); break;
+  }
+});
+
+document.addEventListener("mouseover", e => {
+  const w = e.target.closest(".word");
+  if (w && isDictation) w.classList.add("revealed");
+});
+
+const style = document.createElement("style");
+style.textContent = `
+  .dictation-mode .word .hebrew{filter:blur(8px);transition:filter .4s}
+  .dictation-mode .word:hover .hebrew,
+  .dictation-mode .word.revealed .hebrew,
+  .dictation-mode .word.active .hebrew{filter:blur(0)}
+`;
+document.head.appendChild(style);
+
+// ============================================================
+// 초기화
+// ============================================================
+renderScripture();
+</script>
+</body>
+</html>
