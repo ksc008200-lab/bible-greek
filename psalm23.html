@@ -605,17 +605,19 @@
   <!-- 학습 모드 -->
   <div class="mode-panel active" id="learnPanel">
     <div class="instructions">
-      <strong>📖 학습 모드</strong> — <strong>단어를 클릭하면 히브리어 문법 정보</strong>가 팝업으로 나타납니다.<br>
-      ▸ <kbd>Space</kbd> 재생/정지 · <kbd>→</kbd>/<kbd>←</kbd> 단어 이동 · <kbd>R</kbd> 처음부터 · <kbd>Esc</kbd> 팝업 닫기
+      <strong>📖 학습 모드</strong> — 단어를 클릭하면 히브리어 문법 정보가 팝업으로 나타납니다.<br>
+      ▸ <strong>자동 재생</strong>: 음성과 단어가 자동 싱크 &nbsp;|&nbsp; <strong>단어별 듣기</strong>: <kbd>Space</kbd>마다 한 단어씩 발음 확인 후 다음 단어로<br>
+      ▸ <kbd>→</kbd>/<kbd>←</kbd> 단어 이동 · <kbd>R</kbd> 처음부터 · <kbd>Esc</kbd> 팝업 닫기
     </div>
     <div class="controls">
       <div class="btn-group">
-        <button class="control-btn primary" id="learnPlayBtn">▶ 재생/정지</button>
+        <button class="control-btn primary" id="learnPlayBtn">▶ 자동 재생</button>
+        <button class="control-btn" id="learnWordBtn">👂 단어별 듣기</button>
         <button class="control-btn" id="learnPrevBtn">◀ 이전</button>
         <button class="control-btn" id="learnNextBtn">다음 ▶</button>
         <button class="control-btn" id="learnResetBtn">↺ 처음</button>
       </div>
-      <div class="status" id="learnStatus">단어를 클릭하거나 ▶ 재생하세요</div>
+      <div class="status" id="learnStatus">단어를 클릭하거나 버튼을 선택하세요</div>
     </div>
   </div>
 
@@ -689,6 +691,16 @@
         <button class="control-btn" id="recordSaveBtn">저장</button>
         <button class="control-btn" style="border-color:rgba(232,168,120,.4);color:var(--warn)" id="recordClearBtn">초기화</button>
       </div>
+      <div class="btn-group" style="margin-top:10px">
+        <button class="control-btn" id="autoDetectBtn" style="border-color:rgba(154,200,160,.5);color:var(--success)">🔍 자동 감지</button>
+      </div>
+      <div style="margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 4px">
+        <label style="font-size:12px;color:var(--ink-dim)">감도</label>
+        <input type="range" id="silenceThreshold" min="1" max="30" value="8" style="flex:1;min-width:80px;accent-color:var(--green)">
+        <span id="thresholdValue" style="font-size:12px;color:var(--gold);min-width:24px;text-align:right">8</span>
+        <span style="font-size:11px;color:var(--ink-dim)">(낮을수록 민감)</span>
+      </div>
+      <div class="status" id="autoDetectStatus" style="display:none;margin-top:6px"></div>
       <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
     </div>
   </div>
@@ -1176,9 +1188,52 @@ document.getElementById("verseNav").addEventListener("click", e => {
 // ============================================================
 // 학습 모드 컨트롤
 // ============================================================
+let isWordByWord = false;
+let wordPlayTimer = null;
+
+function setWordByWord(on) {
+  isWordByWord = on;
+  const btn = document.getElementById("learnWordBtn");
+  btn.classList.toggle("primary", on);
+  btn.style.borderColor = on ? "rgba(154,200,160,.6)" : "";
+  document.getElementById("learnStatus").textContent = on
+    ? "👂 단어별 모드 — Space 누르면 현재 단어 발음 후 다음으로 이동"
+    : "단어를 클릭하거나 버튼을 선택하세요";
+  if (on) { stopSync(); audio.pause(); }
+}
+
+function playCurrentWord() {
+  const idx = currentWordIdx;
+  const startT = timings[idx];
+  if (startT === null || startT === undefined) {
+    // 타이밍 없으면 그냥 다음 단어로
+    if (idx < allWords.length - 1) setActive(idx + 1);
+    document.getElementById("learnStatus").textContent = "⚠ 타이밍 없음 — 자동 감지 또는 수동 녹화 먼저 하세요";
+    return;
+  }
+  // 다음 단어 타이밍 또는 +2초
+  const nextT = (timings[idx + 1] !== null && timings[idx + 1] !== undefined)
+    ? timings[idx + 1]
+    : startT + 2.0;
+
+  audio.currentTime = startT;
+  audio.play().catch(() => {});
+
+  if (wordPlayTimer) clearTimeout(wordPlayTimer);
+  wordPlayTimer = setTimeout(() => {
+    audio.pause();
+    if (idx < allWords.length - 1) setActive(idx + 1);
+    else document.getElementById("learnStatus").textContent = "마지막 단어입니다";
+  }, (nextT - startT) * 1000);
+}
+
 document.getElementById("learnPlayBtn").onclick = () => {
+  setWordByWord(false);
   if (audio.paused) { audio.play().catch(() => {}); syncAudio(); }
   else audio.pause();
+};
+document.getElementById("learnWordBtn").onclick = () => {
+  setWordByWord(!isWordByWord);
 };
 document.getElementById("learnPrevBtn").onclick = () => {
   if (currentWordIdx > 0) setActive(currentWordIdx - 1);
@@ -1187,7 +1242,7 @@ document.getElementById("learnNextBtn").onclick = () => {
   if (currentWordIdx < allWords.length - 1) setActive(currentWordIdx + 1);
 };
 document.getElementById("learnResetBtn").onclick = () => {
-  setActive(0); audio.currentTime = 0;
+  setWordByWord(false); setActive(0); audio.currentTime = 0;
 };
 
 // ============================================================
@@ -1398,6 +1453,7 @@ document.querySelectorAll(".mode-tab").forEach(tab => {
     document.getElementById(tab.dataset.mode + "Panel").classList.add("active");
     if (tab.dataset.mode !== "auto") stopAuto();
     if (tab.dataset.mode !== "record") isRecording = false;
+    if (tab.dataset.mode !== "learn") { setWordByWord(false); if (wordPlayTimer) clearTimeout(wordPlayTimer); }
   };
 });
 
@@ -1437,6 +1493,7 @@ document.addEventListener("keydown", e => {
   if (e.code === "Space") {
     e.preventDefault();
     if (isRecording) recordCurrentTime();
+    else if (isWordByWord) playCurrentWord();
     else { if (audio.paused) { audio.play().catch(() => {}); syncAudio(); } else audio.pause(); }
     return;
   }
@@ -1468,6 +1525,99 @@ style.textContent = `
   .dictation-mode .word.active .hebrew{filter:blur(0)}
 `;
 document.head.appendChild(style);
+
+// ============================================================
+// 자동 타이밍 감지 (WebAudio API)
+// ============================================================
+document.getElementById("silenceThreshold").oninput = function() {
+  document.getElementById("thresholdValue").textContent = this.value;
+};
+
+document.getElementById("autoDetectBtn").onclick = async () => {
+  const statusEl = document.getElementById("autoDetectStatus");
+  statusEl.style.display = "block";
+  statusEl.textContent = "오디오 분석 중...";
+
+  const src = audio.src || audio.currentSrc;
+  if (!src) {
+    statusEl.textContent = "오디오 파일을 먼저 로드하세요";
+    return;
+  }
+
+  try {
+    const response = await fetch(src);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+
+    const channelData = audioBuffer.getChannelData(0);
+    const sampleRate = audioBuffer.sampleRate;
+    const frameSize = Math.floor(sampleRate * 0.02); // 20ms 프레임
+    const threshold = parseFloat(document.getElementById("silenceThreshold").value) / 1000;
+    const minSilenceFrames = Math.floor(0.12 / 0.02); // 120ms 침묵 = 단어 구분
+
+    // RMS 계산
+    const frames = [];
+    for (let i = 0; i < channelData.length; i += frameSize) {
+      let sum = 0;
+      const end = Math.min(i + frameSize, channelData.length);
+      for (let j = i; j < end; j++) sum += channelData[j] * channelData[j];
+      frames.push(Math.sqrt(sum / (end - i)));
+    }
+
+    // 발화 시작점(onset) 감지
+    const onsets = [];
+    let inSpeech = false;
+    let silenceCount = 0;
+
+    for (let i = 0; i < frames.length; i++) {
+      if (!inSpeech && frames[i] > threshold) {
+        onsets.push(i * frameSize / sampleRate);
+        inSpeech = true;
+        silenceCount = 0;
+      } else if (inSpeech && frames[i] <= threshold) {
+        silenceCount++;
+        if (silenceCount >= minSilenceFrames) {
+          inSpeech = false;
+          silenceCount = 0;
+        }
+      } else if (inSpeech) {
+        silenceCount = 0;
+      }
+    }
+
+    audioCtx.close();
+    statusEl.textContent = `감지된 발화 ${onsets.length}개 / 단어 ${allWords.length}개`;
+
+    if (onsets.length === 0) {
+      statusEl.textContent = "감지 실패 — 감도 수치를 낮춰보세요";
+      return;
+    }
+
+    // 단어에 타이밍 매핑
+    if (onsets.length >= allWords.length) {
+      // onset이 충분하면 앞에서부터 매핑
+      for (let i = 0; i < allWords.length; i++) {
+        timings[i] = onsets[i];
+      }
+    } else {
+      // onset이 부족하면 비율로 보간
+      timings = allWords.map((_, i) => {
+        const ratio = i / Math.max(allWords.length - 1, 1);
+        const srcIdx = ratio * (onsets.length - 1);
+        const lo = Math.floor(srcIdx);
+        const hi = Math.min(lo + 1, onsets.length - 1);
+        return onsets[lo] + (onsets[hi] - onsets[lo]) * (srcIdx - lo);
+      });
+    }
+
+    saveTimings();
+    renderScripture();
+    statusEl.innerHTML = `<strong style="color:var(--success)">자동 감지 완료!</strong> ⏺ 수동 녹화로 미세 조정 가능`;
+  } catch (err) {
+    statusEl.textContent = "오류: " + err.message;
+  }
+};
 
 // ============================================================
 // 초기화
