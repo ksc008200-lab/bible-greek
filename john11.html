@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>ΚΑΤΑ ΙΩΑΝΝΗΝ Ι:27–29 — 요한복음 10:27-29 · 영원한 생명</title>
+<title>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑ:25-27 — 요한복음 11:25-27 · 부활과 생명</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
@@ -166,9 +166,9 @@
 
   <header>
     <div class="subtitle">Κατὰ Ἰωάννην · 요한복음</div>
-    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ Ι:27–29</h1>
+    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑ:27–29</h1>
     <div class="h1-ko">나의 양은 내 음성을 들으며</div>
-    <div class="reference">요한복음 10:27–29 · NA28 헬라어 원문 · 단어별 문법 분석</div>
+    <div class="reference">요한복음 11:25–27 · NA28 헬라어 원문 · 단어별 문법 분석</div>
   </header>
 
   <!-- 음성 패널 -->
@@ -176,11 +176,11 @@
     <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
     <label class="upload-area has-file" id="uploadArea">
       <input type="file" id="audioFile" accept="audio/*">
-      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 04John10.mp3 자동 재생</div>
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 04John11.mp3 자동 재생</div>
       <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 (필수!)</div>
-      <div class="file-info" id="fileInfo">🎯 53개 단어가 음성과 정밀 매칭됨</div>
+      <div class="file-info" id="fileInfo">🎯 54개 단어가 음성과 매칭됨</div>
     </label>
-    <audio id="audio" controls src="04John10.mp3" preload="auto"></audio>
+    <audio id="audio" controls src="04John11.mp3" preload="auto"></audio>
   </div>
 
   <!-- 절 선택 -->
@@ -326,9 +326,9 @@
       </a>
       <div class="chapter-card current">
         <span class="card-icon">🐑</span>
-        <div class="card-title">요한복음 10:27–29</div>
+        <div class="card-title">요한복음 10:27-29</div>
         <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Ιʹ</div>
-        <div class="card-description">선한 목자 · 영원한 생명 · 헬라어 원어</div>
+        <div class="card-description">선한 목자 · 부활과 생명 · 헬라어 원어</div>
       </div>
       <a class="chapter-card" href="psalm23.html">
         <span class="card-icon">🌿</span>
@@ -348,7 +348,6 @@
         <div class="card-subtitle">תְּהִלִּים א׳</div>
         <div class="card-description">복 있는 사람 · 히브리어 원어 분석</div>
       </a>
-      <a class="chapter-card" href="john11.html"><span class="card-icon">✝</span><div class="card-title">요한복음 11:25-27</div><div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑʹ</div><div class="card-description">나는 부활이요 생명이니 · 헬라어 원어</div></a>
     </div>
   </div>
 
@@ -382,117 +381,148 @@
 
 <script>
 // ============================================================
-// 요한복음 10:27–29 (NA28 기반)
+// 요한복음 11:25–27 (NA28 기반)
 // ============================================================
 const verses = {
+  25:{
+    reference:"요한복음 11:25",
+    gk:"εἶπεν αὐτῇ ὁ Ἰησοῦς· ἐγώ εἰμι ἡ ἀνάστασις καὶ ἡ ζωή· ὁ πιστεύων εἰς ἐμὲ κἂν ἀποθάνῃ ζήσεται,",
+    translation:"예수께서 이르시되 나는 부활이요 생명이니 나를 믿는 자는 죽어도 살겠고",
+    kjv:"Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:",
+    esv:"Jesus said to her, I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live,",
+    words:[
+      {gk:"εἶπεν",translit:"eipen",ko:"에이펜",gloss:"he said",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"λέγω",strongs:"G3004",
+       meaning:"말씀하셨다. λέγω의 부정과거형.",note:""},
+      {gk:"αὐτῇ",translit:"autē",ko:"아우테",gloss:"to her",pos:"대명사",parsing:"여격 여성 3단수",lemma:"αὐτός",strongs:"G846",
+       meaning:"그녀에게. 마르다를 향한 말씀입니다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사.",note:""},
+      {gk:"Ἰησοῦς",translit:"Iēsous",ko:"예수스",gloss:"Jesus",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Ἰησοῦς",strongs:"G2424",isKey:true,
+       meaning:"예수. 히브리어 여호수아에서 유래, '여호와는 구원이시다'.",note:""},
+      {gk:"ἐγώ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:true,
+       meaning:"나. 강조적 1인칭. 요한복음의 ἐγώ εἰμι 선언입니다.",note:"요한복음에는 7개의 ἐγώ εἰμι 선언이 있습니다."},
+      {gk:"εἰμι",translit:"eimi",ko:"에이미",gloss:"am",pos:"동사",parsing:"Present Active Indicative 1단수",lemma:"εἰμί",strongs:"G1510",isKey:true,
+       meaning:"~이다. ἐγώ εἰμι는 출3:14의 하나님 자기 계시와 연결됩니다.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. ἀνάστασις를 한정합니다.",note:""},
+      {gk:"ἀνάστασις",translit:"anastasis",ko:"아나스타시스",gloss:"resurrection",pos:"명사",parsing:"주격 여성 단수",lemma:"ἀνάστασις",strongs:"G386",isKey:true,
+       meaning:"부활. ἀνά(위로)+ἵστημι(세우다). 예수님은 부활의 원천이자 실체이십니다.",note:"단순한 사건이 아니라 부활 그 자체이심을 선언합니다."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고. ἀνάστασις와 ζωή를 연결합니다.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. ζωή를 한정합니다.",note:""},
+      {gk:"ζωή",translit:"zōē",ko:"조에",gloss:"the life",pos:"명사",parsing:"주격 여성 단수",lemma:"ζωή",strongs:"G2222",isKey:true,
+       meaning:"생명. 신적 생명(βίος와 구분). 예수님 안에 있는 영원한 생명입니다.",note:"요1:4 '그 안에 생명이 있었으니'와 연결됩니다."},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. πιστεύων을 명사화합니다(믿는 자).",note:""},
+      {gk:"πιστεύων",translit:"pisteuōn",ko:"피스튜온",gloss:"believing",pos:"동사",parsing:"현재 능동 분사 주격 남성 단수",lemma:"πιστεύω",strongs:"G4100",isKey:true,
+       meaning:"믿는 자. 현재 분사로 지속적인 믿음을 나타냅니다.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"in",pos:"전치사",parsing:"전치사+대격",lemma:"εἰς",strongs:"G1519",
+       meaning:"~을 향하여. 관계적 신뢰의 방향성.",note:""},
+      {gk:"ἐμὲ",translit:"eme",ko:"에메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",
+       meaning:"나를. 강조형 인칭대명사.",note:""},
+      {gk:"κἂν",translit:"kan",ko:"칸",gloss:"even if",pos:"접속사",parsing:"καὶ ἐάν의 축약",lemma:"κἄν",strongs:"G2579",
+       meaning:"비록 ~일지라도. 죽음도 예외가 아님을 강조합니다.",note:""},
+      {gk:"ἀποθάνῃ",translit:"apothanē",ko:"아포타네",gloss:"he dies",pos:"동사",parsing:"Aorist Active Subjunctive 3단수",lemma:"ἀποθνῄσκω",strongs:"G599",
+       meaning:"죽을지라도. 접속법으로 가능성/조건을 나타냅니다.",note:""},
+      {gk:"ζήσεται",translit:"zēsetai",ko:"제세타이",gloss:"will live",pos:"동사",parsing:"Future Middle Indicative 3단수",lemma:"ζάω",strongs:"G2198",isKey:true,
+       meaning:"살 것이다. 미래 직설법—확실한 약속. 부활 생명으로 살아날 것입니다.",note:"미래형이지만 현재적 확실성을 가집니다."}
+    ]
+  },
+  26:{
+    reference:"요한복음 11:26",
+    gk:"καὶ πᾶς ὁ ζῶν καὶ πιστεύων εἰς ἐμὲ οὐ μὴ ἀποθάνῃ εἰς τὸν αἰῶνα· πιστεύεις τοῦτο;",
+    translation:"무릇 살아서 나를 믿는 자는 영원히 죽지 아니하리니 이것을 네가 믿느냐",
+    kjv:"And whosoever liveth and believeth in me shall never die. Believest thou this?",
+    esv:"and everyone who lives and believes in me shall never die. Do you believe this?",
+    words:[
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고. v25의 약속을 확장합니다.",note:""},
+      {gk:"πᾶς",translit:"pas",ko:"파스",gloss:"everyone",pos:"형용사",parsing:"주격 남성 단수",lemma:"πᾶς",strongs:"G3956",isKey:true,
+       meaning:"모든 자. 예외 없이 모든 믿는 자에게 적용됩니다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. ζῶν을 명사화합니다.",note:""},
+      {gk:"ζῶν",translit:"zōn",ko:"존",gloss:"living",pos:"동사",parsing:"현재 능동 분사 주격 남성 단수",lemma:"ζάω",strongs:"G2198",isKey:true,
+       meaning:"살아있는 자. 현재 살아있는 모든 사람.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고. ζῶν과 πιστεύων을 연결합니다.",note:""},
+      {gk:"πιστεύων",translit:"pisteuōn",ko:"피스튜온",gloss:"believing",pos:"동사",parsing:"현재 능동 분사 주격 남성 단수",lemma:"πιστεύω",strongs:"G4100",isKey:true,
+       meaning:"믿는 자. 지속적인 믿음의 삶.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"in",pos:"전치사",parsing:"전치사",lemma:"εἰς",strongs:"G1519",
+       meaning:"~을 향하여.",note:""},
+      {gk:"ἐμὲ",translit:"eme",ko:"에메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",
+       meaning:"나를.",note:""},
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",
+       meaning:"아니다. οὐ μὴ는 가장 강한 헬라어 이중 부정입니다.",note:""},
+      {gk:"μὴ",translit:"mē",ko:"메",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"μή",strongs:"G3361",
+       meaning:"아니다. οὐ μὴ + 접속법 = 절대 부정. 영원히 결코 죽지 않는다는 확실한 약속.",note:"이중 부정으로 가장 강한 강조."},
+      {gk:"ἀποθάνῃ",translit:"apothanē",ko:"아포타네",gloss:"die",pos:"동사",parsing:"Aorist Active Subjunctive 3단수",lemma:"ἀποθνῄσκω",strongs:"G599",
+       meaning:"죽다. οὐ μὴ와 함께 절대 부정을 형성합니다.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"into",pos:"전치사",parsing:"전치사",lemma:"εἰς",strongs:"G1519",
+       meaning:"εἰς τὸν αἰῶνα = 영원히라는 관용어.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사.",note:""},
+      {gk:"αἰῶνα",translit:"aiōna",ko:"아이오나",gloss:"age/eternity",pos:"명사",parsing:"대격 남성 단수",lemma:"αἰών",strongs:"G165",isKey:true,
+       meaning:"영원, 세대. εἰς τὸν αἰῶνα는 영원히를 의미합니다.",note:""},
+      {gk:"πιστεύεις",translit:"pisteueis",ko:"피스튜에이스",gloss:"do you believe",pos:"동사",parsing:"Present Active Indicative 2단수",lemma:"πιστεύω",strongs:"G4100",isKey:true,
+       meaning:"네가 믿느냐? 신학적 선언에서 개인적 믿음으로의 전환. 마르다에게 직접 도전하십니다.",note:"지식이 아닌 개인적 고백을 요구합니다."},
+      {gk:"τοῦτο",translit:"touto",ko:"투토",gloss:"this",pos:"대명사",parsing:"대격 중성 단수",lemma:"οὗτος",strongs:"G3778",
+       meaning:"이것을. v25-26의 모든 선언을 가리킵니다.",note:""}
+    ]
+  },
   27:{
-    reference:"요한복음 10:27",
-    translation:"내 양은 내 음성을 들으며 나는 그들을 알며 그들은 나를 따르느니라",
-    nkjv:"My sheep hear My voice, and I know them, and they follow Me.",
-    esv:"My sheep hear my voice, and I know them, and they follow me.",
+    reference:"요한복음 11:27",
+    gk:"λέγει αὐτῷ· ναί κύριε· ἐγὼ πεπίστευκα ὅτι σύ εἶ ὁ χριστὸς ὁ υἱὸς τοῦ θεοῦ ὁ εἰς τὸν κόσμον ἐρχόμενος.",
+    translation:"이르되 주여 그러하외다 주는 그리스도시요 세상에 오시는 하나님의 아들이신 줄 내가 믿나이다",
+    kjv:"She saith unto him, Yea, Lord: I believe that thou art the Christ, the Son of God, which should come into the world.",
+    esv:"She said to him, Yes, Lord; I believe that you are the Christ, the Son of God, who is coming into the world.",
     words:[
-      {greek:"τὰ",ko:"타",gloss:"the",pos:"관사",parsing:"정관사 · 중성 · 복수 · 주격",lemma:"ὁ",strongs:"G3588",meaning:"그것들. 정관사로 '양들'을 특정함."},
-      {greek:"πρόβατά",ko:"프로바타",gloss:"sheep",pos:"명사",parsing:"명사 · 중성 · 복수 · 주격",lemma:"πρόβατον",strongs:"G4263",meaning:"양. 어근 προβαίνω(앞으로 나아가다) — '앞서 걷는 것'. 목자를 따르는 동물.",isKey:true,
-       note:"요한복음 10장의 핵심 은유. 예수님은 '나는 선한 목자'(10:11)라고 선언. 구약의 여호와께서 이스라엘의 목자이심(시23편)이 예수님께서 성취됨."},
-      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 양'은 예수님과 특별한 관계에 있는 자들."},
-      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그(속격)."},
-      {greek:"φωνῆς",ko:"포네스",gloss:"voice",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"φωνή",strongs:"G5456",meaning:"음성, 소리. '내 음성을 들음'은 인격적 관계와 순종을 의미.",isKey:true,
-       note:"10:3,4,16에서도 반복. 낯선 자의 목소리는 따르지 않음(10:5). 음성을 알아듣는 것은 목자와 양의 친밀한 관계를 나타냄."},
-      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의."},
-      {greek:"ἀκούουσιν,",ko:"아쿠우신",gloss:"they hear",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 복수",lemma:"ἀκούω",strongs:"G191",meaning:"듣다. 현재 시제: 지속적·습관적 행위. 양들이 계속해서 듣고 있음.",isKey:true,
-       note:"영어 acoustic(음향학)의 어원. 단순한 청취가 아닌 순종이 포함된 '듣기'. 히브리어 שמע(샤마)의 같은 의미를 헬라어로 표현."},
-      {greek:"κἀγὼ",ko:"카고",gloss:"and I",pos:"접속사+대명사",parsing:"καί + ἐγώ (크라시스)",lemma:"κἀγώ",strongs:"G2504",meaning:"나 또한. 강조적 병렬 — 양들이 듣고, 나도(예수님도) 행동함.",
-       note:"crasis(모음 축약): καὶ ἐγώ → κἀγώ. 목자와 양의 관계가 쌍방향임을 강조."},
-      {greek:"γινώσκω",ko:"기노스코",gloss:"I know",pos:"동사",parsing:"현재 · 능동 · 직설법 · 1인칭 · 단수",lemma:"γινώσκω",strongs:"G1097",meaning:"알다. 경험적·관계적 앎. 단순한 지식이 아닌 친밀한 관계적 인식.",isKey:true,
-       note:"οἶδα(직관적 앎)과 구별. γινώσκω는 점진적·경험적 앎. 10:15 '아버지께서 나를 아심 같이 나도 아버지를 알고'와 같은 단어 — 삼위일체적 상호 인식이 목자-양 관계에 반영됨."},
-      {greek:"αὐτά,",ko:"아우타",gloss:"them",pos:"대명사",parsing:"인칭대명사 · 중성 · 복수 · 대격",lemma:"αὐτός",strongs:"G846",meaning:"그것들을. '양들'을 가리킴."},
-      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
-      {greek:"ἀκολουθοῦσίν",ko:"아콜루수신",gloss:"they follow",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 복수",lemma:"ἀκολουθέω",strongs:"G190",meaning:"따르다. 제자도의 핵심 단어. 현재 시제: 지속적 따름.",isKey:true,
-       note:"복음서에서 제자들이 예수님을 '따른다'고 할 때 쓰는 단어(마4:20, 막1:18). 단순한 물리적 추종이 아닌 삶 전체의 헌신을 의미."},
-      {greek:"μοι.",ko:"모이",gloss:"me",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 여격",lemma:"ἐγώ",strongs:"G1473",meaning:"나를. 여격으로 '나에게로(따라오다)'."}
-    ]
-  },
-  28:{
-    reference:"요한복음 10:28",
-    translation:"내가 그들에게 영생을 주노니 영원히 멸망하지 아니할 것이요 또 그들을 내 손에서 빼앗을 자가 없느니라",
-    nkjv:"And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand.",
-    esv:"I give them eternal life, and they will never perish, and no one will snatch them out of my hand.",
-    words:[
-      {greek:"κἀγὼ",ko:"카고",gloss:"and I",pos:"접속사+대명사",parsing:"καί + ἐγώ (크라시스)",lemma:"κἀγώ",strongs:"G2504",meaning:"나 또한. 강조: 다름 아닌 '내'가 준다."},
-      {greek:"ζωὴν",ko:"조엔",gloss:"life",pos:"명사",parsing:"명사 · 여성 · 단수 · 대격",lemma:"ζωή",strongs:"G2222",meaning:"생명. 단순한 생물학적 삶(βίος)이 아닌 하나님과의 관계 속의 참된 생명.",isKey:true,
-       note:"요한복음의 핵심 단어 (36회 등장). 1:4 '그 안에 생명이 있었으니'. 영생은 미래의 것만이 아니라 현재 시제 — 지금 여기서 시작되는 영원한 질의 생명."},
-      {greek:"αἰώνιον",ko:"아이오니온",gloss:"eternal",pos:"형용사",parsing:"형용사 · 여성 · 단수 · 대격",lemma:"αἰώνιος",strongs:"G166",meaning:"영원한. 단순한 시간적 무한이 아닌 하나님 나라에 속한 질(質).",isKey:true,
-       note:"αἰών(시대, 세대)에서 유래. 요한복음에서 17회. 3:16 '영생'과 동일 단어. 영생은 예수님을 아는 것(17:3)."},
-      {greek:"δίδωμι",ko:"디도미",gloss:"I give",pos:"동사",parsing:"현재 · 능동 · 직설법 · 1인칭 · 단수",lemma:"δίδωμι",strongs:"G1325",meaning:"주다. 현재 시제: 지금 이 순간에도 계속 주고 있음.",
-       note:"요한복음에 76회. 하나님께서 아들에게, 아들이 양들에게 주는 은혜의 수직적 흐름(10:29→10:28)."},
-      {greek:"αὐτοῖς,",ko:"아우토이스",gloss:"to them",pos:"대명사",parsing:"인칭대명사 · 남성 · 복수 · 여격",lemma:"αὐτός",strongs:"G846",meaning:"그들에게. 여격으로 수여의 대상."},
-      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
-      {greek:"οὐ",ko:"우",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",meaning:"~아니다."},
-      {greek:"μὴ",ko:"메",gloss:"never",pos:"부사",parsing:"부정부사",lemma:"μή",strongs:"G3361",meaning:"~아니다. οὐ μή = 이중 부정 = 강한 부정 ('결코 ~않는다').",
-       note:"οὐ μή + 가정법은 헬라어에서 가장 강한 부정 표현. '결코, 절대로 멸망하지 않는다'는 예수님의 절대적 약속."},
-      {greek:"ἀπόλωνται",ko:"아폴론타이",gloss:"they perish",pos:"동사",parsing:"부정과거 · 중간 · 가정법 · 3인칭 · 복수",lemma:"ἀπόλλυμι",strongs:"G622",meaning:"멸망하다. 중간태로 '스스로 망하다'. 가정법은 가능성 표현.",isKey:true,
-       note:"3:16의 같은 단어 '멸망하지 않고'. 이중 부정(οὐ μή)과 가정법의 결합으로 절대적 안전을 보증."},
-      {greek:"εἰς",ko:"에이스",gloss:"into",pos:"전치사",parsing:"전치사 + 대격",lemma:"εἰς",strongs:"G1519",meaning:"~안으로, ~에 이르도록."},
-      {greek:"τὸν",ko:"톤",gloss:"the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 대격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
-      {greek:"αἰῶνα,",ko:"아이오나",gloss:"age/eternity",pos:"명사",parsing:"명사 · 남성 · 단수 · 대격",lemma:"αἰών",strongs:"G165",meaning:"영원. εἰς τὸν αἰῶνα = '영원히'(관용구).",isKey:true,
-       note:"'영원히(εἰς τὸν αἰῶνα) 멸망하지 않는다'는 구약 시편의 언어를 반영. 히브리어 לְעוֹלָם(레올람)의 헬라어 번역."},
-      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
-      {greek:"οὐχ",ko:"우흐",gloss:"not",pos:"부사",parsing:"부정부사 (유기음 앞)",lemma:"οὐ",strongs:"G3756",meaning:"~아니다."},
-      {greek:"ἁρπάσει",ko:"하르파세이",gloss:"will snatch",pos:"동사",parsing:"미래 · 능동 · 직설법 · 3인칭 · 단수",lemma:"ἁρπάζω",strongs:"G726",meaning:"빼앗다, 강탈하다. 폭력적·강제적 탈취.",isKey:true,
-       note:"강도가 양을 빼앗는 이미지(10:12). 미래 직설법: 어떤 시점에도 빼앗는 일은 일어나지 않는다."},
-      {greek:"τις",ko:"티스",gloss:"anyone",pos:"대명사",parsing:"부정대명사 · 남성 · 단수 · 주격",lemma:"τις",strongs:"G5100",meaning:"누군가. 부정대명사로 '그 누구도'(부정문에서)."},
-      {greek:"αὐτὰ",ko:"아우타",gloss:"them",pos:"대명사",parsing:"인칭대명사 · 중성 · 복수 · 대격",lemma:"αὐτός",strongs:"G846",meaning:"그것들을. 양들을 가리킴."},
-      {greek:"ἐκ",ko:"에크",gloss:"out of",pos:"전치사",parsing:"전치사 + 속격",lemma:"ἐκ",strongs:"G1537",meaning:"~에서, ~밖으로."},
-      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
-      {greek:"χειρός",ko:"케이로스",gloss:"hand",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"χείρ",strongs:"G5495",meaning:"손. '내 손에서' — 소유와 보호의 이미지.",isKey:true,
-       note:"'손'은 능력과 보호를 상징. 29절에서 '아버지의 손'이 반복되어 아들과 아버지의 손이 동일함을 암시 → 예수님의 신성 주장."},
-      {greek:"μου.",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의."}
-    ]
-  },
-  29:{
-    reference:"요한복음 10:29",
-    translation:"그들을 주신 내 아버지는 만물보다 크시매 아무도 아버지 손에서 빼앗을 수 없느니라",
-    nkjv:"My Father, who has given them to Me, is greater than all; and no one is able to snatch them out of My Father's hand.",
-    esv:"My Father, who has given them to me, is greater than all, and no one is able to snatch them out of the Father's hand.",
-    words:[
-      {greek:"ὁ",ko:"호",gloss:"the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 주격",lemma:"ὁ",strongs:"G3588",meaning:"그. 관사가 주어를 이끔."},
-      {greek:"πατήρ",ko:"파테르",gloss:"Father",pos:"명사",parsing:"명사 · 남성 · 단수 · 주격",lemma:"πατήρ",strongs:"G3962",meaning:"아버지. 예수님이 하나님을 '아버지'라 부르는 것은 신약의 혁명적 계시.",isKey:true,
-       note:"요한복음에서 예수님은 하나님을 '아버지'로 부름(53회). 이 호칭은 당시 유대인들에게 신성모독으로 들림(10:30-33). 예수님과 아버지의 유일한 관계를 나타냄."},
-      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 아버지' — 예수님만의 독특한 아버지 관계."},
-      {greek:"ὃ",ko:"호",gloss:"who/what",pos:"대명사",parsing:"관계대명사 · 중성 · 단수 · 주격",lemma:"ὅς",strongs:"G3739",meaning:"~것/~자. 중성으로 '주어진 것'(양 무리 전체)을 가리킬 수도 있음.",
-       note:"문법적 논쟁: ὃ(중성)가 ὁ πατήρ(남성)를 받는 것은 불규칙. 일부는 '아버지가 내게 주신 것'으로 해석. NA28 이독에 주목."},
-      {greek:"δέδωκέν",ko:"데도켄",gloss:"has given",pos:"동사",parsing:"완료 · 능동 · 직설법 · 3인칭 · 단수",lemma:"δίδωμι",strongs:"G1325",meaning:"주셨다. 완료 시제: 과거에 주신 행위가 현재도 유효하게 지속됨.",isKey:true,
-       note:"완료형은 '영원히 유효한 증여'. 양들은 아버지의 선물로 아들에게 왔고, 그 선물은 취소될 수 없음. 17:2,6,9,24에서도 동일한 신학적 의미."},
-      {greek:"μοι",ko:"모이",gloss:"to me",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 여격",lemma:"ἐγώ",strongs:"G1473",meaning:"나에게."},
-      {greek:"πάντων",ko:"판톤",gloss:"than all",pos:"형용사",parsing:"형용사 · 중성/남성 · 복수 · 속격",lemma:"πᾶς",strongs:"G3956",meaning:"모든 것보다. 속격 비교: '~보다 더 크다'.",isKey:true,
-       note:"'만물보다' 크신 아버지의 절대 주권. 어떤 세력도, 마귀도, 인간도 아버지보다 크지 않음. 양들의 안전의 궁극적 근거."},
-      {greek:"μεῖζόν",ko:"메이존",gloss:"greater",pos:"형용사",parsing:"비교급 형용사 · 중성 · 단수 · 주격",lemma:"μέγας",strongs:"G3173",meaning:"더 큰. μέγας의 비교급.",isKey:true,
-       note:"14:28 '아버지는 나보다 크심이라'와 연결. 아버지의 위대함이 양들의 안전을 보장. 아버지와 아들의 관계 안에서 양들은 이중 보호를 받음."},
-      {greek:"ἐστιν,",ko:"에스틴",gloss:"is",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 단수",lemma:"εἰμί",strongs:"G1510",meaning:"~이다."},
-      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
-      {greek:"οὐδεὶς",ko:"우데이스",gloss:"no one",pos:"대명사",parsing:"부정대명사 · 남성 · 단수 · 주격",lemma:"οὐδείς",strongs:"G3762",meaning:"아무도 ~않다. 완전한 부정."},
-      {greek:"δύναται",ko:"뒤나타이",gloss:"is able",pos:"동사",parsing:"현재 · 중간 · 직설법 · 3인칭 · 단수",lemma:"δύναμαι",strongs:"G1410",meaning:"할 수 있다. 능력·가능성의 표현.",
-       note:"영어 dynamic, dynamite의 어원. '능력이 없다' — 마귀도, 인간도, 그 어떤 존재도 하나님 아버지 손에서 빼앗을 능력이 없음."},
-      {greek:"ἁρπάζειν",ko:"하르파제인",gloss:"to snatch",pos:"동사",parsing:"현재 · 능동 · 부정사",lemma:"ἁρπάζω",strongs:"G726",meaning:"빼앗다. 부정사로 '빼앗는 것'.",isKey:true,
-       note:"28절의 ἁρπάσει(미래 직설)와 같은 어근. 이중 보호: 아들의 손(28절)과 아버지의 손(29절)에서 모두 빼앗을 수 없음 → 30절 '나와 아버지는 하나이니라'."},
-      {greek:"ἐκ",ko:"에크",gloss:"out of",pos:"전치사",parsing:"전치사 + 속격",lemma:"ἐκ",strongs:"G1537",meaning:"~에서."},
-      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
-      {greek:"χειρὸς",ko:"케이로스",gloss:"hand",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"χείρ",strongs:"G5495",meaning:"손. 28절의 '내 손'에 이어 '아버지의 손' — 두 손이 동일한 보호를 제공함.",isKey:true,
-       note:"28절 '내 손' + 29절 '아버지의 손' + 30절 '나와 아버지는 하나' — 이 논리적 구조가 예수님의 신성 주장의 핵심. 유대인들이 즉시 돌을 들었다(31절)."},
-      {greek:"τοῦ",ko:"투",gloss:"of the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
-      {greek:"πατρός",ko:"파트로스",gloss:"Father",pos:"명사",parsing:"명사 · 남성 · 단수 · 속격",lemma:"πατήρ",strongs:"G3962",meaning:"아버지의. 29절의 주어 '내 아버지'로 돌아옴."},
-      {greek:"μου.",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 아버지의 손' — 아버지와 아들의 관계 속에 있는 절대 안전."}
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"she says",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"λέγω",strongs:"G3004",
+       meaning:"말한다. 역사적 현재형으로 생생하게 묘사합니다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",
+       meaning:"그에게. 예수님께 대답합니다.",note:""},
+      {gk:"ναί",translit:"nai",ko:"나이",gloss:"yes",pos:"불변화사",parsing:"긍정 불변화사",lemma:"ναί",strongs:"G3483",isKey:true,
+       meaning:"네, 그렇습니다. 마르다의 신앙 고백이 시작됩니다.",note:""},
+      {gk:"κύριε",translit:"kyrie",ko:"퀴리에",gloss:"Lord",pos:"명사",parsing:"호격 남성 단수",lemma:"κύριος",strongs:"G2962",isKey:true,
+       meaning:"주님. 호격으로 직접 호칭. 신적 주권을 인정합니다.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",
+       meaning:"나. 강조적 주어—개인적 고백임을 강조합니다.",note:""},
+      {gk:"πεπίστευκα",translit:"pepistеuka",ko:"페피스튜카",gloss:"I have believed",pos:"동사",parsing:"Perfect Active Indicative 1단수",lemma:"πιστεύω",strongs:"G4100",isKey:true,
+       meaning:"나는 믿어왔다. 완료형—과거에 시작된 믿음이 현재까지 지속됩니다. 확립된 신앙.",note:"완료형의 사용: 지금 결심하는 것이 아니라 이미 믿어온 확신입니다."},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",
+       meaning:"~임을. 고백의 내용을 이끕니다.",note:""},
+      {gk:"σύ",translit:"sy",ko:"쉬",gloss:"you",pos:"대명사",parsing:"주격 2단수",lemma:"σύ",strongs:"G4771",
+       meaning:"당신이. 강조적 2인칭—바로 당신이.",note:""},
+      {gk:"εἶ",translit:"ei",ko:"에이",gloss:"are",pos:"동사",parsing:"Present Active Indicative 2단수",lemma:"εἰμί",strongs:"G1510",
+       meaning:"~이시다. 예수님의 정체성에 대한 현재적 선언입니다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. χριστός를 특정합니다.",note:""},
+      {gk:"χριστὸς",translit:"Christos",ko:"크리스토스",gloss:"Christ",pos:"명사",parsing:"주격 남성 단수",lemma:"χριστός",strongs:"G5547",isKey:true,
+       meaning:"기름 부음 받은 자, 메시아. 히브리어 מָשִׁיחַ(마쉬아흐)의 헬라어 번역입니다.",note:"구약의 약속이 예수님 안에서 성취됨을 고백합니다."},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. υἱός를 한정합니다.",note:""},
+      {gk:"υἱὸς",translit:"huios",ko:"휘오스",gloss:"the Son",pos:"명사",parsing:"주격 남성 단수",lemma:"υἱός",strongs:"G5207",isKey:true,
+       meaning:"아들. ὁ υἱὸς τοῦ θεοῦ—하나님의 아들. 신적 본질을 나타냅니다.",note:"베드로의 고백(마16:16)과 동일한 표현입니다."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"속격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사 속격.",note:""},
+      {gk:"θεοῦ",translit:"theou",ko:"테우",gloss:"of God",pos:"명사",parsing:"속격 남성 단수",lemma:"θεός",strongs:"G2316",isKey:true,
+       meaning:"하나님의. 예수님의 신성을 고백합니다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사. ἐρχόμενος를 명사화합니다.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"into",pos:"전치사",parsing:"전치사",lemma:"εἰς",strongs:"G1519",
+       meaning:"~안으로. 세상으로 오심의 방향.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",
+       meaning:"정관사.",note:""},
+      {gk:"κόσμον",translit:"kosmon",ko:"코스몬",gloss:"world",pos:"명사",parsing:"대격 남성 단수",lemma:"κόσμος",strongs:"G2889",isKey:true,
+       meaning:"세상. 하나님이 창조하시고 사랑하시는 세계(요3:16).",note:""},
+      {gk:"ἐρχόμενος",translit:"erchomenos",ko:"에르코메노스",gloss:"coming",pos:"동사",parsing:"현재 중간 분사 주격 남성 단수",lemma:"ἔρχομαι",strongs:"G2064",isKey:true,
+       meaning:"오시는 분. 구약에서 예언된 오시는 분(시118:26, 말3:1)의 성취. 마르다의 완전한 신앙 고백.",note:"현재 분사로 지속적 오심을 나타냅니다."}
     ]
   }
 };
 
-// ============================================================
-// 상태 & 타이밍
-// ============================================================
-const STORAGE_KEY = 'bible_john10_2729_v1';
-
-// AUTO_TIMINGS — Whisper AI 기반 (04John10.mp3, 요10:27-29 구간 262~292초)
-const AUTO_TIMINGS = [262.72,262.9,263.52,263.84,264.36,265.2,265.5,265.78,266.68,267.5,268.22,268.68,269.34,270.32,271.14,271.72,272.16,272.54,272.86,273.06,273.34,273.6,274.74,275.04,275.26,275.42,276.12,276.38,276.82,277.0,277.94,278.22,278.4,279.2,279.68,280.06,282.02,283.0,283.72,283.92,284.2,285.0,285.52,286.52,286.74,287.22,287.8,288.68,289.82,289.98,291.28,291.7,292.12];
+// AUTO_TIMINGS — Whisper AI 기반 (04John11.mp3, 요11:25-27 구간 210~239초)
+const AUTO_TIMINGS = [210.48,210.92,211.16,211.2,213.77,216.26,218.57,218.92,219.26,219.74,220.02,220.4,220.94,221.58,222.16,222.58,223.12,223.72,224.4,224.63,224.96,225.71,226.17,226.69,227.54,228.08,228.62,229.48,229.92,230.16,230.27,230.66,231.09,231.27,231.69,232.19,232.48,232.88,233.29,233.49,233.9,234.4,234.54,235.05,235.79,236.39,236.69,236.8,237.51,237.9,238.01,238.37,238.8,239.3];
 
 const allWords = [];
 Object.keys(verses).forEach(k => {
