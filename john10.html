@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>ΚΑΤΑ ΙΩΑΝΝΗΝ Ι:27–29 — 요한복음 10:27-29 · 영원한 생명</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1520;
+    --bg-2:#141d2e;
+    --ink:#dde8f5;
+    --ink-dim:#6a7a9a;
+    --gold:#c9a95c;
+    --gold-bright:#e8c878;
+    --blue:#4a82c0;
+    --blue-bright:#6aa0e0;
+    --rose:#8ab0d8;
+    --parchment:#eef4fc;
+    --shadow:rgba(0,0,0,.55);
+    --success:#6fb86f;
+    --warn:#e8a878;
+    --sky:#a8c8e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'EB Garamond','Noto Serif KR',serif;
+    background:radial-gradient(ellipse at top,#1a2540 0%,var(--bg) 60%),var(--bg);
+    color:var(--ink);min-height:100vh;padding:25px 15px;position:relative;
+  }
+  body::before{content:"";position:fixed;inset:0;
+    background-image:radial-gradient(circle at 20% 20%,rgba(74,130,192,.06) 0%,transparent 40%),
+      radial-gradient(circle at 80% 80%,rgba(138,176,216,.05) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  body::after{content:"";position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    opacity:.4;pointer-events:none;z-index:1;}
+  .container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  header{text-align:center;margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid rgba(74,130,192,.25);position:relative}
+  header::after{content:"✝";position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);background:var(--bg);color:var(--rose);padding:0 15px;font-size:14px}
+  .subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(22px,3.5vw,34px);color:var(--parchment);letter-spacing:2px}
+  .h1-ko{font-family:'Noto Serif KR',serif;font-size:clamp(14px,1.8vw,20px);color:var(--blue-bright);letter-spacing:1px;margin-top:6px}
+  .reference{font-family:'Noto Serif KR',serif;color:var(--ink-dim);font-size:14px;margin-top:6px}
+
+  .verse-nav{display:flex;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+  .verse-nav button{font-family:'Cormorant Garamond',serif;background:rgba(0,0,0,.25);border:1px solid rgba(74,130,192,.2);color:var(--ink);padding:8px 16px;font-size:14px;cursor:pointer;transition:all .3s;border-radius:2px;letter-spacing:1px}
+  .verse-nav button:hover{border-color:var(--blue);background:rgba(74,130,192,.1);color:var(--blue-bright)}
+  .verse-nav button.active{background:linear-gradient(180deg,rgba(138,176,216,.25),rgba(74,130,192,.08));border-color:var(--rose);color:var(--parchment)}
+
+  .audio-panel{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.18);border-radius:2px;padding:15px 22px;margin-bottom:18px;box-shadow:0 10px 30px var(--shadow)}
+  .audio-panel h3{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+  .upload-area{border:2px dashed rgba(74,130,192,.3);border-radius:4px;padding:15px;text-align:center;cursor:pointer;transition:all .3s;background:rgba(0,0,0,.2);display:block}
+  .upload-area:hover{border-color:var(--blue);background:rgba(74,130,192,.05)}
+  .upload-area.has-file{border-style:solid;border-color:var(--success);background:rgba(111,184,111,.05)}
+  .upload-area input{display:none}
+  .upload-text{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:14px}
+  .upload-hint{font-size:11px;color:var(--ink-dim);margin-top:3px}
+  .file-info{margin-top:5px;font-size:12px;color:var(--success)}
+  audio{width:100%;margin-top:10px;filter:sepia(.3) hue-rotate(200deg) saturate(.9)}
+
+  .scripture-card{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.15);border-radius:2px;padding:40px 30px;box-shadow:0 20px 60px var(--shadow),inset 0 1px 0 rgba(255,255,255,.03);margin-bottom:18px;position:relative}
+  .scripture-card::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(74,130,192,.07);pointer-events:none}
+  .verse-block{margin-bottom:35px;padding-bottom:25px;border-bottom:1px dashed rgba(74,130,192,.1)}
+  .verse-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .verse-label{text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:18px;opacity:.85}
+  .verse{display:flex;flex-wrap:wrap;gap:22px 18px;justify-content:center;align-items:flex-start;margin-bottom:10px}
+  .word{display:inline-flex;flex-direction:column;align-items:center;text-align:center;padding:10px 8px 8px;border-radius:4px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;min-width:60px}
+  .word:hover{background:rgba(74,130,192,.1);transform:translateY(-2px)}
+  .word.active{background:linear-gradient(180deg,rgba(138,176,216,.22),rgba(74,130,192,.1));transform:translateY(-4px);box-shadow:0 8px 24px rgba(74,130,192,.25),inset 0 0 0 1px rgba(138,176,216,.4)}
+  .word.active .greek{color:var(--blue-bright);text-shadow:0 0 20px rgba(106,160,224,.6)}
+  .word.active .korean{color:var(--parchment)}
+  .word.read{opacity:.5}
+  .word.has-timing::after{content:"✓";position:absolute;top:2px;right:4px;font-size:10px;color:var(--success)}
+  .word.key-word{background:rgba(138,176,216,.07);border:1px solid rgba(138,176,216,.25)}
+  .word.key-word .greek{color:var(--sky)}
+  .greek{font-family:'Cardo','EB Garamond',serif;font-size:32px;font-weight:400;color:var(--parchment);transition:color .3s,text-shadow .3s;line-height:1.2}
+  .korean{font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);margin-top:5px;letter-spacing:1px}
+  .gloss{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:rgba(201,169,92,.55);margin-top:2px}
+  .timestamp{font-family:monospace;font-size:9px;color:var(--gold);margin-top:3px;opacity:.7}
+
+  .translation{margin-top:18px;padding-top:14px;border-top:1px solid rgba(74,130,192,.1);text-align:center;font-family:'Noto Serif KR',serif;font-size:14px;color:var(--ink);line-height:1.75;font-style:italic;opacity:.9}
+  .translation-ko{color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px dashed rgba(74,130,192,.12)}
+  .translation-esv,.translation-kjv,.translation-nkjv{font-family:'EB Garamond',serif;font-size:13px;line-height:1.6;margin-top:7px;padding-left:50px;position:relative;text-align:left;text-indent:-50px}
+  .translation-nkjv{color:var(--parchment);opacity:.9}
+  .translation-nkjv .version-label{background:rgba(138,176,216,.12);color:var(--rose);border:1px solid rgba(138,176,216,.3)}
+  .translation-esv{color:var(--ink);opacity:.9}
+  .translation-kjv{font-style:italic;color:var(--gold);opacity:.8}
+  .version-label{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:600;font-style:normal;letter-spacing:2px;padding:2px 7px;border-radius:2px;margin-right:8px;vertical-align:2px}
+  .translation-esv .version-label{background:rgba(111,184,111,.15);color:var(--success);border:1px solid rgba(111,184,111,.3)}
+  .translation-kjv .version-label{background:rgba(201,169,92,.15);color:var(--gold);border:1px solid rgba(201,169,92,.3)}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;animation:fadeIn .25s}
+  .modal-overlay.show{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .modal{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(138,176,216,.3);border-radius:4px;padding:35px 38px;max-width:540px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7);position:relative;animation:slideUp .3s}
+  .modal-close{position:absolute;top:15px;right:20px;background:none;border:none;color:var(--ink-dim);font-size:24px;cursor:pointer;transition:color .2s;line-height:1;padding:5px}
+  .modal-close:hover{color:var(--blue-bright)}
+  .modal-greek{font-family:'Cardo','EB Garamond',serif;font-size:52px;text-align:center;color:var(--blue-bright);margin-bottom:8px;font-weight:400;text-shadow:0 0 25px rgba(106,160,224,.3)}
+  .modal-korean{text-align:center;font-family:'Noto Serif KR',serif;font-size:18px;color:var(--parchment);margin-bottom:20px}
+  .modal-divider{border:none;border-top:1px solid rgba(74,130,192,.2);margin:18px 0}
+  .modal-section{margin-bottom:16px}
+  .modal-section-title{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:8px;font-weight:500}
+  .grammar-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-family:'Noto Serif KR',serif;font-size:14px}
+  .grammar-grid .label{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1px}
+  .grammar-grid .value{color:var(--ink)}
+  .modal-meaning{font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.7;color:var(--ink);padding:12px 15px;background:rgba(0,0,0,.25);border-left:3px solid var(--rose);border-radius:2px}
+  .modal-note{font-family:'Noto Serif KR',serif;font-size:13px;line-height:1.7;color:var(--ink-dim);margin-top:10px;padding:10px 14px;background:rgba(138,176,216,.05);border-radius:2px;font-style:italic}
+  .strongs{display:inline-block;background:rgba(201,169,92,.15);color:var(--gold);padding:2px 10px;border-radius:2px;font-family:monospace;font-size:12px;letter-spacing:1px}
+
+  .mode-tabs{display:flex;background:rgba(0,0,0,.3);border:1px solid rgba(74,130,192,.2);border-radius:2px;margin-bottom:15px;overflow:hidden;flex-wrap:wrap}
+  .mode-tab{flex:1;min-width:110px;padding:12px;text-align:center;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);transition:all .3s;border-right:1px solid rgba(74,130,192,.1)}
+  .mode-tab:last-child{border-right:none}
+  .mode-tab:hover{color:var(--ink);background:rgba(74,130,192,.05)}
+  .mode-tab.active{background:linear-gradient(180deg,rgba(138,176,216,.2),rgba(74,130,192,.05));color:var(--rose);box-shadow:inset 0 -2px 0 var(--blue)}
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .controls{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.15);border-radius:2px;padding:20px 22px;box-shadow:0 10px 30px var(--shadow)}
+  .btn-group{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  button.control-btn{font-family:'Cormorant Garamond',serif;background:transparent;border:1px solid rgba(74,130,192,.3);color:var(--parchment);padding:9px 16px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:2px;min-width:90px}
+  button.control-btn:hover:not(:disabled){background:rgba(74,130,192,.1);border-color:var(--blue);color:var(--blue-bright)}
+  button.control-btn:disabled{opacity:.35;cursor:not-allowed}
+  button.control-btn.primary{background:linear-gradient(180deg,rgba(138,176,216,.25),rgba(74,130,192,.1));border-color:var(--rose);color:var(--parchment)}
+  button.control-btn.danger{border-color:rgba(232,168,120,.4);color:var(--warn)}
+  .speed-control{display:flex;align-items:center;gap:10px;margin-top:12px;justify-content:center;flex-wrap:wrap}
+  .speed-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .speed-buttons{display:flex;gap:4px;background:rgba(0,0,0,.3);padding:3px;border-radius:2px;border:1px solid rgba(74,130,192,.1)}
+  .speed-btn{padding:5px 11px;font-size:11px;min-width:auto;border:none;background:transparent;color:var(--ink-dim);cursor:pointer;border-radius:2px;font-family:'Cormorant Garamond',serif}
+  .speed-btn.active{background:rgba(74,130,192,.2);color:var(--blue-bright)}
+  .instructions{padding:14px 18px;background:rgba(0,0,0,.25);border-left:3px solid var(--rose);margin-bottom:15px;font-family:'Noto Serif KR',serif;font-size:13px;line-height:1.8;color:var(--ink)}
+  .instructions strong{color:var(--sky)}
+  .instructions kbd{background:rgba(138,176,216,.12);border:1px solid rgba(138,176,216,.3);padding:2px 7px;border-radius:2px;color:var(--rose);margin:0 2px;font-family:inherit;font-size:11px}
+  .status{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-dim);margin-top:12px;font-size:13px;min-height:18px}
+  .progress{height:3px;background:rgba(0,0,0,.4);border-radius:2px;margin-top:12px;overflow:hidden}
+  .progress-bar{height:100%;background:linear-gradient(90deg,var(--rose),var(--sky));width:0%;transition:width .1s linear;box-shadow:0 0 10px rgba(138,176,216,.5)}
+  .stats-bar{display:flex;justify-content:center;gap:20px;margin-bottom:15px;font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ink-dim);letter-spacing:1px;flex-wrap:wrap}
+  .stats-bar span strong{color:var(--gold);font-size:14px}
+
+  .recording-display{background:rgba(0,0,0,.3);border:1px solid rgba(74,130,192,.2);border-radius:4px;padding:16px;margin-bottom:12px;text-align:center;display:none}
+  .recording-word{font-family:'Cardo',serif;font-size:42px;color:var(--blue-bright);margin-bottom:6px}
+  .recording-progress{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ink-dim);letter-spacing:2px}
+  .recording-hint{font-family:'Noto Serif KR',serif;font-size:13px;color:var(--ink);margin-top:6px}
+  .next-word{color:var(--rose);font-style:italic}
+  .recording-meter{height:4px;background:rgba(0,0,0,.3);border-radius:2px;margin-top:10px;overflow:hidden}
+  .recording-meter-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--rose));width:0%;transition:width .2s}
+
+  .more-chapters{margin-top:30px;padding-top:20px;border-top:1px solid rgba(74,130,192,.1)}
+  .more-chapters-title{text-align:center;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:16px}
+  .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  .chapter-card{display:block;text-decoration:none;background:rgba(0,0,0,.2);border:1px solid rgba(74,130,192,.12);border-radius:4px;padding:16px 14px;transition:all .3s;text-align:center}
+  .chapter-card:hover{background:rgba(74,130,192,.08);border-color:rgba(74,130,192,.3);transform:translateY(-2px)}
+  .chapter-card.current{border-color:rgba(138,176,216,.35);background:rgba(138,176,216,.06);cursor:default}
+  .card-icon{font-size:22px;display:block;margin-bottom:8px}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--parchment);margin-bottom:4px}
+  .card-subtitle{font-family:'Cardo',serif;font-size:11px;color:var(--ink-dim);margin-bottom:4px}
+  .card-description{font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);line-height:1.4}
+  .hint-footer{text-align:center;margin-top:25px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--ink-dim);padding:15px}
+  @media(max-width:600px){.modal{padding:25px 20px}.greek{font-size:26px}.modal-greek{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="subtitle">Κατὰ Ἰωάννην · 요한복음</div>
+    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ Ι:27–29</h1>
+    <div class="h1-ko">나의 양은 내 음성을 들으며</div>
+    <div class="reference">요한복음 10:27–29 · NA28 헬라어 원문 · 단어별 문법 분석</div>
+  </header>
+
+  <!-- 음성 패널 -->
+  <div class="audio-panel">
+    <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
+    <label class="upload-area has-file" id="uploadArea">
+      <input type="file" id="audioFile" accept="audio/*">
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 04John10.mp3 자동 재생</div>
+      <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 (필수!)</div>
+      <div class="file-info" id="fileInfo">🎯 53개 단어가 음성과 정밀 매칭됨</div>
+    </label>
+    <audio id="audio" controls src="04John10.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- 절 선택 -->
+  <div class="verse-nav" id="verseNav">
+    <button onclick="filterVerse('all')" class="active" data-v="all">전체 (27–29)</button>
+    <button onclick="filterVerse(27)" data-v="27">27절</button>
+    <button onclick="filterVerse(28)" data-v="28">28절</button>
+    <button onclick="filterVerse(29)" data-v="29">29절</button>
+  </div>
+
+  <!-- 통계 -->
+  <div class="stats-bar" id="statsBar"></div>
+
+  <!-- 본문 카드 -->
+  <div class="scripture-card" id="scriptureCard"></div>
+
+  <!-- 모드 탭 -->
+  <div class="controls">
+    <div class="mode-tabs">
+      <div class="mode-tab active" data-mode="learn">📖 학습</div>
+      <div class="mode-tab" data-mode="auto">▶ 자동</div>
+      <div class="mode-tab" data-mode="record">⏺ 타이밍</div>
+      <div class="mode-tab" data-mode="dictation">✏ 받아쓰기</div>
+    </div>
+
+    <!-- 학습 모드 -->
+    <div class="mode-panel active" id="learnPanel">
+      <div class="instructions">
+        <strong>단어 클릭</strong> → 문법 팝업 &nbsp;|&nbsp;
+        <kbd>Space</kbd> 재생/정지 &nbsp;|&nbsp;
+        <kbd>←</kbd><kbd>→</kbd> 이전/다음 단어
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="learnPlayBtn">▶ 재생</button>
+        <button class="control-btn" id="learnWordBtn">단어별 듣기</button>
+        <button class="control-btn" id="learnPrevBtn">◀ 이전</button>
+        <button class="control-btn" id="learnNextBtn">다음 ▶</button>
+        <button class="control-btn" id="learnResetBtn">처음으로</button>
+      </div>
+      <div class="speed-control">
+        <span class="speed-label">속도</span>
+        <div class="speed-buttons">
+          <button class="speed-btn" data-speed="0.5">0.5×</button>
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1.0">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+        </div>
+      </div>
+      <div class="status" id="learnStatus">단어를 클릭하거나 재생 버튼을 누르세요</div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    </div>
+
+    <!-- 자동 모드 -->
+    <div class="mode-panel" id="autoPanel">
+      <div class="instructions">
+        음성을 재생하면 <strong>단어가 자동으로 강조</strong>됩니다.<br>
+        <kbd>Space</kbd> 재생/정지 &nbsp;|&nbsp; 단어 클릭 → 해당 위치로 이동
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="autoPlayBtn">▶ 자동 재생</button>
+        <button class="control-btn" id="autoStopBtn">■ 정지</button>
+        <button class="control-btn" id="sampleTimingBtn">균등 타이밍</button>
+      </div>
+      <div style="margin-top:12px;text-align:center">
+        <div style="font-size:32px;font-family:'Cardo',serif;color:var(--blue-bright);min-height:44px" id="autoWord"></div>
+        <div style="font-size:13px;color:var(--ink-dim);font-family:'Noto Serif KR',serif;margin-top:4px" id="autoKo"></div>
+        <div style="font-size:11px;color:rgba(201,169,92,.7);font-style:italic;margin-top:2px" id="autoGloss"></div>
+      </div>
+      <div class="status" id="autoStatus">재생 버튼을 눌러 시작하세요</div>
+    </div>
+
+    <!-- 타이밍 녹화 모드 -->
+    <div class="mode-panel" id="recordPanel">
+      <div class="instructions">
+        음성을 들으며 <strong>각 단어 발음 시작 시 <kbd>Space</kbd></strong>를 누르세요.<br>
+        <kbd>Backspace</kbd> 이전 단어로 &nbsp;|&nbsp; SRT 파일 가져오기도 지원
+      </div>
+      <div class="recording-display" id="recordingDisplay">
+        <div class="recording-word" id="recordingWord"></div>
+        <div class="recording-progress" id="recordingProgress"></div>
+        <div class="recording-hint" id="recordingHint"></div>
+        <div class="recording-meter"><div class="recording-meter-bar" id="recordingMeterBar"></div></div>
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="recordStartBtn">⏺ 시작</button>
+        <button class="control-btn" id="recordPauseBtn">❚❚ 일시정지</button>
+        <button class="control-btn" id="recordUndoBtn">↩ 취소</button>
+        <button class="control-btn" id="recordStopBtn">■ 중단</button>
+      </div>
+      <div class="btn-group" style="margin-top:10px">
+        <button class="control-btn" id="recordSaveBtn">저장</button>
+        <button class="control-btn danger" id="recordClearBtn">초기화</button>
+      </div>
+      <div class="btn-group" style="margin-top:10px">
+        <label style="cursor:pointer">
+          <input type="file" id="srtFile" accept=".srt" style="display:none">
+          <span class="control-btn" style="display:inline-block;border:1px solid rgba(74,130,192,.3);color:var(--parchment);padding:9px 16px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;border-radius:2px">SRT 가져오기</span>
+        </label>
+        <button class="control-btn" id="autoDetectBtn">자동 타이밍 감지</button>
+      </div>
+      <div style="margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 4px">
+        <label style="font-size:12px;color:var(--ink-dim)">감지 감도</label>
+        <input type="range" id="silenceThreshold" min="5" max="50" value="20" style="flex:1;min-width:80px;accent-color:var(--blue)">
+        <span id="thresholdValue" style="font-size:12px;color:var(--gold);min-width:24px;text-align:right">20</span>
+        <span style="font-size:11px;color:var(--ink-dim)">%</span>
+      </div>
+      <div class="status" id="srtStatus" style="display:none;margin-top:6px"></div>
+      <div class="status" id="autoDetectStatus" style="display:none;margin-top:6px"></div>
+      <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
+    </div>
+
+    <!-- 받아쓰기 모드 -->
+    <div class="mode-panel" id="dictationPanel">
+      <div class="instructions">
+        단어가 <strong>흐릿하게 가려집니다</strong>.<br>
+        마우스를 올리거나 클릭하면 단어가 보입니다.
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="dictationToggleBtn">받아쓰기 시작</button>
+        <button class="control-btn" id="dictationRevealBtn">전체 보기</button>
+      </div>
+      <div class="status" id="dictationStatus">위 버튼으로 시작하세요</div>
+    </div>
+  </div>
+
+  <div class="hint-footer">✝ 각 단어를 클릭하면 헬라어 문법 분석 · 어근 · Strong's · 신학 주석이 나타납니다 ✝</div>
+
+  <!-- 다른 본문 -->
+  <div class="more-chapters">
+    <div class="more-chapters-title">다른 성경 본문</div>
+    <div class="chapters-grid">
+      <a class="chapter-card" href="index.html">
+        <span class="card-icon">✝</span>
+        <div class="card-title">고린도전서 13장</div>
+        <div class="card-subtitle">ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Αʹ</div>
+        <div class="card-description">사랑장 전체 · 헬라어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john1.html">
+        <span class="card-icon">🕊</span>
+        <div class="card-title">요한복음 1장</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Αʹ</div>
+        <div class="card-description">태초에 말씀 · 헬라어 원어 분석</div>
+      </a>
+      <div class="chapter-card current">
+        <span class="card-icon">🐑</span>
+        <div class="card-title">요한복음 10:27–29</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Ιʹ</div>
+        <div class="card-description">선한 목자 · 영원한 생명 · 헬라어 원어</div>
+      </div>
+      <a class="chapter-card" href="psalm23.html">
+        <span class="card-icon">🌿</span>
+        <div class="card-title">시편 23편</div>
+        <div class="card-subtitle">תְּהִלִּים כ״ג</div>
+        <div class="card-description">선한 목자 · 히브리어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="num6.html">
+        <span class="card-icon">✡</span>
+        <div class="card-title">민수기 6:24–27</div>
+        <div class="card-subtitle">בְּמִדְבַּר ו׳</div>
+        <div class="card-description">아론의 축복 · 히브리어 원어 분석</div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- 문법 정보 모달 -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-greek" id="modalGreek"></div>
+    <div class="modal-korean" id="modalKorean"></div>
+    <hr class="modal-divider">
+    <div class="modal-section">
+      <div class="modal-section-title">📖 문법 정보 · Parsing</div>
+      <div class="grammar-grid" id="modalGrammar"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">🔗 어근 · Lexical Info</div>
+      <div class="grammar-grid" id="modalLexical"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">💡 기본 뜻</div>
+      <div class="modal-meaning" id="modalMeaning"></div>
+    </div>
+    <div id="modalNoteSection" class="modal-section" style="display:none">
+      <div class="modal-section-title">📝 신학적 / 문법적 주석</div>
+      <div class="modal-note" id="modalNote"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// 요한복음 10:27–29 (NA28 기반)
+// ============================================================
+const verses = {
+  27:{
+    reference:"요한복음 10:27",
+    translation:"내 양은 내 음성을 들으며 나는 그들을 알며 그들은 나를 따르느니라",
+    nkjv:"My sheep hear My voice, and I know them, and they follow Me.",
+    esv:"My sheep hear my voice, and I know them, and they follow me.",
+    words:[
+      {greek:"τὰ",ko:"타",gloss:"the",pos:"관사",parsing:"정관사 · 중성 · 복수 · 주격",lemma:"ὁ",strongs:"G3588",meaning:"그것들. 정관사로 '양들'을 특정함."},
+      {greek:"πρόβατά",ko:"프로바타",gloss:"sheep",pos:"명사",parsing:"명사 · 중성 · 복수 · 주격",lemma:"πρόβατον",strongs:"G4263",meaning:"양. 어근 προβαίνω(앞으로 나아가다) — '앞서 걷는 것'. 목자를 따르는 동물.",isKey:true,
+       note:"요한복음 10장의 핵심 은유. 예수님은 '나는 선한 목자'(10:11)라고 선언. 구약의 여호와께서 이스라엘의 목자이심(시23편)이 예수님께서 성취됨."},
+      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 양'은 예수님과 특별한 관계에 있는 자들."},
+      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그(속격)."},
+      {greek:"φωνῆς",ko:"포네스",gloss:"voice",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"φωνή",strongs:"G5456",meaning:"음성, 소리. '내 음성을 들음'은 인격적 관계와 순종을 의미.",isKey:true,
+       note:"10:3,4,16에서도 반복. 낯선 자의 목소리는 따르지 않음(10:5). 음성을 알아듣는 것은 목자와 양의 친밀한 관계를 나타냄."},
+      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의."},
+      {greek:"ἀκούουσιν,",ko:"아쿠우신",gloss:"they hear",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 복수",lemma:"ἀκούω",strongs:"G191",meaning:"듣다. 현재 시제: 지속적·습관적 행위. 양들이 계속해서 듣고 있음.",isKey:true,
+       note:"영어 acoustic(음향학)의 어원. 단순한 청취가 아닌 순종이 포함된 '듣기'. 히브리어 שמע(샤마)의 같은 의미를 헬라어로 표현."},
+      {greek:"κἀγὼ",ko:"카고",gloss:"and I",pos:"접속사+대명사",parsing:"καί + ἐγώ (크라시스)",lemma:"κἀγώ",strongs:"G2504",meaning:"나 또한. 강조적 병렬 — 양들이 듣고, 나도(예수님도) 행동함.",
+       note:"crasis(모음 축약): καὶ ἐγώ → κἀγώ. 목자와 양의 관계가 쌍방향임을 강조."},
+      {greek:"γινώσκω",ko:"기노스코",gloss:"I know",pos:"동사",parsing:"현재 · 능동 · 직설법 · 1인칭 · 단수",lemma:"γινώσκω",strongs:"G1097",meaning:"알다. 경험적·관계적 앎. 단순한 지식이 아닌 친밀한 관계적 인식.",isKey:true,
+       note:"οἶδα(직관적 앎)과 구별. γινώσκω는 점진적·경험적 앎. 10:15 '아버지께서 나를 아심 같이 나도 아버지를 알고'와 같은 단어 — 삼위일체적 상호 인식이 목자-양 관계에 반영됨."},
+      {greek:"αὐτά,",ko:"아우타",gloss:"them",pos:"대명사",parsing:"인칭대명사 · 중성 · 복수 · 대격",lemma:"αὐτός",strongs:"G846",meaning:"그것들을. '양들'을 가리킴."},
+      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
+      {greek:"ἀκολουθοῦσίν",ko:"아콜루수신",gloss:"they follow",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 복수",lemma:"ἀκολουθέω",strongs:"G190",meaning:"따르다. 제자도의 핵심 단어. 현재 시제: 지속적 따름.",isKey:true,
+       note:"복음서에서 제자들이 예수님을 '따른다'고 할 때 쓰는 단어(마4:20, 막1:18). 단순한 물리적 추종이 아닌 삶 전체의 헌신을 의미."},
+      {greek:"μοι.",ko:"모이",gloss:"me",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 여격",lemma:"ἐγώ",strongs:"G1473",meaning:"나를. 여격으로 '나에게로(따라오다)'."}
+    ]
+  },
+  28:{
+    reference:"요한복음 10:28",
+    translation:"내가 그들에게 영생을 주노니 영원히 멸망하지 아니할 것이요 또 그들을 내 손에서 빼앗을 자가 없느니라",
+    nkjv:"And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand.",
+    esv:"I give them eternal life, and they will never perish, and no one will snatch them out of my hand.",
+    words:[
+      {greek:"κἀγὼ",ko:"카고",gloss:"and I",pos:"접속사+대명사",parsing:"καί + ἐγώ (크라시스)",lemma:"κἀγώ",strongs:"G2504",meaning:"나 또한. 강조: 다름 아닌 '내'가 준다."},
+      {greek:"ζωὴν",ko:"조엔",gloss:"life",pos:"명사",parsing:"명사 · 여성 · 단수 · 대격",lemma:"ζωή",strongs:"G2222",meaning:"생명. 단순한 생물학적 삶(βίος)이 아닌 하나님과의 관계 속의 참된 생명.",isKey:true,
+       note:"요한복음의 핵심 단어 (36회 등장). 1:4 '그 안에 생명이 있었으니'. 영생은 미래의 것만이 아니라 현재 시제 — 지금 여기서 시작되는 영원한 질의 생명."},
+      {greek:"αἰώνιον",ko:"아이오니온",gloss:"eternal",pos:"형용사",parsing:"형용사 · 여성 · 단수 · 대격",lemma:"αἰώνιος",strongs:"G166",meaning:"영원한. 단순한 시간적 무한이 아닌 하나님 나라에 속한 질(質).",isKey:true,
+       note:"αἰών(시대, 세대)에서 유래. 요한복음에서 17회. 3:16 '영생'과 동일 단어. 영생은 예수님을 아는 것(17:3)."},
+      {greek:"δίδωμι",ko:"디도미",gloss:"I give",pos:"동사",parsing:"현재 · 능동 · 직설법 · 1인칭 · 단수",lemma:"δίδωμι",strongs:"G1325",meaning:"주다. 현재 시제: 지금 이 순간에도 계속 주고 있음.",
+       note:"요한복음에 76회. 하나님께서 아들에게, 아들이 양들에게 주는 은혜의 수직적 흐름(10:29→10:28)."},
+      {greek:"αὐτοῖς,",ko:"아우토이스",gloss:"to them",pos:"대명사",parsing:"인칭대명사 · 남성 · 복수 · 여격",lemma:"αὐτός",strongs:"G846",meaning:"그들에게. 여격으로 수여의 대상."},
+      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
+      {greek:"οὐ",ko:"우",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",meaning:"~아니다."},
+      {greek:"μὴ",ko:"메",gloss:"never",pos:"부사",parsing:"부정부사",lemma:"μή",strongs:"G3361",meaning:"~아니다. οὐ μή = 이중 부정 = 강한 부정 ('결코 ~않는다').",
+       note:"οὐ μή + 가정법은 헬라어에서 가장 강한 부정 표현. '결코, 절대로 멸망하지 않는다'는 예수님의 절대적 약속."},
+      {greek:"ἀπόλωνται",ko:"아폴론타이",gloss:"they perish",pos:"동사",parsing:"부정과거 · 중간 · 가정법 · 3인칭 · 복수",lemma:"ἀπόλλυμι",strongs:"G622",meaning:"멸망하다. 중간태로 '스스로 망하다'. 가정법은 가능성 표현.",isKey:true,
+       note:"3:16의 같은 단어 '멸망하지 않고'. 이중 부정(οὐ μή)과 가정법의 결합으로 절대적 안전을 보증."},
+      {greek:"εἰς",ko:"에이스",gloss:"into",pos:"전치사",parsing:"전치사 + 대격",lemma:"εἰς",strongs:"G1519",meaning:"~안으로, ~에 이르도록."},
+      {greek:"τὸν",ko:"톤",gloss:"the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 대격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
+      {greek:"αἰῶνα,",ko:"아이오나",gloss:"age/eternity",pos:"명사",parsing:"명사 · 남성 · 단수 · 대격",lemma:"αἰών",strongs:"G165",meaning:"영원. εἰς τὸν αἰῶνα = '영원히'(관용구).",isKey:true,
+       note:"'영원히(εἰς τὸν αἰῶνα) 멸망하지 않는다'는 구약 시편의 언어를 반영. 히브리어 לְעוֹלָם(레올람)의 헬라어 번역."},
+      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
+      {greek:"οὐχ",ko:"우흐",gloss:"not",pos:"부사",parsing:"부정부사 (유기음 앞)",lemma:"οὐ",strongs:"G3756",meaning:"~아니다."},
+      {greek:"ἁρπάσει",ko:"하르파세이",gloss:"will snatch",pos:"동사",parsing:"미래 · 능동 · 직설법 · 3인칭 · 단수",lemma:"ἁρπάζω",strongs:"G726",meaning:"빼앗다, 강탈하다. 폭력적·강제적 탈취.",isKey:true,
+       note:"강도가 양을 빼앗는 이미지(10:12). 미래 직설법: 어떤 시점에도 빼앗는 일은 일어나지 않는다."},
+      {greek:"τις",ko:"티스",gloss:"anyone",pos:"대명사",parsing:"부정대명사 · 남성 · 단수 · 주격",lemma:"τις",strongs:"G5100",meaning:"누군가. 부정대명사로 '그 누구도'(부정문에서)."},
+      {greek:"αὐτὰ",ko:"아우타",gloss:"them",pos:"대명사",parsing:"인칭대명사 · 중성 · 복수 · 대격",lemma:"αὐτός",strongs:"G846",meaning:"그것들을. 양들을 가리킴."},
+      {greek:"ἐκ",ko:"에크",gloss:"out of",pos:"전치사",parsing:"전치사 + 속격",lemma:"ἐκ",strongs:"G1537",meaning:"~에서, ~밖으로."},
+      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
+      {greek:"χειρός",ko:"케이로스",gloss:"hand",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"χείρ",strongs:"G5495",meaning:"손. '내 손에서' — 소유와 보호의 이미지.",isKey:true,
+       note:"'손'은 능력과 보호를 상징. 29절에서 '아버지의 손'이 반복되어 아들과 아버지의 손이 동일함을 암시 → 예수님의 신성 주장."},
+      {greek:"μου.",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의."}
+    ]
+  },
+  29:{
+    reference:"요한복음 10:29",
+    translation:"그들을 주신 내 아버지는 만물보다 크시매 아무도 아버지 손에서 빼앗을 수 없느니라",
+    nkjv:"My Father, who has given them to Me, is greater than all; and no one is able to snatch them out of My Father's hand.",
+    esv:"My Father, who has given them to me, is greater than all, and no one is able to snatch them out of the Father's hand.",
+    words:[
+      {greek:"ὁ",ko:"호",gloss:"the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 주격",lemma:"ὁ",strongs:"G3588",meaning:"그. 관사가 주어를 이끔."},
+      {greek:"πατήρ",ko:"파테르",gloss:"Father",pos:"명사",parsing:"명사 · 남성 · 단수 · 주격",lemma:"πατήρ",strongs:"G3962",meaning:"아버지. 예수님이 하나님을 '아버지'라 부르는 것은 신약의 혁명적 계시.",isKey:true,
+       note:"요한복음에서 예수님은 하나님을 '아버지'로 부름(53회). 이 호칭은 당시 유대인들에게 신성모독으로 들림(10:30-33). 예수님과 아버지의 유일한 관계를 나타냄."},
+      {greek:"μου",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 아버지' — 예수님만의 독특한 아버지 관계."},
+      {greek:"ὃ",ko:"호",gloss:"who/what",pos:"대명사",parsing:"관계대명사 · 중성 · 단수 · 주격",lemma:"ὅς",strongs:"G3739",meaning:"~것/~자. 중성으로 '주어진 것'(양 무리 전체)을 가리킬 수도 있음.",
+       note:"문법적 논쟁: ὃ(중성)가 ὁ πατήρ(남성)를 받는 것은 불규칙. 일부는 '아버지가 내게 주신 것'으로 해석. NA28 이독에 주목."},
+      {greek:"δέδωκέν",ko:"데도켄",gloss:"has given",pos:"동사",parsing:"완료 · 능동 · 직설법 · 3인칭 · 단수",lemma:"δίδωμι",strongs:"G1325",meaning:"주셨다. 완료 시제: 과거에 주신 행위가 현재도 유효하게 지속됨.",isKey:true,
+       note:"완료형은 '영원히 유효한 증여'. 양들은 아버지의 선물로 아들에게 왔고, 그 선물은 취소될 수 없음. 17:2,6,9,24에서도 동일한 신학적 의미."},
+      {greek:"μοι",ko:"모이",gloss:"to me",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 여격",lemma:"ἐγώ",strongs:"G1473",meaning:"나에게."},
+      {greek:"πάντων",ko:"판톤",gloss:"than all",pos:"형용사",parsing:"형용사 · 중성/남성 · 복수 · 속격",lemma:"πᾶς",strongs:"G3956",meaning:"모든 것보다. 속격 비교: '~보다 더 크다'.",isKey:true,
+       note:"'만물보다' 크신 아버지의 절대 주권. 어떤 세력도, 마귀도, 인간도 아버지보다 크지 않음. 양들의 안전의 궁극적 근거."},
+      {greek:"μεῖζόν",ko:"메이존",gloss:"greater",pos:"형용사",parsing:"비교급 형용사 · 중성 · 단수 · 주격",lemma:"μέγας",strongs:"G3173",meaning:"더 큰. μέγας의 비교급.",isKey:true,
+       note:"14:28 '아버지는 나보다 크심이라'와 연결. 아버지의 위대함이 양들의 안전을 보장. 아버지와 아들의 관계 안에서 양들은 이중 보호를 받음."},
+      {greek:"ἐστιν,",ko:"에스틴",gloss:"is",pos:"동사",parsing:"현재 · 능동 · 직설법 · 3인칭 · 단수",lemma:"εἰμί",strongs:"G1510",meaning:"~이다."},
+      {greek:"καὶ",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고."},
+      {greek:"οὐδεὶς",ko:"우데이스",gloss:"no one",pos:"대명사",parsing:"부정대명사 · 남성 · 단수 · 주격",lemma:"οὐδείς",strongs:"G3762",meaning:"아무도 ~않다. 완전한 부정."},
+      {greek:"δύναται",ko:"뒤나타이",gloss:"is able",pos:"동사",parsing:"현재 · 중간 · 직설법 · 3인칭 · 단수",lemma:"δύναμαι",strongs:"G1410",meaning:"할 수 있다. 능력·가능성의 표현.",
+       note:"영어 dynamic, dynamite의 어원. '능력이 없다' — 마귀도, 인간도, 그 어떤 존재도 하나님 아버지 손에서 빼앗을 능력이 없음."},
+      {greek:"ἁρπάζειν",ko:"하르파제인",gloss:"to snatch",pos:"동사",parsing:"현재 · 능동 · 부정사",lemma:"ἁρπάζω",strongs:"G726",meaning:"빼앗다. 부정사로 '빼앗는 것'.",isKey:true,
+       note:"28절의 ἁρπάσει(미래 직설)와 같은 어근. 이중 보호: 아들의 손(28절)과 아버지의 손(29절)에서 모두 빼앗을 수 없음 → 30절 '나와 아버지는 하나이니라'."},
+      {greek:"ἐκ",ko:"에크",gloss:"out of",pos:"전치사",parsing:"전치사 + 속격",lemma:"ἐκ",strongs:"G1537",meaning:"~에서."},
+      {greek:"τῆς",ko:"테스",gloss:"the",pos:"관사",parsing:"정관사 · 여성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
+      {greek:"χειρὸς",ko:"케이로스",gloss:"hand",pos:"명사",parsing:"명사 · 여성 · 단수 · 속격",lemma:"χείρ",strongs:"G5495",meaning:"손. 28절의 '내 손'에 이어 '아버지의 손' — 두 손이 동일한 보호를 제공함.",isKey:true,
+       note:"28절 '내 손' + 29절 '아버지의 손' + 30절 '나와 아버지는 하나' — 이 논리적 구조가 예수님의 신성 주장의 핵심. 유대인들이 즉시 돌을 들었다(31절)."},
+      {greek:"τοῦ",ko:"투",gloss:"of the",pos:"관사",parsing:"정관사 · 남성 · 단수 · 속격",lemma:"ὁ",strongs:"G3588",meaning:"그."},
+      {greek:"πατρός",ko:"파트로스",gloss:"Father",pos:"명사",parsing:"명사 · 남성 · 단수 · 속격",lemma:"πατήρ",strongs:"G3962",meaning:"아버지의. 29절의 주어 '내 아버지'로 돌아옴."},
+      {greek:"μου.",ko:"무",gloss:"my",pos:"대명사",parsing:"인칭대명사 · 1인칭 · 단수 · 속격",lemma:"ἐγώ",strongs:"G1473",meaning:"나의. '내 아버지의 손' — 아버지와 아들의 관계 속에 있는 절대 안전."}
+    ]
+  }
+};
+
+// ============================================================
+// 상태 & 타이밍
+// ============================================================
+const STORAGE_KEY = 'bible_john10_2729_v1';
+
+// AUTO_TIMINGS — Whisper AI 기반 (04John10.mp3, 요10:27-29 구간 262~292초)
+const AUTO_TIMINGS = [262.72,262.9,263.52,263.84,264.36,265.2,265.5,265.78,266.68,267.5,268.22,268.68,269.34,270.32,271.14,271.72,272.16,272.54,272.86,273.06,273.34,273.6,274.74,275.04,275.26,275.42,276.12,276.38,276.82,277.0,277.94,278.22,278.4,279.2,279.68,280.06,282.02,283.0,283.72,283.92,284.2,285.0,285.52,286.52,286.74,287.22,287.8,288.68,289.82,289.98,291.28,291.7,292.12];
+
+const allWords = [];
+Object.keys(verses).forEach(k => {
+  verses[k].words.forEach((w, i) => {
+    allWords.push({ verseKey: k, wordIdx: i, ...w });
+  });
+});
+
+let timings = AUTO_TIMINGS.slice();
+(function() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  try {
+    const parsed = JSON.parse(saved);
+    if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
+      timings = parsed;
+  } catch(e) {}
+})();
+
+let currentVerse = 'all';
+let currentWordIdx = 0;
+let autoSyncRAF = null;
+let isDictation = false;
+let isRecording = false;
+let recordingIdx = 0;
+const audio = document.getElementById('audio');
+
+// ============================================================
+// 렌더링
+// ============================================================
+function renderScripture() {
+  const card = document.getElementById('scriptureCard');
+  const keys = currentVerse === 'all' ? Object.keys(verses) : [String(currentVerse)];
+  card.innerHTML = keys.filter(k => verses[k]).map(k => {
+    const v = verses[k];
+    const wordsHtml = v.words.map((w, wi) => {
+      const globalIdx = allWords.findIndex(a => a.verseKey === k && a.wordIdx === wi);
+      const keyClass = w.isKey ? ' key-word' : '';
+      const hasTiming = timings[globalIdx] !== null && timings[globalIdx] !== undefined;
+      return `<div class="word${keyClass}${hasTiming?' has-timing':''}" data-global="${globalIdx}" onclick="clickWord(${globalIdx})">
+        <span class="greek">${w.greek}</span>
+        <span class="korean">${w.ko}</span>
+        <span class="gloss">${w.gloss}</span>
+        ${hasTiming?`<span class="timestamp">${timings[globalIdx].toFixed(2)}s</span>`:''}
+      </div>`;
+    }).join('');
+    return `<div class="verse-block" id="verse-block-${k}">
+      <div class="verse-label">— ${v.reference} —</div>
+      <div class="verse" id="verse-${k}">${wordsHtml}</div>
+      <div class="translation">
+        <div class="translation-ko">${v.translation}</div>
+        <div class="translation-nkjv"><span class="version-label">NKJV</span>${v.nkjv}</div>
+        <div class="translation-esv"><span class="version-label">ESV</span>${v.esv}</div>
+      </div>
+    </div>`;
+  }).join('');
+  if (isDictation) card.classList.add('dictation-mode');
+  else card.classList.remove('dictation-mode');
+  updateStats();
+  setActive(currentWordIdx);
+}
+
+function updateStats() {
+  const bar = document.getElementById('statsBar');
+  const keyCount = allWords.filter(w => w.isKey).length;
+  const timingsSet = timings.filter(t => t !== null).length;
+  bar.innerHTML = `<span>단어 <strong>${allWords.length}</strong></span><span>핵심 어휘 <strong>${keyCount}</strong></span><span>타이밍 <strong>${timingsSet}/${allWords.length}</strong></span>`;
+}
+
+function setActive(idx) {
+  currentWordIdx = idx;
+  document.querySelectorAll('.word').forEach(el => {
+    const i = parseInt(el.dataset.global);
+    el.classList.remove('active','read');
+    if (i < idx) el.classList.add('read');
+    if (i === idx) { el.classList.add('active'); el.scrollIntoView({behavior:'smooth',block:'center',inline:'center'}); }
+  });
+  const w = allWords[idx];
+  if (w) {
+    document.getElementById('learnStatus').textContent = `${w.greek}  ·  ${w.ko}  ·  ${w.gloss}`;
+    document.getElementById('autoWord').textContent = w.greek;
+    document.getElementById('autoKo').textContent = w.ko;
+    document.getElementById('autoGloss').textContent = w.gloss;
+    document.getElementById('progressBar').style.width = ((idx+1)/allWords.length*100)+'%';
+  }
+}
+
+function filterVerse(v) {
+  currentVerse = v;
+  document.querySelectorAll('.verse-nav button').forEach(b => b.classList.toggle('active', b.dataset.v == v));
+  renderScripture();
+}
+
+function clickWord(idx) {
+  currentWordIdx = idx;
+  setActive(idx);
+  if (timings[idx] !== null && audio.src) audio.currentTime = timings[idx];
+  const activeMode = document.querySelector('.mode-tab.active')?.dataset.mode;
+  if (activeMode === 'dictation') {
+    const el = document.querySelector(`[data-global="${idx}"]`);
+    if (el) el.classList.toggle('revealed');
+    return;
+  }
+  if (activeMode !== 'record') openModal(allWords[idx]);
+}
+
+// ============================================================
+// 모달
+// ============================================================
+function openModal(w) {
+  document.getElementById('modalGreek').textContent = w.greek;
+  document.getElementById('modalKorean').textContent = `${w.ko} — ${w.gloss}`;
+  document.getElementById('modalGrammar').innerHTML = `
+    <span class="label">품사</span><span class="value">${w.pos}</span>
+    <span class="label">파싱</span><span class="value">${w.parsing}</span>`;
+  document.getElementById('modalLexical').innerHTML = `
+    <span class="label">어근</span><span class="value">${w.lemma}</span>
+    <span class="label">Strong's</span><span class="value"><span class="strongs">${w.strongs}</span></span>`;
+  document.getElementById('modalMeaning').textContent = w.meaning;
+  const noteSection = document.getElementById('modalNoteSection');
+  if (w.note) { noteSection.style.display='block'; document.getElementById('modalNote').textContent = w.note; }
+  else noteSection.style.display='none';
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal() { document.getElementById('modal').classList.remove('show'); }
+document.getElementById('modalClose').onclick = closeModal;
+document.getElementById('modal').onclick = e => { if (e.target === e.currentTarget) closeModal(); };
+
+// ============================================================
+// 학습 모드
+// ============================================================
+let isWordByWord = false;
+let wordPlayTimer = null;
+
+function setWordByWord(on) {
+  isWordByWord = on;
+  document.getElementById('learnWordBtn').classList.toggle('primary', on);
+}
+
+function playCurrentWord() {
+  if (wordPlayTimer) { clearTimeout(wordPlayTimer); wordPlayTimer = null; }
+  const idx = currentWordIdx;
+  const startT = timings[idx];
+  if (startT === null || startT === undefined) {
+    if (idx < allWords.length-1) setActive(idx+1);
+    document.getElementById('learnStatus').textContent = '⚠ 타이밍 없음';
+    return;
+  }
+  audio.currentTime = startT;
+  audio.play().catch(()=>{});
+  let nextT = audio.duration;
+  for (let i = idx+1; i < allWords.length; i++) {
+    if (timings[i] !== null) { nextT = timings[i]; break; }
+  }
+  wordPlayTimer = setTimeout(() => {
+    audio.pause();
+    if (idx < allWords.length-1) setActive(idx+1);
+    else document.getElementById('learnStatus').textContent = '마지막 단어입니다';
+  }, (nextT-startT)*1000);
+}
+
+document.getElementById('learnPlayBtn').onclick = () => {
+  setWordByWord(false);
+  if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause();
+};
+document.getElementById('learnWordBtn').onclick = () => setWordByWord(!isWordByWord);
+document.getElementById('learnPrevBtn').onclick = () => { if (currentWordIdx > 0) setActive(currentWordIdx-1); };
+document.getElementById('learnNextBtn').onclick = () => { if (currentWordIdx < allWords.length-1) setActive(currentWordIdx+1); };
+document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=0; };
+
+// ============================================================
+// 오디오 동기화
+// ============================================================
+function syncAudio() {
+  const t = audio.currentTime, dur = audio.duration||1;
+  document.getElementById('progressBar').style.width = `${t/dur*100}%`;
+  let activeIdx = currentWordIdx;
+  for (let i = 0; i < allWords.length; i++) {
+    if (timings[i] !== null && t >= timings[i]) activeIdx = i;
+    else if (timings[i] !== null && t < timings[i]) break;
+  }
+  if (activeIdx !== currentWordIdx) setActive(activeIdx);
+  if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
+}
+function stopSync() { if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF = null; } }
+
+// ============================================================
+// 자동 모드
+// ============================================================
+document.getElementById('autoPlayBtn').onclick = () => {
+  if (!audio.src) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  setActive(0); audio.currentTime=0; audio.play().catch(()=>{});
+  document.getElementById('autoStatus').textContent='▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다';
+  syncAudio();
+};
+document.getElementById('autoStopBtn').onclick = () => { stopSync(); if (!audio.paused) audio.pause(); document.getElementById('autoStatus').textContent='정지됨'; };
+document.getElementById('sampleTimingBtn').onclick = () => {
+  if (!audio.duration) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  const step = audio.duration/allWords.length;
+  timings = allWords.map((_,i)=>i*step);
+  saveTimings(); renderScripture();
+  document.getElementById('autoStatus').textContent='샘플 타이밍 적용됨 — 재생해보세요';
+};
+
+// ============================================================
+// 타이밍 녹화
+// ============================================================
+const recordingDisplay = document.getElementById('recordingDisplay');
+const recordingWordEl = document.getElementById('recordingWord');
+const recordingProgressEl = document.getElementById('recordingProgress');
+const recordingHintEl = document.getElementById('recordingHint');
+const recordingMeterBar = document.getElementById('recordingMeterBar');
+const recordStatus = document.getElementById('recordStatus');
+
+function updateRecordingDisplay() {
+  if (recordingIdx < allWords.length) {
+    const cur = allWords[recordingIdx], nxt = allWords[recordingIdx+1];
+    recordingWordEl.textContent = cur.greek;
+    recordingProgressEl.textContent = `${recordingIdx+1} / ${allWords.length}`;
+    recordingHintEl.innerHTML = nxt ? `현재: <strong>${cur.ko}</strong> · 다음: <span class="next-word">${nxt.greek}</span>` : '<span style="color:var(--success)">마지막 단어!</span>';
+    recordingMeterBar.style.width = (recordingIdx/allWords.length*100)+'%';
+  } else {
+    recordingWordEl.textContent = '완료';
+    recordingHintEl.innerHTML = '<span style="color:var(--success)">모든 단어 녹화 완료!</span>';
+    recordingMeterBar.style.width = '100%';
+  }
+}
+
+document.getElementById('recordStartBtn').onclick = () => {
+  if (!audio.src && !audio.currentSrc) { recordStatus.textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=0; setActive(0); renderScripture(); }
+  isRecording=true; recordingDisplay.style.display='block'; updateRecordingDisplay();
+  audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
+};
+document.getElementById('recordPauseBtn').onclick = () => {
+  if (isRecording) { isRecording=false; audio.pause(); recordStatus.textContent=`❚❚ 일시정지 (${recordingIdx}/${allWords.length})`; }
+  else if (recordingIdx>0) { isRecording=true; audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 재개</strong>'; }
+};
+document.getElementById('recordUndoBtn').onclick = () => {
+  if (recordingIdx>0) { recordingIdx--; timings[recordingIdx]=null; setActive(recordingIdx); updateRecordingDisplay(); }
+};
+document.getElementById('recordStopBtn').onclick = () => { isRecording=false; audio.pause(); recordingDisplay.style.display='none'; recordStatus.textContent='중단됨'; };
+document.getElementById('recordSaveBtn').onclick = () => { saveTimings(); renderScripture(); recordStatus.textContent='저장되었습니다'; };
+document.getElementById('recordClearBtn').onclick = () => {
+  if (confirm('자동 타이밍으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
+    timings = AUTO_TIMINGS.slice();
+    localStorage.removeItem(STORAGE_KEY); recordingIdx=0; recordingDisplay.style.display='none'; renderScripture(); recordStatus.textContent='초기화되었습니다';
+  }
+};
+
+function recordCurrentTime() {
+  if (!isRecording || recordingIdx >= allWords.length) return;
+  timings[recordingIdx] = audio.currentTime;
+  const wordEl = document.querySelector(`.word[data-global="${recordingIdx}"]`);
+  if (wordEl) {
+    wordEl.classList.add('has-timing');
+    const ex = wordEl.querySelector('.timestamp'), ts = audio.currentTime.toFixed(2)+'s';
+    if (ex) ex.textContent=ts; else wordEl.insertAdjacentHTML('beforeend',`<span class="timestamp">${ts}</span>`);
+  }
+  recordingIdx++;
+  setActive(recordingIdx < allWords.length ? recordingIdx : recordingIdx-1);
+  updateRecordingDisplay();
+  if (recordingIdx >= allWords.length) { isRecording=false; audio.pause(); recordStatus.innerHTML='<strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "저장" 버튼을 누르세요'; }
+}
+function saveTimings() { localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); }
+
+// ============================================================
+// 받아쓰기 모드
+// ============================================================
+document.getElementById('dictationToggleBtn').onclick = () => {
+  isDictation = !isDictation;
+  document.getElementById('dictationToggleBtn').textContent = isDictation ? '받아쓰기 종료' : '받아쓰기 시작';
+  document.getElementById('dictationToggleBtn').classList.toggle('primary', isDictation);
+  document.getElementById('dictationStatus').textContent = isDictation ? '단어가 가려졌습니다. 마우스를 올려 확인하세요.' : '받아쓰기 종료됨';
+  renderScripture();
+};
+document.getElementById('dictationRevealBtn').onclick = () => {
+  document.querySelectorAll('.word').forEach(el => el.classList.add('revealed'));
+};
+const dictStyle = document.createElement('style');
+dictStyle.textContent = `.dictation-mode .word .greek{filter:blur(8px);transition:filter .4s}.dictation-mode .word:hover .greek,.dictation-mode .word.revealed .greek,.dictation-mode .word.active .greek{filter:blur(0)}`;
+document.head.appendChild(dictStyle);
+
+// ============================================================
+// 모드 탭
+// ============================================================
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.mode-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.mode+'Panel').classList.add('active');
+    if (tab.dataset.mode !== 'auto') stopSync();
+    if (tab.dataset.mode !== 'record') isRecording = false;
+    if (tab.dataset.mode !== 'learn') { setWordByWord(false); if (wordPlayTimer) clearTimeout(wordPlayTimer); }
+  };
+});
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.speed);
+  };
+});
+
+// ============================================================
+// 파일 업로드
+// ============================================================
+document.getElementById('audioFile').addEventListener('change', e => {
+  const file = e.target.files[0]; if (!file) return;
+  audio.src = URL.createObjectURL(file);
+  const area = document.getElementById('uploadArea');
+  area.classList.add('has-file');
+  area.querySelector('.upload-text').innerHTML = `<span style="color:var(--gold)">✓ ${file.name}</span>`;
+  document.getElementById('fileInfo').textContent = '음성 파일 로드 완료';
+});
+
+// ============================================================
+// 키보드
+// ============================================================
+document.addEventListener('keydown', e => {
+  if (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if (document.getElementById('modal').classList.contains('show')) { if(e.key==='Escape') closeModal(); return; }
+  if (e.code==='Space') {
+    e.preventDefault();
+    if (isRecording) recordCurrentTime();
+    else if (isWordByWord) playCurrentWord();
+    else { if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause(); }
+    return;
+  }
+  if (e.code==='Backspace'&&isRecording) { e.preventDefault(); document.getElementById('recordUndoBtn').click(); return; }
+  switch(e.key) {
+    case 'ArrowRight': case 'l': if(currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); break;
+    case 'ArrowLeft': case 'h': if(currentWordIdx>0) setActive(currentWordIdx-1); break;
+    case 'r': case 'R': setActive(0); audio.currentTime=0; break;
+    case 'Escape': closeModal(); break;
+  }
+});
+
+// ============================================================
+// SRT 가져오기
+// ============================================================
+function parseSrtTimestamp(ts) { const [hms,ms]=ts.replace(',','.').split('.'); const [h,m,s]=hms.split(':').map(Number); return h*3600+m*60+s+parseFloat('0.'+(ms||'0')); }
+document.getElementById('srtFile').addEventListener('change', e => {
+  const file=e.target.files[0]; if(!file) return;
+  const statusEl=document.getElementById('srtStatus');
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const blocks=ev.target.result.trim().split(/\r?\n\s*\r?\n/);
+    const entries=[];
+    for (const block of blocks) { const lines=block.trim().split(/\r?\n/); const tl=lines.find(l=>l.includes('-->')); if(!tl) continue; const m=tl.match(/(\d{2}:\d{2}:\d{2}[,\.]\d{3})/); if(m) entries.push(parseSrtTimestamp(m[1])); }
+    if (entries.length===0) { statusEl.style.display='block'; statusEl.textContent='⚠ SRT 파싱 실패'; return; }
+    if (entries.length>=allWords.length) { for(let i=0;i<allWords.length;i++) timings[i]=entries[i]; }
+    else { timings=allWords.map((_,i)=>{ const r=i/Math.max(allWords.length-1,1),si=r*(entries.length-1),lo=Math.floor(si),hi=Math.min(lo+1,entries.length-1); return entries[lo]+(entries[hi]-entries[lo])*(si-lo); }); }
+    saveTimings(); renderScripture();
+    statusEl.style.display='block';
+    statusEl.innerHTML=`<strong style="color:var(--success)">SRT 가져오기 완료!</strong> ${entries.length}개 → ${allWords.length}개 매핑`;
+  };
+  reader.readAsText(file,'UTF-8');
+});
+
+// ============================================================
+// 자동 타이밍 감지 (WebAudio)
+// ============================================================
+document.getElementById('silenceThreshold').oninput = function() { document.getElementById('thresholdValue').textContent=this.value; };
+document.getElementById('autoDetectBtn').onclick = async () => {
+  const statusEl=document.getElementById('autoDetectStatus');
+  statusEl.style.display='block'; statusEl.textContent='오디오 분석 중... (수초 소요)';
+  const src=audio.src||audio.currentSrc;
+  if (!src) { statusEl.textContent='오디오 파일을 먼저 로드하세요'; return; }
+  try {
+    const response=await fetch(src); const arrayBuffer=await response.arrayBuffer();
+    const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const audioBuffer=await audioCtx.decodeAudioData(arrayBuffer);
+    const numCh=audioBuffer.numberOfChannels,len=audioBuffer.length,sampleRate=audioBuffer.sampleRate;
+    const mixed=new Float32Array(len);
+    for (let c=0;c<numCh;c++){const ch=audioBuffer.getChannelData(c);for(let i=0;i<len;i++) mixed[i]+=ch[i]/numCh;}
+    const frameSize=Math.floor(sampleRate*0.02);const frames=[];
+    for (let i=0;i<mixed.length;i+=frameSize){let sum=0;const end=Math.min(i+frameSize,mixed.length);for(let j=i;j<end;j++) sum+=mixed[j]*mixed[j];frames.push(Math.sqrt(sum/(end-i)));}
+    const sw=3;const smoothed=frames.map((_,i)=>{let s=0,cnt=0;for(let j=Math.max(0,i-sw);j<=Math.min(frames.length-1,i+sw);j++){s+=frames[j];cnt++;}return s/cnt;});
+    const maxRMS=Math.max(...smoothed);const pct=parseFloat(document.getElementById('silenceThreshold').value);const threshold=maxRMS*(pct/100);
+    const minGapFrames=Math.floor(0.15/0.02),minSilenceFrames=Math.floor(0.08/0.02);
+    const onsets=[];let inSpeech=false,silenceCount=0,lastOnsetFrame=-minGapFrames;
+    for (let i=0;i<smoothed.length;i++){
+      if(!inSpeech&&smoothed[i]>threshold&&(i-lastOnsetFrame)>=minGapFrames){onsets.push(i*frameSize/sampleRate);lastOnsetFrame=i;inSpeech=true;silenceCount=0;}
+      else if(inSpeech&&smoothed[i]<=threshold){silenceCount++;if(silenceCount>=minSilenceFrames){inSpeech=false;silenceCount=0;}}
+      else if(inSpeech) silenceCount=0;
+    }
+    audioCtx.close();
+    const ratio=onsets.length/allWords.length;
+    const qm=ratio>=0.85&&ratio<=1.2?`<span style="color:var(--success)">✓ 양호</span>`:ratio<0.5?`<span style="color:var(--warn)">⚠ 감도 높이세요</span>`:ratio>1.5?`<span style="color:var(--warn)">⚠ 감도 낮추세요</span>`:`<span style="color:var(--warn)">△ 수동 조정 권장</span>`;
+    statusEl.innerHTML=`감지 ${onsets.length}개 / 단어 ${allWords.length}개 · ${qm}`;
+    if (onsets.length===0){statusEl.textContent='감지 실패 — 감도를 높여보세요';return;}
+    if (onsets.length>=allWords.length){for(let i=0;i<allWords.length;i++) timings[i]=onsets[i];}
+    else{timings=allWords.map((_,i)=>{const r=i/Math.max(allWords.length-1,1),si=r*(onsets.length-1),lo=Math.floor(si),hi=Math.min(lo+1,onsets.length-1);return onsets[lo]+(onsets[hi]-onsets[lo])*(si-lo);});}
+    saveTimings();renderScripture();
+    statusEl.innerHTML+=`<br><strong style="color:var(--gold)">저장 완료!</strong> ⏺ 수동 녹화로 미세 조정 가능`;
+  } catch(err){statusEl.textContent=err.name==='TypeError'?'⚠ 로컬 파일 제한 — GitHub Pages에서 실행하세요':'오류: '+err.message;}
+};
+
+// ============================================================
+// 초기화
+// ============================================================
+renderScripture();
+</script>
+</body>
+</html>

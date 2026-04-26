@@ -559,7 +559,7 @@
       <input type="file" id="audioFile" accept="audio/*">
       <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 audio-hb-psalms-ch023.mp3 자동 재생</div>
       <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 · "⏺ 타이밍" 탭에서 단어별 타이밍 녹화 가능</div>
-      <div class="file-info" id="fileInfo"></div>
+      <div class="file-info" id="fileInfo">🎯 57개 단어가 음성과 매칭됨</div>
     </label>
     <audio id="audio" controls src="audio-hb-psalms-ch023.mp3" preload="auto" style="width:100%;margin-top:10px;filter:sepia(.4) hue-rotate(60deg) saturate(.8)"></audio>
   </div>
@@ -740,6 +740,18 @@
         <div class="card-title">시편 1편</div>
         <div class="card-subtitle">תְּהִלִּים א׳</div>
         <div class="card-description">복 있는 사람 · 히브리어 원어 분석 · 음성 매칭</div>
+      </a>
+      <a class="chapter-card" href="num6.html">
+        <span class="card-icon">✋</span>
+        <div class="card-title">민수기 6:24-27</div>
+        <div class="card-subtitle">בְּמִדְבַּר ו׳</div>
+        <div class="card-description">아론의 축복 · 히브리어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john10.html">
+        <span class="card-icon">🐏</span>
+        <div class="card-title">요한복음 10:27-29</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Ιʹ</div>
+        <div class="card-description">내 양은 내 음성을 들으며 · 헬라어 원어 분석</div>
       </a>
     </div>
   </div>
@@ -1009,6 +1021,9 @@ const verses = {
 // ============================================================
 const STORAGE_KEY = 'bible_ps23_timings_v1';
 
+// AUTO_TIMINGS — Whisper AI 기반 정밀 타이밍 (57단어)
+const AUTO_TIMINGS = [0.0,2.24,3.643,4.603,6.134,7.084,7.74,8.67,9.851,10.644,11.994,12.644,13.66,14.173,15.46,16.311,17.849,18.599,19.68,20.694,21.483,22.4,23.306,23.88,24.666,25.403,26.174,26.911,27.4,28.114,28.983,30.316,32.174,33.781,34.283,34.68,35.271,37.179,38.7,39.521,40.194,41.729,42.8,43.729,44.966,45.789,47.04,47.49,48.206,49.39,50.357,50.936,51.5,52.996,53.874,54.591,56.06];
+
 // 전체 단어 목록 (필터 무관, 항상 전체 57단어)
 const allWords = [];
 Object.keys(verses).forEach(k => {
@@ -1017,8 +1032,8 @@ Object.keys(verses).forEach(k => {
   });
 });
 
-// 타이밍 배열 (null = 미설정)
-let timings = new Array(allWords.length).fill(null);
+// 타이밍 배열
+let timings = AUTO_TIMINGS.slice();
 (function() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return;
@@ -1411,8 +1426,8 @@ document.getElementById("recordSaveBtn").onclick = () => {
 };
 
 document.getElementById("recordClearBtn").onclick = () => {
-  if (confirm('모든 타이밍을 초기화할까요?')) {
-    timings = new Array(allWords.length).fill(null);
+  if (confirm('자동 타이밍으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
+    timings = AUTO_TIMINGS.slice();
     localStorage.removeItem(STORAGE_KEY);
     recordingIdx = 0;
     recordingDisplay.style.display = 'none';
