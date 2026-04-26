@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ:1-11 — 로마서 8:1-11 · 성령 안의 삶</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1520;
+    --bg-2:#141d2e;
+    --ink:#dde8f5;
+    --ink-dim:#6a7a9a;
+    --gold:#c9a95c;
+    --gold-bright:#e8c878;
+    --blue:#4a82c0;
+    --blue-bright:#6aa0e0;
+    --rose:#8ab0d8;
+    --parchment:#eef4fc;
+    --shadow:rgba(0,0,0,.55);
+    --success:#6fb86f;
+    --warn:#e8a878;
+    --sky:#a8c8e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'EB Garamond','Noto Serif KR',serif;
+    background:radial-gradient(ellipse at top,#1a2540 0%,var(--bg) 60%),var(--bg);
+    color:var(--ink);min-height:100vh;padding:25px 15px;position:relative;
+  }
+  body::before{content:"";position:fixed;inset:0;
+    background-image:radial-gradient(circle at 20% 20%,rgba(74,130,192,.06) 0%,transparent 40%),
+      radial-gradient(circle at 80% 80%,rgba(138,176,216,.05) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  body::after{content:"";position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    opacity:.4;pointer-events:none;z-index:1;}
+  .container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  header{text-align:center;margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid rgba(74,130,192,.25);position:relative}
+  header::after{content:"✝";position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);background:var(--bg);color:var(--rose);padding:0 15px;font-size:14px}
+  .subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(22px,3.5vw,34px);color:var(--parchment);letter-spacing:2px}
+  .h1-ko{font-family:'Noto Serif KR',serif;font-size:clamp(14px,1.8vw,20px);color:var(--blue-bright);letter-spacing:1px;margin-top:6px}
+  .reference{font-family:'Noto Serif KR',serif;color:var(--ink-dim);font-size:14px;margin-top:6px}
+
+  .verse-nav{display:flex;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+  .verse-nav button{font-family:'Cormorant Garamond',serif;background:rgba(0,0,0,.25);border:1px solid rgba(74,130,192,.2);color:var(--ink);padding:8px 16px;font-size:14px;cursor:pointer;transition:all .3s;border-radius:2px;letter-spacing:1px}
+  .verse-nav button:hover{border-color:var(--blue);background:rgba(74,130,192,.1);color:var(--blue-bright)}
+  .verse-nav button.active{background:linear-gradient(180deg,rgba(138,176,216,.25),rgba(74,130,192,.08));border-color:var(--rose);color:var(--parchment)}
+
+  .audio-panel{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.18);border-radius:2px;padding:15px 22px;margin-bottom:18px;box-shadow:0 10px 30px var(--shadow)}
+  .audio-panel h3{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+  .upload-area{border:2px dashed rgba(74,130,192,.3);border-radius:4px;padding:15px;text-align:center;cursor:pointer;transition:all .3s;background:rgba(0,0,0,.2);display:block}
+  .upload-area:hover{border-color:var(--blue);background:rgba(74,130,192,.05)}
+  .upload-area.has-file{border-style:solid;border-color:var(--success);background:rgba(111,184,111,.05)}
+  .upload-area input{display:none}
+  .upload-text{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:14px}
+  .upload-hint{font-size:11px;color:var(--ink-dim);margin-top:3px}
+  .file-info{margin-top:5px;font-size:12px;color:var(--success)}
+  audio{width:100%;margin-top:10px;filter:sepia(.3) hue-rotate(200deg) saturate(.9)}
+
+  .scripture-card{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.15);border-radius:2px;padding:40px 30px;box-shadow:0 20px 60px var(--shadow),inset 0 1px 0 rgba(255,255,255,.03);margin-bottom:18px;position:relative}
+  .scripture-card::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(74,130,192,.07);pointer-events:none}
+  .verse-block{margin-bottom:35px;padding-bottom:25px;border-bottom:1px dashed rgba(74,130,192,.1)}
+  .verse-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .verse-label{text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:18px;opacity:.85}
+  .verse{display:flex;flex-wrap:wrap;gap:22px 18px;justify-content:center;align-items:flex-start;margin-bottom:10px}
+  .word{display:inline-flex;flex-direction:column;align-items:center;text-align:center;padding:10px 8px 8px;border-radius:4px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;min-width:60px}
+  .word:hover{background:rgba(74,130,192,.1);transform:translateY(-2px)}
+  .word.active{background:linear-gradient(180deg,rgba(138,176,216,.22),rgba(74,130,192,.1));transform:translateY(-4px);box-shadow:0 8px 24px rgba(74,130,192,.25),inset 0 0 0 1px rgba(138,176,216,.4)}
+  .word.active .greek{color:var(--blue-bright);text-shadow:0 0 20px rgba(106,160,224,.6)}
+  .word.active .korean{color:var(--parchment)}
+  .word.read{opacity:.5}
+  .word.has-timing::after{content:"✓";position:absolute;top:2px;right:4px;font-size:10px;color:var(--success)}
+  .word.key-word{background:rgba(138,176,216,.07);border:1px solid rgba(138,176,216,.25)}
+  .word.key-word .greek{color:var(--sky)}
+  .greek{font-family:'Cardo','EB Garamond',serif;font-size:32px;font-weight:400;color:var(--parchment);transition:color .3s,text-shadow .3s;line-height:1.2}
+  .korean{font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);margin-top:5px;letter-spacing:1px}
+  .gloss{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:rgba(201,169,92,.55);margin-top:2px}
+  .timestamp{font-family:monospace;font-size:9px;color:var(--gold);margin-top:3px;opacity:.7}
+
+  .translation{margin-top:18px;padding-top:14px;border-top:1px solid rgba(74,130,192,.1);text-align:center;font-family:'Noto Serif KR',serif;font-size:14px;color:var(--ink);line-height:1.75;font-style:italic;opacity:.9}
+  .translation-ko{color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px dashed rgba(74,130,192,.12)}
+  .translation-esv,.translation-kjv,.translation-nkjv{font-family:'EB Garamond',serif;font-size:13px;line-height:1.6;margin-top:7px;padding-left:50px;position:relative;text-align:left;text-indent:-50px}
+  .translation-nkjv{color:var(--parchment);opacity:.9}
+  .translation-nkjv .version-label{background:rgba(138,176,216,.12);color:var(--rose);border:1px solid rgba(138,176,216,.3)}
+  .translation-esv{color:var(--ink);opacity:.9}
+  .translation-kjv{font-style:italic;color:var(--gold);opacity:.8}
+  .version-label{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:600;font-style:normal;letter-spacing:2px;padding:2px 7px;border-radius:2px;margin-right:8px;vertical-align:2px}
+  .translation-esv .version-label{background:rgba(111,184,111,.15);color:var(--success);border:1px solid rgba(111,184,111,.3)}
+  .translation-kjv .version-label{background:rgba(201,169,92,.15);color:var(--gold);border:1px solid rgba(201,169,92,.3)}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;animation:fadeIn .25s}
+  .modal-overlay.show{display:flex}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .modal{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(138,176,216,.3);border-radius:4px;padding:35px 38px;max-width:540px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7);position:relative;animation:slideUp .3s}
+  .modal-close{position:absolute;top:15px;right:20px;background:none;border:none;color:var(--ink-dim);font-size:24px;cursor:pointer;transition:color .2s;line-height:1;padding:5px}
+  .modal-close:hover{color:var(--blue-bright)}
+  .modal-greek{font-family:'Cardo','EB Garamond',serif;font-size:52px;text-align:center;color:var(--blue-bright);margin-bottom:8px;font-weight:400;text-shadow:0 0 25px rgba(106,160,224,.3)}
+  .modal-korean{text-align:center;font-family:'Noto Serif KR',serif;font-size:18px;color:var(--parchment);margin-bottom:20px}
+  .modal-divider{border:none;border-top:1px solid rgba(74,130,192,.2);margin:18px 0}
+  .modal-section{margin-bottom:16px}
+  .modal-section-title{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:8px;font-weight:500}
+  .grammar-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-family:'Noto Serif KR',serif;font-size:14px}
+  .grammar-grid .label{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1px}
+  .grammar-grid .value{color:var(--ink)}
+  .modal-meaning{font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.7;color:var(--ink);padding:12px 15px;background:rgba(0,0,0,.25);border-left:3px solid var(--rose);border-radius:2px}
+  .modal-note{font-family:'Noto Serif KR',serif;font-size:13px;line-height:1.7;color:var(--ink-dim);margin-top:10px;padding:10px 14px;background:rgba(138,176,216,.05);border-radius:2px;font-style:italic}
+  .strongs{display:inline-block;background:rgba(201,169,92,.15);color:var(--gold);padding:2px 10px;border-radius:2px;font-family:monospace;font-size:12px;letter-spacing:1px}
+
+  .mode-tabs{display:flex;background:rgba(0,0,0,.3);border:1px solid rgba(74,130,192,.2);border-radius:2px;margin-bottom:15px;overflow:hidden;flex-wrap:wrap}
+  .mode-tab{flex:1;min-width:110px;padding:12px;text-align:center;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);transition:all .3s;border-right:1px solid rgba(74,130,192,.1)}
+  .mode-tab:last-child{border-right:none}
+  .mode-tab:hover{color:var(--ink);background:rgba(74,130,192,.05)}
+  .mode-tab.active{background:linear-gradient(180deg,rgba(138,176,216,.2),rgba(74,130,192,.05));color:var(--rose);box-shadow:inset 0 -2px 0 var(--blue)}
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .controls{background:linear-gradient(145deg,var(--bg-2) 0%,var(--bg) 100%);border:1px solid rgba(74,130,192,.15);border-radius:2px;padding:20px 22px;box-shadow:0 10px 30px var(--shadow)}
+  .btn-group{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  button.control-btn{font-family:'Cormorant Garamond',serif;background:transparent;border:1px solid rgba(74,130,192,.3);color:var(--parchment);padding:9px 16px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:2px;min-width:90px}
+  button.control-btn:hover:not(:disabled){background:rgba(74,130,192,.1);border-color:var(--blue);color:var(--blue-bright)}
+  button.control-btn:disabled{opacity:.35;cursor:not-allowed}
+  button.control-btn.primary{background:linear-gradient(180deg,rgba(138,176,216,.25),rgba(74,130,192,.1));border-color:var(--rose);color:var(--parchment)}
+  button.control-btn.danger{border-color:rgba(232,168,120,.4);color:var(--warn)}
+  .speed-control{display:flex;align-items:center;gap:10px;margin-top:12px;justify-content:center;flex-wrap:wrap}
+  .speed-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .speed-buttons{display:flex;gap:4px;background:rgba(0,0,0,.3);padding:3px;border-radius:2px;border:1px solid rgba(74,130,192,.1)}
+  .speed-btn{padding:5px 11px;font-size:11px;min-width:auto;border:none;background:transparent;color:var(--ink-dim);cursor:pointer;border-radius:2px;font-family:'Cormorant Garamond',serif}
+  .speed-btn.active{background:rgba(74,130,192,.2);color:var(--blue-bright)}
+  .instructions{padding:14px 18px;background:rgba(0,0,0,.25);border-left:3px solid var(--rose);margin-bottom:15px;font-family:'Noto Serif KR',serif;font-size:13px;line-height:1.8;color:var(--ink)}
+  .instructions strong{color:var(--sky)}
+  .instructions kbd{background:rgba(138,176,216,.12);border:1px solid rgba(138,176,216,.3);padding:2px 7px;border-radius:2px;color:var(--rose);margin:0 2px;font-family:inherit;font-size:11px}
+  .status{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-dim);margin-top:12px;font-size:13px;min-height:18px}
+  .progress{height:3px;background:rgba(0,0,0,.4);border-radius:2px;margin-top:12px;overflow:hidden}
+  .progress-bar{height:100%;background:linear-gradient(90deg,var(--rose),var(--sky));width:0%;transition:width .1s linear;box-shadow:0 0 10px rgba(138,176,216,.5)}
+  .stats-bar{display:flex;justify-content:center;gap:20px;margin-bottom:15px;font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ink-dim);letter-spacing:1px;flex-wrap:wrap}
+  .stats-bar span strong{color:var(--gold);font-size:14px}
+
+  .recording-display{background:rgba(0,0,0,.3);border:1px solid rgba(74,130,192,.2);border-radius:4px;padding:16px;margin-bottom:12px;text-align:center;display:none}
+  .recording-word{font-family:'Cardo',serif;font-size:42px;color:var(--blue-bright);margin-bottom:6px}
+  .recording-progress{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ink-dim);letter-spacing:2px}
+  .recording-hint{font-family:'Noto Serif KR',serif;font-size:13px;color:var(--ink);margin-top:6px}
+  .next-word{color:var(--rose);font-style:italic}
+  .recording-meter{height:4px;background:rgba(0,0,0,.3);border-radius:2px;margin-top:10px;overflow:hidden}
+  .recording-meter-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--rose));width:0%;transition:width .2s}
+
+  .more-chapters{margin-top:30px;padding-top:20px;border-top:1px solid rgba(74,130,192,.1)}
+  .more-chapters-title{text-align:center;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:16px}
+  .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  .chapter-card{display:block;text-decoration:none;background:rgba(0,0,0,.2);border:1px solid rgba(74,130,192,.12);border-radius:4px;padding:16px 14px;transition:all .3s;text-align:center}
+  .chapter-card:hover{background:rgba(74,130,192,.08);border-color:rgba(74,130,192,.3);transform:translateY(-2px)}
+  .chapter-card.current{border-color:rgba(138,176,216,.35);background:rgba(138,176,216,.06);cursor:default}
+  .card-icon{font-size:22px;display:block;margin-bottom:8px}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--parchment);margin-bottom:4px}
+  .card-subtitle{font-family:'Cardo',serif;font-size:11px;color:var(--ink-dim);margin-bottom:4px}
+  .card-description{font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);line-height:1.4}
+  .hint-footer{text-align:center;margin-top:25px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--ink-dim);padding:15px}
+  @media(max-width:600px){.modal{padding:25px 20px}.greek{font-size:26px}.modal-greek{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="subtitle">Κατὰ Ἰωάννην · 요한복음</div>
+    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑ:27–29</h1>
+    <div class="h1-ko">나의 양은 내 음성을 들으며</div>
+    <div class="reference">요한복음 11:25–27 · NA28 헬라어 원문 · 단어별 문법 분석</div>
+  </header>
+
+  <!-- 음성 패널 -->
+  <div class="audio-panel">
+    <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
+    <label class="upload-area has-file" id="uploadArea">
+      <input type="file" id="audioFile" accept="audio/*">
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 06Roma08.mp3 자동 재생</div>
+      <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 (필수!)</div>
+      <div class="file-info" id="fileInfo"></div>
+    </label>
+    <audio id="audio" controls src="06Roma08.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- 절 선택 -->
+  <div class="verse-nav" id="verseNav">
+    <button onclick="filterVerse('all')" class="active" data-v="all">전체 (27–29)</button>
+    <button onclick="filterVerse(27)" data-v="27">27절</button>
+    <button onclick="filterVerse(28)" data-v="28">28절</button>
+    <button onclick="filterVerse(29)" data-v="29">29절</button>
+  </div>
+
+  <!-- 통계 -->
+  <div class="stats-bar" id="statsBar"></div>
+
+  <!-- 본문 카드 -->
+  <div class="scripture-card" id="scriptureCard"></div>
+
+  <!-- 모드 탭 -->
+  <div class="controls">
+    <div class="mode-tabs">
+      <div class="mode-tab active" data-mode="learn">📖 학습</div>
+      <div class="mode-tab" data-mode="auto">▶ 자동</div>
+      <div class="mode-tab" data-mode="record">⏺ 타이밍</div>
+      <div class="mode-tab" data-mode="dictation">✏ 받아쓰기</div>
+    </div>
+
+    <!-- 학습 모드 -->
+    <div class="mode-panel active" id="learnPanel">
+      <div class="instructions">
+        <strong>단어 클릭</strong> → 문법 팝업 &nbsp;|&nbsp;
+        <kbd>Space</kbd> 재생/정지 &nbsp;|&nbsp;
+        <kbd>←</kbd><kbd>→</kbd> 이전/다음 단어
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="learnPlayBtn">▶ 재생</button>
+        <button class="control-btn" id="learnWordBtn">단어별 듣기</button>
+        <button class="control-btn" id="learnPrevBtn">◀ 이전</button>
+        <button class="control-btn" id="learnNextBtn">다음 ▶</button>
+        <button class="control-btn" id="learnResetBtn">처음으로</button>
+      </div>
+      <div class="speed-control">
+        <span class="speed-label">속도</span>
+        <div class="speed-buttons">
+          <button class="speed-btn" data-speed="0.5">0.5×</button>
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1.0">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+        </div>
+      </div>
+      <div class="status" id="learnStatus">단어를 클릭하거나 재생 버튼을 누르세요</div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    </div>
+
+    <!-- 자동 모드 -->
+    <div class="mode-panel" id="autoPanel">
+      <div class="instructions">
+        음성을 재생하면 <strong>단어가 자동으로 강조</strong>됩니다.<br>
+        <kbd>Space</kbd> 재생/정지 &nbsp;|&nbsp; 단어 클릭 → 해당 위치로 이동
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="autoPlayBtn">▶ 자동 재생</button>
+        <button class="control-btn" id="autoStopBtn">■ 정지</button>
+        <button class="control-btn" id="sampleTimingBtn">균등 타이밍</button>
+      </div>
+      <div style="margin-top:12px;text-align:center">
+        <div style="font-size:32px;font-family:'Cardo',serif;color:var(--blue-bright);min-height:44px" id="autoWord"></div>
+        <div style="font-size:13px;color:var(--ink-dim);font-family:'Noto Serif KR',serif;margin-top:4px" id="autoKo"></div>
+        <div style="font-size:11px;color:rgba(201,169,92,.7);font-style:italic;margin-top:2px" id="autoGloss"></div>
+      </div>
+      <div class="status" id="autoStatus">재생 버튼을 눌러 시작하세요</div>
+    </div>
+
+    <!-- 타이밍 녹화 모드 -->
+    <div class="mode-panel" id="recordPanel">
+      <div class="instructions">
+        음성을 들으며 <strong>각 단어 발음 시작 시 <kbd>Space</kbd></strong>를 누르세요.<br>
+        <kbd>Backspace</kbd> 이전 단어로 &nbsp;|&nbsp; SRT 파일 가져오기도 지원
+      </div>
+      <div class="recording-display" id="recordingDisplay">
+        <div class="recording-word" id="recordingWord"></div>
+        <div class="recording-progress" id="recordingProgress"></div>
+        <div class="recording-hint" id="recordingHint"></div>
+        <div class="recording-meter"><div class="recording-meter-bar" id="recordingMeterBar"></div></div>
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="recordStartBtn">⏺ 시작</button>
+        <button class="control-btn" id="recordPauseBtn">❚❚ 일시정지</button>
+        <button class="control-btn" id="recordUndoBtn">↩ 취소</button>
+        <button class="control-btn" id="recordStopBtn">■ 중단</button>
+      </div>
+      <div class="btn-group" style="margin-top:10px">
+        <button class="control-btn" id="recordSaveBtn">저장</button>
+        <button class="control-btn danger" id="recordClearBtn">초기화</button>
+      </div>
+      <div class="btn-group" style="margin-top:10px">
+        <label style="cursor:pointer">
+          <input type="file" id="srtFile" accept=".srt" style="display:none">
+          <span class="control-btn" style="display:inline-block;border:1px solid rgba(74,130,192,.3);color:var(--parchment);padding:9px 16px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;border-radius:2px">SRT 가져오기</span>
+        </label>
+        <button class="control-btn" id="autoDetectBtn">자동 타이밍 감지</button>
+      </div>
+      <div style="margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 4px">
+        <label style="font-size:12px;color:var(--ink-dim)">감지 감도</label>
+        <input type="range" id="silenceThreshold" min="5" max="50" value="20" style="flex:1;min-width:80px;accent-color:var(--blue)">
+        <span id="thresholdValue" style="font-size:12px;color:var(--gold);min-width:24px;text-align:right">20</span>
+        <span style="font-size:11px;color:var(--ink-dim)">%</span>
+      </div>
+      <div class="status" id="srtStatus" style="display:none;margin-top:6px"></div>
+      <div class="status" id="autoDetectStatus" style="display:none;margin-top:6px"></div>
+      <div class="status" id="recordStatus">준비 완료 — "⏺ 시작"을 누르세요</div>
+    </div>
+
+    <!-- 받아쓰기 모드 -->
+    <div class="mode-panel" id="dictationPanel">
+      <div class="instructions">
+        단어가 <strong>흐릿하게 가려집니다</strong>.<br>
+        마우스를 올리거나 클릭하면 단어가 보입니다.
+      </div>
+      <div class="btn-group">
+        <button class="control-btn primary" id="dictationToggleBtn">받아쓰기 시작</button>
+        <button class="control-btn" id="dictationRevealBtn">전체 보기</button>
+      </div>
+      <div class="status" id="dictationStatus">위 버튼으로 시작하세요</div>
+    </div>
+  </div>
+
+  <div class="hint-footer">✝ 각 단어를 클릭하면 헬라어 문법 분석 · 어근 · Strong's · 신학 주석이 나타납니다 ✝</div>
+
+  <!-- 다른 본문 -->
+  <div class="more-chapters">
+    <div class="more-chapters-title">다른 성경 본문</div>
+    <div class="chapters-grid">
+      <a class="chapter-card" href="index.html">
+        <span class="card-icon">&#10013;</span>
+        <div class="card-title">고린도전서 13장</div>
+        <div class="card-subtitle">ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Αʹ</div>
+        <div class="card-description">사랑장 전체 · 헬라어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john1.html">
+        <span class="card-icon">&#128330;</span>
+        <div class="card-title">요한복음 1장</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Αʹ</div>
+        <div class="card-description">태초에 말씀 · 헬라어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john10.html">
+        <span class="card-icon">&#128017;</span>
+        <div class="card-title">요한복음 10:27-29</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ Ιʹ</div>
+        <div class="card-description">선한 목자 · 헬라어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john11.html">
+        <span class="card-icon">&#10013;</span>
+        <div class="card-title">요한복음 11:25-27</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑʹ</div>
+        <div class="card-description">부활과 생명 · 헬라어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="john14.html">
+        <span class="card-icon">&#9774;</span>
+        <div class="card-title">요한복음 14:23-27</div>
+        <div class="card-subtitle">ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΔʹ</div>
+        <div class="card-description">평화의 약속 · 헬라어 원어 분석</div>
+      </a>
+      <div class="chapter-card current">
+        <span class="card-icon">&#128293;</span>
+        <div class="card-title">로마서 8:1-11</div>
+        <div class="card-subtitle">ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ</div>
+        <div class="card-description">성령 안의 삶 · 헬라어 원어 분석</div>
+      </div>
+      <a class="chapter-card" href="psalm23.html">
+        <span class="card-icon">&#127807;</span>
+        <div class="card-title">시편 23편</div>
+        <div class="card-subtitle">&#1514;&#1468;&#1456;&#1492;&#1460;&#1500;&#1468;&#1460;&#1497;&#1501; &#1499;&#1468;&#1464;&#1490;</div>
+        <div class="card-description">선한 목자 · 히브리어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="num6.html">
+        <span class="card-icon">&#10017;</span>
+        <div class="card-title">민수기 6:24-27</div>
+        <div class="card-subtitle">&#1489;&#1468;&#1456;&#1502;&#1460;&#1491;&#1468;&#1456;&#1489;&#1463;&#1468;&#1512; &#1493;&#1456;&#1468;</div>
+        <div class="card-description">아론의 축복 · 히브리어 원어 분석</div>
+      </a>
+      <a class="chapter-card" href="psalm1.html">
+        <span class="card-icon">&#11088;</span>
+        <div class="card-title">시편 1편</div>
+        <div class="card-subtitle">&#1514;&#1468;&#1456;&#1492;&#1460;&#1500;&#1468;&#1460;&#1497;&#1501; &#1488;&#1468;&#1456;</div>
+        <div class="card-description">복 있는 사람 · 히브리어 원어 분석</div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- 문법 정보 모달 -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-greek" id="modalGreek"></div>
+    <div class="modal-korean" id="modalKorean"></div>
+    <hr class="modal-divider">
+    <div class="modal-section">
+      <div class="modal-section-title">📖 문법 정보 · Parsing</div>
+      <div class="grammar-grid" id="modalGrammar"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">🔗 어근 · Lexical Info</div>
+      <div class="grammar-grid" id="modalLexical"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">💡 기본 뜻</div>
+      <div class="modal-meaning" id="modalMeaning"></div>
+    </div>
+    <div id="modalNoteSection" class="modal-section" style="display:none">
+      <div class="modal-section-title">📝 신학적 / 문법적 주석</div>
+      <div class="modal-note" id="modalNote"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// AUTO_TIMINGS: Whisper AI 기반 타이밍 — 06Roma08.mp3 처리 후 삽입
+const AUTO_TIMINGS = null;
+const STORAGE_KEY = 'rom8-timings';
+// ============================================================
+// 로마서 8:1-11 (NA28)  총 207 단어
+// ============================================================
+const verses = {
+  1:{
+    reference:"로마서 8:1",
+    gk:"Οὐδὲν ἄρα νῦν κατάκριμα τοῖς ἐν Χριστῷ Ἰησοῦ.",
+    translation:"그러므로 이제 그리스도 예수 안에 있는 자에게는 결코 정죄함이 없나니",
+    kjv:"There is therefore now no condemnation to them which are in Christ Jesus.",
+    esv:"There is therefore now no condemnation for those who are in Christ Jesus.",
+    words:[
+      {gk:"Οὐδὲν",translit:"Ouden",ko:"우덴",gloss:"nothing",pos:"대명사",parsing:"Nominative neuter singular",lemma:"οὐδείς",strongs:"G3762",isKey:true,
+       meaning:"아무것도 없다. 정죄가 완전히 없음을 선언.",note:"롬 8장의 핵심 선언. 법정 완전 무죄판결. 5:16,18의 κατάκριμα와 대응."},
+      {gk:"ἄρα",translit:"ara",ko:"아라",gloss:"therefore",pos:"접속사",parsing:"추론접속사",lemma:"ἄρα",strongs:"G686",
+       meaning:"따라서. 1–7장 전체 논증의 결론.",note:""},
+      {gk:"νῦν",translit:"nyn",ko:"뉜",gloss:"now",pos:"부사",parsing:"시간부사",lemma:"νῦν",strongs:"G3568",
+       meaning:"지금. 그리스도 안에서 현재 유효한 상태.",note:""},
+      {gk:"κατάκριμα",translit:"katakrima",ko:"카타크리마",gloss:"condemnation",pos:"명사",parsing:"Nominative neuter singular",lemma:"κατάκριμα",strongs:"G2631",isKey:true,
+       meaning:"정죄·유죄판결. 법정적 형벌 선고.",note:"κατά(반대)+κρίμα(심판). 롬 5:16,18과 같은 단어."},
+      {gk:"τοῖς",translit:"tois",ko:"토이스",gloss:"to those",pos:"관사",parsing:"Dative masculine plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~에 있는 자들에게.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에. 그리스도와의 연합 위치.",note:""},
+      {gk:"Χριστῷ",translit:"Christō",ko:"크리스토",gloss:"Christ",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,
+       meaning:"그리스도.",note:""},
+      {gk:"Ἰησοῦ",translit:"Iēsou",ko:"예수",gloss:"Jesus",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Ἰησοῦς",strongs:"G2424",isKey:true,
+       meaning:"예수. ἐν Χριστῷ Ἰησοῦ = 그리스도 예수 안에(연합의 위치).",note:""}
+    ]
+  },
+  2:{
+    reference:"로마서 8:2",
+    gk:"ὁ γὰρ νόμος τοῦ πνεύματος τῆς ζωῆς ἐν Χριστῷ Ἰησοῦ ἠλευθέρωσέν σε ἀπὸ τοῦ νόμου τῆς ἁμαρτίας καὶ τοῦ θανάτου.",
+    translation:"이는 그리스도 예수 안에 있는 생명의 성령의 법이 죄와 사망의 법에서 너를 해방하였음이라",
+    kjv:"For the law of the Spirit of life in Christ Jesus hath made me free from the law of sin and death.",
+    esv:"For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death.",
+    words:[
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"왜냐하면. v1의 이유를 설명합니다.",note:""},
+      {gk:"νόμος",translit:"nomos",ko:"노모스",gloss:"law",pos:"명사",parsing:"Nominative masculine singular",lemma:"νόμος",strongs:"G3551",isKey:true,
+       meaning:"법칙/원리. 성령의 원리(모세 율법과 대조).",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"Genitive neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"πνεύματος",translit:"pneumatos",ko:"프뉴마토스",gloss:"Spirit",pos:"명사",parsing:"Genitive neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"ζωῆς",translit:"zōēs",ko:"조에스",gloss:"life",pos:"명사",parsing:"Genitive feminine singular",lemma:"ζωή",strongs:"G2222",isKey:true,
+       meaning:"생명. 하나님 안의 참 생명.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"Χριστῷ",translit:"Christō",ko:"크리스토",gloss:"Christ",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Χριστός",strongs:"G5547",
+       meaning:"그리스도.",note:""},
+      {gk:"Ἰησοῦ",translit:"Iēsou",ko:"예수",gloss:"Jesus",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Ἰησοῦς",strongs:"G2424",
+       meaning:"예수.",note:""},
+      {gk:"ἠλευθέρωσέν",translit:"ēleutherōsen",ko:"엘류테로센",gloss:"set free",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"ἐλευθερόω",strongs:"G1659",isKey:true,
+       meaning:"해방시켰다. 단번에 완료된 해방.",note:"부정과거(aorist) = 십자가 사건으로 이루어진 역사적·단회적 해방."},
+      {gk:"σε",translit:"se",ko:"세",gloss:"you",pos:"대명사",parsing:"Accusative 2단수",lemma:"σύ",strongs:"G4771",
+       meaning:"너를. 독자 개인에게 직접 말씀하십니다.",note:""},
+      {gk:"ἀπὸ",translit:"apo",ko:"아포",gloss:"from",pos:"전치사",parsing:"소유격지배",lemma:"ἀπό",strongs:"G575",
+       meaning:"~로부터. 분리를 나타냅니다.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"the",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"νόμου",translit:"nomou",ko:"노무",gloss:"law",pos:"명사",parsing:"Genitive masculine singular",lemma:"νόμος",strongs:"G3551",
+       meaning:"율법.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"ἁμαρτίας",translit:"hamartias",ko:"하마르티아스",gloss:"sin",pos:"명사",parsing:"Genitive feminine singular",lemma:"ἁμαρτία",strongs:"G266",isKey:true,
+       meaning:"죄. 목표를 빗나감.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"the",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"θανάτου",translit:"thanatou",ko:"다나투",gloss:"death",pos:"명사",parsing:"Genitive masculine singular",lemma:"θάνατος",strongs:"G2288",isKey:true,
+       meaning:"죽음. 죄의 결과인 사망.",note:""}
+    ]
+  },
+  3:{
+    reference:"로마서 8:3",
+    gk:"τὸ γὰρ ἀδύνατον τοῦ νόμου, ἐν ᾧ ἠσθένει διὰ τῆς σαρκός, ὁ θεὸς τὸν ἑαυτοῦ υἱὸν πέμψας ἐν ὁμοιώματι σαρκὸς ἁμαρτίας καὶ περὶ ἁμαρτίας κατέκρινεν τὴν ἁμαρτίαν ἐν τῇ σαρκί,",
+    translation:"율법이 육신으로 말미암아 연약하여 할 수 없는 그것을 하나님은 하시나니 곧 죄로 말미암아 자기 아들을 죄 있는 육신의 모양으로 보내어 육신에 죄를 정하사",
+    kjv:"For what the law could not do, in that it was weak through the flesh, God sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh:",
+    esv:"For God has done what the law, weakened by the flesh, could not do. By sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh,",
+    words:[
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Accusative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그 ~을. 명사절을 이끕니다.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"왜냐하면.",note:""},
+      {gk:"ἀδύνατον",translit:"adynaton",ko:"아뒤나톤",gloss:"impossible",pos:"형용사",parsing:"Accusative neuter singular",lemma:"ἀδύνατος",strongs:"G102",isKey:true,
+       meaning:"불가능한 것. 율법이 할 수 없었던 것.",note:"α(부정)+δυνατός(가능한). 율법의 결함이 아닌 육신의 연약함 때문."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"νόμου",translit:"nomou",ko:"노무",gloss:"law",pos:"명사",parsing:"Genitive masculine singular",lemma:"νόμος",strongs:"G3551",
+       meaning:"율법.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~에 있어서.",note:""},
+      {gk:"ᾧ",translit:"hō",ko:"호",gloss:"which",pos:"관계대명사",parsing:"Dative neuter singular",lemma:"ὅς",strongs:"G3739",
+       meaning:"~에 있어서. 율법이 무능한 그 영역.",note:""},
+      {gk:"ἠσθένει",translit:"ēsthenei",ko:"에스데네이",gloss:"was weak",pos:"동사",parsing:"Imperfect Active Indicative 3단수",lemma:"ἀσθενέω",strongs:"G770",
+       meaning:"약하였다. 계속된 무능 상태.",note:""},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"through/because of",pos:"전치사",parsing:"소유격지배",lemma:"διά",strongs:"G1223",
+       meaning:"~때문에. 원인.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"σαρκός",translit:"sarkos",ko:"사르코스",gloss:"flesh",pos:"명사",parsing:"Genitive feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신. 죄에 취약한 인간 본성.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"θεὸς",translit:"theos",ko:"데오스",gloss:"God",pos:"명사",parsing:"Nominative masculine singular",lemma:"θεός",strongs:"G2316",isKey:true,
+       meaning:"하나님. 율법이 못한 일을 하나님이 직접 행하십니다.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"Accusative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"ἑαυτοῦ",translit:"heautou",ko:"헤아우투",gloss:"his own",pos:"재귀대명사",parsing:"Genitive masculine singular",lemma:"ἑαυτοῦ",strongs:"G1438",
+       meaning:"자기 자신의. '친아들'을 강조합니다.",note:""},
+      {gk:"υἱὸν",translit:"huion",ko:"휘온",gloss:"Son",pos:"명사",parsing:"Accusative masculine singular",lemma:"υἱός",strongs:"G5207",isKey:true,
+       meaning:"아들. 성부가 성자를 보내신 성육신.",note:"요 3:16과 연결."},
+      {gk:"πέμψας",translit:"pempsas",ko:"펨프사스",gloss:"sending",pos:"분사",parsing:"Aorist Active Participle Nominative masculine singular",lemma:"πέμπω",strongs:"G3992",
+       meaning:"보내심으로. 단회적 성육신 사건.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~모양으로.",note:""},
+      {gk:"ὁμοιώματι",translit:"homoiōmati",ko:"호모이오마티",gloss:"likeness",pos:"명사",parsing:"Dative neuter singular",lemma:"ὁμοίωμα",strongs:"G3667",isKey:true,
+       meaning:"모양/형상. 성육신—진짜 인간이 되셨으나 죄는 없으심.",note:"빌 2:7과 연결."},
+      {gk:"σαρκὸς",translit:"sarkos",ko:"사르코스",gloss:"flesh",pos:"명사",parsing:"Genitive feminine singular",lemma:"σάρξ",strongs:"G4561",
+       meaning:"육신.",note:""},
+      {gk:"ἁμαρτίας",translit:"hamartias",ko:"하마르티아스",gloss:"sin",pos:"명사",parsing:"Genitive feminine singular",lemma:"ἁμαρτία",strongs:"G266",
+       meaning:"죄. 죄 있는 육신의 모양.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고.",note:""},
+      {gk:"περὶ",translit:"peri",ko:"페리",gloss:"for/concerning",pos:"전치사",parsing:"소유격지배",lemma:"περί",strongs:"G4012",
+       meaning:"~을 위하여. 속죄제를 암시합니다.",note:"LXX에서 περὶ ἁμαρτίας = 속죄제(레 4-5장)."},
+      {gk:"ἁμαρτίας",translit:"hamartias",ko:"하마르티아스",gloss:"sin",pos:"명사",parsing:"Genitive feminine singular",lemma:"ἁμαρτία",strongs:"G266",
+       meaning:"죄.",note:""},
+      {gk:"κατέκρινεν",translit:"katekrinen",ko:"카테크리넨",gloss:"condemned",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"κατακρίνω",strongs:"G2632",isKey:true,
+       meaning:"정죄하셨다. 죄 자체를 육신 안에서 정죄.",note:"v1의 κατάκριμα와 같은 어근. 믿는 자 대신 예수께서 정죄를 받으셨습니다."},
+      {gk:"τὴν",translit:"tēn",ko:"텐",gloss:"the",pos:"관사",parsing:"Accusative feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"ἁμαρτίαν",translit:"hamartian",ko:"하마르티안",gloss:"sin",pos:"명사",parsing:"Accusative feminine singular",lemma:"ἁμαρτία",strongs:"G266",
+       meaning:"죄.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"τῇ",translit:"tē",ko:"테",gloss:"the",pos:"관사",parsing:"Dative feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"σαρκί",translit:"sarki",ko:"사르키",gloss:"flesh",pos:"명사",parsing:"Dative feminine singular",lemma:"σάρξ",strongs:"G4561",
+       meaning:"육신. 죄가 활동하던 바로 그 영역에서 죄를 정죄.",note:""}
+    ]
+  },
+  4:{
+    reference:"로마서 8:4",
+    gk:"ἵνα τὸ δικαίωμα τοῦ νόμου πληρωθῇ ἐν ἡμῖν τοῖς μὴ κατὰ σάρκα περιπατοῦσιν ἀλλὰ κατὰ πνεῦμα.",
+    translation:"육신을 따르지 않고 그 영을 따라 행하는 우리에게 율법의 요구가 이루어지게 하려 하심이니라",
+    kjv:"That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.",
+    esv:"in order that the righteous requirement of the law might be fulfilled in us, who walk not according to the flesh but according to the Spirit.",
+    words:[
+      {gk:"ἵνα",translit:"hina",ko:"히나",gloss:"in order that",pos:"접속사",parsing:"목적접속사",lemma:"ἵνα",strongs:"G2443",
+       meaning:"~하기 위하여.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"δικαίωμα",translit:"dikaiōma",ko:"디카이오마",gloss:"righteous requirement",pos:"명사",parsing:"Nominative neuter singular",lemma:"δικαίωμα",strongs:"G1345",isKey:true,
+       meaning:"의로운 요구/규정. 율법이 요구하는 의.",note:"δίκη(정의)에서 파생."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"νόμου",translit:"nomou",ko:"노무",gloss:"law",pos:"명사",parsing:"Genitive masculine singular",lemma:"νόμος",strongs:"G3551",
+       meaning:"율법.",note:""},
+      {gk:"πληρωθῇ",translit:"plērōthē",ko:"플레로데",gloss:"be fulfilled",pos:"동사",parsing:"Aorist Passive Subjunctive 3단수",lemma:"πληρόω",strongs:"G4137",isKey:true,
+       meaning:"이루어지다. 성령 안에서 율법의 요구가 성취됩니다.",note:"마 5:17 예수 말씀과 연결."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에서.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"us",pos:"대명사",parsing:"Dative 1복수",lemma:"ἐγώ",strongs:"G1473",
+       meaning:"우리 안에서.",note:""},
+      {gk:"τοῖς",translit:"tois",ko:"토이스",gloss:"those",pos:"관사",parsing:"Dative masculine plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하는 자들.",note:""},
+      {gk:"μὴ",translit:"mē",ko:"메",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"μή",strongs:"G3361",
+       meaning:"~않는.",note:""},
+      {gk:"κατὰ",translit:"kata",ko:"카타",gloss:"according to",pos:"전치사",parsing:"대격지배",lemma:"κατά",strongs:"G2596",
+       meaning:"~을 따라.",note:""},
+      {gk:"σάρκα",translit:"sarka",ko:"사르카",gloss:"flesh",pos:"명사",parsing:"Accusative feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신. 죄에 이끌리는 인간 본성.",note:""},
+      {gk:"περιπατοῦσιν",translit:"peripatousin",ko:"페리파투신",gloss:"walking",pos:"분사",parsing:"Present Active Participle Dative masculine plural",lemma:"περιπατέω",strongs:"G4043",isKey:true,
+       meaning:"걷는 자들. 삶의 방식·방향성을 묘사.",note:"περί(around)+πατέω(walk)."},
+      {gk:"ἀλλὰ",translit:"alla",ko:"알라",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"ἀλλά",strongs:"G235",
+       meaning:"그러나/오히려.",note:""},
+      {gk:"κατὰ",translit:"kata",ko:"카타",gloss:"according to",pos:"전치사",parsing:"대격지배",lemma:"κατά",strongs:"G2596",
+       meaning:"~을 따라.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"Accusative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령의 인도를 따라 사는 삶.",note:""}
+    ]
+  },
+  5:{
+    reference:"로마서 8:5",
+    gk:"οἱ γὰρ κατὰ σάρκα ὄντες τὰ τῆς σαρκὸς φρονοῦσιν, οἱ δὲ κατὰ πνεῦμα τὰ τοῦ πνεύματος.",
+    translation:"육신을 따르는 자는 육신의 일을 생각하고 영을 따르는 자는 영의 일을 생각하나니",
+    kjv:"For they that are after the flesh do mind the things of the flesh; but they that are after the Spirit the things of the Spirit.",
+    esv:"For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit.",
+    words:[
+      {gk:"οἱ",translit:"hoi",ko:"호이",gloss:"those",pos:"관사",parsing:"Nominative masculine plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하는 자들.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"왜냐하면.",note:""},
+      {gk:"κατὰ",translit:"kata",ko:"카타",gloss:"according to",pos:"전치사",parsing:"대격지배",lemma:"κατά",strongs:"G2596",
+       meaning:"~을 따라.",note:""},
+      {gk:"σάρκα",translit:"sarka",ko:"사르카",gloss:"flesh",pos:"명사",parsing:"Accusative feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신.",note:""},
+      {gk:"ὄντες",translit:"ontes",ko:"온테스",gloss:"being",pos:"분사",parsing:"Present Active Participle Nominative masculine plural",lemma:"εἰμί",strongs:"G1510",
+       meaning:"있는 자들.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the things",pos:"관사",parsing:"Accusative neuter plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의 것들.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"σαρκὸς",translit:"sarkos",ko:"사르코스",gloss:"flesh",pos:"명사",parsing:"Genitive feminine singular",lemma:"σάρξ",strongs:"G4561",
+       meaning:"육신의.",note:""},
+      {gk:"φρονοῦσιν",translit:"phronousin",ko:"프로누신",gloss:"set minds on",pos:"동사",parsing:"Present Active Indicative 3복수",lemma:"φρονέω",strongs:"G5426",isKey:true,
+       meaning:"마음을 두다. 삶의 지향점.",note:"v6의 φρόνημα와 같은 어근."},
+      {gk:"οἱ",translit:"hoi",ko:"호이",gloss:"those",pos:"관사",parsing:"Nominative masculine plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하는 자들.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나/한편.",note:""},
+      {gk:"κατὰ",translit:"kata",ko:"카타",gloss:"according to",pos:"전치사",parsing:"대격지배",lemma:"κατά",strongs:"G2596",
+       meaning:"~을 따라.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"Accusative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the things",pos:"관사",parsing:"Accusative neuter plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의 것들.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"Genitive neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"πνεύματος",translit:"pneumatos",ko:"프뉴마토스",gloss:"Spirit",pos:"명사",parsing:"Genitive neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령의.",note:""}
+    ]
+  },
+  6:{
+    reference:"로마서 8:6",
+    gk:"τὸ γὰρ φρόνημα τῆς σαρκὸς θάνατος, τὸ δὲ φρόνημα τοῦ πνεύματος ζωὴ καὶ εἰρήνη·",
+    translation:"육신의 생각은 사망이요 영의 생각은 생명과 평안이니라",
+    kjv:"For to be carnally minded is death; but to be spiritually minded is life and peace.",
+    esv:"For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace.",
+    words:[
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"왜냐하면.",note:""},
+      {gk:"φρόνημα",translit:"phronēma",ko:"프로네마",gloss:"mindset",pos:"명사",parsing:"Nominative neuter singular",lemma:"φρόνημα",strongs:"G5427",isKey:true,
+       meaning:"마음의 성향/지향. 사고방식 전반.",note:"v5의 φρονέω에서 파생."},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"σαρκὸς",translit:"sarkos",ko:"사르코스",gloss:"flesh",pos:"명사",parsing:"Genitive feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신.",note:""},
+      {gk:"θάνατος",translit:"thanatos",ko:"다나토스",gloss:"death",pos:"명사",parsing:"Nominative masculine singular",lemma:"θάνατος",strongs:"G2288",isKey:true,
+       meaning:"죽음. 하나님과의 단절.",note:"단순 육체적 죽음이 아닌 영적 사망."},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"φρόνημα",translit:"phronēma",ko:"프로네마",gloss:"mindset",pos:"명사",parsing:"Nominative neuter singular",lemma:"φρόνημα",strongs:"G5427",isKey:true,
+       meaning:"마음의 성향.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"Genitive neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"πνεύματος",translit:"pneumatos",ko:"프뉴마토스",gloss:"Spirit",pos:"명사",parsing:"Genitive neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"ζωὴ",translit:"zōē",ko:"조에",gloss:"life",pos:"명사",parsing:"Nominative feminine singular",lemma:"ζωή",strongs:"G2222",isKey:true,
+       meaning:"생명. 하나님 안의 참 생명.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",
+       meaning:"그리고.",note:""},
+      {gk:"εἰρήνη",translit:"eirēnē",ko:"에이레네",gloss:"peace",pos:"명사",parsing:"Nominative feminine singular",lemma:"εἰρήνη",strongs:"G1515",isKey:true,
+       meaning:"평화/평안. 히브리어 שָׁלוֹם에 해당. 하나님과의 화목.",note:"성령 지향의 삶은 생명과 평화를 가져옵니다."}
+    ]
+  },
+  7:{
+    reference:"로마서 8:7",
+    gk:"διότι τὸ φρόνημα τῆς σαρκὸς ἔχθρα εἰς θεόν, τῷ γὰρ νόμῳ τοῦ θεοῦ οὐχ ὑποτάσσεται, οὐδὲ γὰρ δύναται·",
+    translation:"육신의 생각은 하나님과 원수가 되나니 이는 하나님의 법에 굴복하지 아니할 뿐 아니라 할 수도 없음이라",
+    kjv:"Because the carnal mind is enmity against God: for it is not subject to the law of God, neither indeed can be.",
+    esv:"For the mind that is set on the flesh is hostile to God, for it does not submit to God's law; indeed, it cannot.",
+    words:[
+      {gk:"διότι",translit:"dioti",ko:"디오티",gloss:"because",pos:"접속사",parsing:"이유접속사",lemma:"διότι",strongs:"G1360",
+       meaning:"왜냐하면. v6의 이유를 더 강하게 설명합니다.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"φρόνημα",translit:"phronēma",ko:"프로네마",gloss:"mindset",pos:"명사",parsing:"Nominative neuter singular",lemma:"φρόνημα",strongs:"G5427",isKey:true,
+       meaning:"마음의 성향.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"σαρκὸς",translit:"sarkos",ko:"사르코스",gloss:"flesh",pos:"명사",parsing:"Genitive feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신.",note:""},
+      {gk:"ἔχθρα",translit:"echthra",ko:"에크드라",gloss:"enmity",pos:"명사",parsing:"Nominative feminine singular",lemma:"ἔχθρα",strongs:"G2189",isKey:true,
+       meaning:"원수됨/적대감. 하나님을 향한 적대적 상태.",note:"εἰρήνη(v6)의 정반대. 육신의 마음은 하나님과 전쟁 상태."},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"toward",pos:"전치사",parsing:"대격지배",lemma:"εἰς",strongs:"G1519",
+       meaning:"~을 향하여.",note:""},
+      {gk:"θεόν",translit:"theon",ko:"데온",gloss:"God",pos:"명사",parsing:"Accusative masculine singular",lemma:"θεός",strongs:"G2316",isKey:true,
+       meaning:"하나님.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"Dative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"왜냐하면.",note:""},
+      {gk:"νόμῳ",translit:"nomō",ko:"노모",gloss:"law",pos:"명사",parsing:"Dative masculine singular",lemma:"νόμος",strongs:"G3551",
+       meaning:"율법에.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~의.",note:""},
+      {gk:"θεοῦ",translit:"theou",ko:"데우",gloss:"God",pos:"명사",parsing:"Genitive masculine singular",lemma:"θεός",strongs:"G2316",
+       meaning:"하나님의.",note:""},
+      {gk:"οὐχ",translit:"ouch",ko:"우크",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",
+       meaning:"~않는다.",note:""},
+      {gk:"ὑποτάσσεται",translit:"hypotassetai",ko:"휘포타세타이",gloss:"submits",pos:"동사",parsing:"Present Middle/Passive Indicative 3단수",lemma:"ὑποτάσσω",strongs:"G5293",isKey:true,
+       meaning:"복종한다. 율법 아래 자신을 두다.",note:"ὑπό(아래)+τάσσω(배치). 군사 용어에서 유래."},
+      {gk:"οὐδὲ",translit:"oude",ko:"우데",gloss:"nor",pos:"접속사",parsing:"부정접속사",lemma:"οὐδέ",strongs:"G3761",
+       meaning:"게다가 ~도 아니다.",note:""},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"indeed",pos:"접속사",parsing:"강조접속사",lemma:"γάρ",strongs:"G1063",
+       meaning:"사실.",note:""},
+      {gk:"δύναται",translit:"dynatai",ko:"뒤나타이",gloss:"is able",pos:"동사",parsing:"Present Middle/Passive Indicative 3단수",lemma:"δύναμαι",strongs:"G1410",isKey:true,
+       meaning:"할 수 있다. 육신의 마음은 복종 자체가 불가능.",note:"인간의 자력 갱생 불가능성을 선언합니다."}
+    ]
+  },
+  8:{
+    reference:"로마서 8:8",
+    gk:"οἱ δὲ ἐν σαρκὶ ὄντες θεῷ ἀρέσαι οὐ δύνανται.",
+    translation:"육신에 있는 자들은 하나님을 기쁘시게 할 수 없느니라",
+    kjv:"So then they that are in the flesh cannot please God.",
+    esv:"Those who are in the flesh cannot please God.",
+    words:[
+      {gk:"οἱ",translit:"hoi",ko:"호이",gloss:"those",pos:"관사",parsing:"Nominative masculine plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하는 자들.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"and",pos:"접속사",parsing:"연결접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그리고.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"σαρκὶ",translit:"sarki",ko:"사르키",gloss:"flesh",pos:"명사",parsing:"Dative feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신 안에. 그리스도 없이 육신 지배 아래 있는 상태.",note:""},
+      {gk:"ὄντες",translit:"ontes",ko:"온테스",gloss:"being",pos:"분사",parsing:"Present Active Participle Nominative masculine plural",lemma:"εἰμί",strongs:"G1510",
+       meaning:"있는 자들.",note:""},
+      {gk:"θεῷ",translit:"theō",ko:"데오",gloss:"God",pos:"명사",parsing:"Dative masculine singular",lemma:"θεός",strongs:"G2316",
+       meaning:"하나님을.",note:""},
+      {gk:"ἀρέσαι",translit:"aresai",ko:"아레사이",gloss:"to please",pos:"동사",parsing:"Aorist Active Infinitive",lemma:"ἀρέσκω",strongs:"G700",isKey:true,
+       meaning:"기쁘게 하다. 하나님을 기쁘시게 하는 것이 불가능.",note:""},
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",
+       meaning:"~않는다.",note:""},
+      {gk:"δύνανται",translit:"dynantai",ko:"뒤난타이",gloss:"are able",pos:"동사",parsing:"Present Middle/Passive Indicative 3복수",lemma:"δύναμαι",strongs:"G1410",isKey:true,
+       meaning:"할 수 있다. 불가능성 선언.",note:""}
+    ]
+  },
+  9:{
+    reference:"로마서 8:9",
+    gk:"Ὑμεῖς δὲ οὐκ ἐστὲ ἐν σαρκὶ ἀλλὰ ἐν πνεύματι, εἴπερ πνεῦμα θεοῦ οἰκεῖ ἐν ὑμῖν. εἰ δέ τις πνεῦμα Χριστοῦ οὐκ ἔχει, οὗτος οὐκ ἔστιν αὐτοῦ.",
+    translation:"만일 너희 속에 하나님의 영이 거하시면 너희가 육신에 있지 아니하고 영에 있나니 누구든지 그리스도의 영이 없으면 그리스도의 사람이 아니라",
+    kjv:"But ye are not in the flesh, but in the Spirit, if so be that the Spirit of God dwell in you. Now if any man have not the Spirit of Christ, he is none of his.",
+    esv:"You, however, are not in the flesh but in the Spirit, if in fact the Spirit of God dwells in you. Anyone who does not have the Spirit of Christ does not belong to him.",
+    words:[
+      {gk:"Ὑμεῖς",translit:"Hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"Nominative 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희는. 강조형. v8의 '육신에 있는 자들'과 대조.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",
+       meaning:"~않다.",note:""},
+      {gk:"ἐστὲ",translit:"este",ko:"에스테",gloss:"are",pos:"동사",parsing:"Present Active Indicative 2복수",lemma:"εἰμί",strongs:"G1510",
+       meaning:"있다. 존재 상태.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"σαρκὶ",translit:"sarki",ko:"사르키",gloss:"flesh",pos:"명사",parsing:"Dative feminine singular",lemma:"σάρξ",strongs:"G4561",isKey:true,
+       meaning:"육신.",note:""},
+      {gk:"ἀλλὰ",translit:"alla",ko:"알라",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"ἀλλά",strongs:"G235",
+       meaning:"그러나/오히려.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"πνεύματι",translit:"pneumati",ko:"프뉴마티",gloss:"Spirit",pos:"명사",parsing:"Dative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령 안에.",note:""},
+      {gk:"εἴπερ",translit:"eiper",ko:"에이페르",gloss:"if indeed",pos:"접속사",parsing:"조건접속사",lemma:"εἴπερ",strongs:"G1512",
+       meaning:"만약 정말로 ~라면. 조건의 실제성 강조.",note:"성령의 내주를 구원의 표지로 제시."},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"Nominative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"θεοῦ",translit:"theou",ko:"데우",gloss:"of God",pos:"명사",parsing:"Genitive masculine singular",lemma:"θεός",strongs:"G2316",
+       meaning:"하나님의.",note:""},
+      {gk:"οἰκεῖ",translit:"oikei",ko:"오이케이",gloss:"dwells",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"οἰκέω",strongs:"G3611",isKey:true,
+       meaning:"거하다. 성령이 신자 안에 영구히 거하심.",note:"오이코스(집)에서 파생. 일시적 방문이 아닌 영구 거주."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"Dative 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희 안에.",note:""},
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",
+       meaning:"만약.",note:""},
+      {gk:"δέ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"τις",translit:"tis",ko:"티스",gloss:"anyone",pos:"대명사",parsing:"Nominative masculine singular",lemma:"τις",strongs:"G5100",
+       meaning:"누구든지.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"Accusative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"Χριστοῦ",translit:"Christou",ko:"크리스투",gloss:"of Christ",pos:"고유명사",parsing:"Genitive masculine singular",lemma:"Χριστός",strongs:"G5547",
+       meaning:"그리스도의.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",
+       meaning:"~않다.",note:""},
+      {gk:"ἔχει",translit:"echei",ko:"에케이",gloss:"has",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"ἔχω",strongs:"G2192",
+       meaning:"가지고 있다.",note:""},
+      {gk:"οὗτος",translit:"houtos",ko:"후토스",gloss:"this one",pos:"대명사",parsing:"Nominative masculine singular",lemma:"οὗτος",strongs:"G3778",
+       meaning:"이 사람은.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",
+       meaning:"~않다.",note:""},
+      {gk:"ἔστιν",translit:"estin",ko:"에스틴",gloss:"is",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"εἰμί",strongs:"G1510",
+       meaning:"있다/이다.",note:""},
+      {gk:"αὐτοῦ",translit:"autou",ko:"아우투",gloss:"his",pos:"대명사",parsing:"Genitive masculine singular",lemma:"αὐτός",strongs:"G846",isKey:true,
+       meaning:"그의. 그리스도께 속한 자가 아닙니다.",note:"성령 없이는 그리스도와 아무 관계가 없습니다."}
+    ]
+  },
+  10:{
+    reference:"로마서 8:10",
+    gk:"εἰ δὲ Χριστὸς ἐν ὑμῖν, τὸ μὲν σῶμα νεκρὸν διὰ ἁμαρτίαν, τὸ δὲ πνεῦμα ζωὴ διὰ δικαιοσύνην.",
+    translation:"또 그리스도께서 너희 안에 계시면 몸은 죄로 말미암아 죽은 것이나 영은 의로 말미암아 살아 있는 것이니라",
+    kjv:"And if Christ be in you, the body is dead because of sin; but the Spirit is life because of righteousness.",
+    esv:"But if Christ is in you, although the body is dead because of sin, the Spirit is life because of righteousness.",
+    words:[
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",
+       meaning:"만약.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"연결접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"Χριστὸς",translit:"Christos",ko:"크리스토스",gloss:"Christ",pos:"고유명사",parsing:"Nominative masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,
+       meaning:"그리스도. 그리스도가 신자 안에 거하심.",note:"v9의 πνεῦμα Χριστοῦ와 동의어. 성령과 그리스도는 내주에 있어 동일."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"Dative 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희 안에.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"μὲν",translit:"men",ko:"멘",gloss:"on the one hand",pos:"불변사",parsing:"대조불변사",lemma:"μέν",strongs:"G3303",
+       meaning:"한편으로는. 뒤의 δέ와 대조.",note:""},
+      {gk:"σῶμα",translit:"sōma",ko:"소마",gloss:"body",pos:"명사",parsing:"Nominative neuter singular",lemma:"σῶμα",strongs:"G4983",isKey:true,
+       meaning:"몸. 현재는 죄로 인해 죽은 상태.",note:""},
+      {gk:"νεκρὸν",translit:"nekron",ko:"네크론",gloss:"dead",pos:"형용사",parsing:"Nominative neuter singular",lemma:"νεκρός",strongs:"G3498",isKey:true,
+       meaning:"죽은. 아직 부활 이전의 물리적 몸.",note:""},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"because of",pos:"전치사",parsing:"대격지배",lemma:"διά",strongs:"G1223",
+       meaning:"~때문에.",note:""},
+      {gk:"ἁμαρτίαν",translit:"hamartian",ko:"하마르티안",gloss:"sin",pos:"명사",parsing:"Accusative feminine singular",lemma:"ἁμαρτία",strongs:"G266",isKey:true,
+       meaning:"죄. 몸이 죽는 원인.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"spirit/Spirit",pos:"명사",parsing:"Nominative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"영/성령. 살아있는 영.",note:""},
+      {gk:"ζωὴ",translit:"zōē",ko:"조에",gloss:"life",pos:"명사",parsing:"Nominative feminine singular",lemma:"ζωή",strongs:"G2222",isKey:true,
+       meaning:"생명.",note:""},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"because of",pos:"전치사",parsing:"대격지배",lemma:"διά",strongs:"G1223",
+       meaning:"~때문에.",note:""},
+      {gk:"δικαιοσύνην",translit:"dikaiosynēn",ko:"디카이오쉬넨",gloss:"righteousness",pos:"명사",parsing:"Accusative feminine singular",lemma:"δικαιοσύνη",strongs:"G1343",isKey:true,
+       meaning:"의. 그리스도의 의로 말미암아 생명.",note:"롬 1:17의 핵심 주제와 연결."}
+    ]
+  },
+  11:{
+    reference:"로마서 8:11",
+    gk:"εἰ δὲ τὸ πνεῦμα τοῦ ἐγείραντος τὸν Ἰησοῦν ἐκ νεκρῶν οἰκεῖ ἐν ὑμῖν, ὁ ἐγείρας Χριστὸν ἐκ νεκρῶν ζωοποιήσει καὶ τὰ θνητὰ σώματα ὑμῶν διὰ τοῦ ἐνοικοῦντος αὐτοῦ πνεύματος ἐν ὑμῖν.",
+    translation:"예수를 죽은 자 가운데서 살리신 이의 영이 너희 안에 거하시면 그리스도 예수를 죽은 자 가운데서 살리신 이가 너희 안에 거하시는 그의 영으로 말미암아 너희 죽을 몸도 살리시리라",
+    kjv:"But if the Spirit of him that raised up Jesus from the dead dwell in you, he that raised up Christ from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you.",
+    esv:"If the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.",
+    words:[
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",
+       meaning:"만약.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"연결접속사",lemma:"δέ",strongs:"G1161",
+       meaning:"그러나.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Nominative neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"Nominative neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"성령.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the one",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하신 분의.",note:""},
+      {gk:"ἐγείραντος",translit:"egeirantos",ko:"에게이란토스",gloss:"who raised",pos:"분사",parsing:"Aorist Active Participle Genitive masculine singular",lemma:"ἐγείρω",strongs:"G1453",isKey:true,
+       meaning:"살리신 분의. 부활을 행하신 하나님.",note:"예수의 부활 = 신자의 미래 부활의 근거."},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"Accusative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"Ἰησοῦν",translit:"Iēsoun",ko:"예순",gloss:"Jesus",pos:"고유명사",parsing:"Accusative masculine singular",lemma:"Ἰησοῦς",strongs:"G2424",isKey:true,
+       meaning:"예수를. 역사적 부활의 대상.",note:""},
+      {gk:"ἐκ",translit:"ek",ko:"에크",gloss:"from",pos:"전치사",parsing:"소유격지배",lemma:"ἐκ",strongs:"G1537",
+       meaning:"~으로부터.",note:""},
+      {gk:"νεκρῶν",translit:"nekrōn",ko:"네크론",gloss:"the dead",pos:"형용사",parsing:"Genitive masculine plural",lemma:"νεκρός",strongs:"G3498",isKey:true,
+       meaning:"죽은 자들.",note:""},
+      {gk:"οἰκεῖ",translit:"oikei",ko:"오이케이",gloss:"dwells",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"οἰκέω",strongs:"G3611",isKey:true,
+       meaning:"거하다. v9와 같은 동사 — 성령의 영구 내주.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"Dative 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희 안에.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one who",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하신 분이.",note:""},
+      {gk:"ἐγείρας",translit:"egeiras",ko:"에게이라스",gloss:"having raised",pos:"분사",parsing:"Aorist Active Participle Nominative masculine singular",lemma:"ἐγείρω",strongs:"G1453",isKey:true,
+       meaning:"살리신 분이. 하나님 아버지.",note:""},
+      {gk:"Χριστὸν",translit:"Christon",ko:"크리스톤",gloss:"Christ",pos:"고유명사",parsing:"Accusative masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,
+       meaning:"그리스도를.",note:""},
+      {gk:"ἐκ",translit:"ek",ko:"에크",gloss:"from",pos:"전치사",parsing:"소유격지배",lemma:"ἐκ",strongs:"G1537",
+       meaning:"~으로부터.",note:""},
+      {gk:"νεκρῶν",translit:"nekrōn",ko:"네크론",gloss:"the dead",pos:"형용사",parsing:"Genitive masculine plural",lemma:"νεκρός",strongs:"G3498",
+       meaning:"죽은 자들.",note:""},
+      {gk:"ζωοποιήσει",translit:"zōopoiēsei",ko:"조오포이에세이",gloss:"will give life",pos:"동사",parsing:"Future Active Indicative 3단수",lemma:"ζωοποιέω",strongs:"G2227",isKey:true,
+       meaning:"살리실 것이다. 미래 몸의 부활 약속.",note:"ζωή(생명)+ποιέω(만들다)."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"강조접속사",lemma:"καί",strongs:"G2532",
+       meaning:"또한.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"Accusative neuter plural",lemma:"ὁ",strongs:"G3588",
+       meaning:"그.",note:""},
+      {gk:"θνητὰ",translit:"thnēta",ko:"드네타",gloss:"mortal",pos:"형용사",parsing:"Accusative neuter plural",lemma:"θνητός",strongs:"G2349",isKey:true,
+       meaning:"죽을/필멸의. 아직 살아있지만 죽을 운명의 몸.",note:"θνήσκω(죽다)에서 파생."},
+      {gk:"σώματα",translit:"sōmata",ko:"소마타",gloss:"bodies",pos:"명사",parsing:"Accusative neuter plural",lemma:"σῶμα",strongs:"G4983",isKey:true,
+       meaning:"몸들. 물리적 몸의 부활.",note:""},
+      {gk:"ὑμῶν",translit:"hymōn",ko:"휘몬",gloss:"your",pos:"대명사",parsing:"Genitive 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희의.",note:""},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"through",pos:"전치사",parsing:"소유격지배",lemma:"διά",strongs:"G1223",
+       meaning:"~을 통하여.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"the",pos:"관사",parsing:"Genitive neuter singular",lemma:"ὁ",strongs:"G3588",
+       meaning:"~하시는.",note:""},
+      {gk:"ἐνοικοῦντος",translit:"enoikountos",ko:"에노이쿤토스",gloss:"indwelling",pos:"분사",parsing:"Present Active Participle Genitive neuter singular",lemma:"ἐνοικέω",strongs:"G1774",isKey:true,
+       meaning:"안에 거하시는. 지속적 내주 강조.",note:"ἐν(안에)+οἰκέω(거하다). v9의 οἰκεῖ보다 더 강조된 내주 표현."},
+      {gk:"αὐτοῦ",translit:"autou",ko:"아우투",gloss:"his",pos:"대명사",parsing:"Genitive masculine singular",lemma:"αὐτός",strongs:"G846",
+       meaning:"그의. 하나님의 영.",note:""},
+      {gk:"πνεύματος",translit:"pneumatos",ko:"프뉴마토스",gloss:"Spirit",pos:"명사",parsing:"Genitive neuter singular",lemma:"πνεῦμα",strongs:"G4151",isKey:true,
+       meaning:"영/성령.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",
+       meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"Dative 2복수",lemma:"σύ",strongs:"G4771",
+       meaning:"너희 안에.",note:""}
+    ]
+  }
+};
+
+const allWords = [];
+Object.keys(verses).forEach(k => {
+  verses[k].words.forEach((w, i) => {
+    allWords.push({ verseKey: k, wordIdx: i, ...w });
+  });
+});
+
+let timings = new Array(allWords.length).fill(null);
+if (AUTO_TIMINGS && AUTO_TIMINGS.length === allWords.length) {
+  timings = AUTO_TIMINGS.slice();
+}
+(function() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  try {
+    const parsed = JSON.parse(saved);
+    if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
+      timings = parsed;
+  } catch(e) {}
+})();
+
+let currentVerse = 'all';
+let currentWordIdx = 0;
+let autoSyncRAF = null;
+let isDictation = false;
+let isRecording = false;
+let recordingIdx = 0;
+const audio = document.getElementById('audio');
+
+// ============================================================
+// 렌더링
+// ============================================================
+function renderScripture() {
+  const card = document.getElementById('scriptureCard');
+  const keys = currentVerse === 'all' ? Object.keys(verses) : [String(currentVerse)];
+  card.innerHTML = keys.filter(k => verses[k]).map(k => {
+    const v = verses[k];
+    const wordsHtml = v.words.map((w, wi) => {
+      const globalIdx = allWords.findIndex(a => a.verseKey === k && a.wordIdx === wi);
+      const keyClass = w.isKey ? ' key-word' : '';
+      const hasTiming = timings[globalIdx] !== null && timings[globalIdx] !== undefined;
+      return `<div class="word${keyClass}${hasTiming?' has-timing':''}" data-global="${globalIdx}" onclick="clickWord(${globalIdx})">
+        <span class="greek">${w.gk}</span>
+        <span class="korean">${w.ko}</span>
+        <span class="gloss">${w.gloss}</span>
+        ${hasTiming?`<span class="timestamp">${timings[globalIdx].toFixed(2)}s</span>`:''}
+      </div>`;
+    }).join('');
+    return `<div class="verse-block" id="verse-block-${k}">
+      <div class="verse-label">— ${v.reference} —</div>
+      <div class="verse" id="verse-${k}">${wordsHtml}</div>
+      <div class="translation">
+        <div class="translation-ko">${v.translation}</div>
+        <div class="translation-nkjv"><span class="version-label">KJV</span>${v.kjv}</div>
+        <div class="translation-esv"><span class="version-label">ESV</span>${v.esv}</div>
+      </div>
+    </div>`;
+  }).join('');
+  if (isDictation) card.classList.add('dictation-mode');
+  else card.classList.remove('dictation-mode');
+  updateStats();
+  setActive(currentWordIdx);
+}
+
+function updateStats() {
+  const bar = document.getElementById('statsBar');
+  const keyCount = allWords.filter(w => w.isKey).length;
+  const timingsSet = timings.filter(t => t !== null).length;
+  bar.innerHTML = `<span>단어 <strong>${allWords.length}</strong></span><span>핵심 어휘 <strong>${keyCount}</strong></span><span>타이밍 <strong>${timingsSet}/${allWords.length}</strong></span>`;
+}
+
+function setActive(idx) {
+  currentWordIdx = idx;
+  document.querySelectorAll('.word').forEach(el => {
+    const i = parseInt(el.dataset.global);
+    el.classList.remove('active','read');
+    if (i < idx) el.classList.add('read');
+    if (i === idx) { el.classList.add('active'); el.scrollIntoView({behavior:'smooth',block:'center',inline:'center'}); }
+  });
+  const w = allWords[idx];
+  if (w) {
+    document.getElementById('learnStatus').textContent = `${w.gk}  ·  ${w.ko}  ·  ${w.gloss}`;
+    document.getElementById('autoWord').textContent = w.gk;
+    document.getElementById('autoKo').textContent = w.ko;
+    document.getElementById('autoGloss').textContent = w.gloss;
+    document.getElementById('progressBar').style.width = ((idx+1)/allWords.length*100)+'%';
+  }
+}
+
+function filterVerse(v) {
+  currentVerse = v;
+  document.querySelectorAll('.verse-nav button').forEach(b => b.classList.toggle('active', b.dataset.v == v));
+  renderScripture();
+}
+
+function clickWord(idx) {
+  currentWordIdx = idx;
+  setActive(idx);
+  if (timings[idx] !== null && audio.src) audio.currentTime = timings[idx];
+  const activeMode = document.querySelector('.mode-tab.active')?.dataset.mode;
+  if (activeMode === 'dictation') {
+    const el = document.querySelector(`[data-global="${idx}"]`);
+    if (el) el.classList.toggle('revealed');
+    return;
+  }
+  if (activeMode !== 'record') openModal(allWords[idx]);
+}
+
+// ============================================================
+// 모달
+// ============================================================
+function openModal(w) {
+  document.getElementById('modalGreek').textContent = w.gk;
+  document.getElementById('modalKorean').textContent = `${w.ko} — ${w.gloss}`;
+  document.getElementById('modalGrammar').innerHTML = `
+    <span class="label">품사</span><span class="value">${w.pos}</span>
+    <span class="label">파싱</span><span class="value">${w.parsing}</span>`;
+  document.getElementById('modalLexical').innerHTML = `
+    <span class="label">어근</span><span class="value">${w.lemma}</span>
+    <span class="label">Strong's</span><span class="value"><span class="strongs">${w.strongs}</span></span>`;
+  document.getElementById('modalMeaning').textContent = w.meaning;
+  const noteSection = document.getElementById('modalNoteSection');
+  if (w.note) { noteSection.style.display='block'; document.getElementById('modalNote').textContent = w.note; }
+  else noteSection.style.display='none';
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal() { document.getElementById('modal').classList.remove('show'); }
+document.getElementById('modalClose').onclick = closeModal;
+document.getElementById('modal').onclick = e => { if (e.target === e.currentTarget) closeModal(); };
+
+// ============================================================
+// 학습 모드
+// ============================================================
+let isWordByWord = false;
+let wordPlayTimer = null;
+
+function setWordByWord(on) {
+  isWordByWord = on;
+  document.getElementById('learnWordBtn').classList.toggle('primary', on);
+}
+
+function playCurrentWord() {
+  if (wordPlayTimer) { clearTimeout(wordPlayTimer); wordPlayTimer = null; }
+  const idx = currentWordIdx;
+  const startT = timings[idx];
+  if (startT === null || startT === undefined) {
+    if (idx < allWords.length-1) setActive(idx+1);
+    document.getElementById('learnStatus').textContent = '⚠ 타이밍 없음';
+    return;
+  }
+  audio.currentTime = startT;
+  audio.play().catch(()=>{});
+  let nextT = audio.duration;
+  for (let i = idx+1; i < allWords.length; i++) {
+    if (timings[i] !== null) { nextT = timings[i]; break; }
+  }
+  wordPlayTimer = setTimeout(() => {
+    audio.pause();
+    if (idx < allWords.length-1) setActive(idx+1);
+    else document.getElementById('learnStatus').textContent = '마지막 단어입니다';
+  }, (nextT-startT)*1000);
+}
+
+document.getElementById('learnPlayBtn').onclick = () => {
+  setWordByWord(false);
+  if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause();
+};
+document.getElementById('learnWordBtn').onclick = () => setWordByWord(!isWordByWord);
+document.getElementById('learnPrevBtn').onclick = () => { if (currentWordIdx > 0) setActive(currentWordIdx-1); };
+document.getElementById('learnNextBtn').onclick = () => { if (currentWordIdx < allWords.length-1) setActive(currentWordIdx+1); };
+document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=0; };
+
+// ============================================================
+// 오디오 동기화
+// ============================================================
+function syncAudio() {
+  const t = audio.currentTime, dur = audio.duration||1;
+  document.getElementById('progressBar').style.width = `${t/dur*100}%`;
+  let activeIdx = currentWordIdx;
+  for (let i = 0; i < allWords.length; i++) {
+    if (timings[i] !== null && t >= timings[i]) activeIdx = i;
+    else if (timings[i] !== null && t < timings[i]) break;
+  }
+  if (activeIdx !== currentWordIdx) setActive(activeIdx);
+  if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
+}
+function stopSync() { if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF = null; } }
+
+// ============================================================
+// 자동 모드
+// ============================================================
+document.getElementById('autoPlayBtn').onclick = () => {
+  if (!audio.src) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  setActive(0); audio.currentTime=0; audio.play().catch(()=>{});
+  document.getElementById('autoStatus').textContent='▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다';
+  syncAudio();
+};
+document.getElementById('autoStopBtn').onclick = () => { stopSync(); if (!audio.paused) audio.pause(); document.getElementById('autoStatus').textContent='정지됨'; };
+document.getElementById('sampleTimingBtn').onclick = () => {
+  if (!audio.duration) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  const step = audio.duration/allWords.length;
+  timings = allWords.map((_,i)=>i*step);
+  saveTimings(); renderScripture();
+  document.getElementById('autoStatus').textContent='샘플 타이밍 적용됨 — 재생해보세요';
+};
+
+// ============================================================
+// 타이밍 녹화
+// ============================================================
+const recordingDisplay = document.getElementById('recordingDisplay');
+const recordingWordEl = document.getElementById('recordingWord');
+const recordingProgressEl = document.getElementById('recordingProgress');
+const recordingHintEl = document.getElementById('recordingHint');
+const recordingMeterBar = document.getElementById('recordingMeterBar');
+const recordStatus = document.getElementById('recordStatus');
+
+function updateRecordingDisplay() {
+  if (recordingIdx < allWords.length) {
+    const cur = allWords[recordingIdx], nxt = allWords[recordingIdx+1];
+    recordingWordEl.textContent = cur.greek;
+    recordingProgressEl.textContent = `${recordingIdx+1} / ${allWords.length}`;
+    recordingHintEl.innerHTML = nxt ? `현재: <strong>${cur.ko}</strong> · 다음: <span class="next-word">${nxt.greek}</span>` : '<span style="color:var(--success)">마지막 단어!</span>';
+    recordingMeterBar.style.width = (recordingIdx/allWords.length*100)+'%';
+  } else {
+    recordingWordEl.textContent = '완료';
+    recordingHintEl.innerHTML = '<span style="color:var(--success)">모든 단어 녹화 완료!</span>';
+    recordingMeterBar.style.width = '100%';
+  }
+}
+
+document.getElementById('recordStartBtn').onclick = () => {
+  if (!audio.src && !audio.currentSrc) { recordStatus.textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
+  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=0; setActive(0); renderScripture(); }
+  isRecording=true; recordingDisplay.style.display='block'; updateRecordingDisplay();
+  audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
+};
+document.getElementById('recordPauseBtn').onclick = () => {
+  if (isRecording) { isRecording=false; audio.pause(); recordStatus.textContent=`❚❚ 일시정지 (${recordingIdx}/${allWords.length})`; }
+  else if (recordingIdx>0) { isRecording=true; audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 재개</strong>'; }
+};
+document.getElementById('recordUndoBtn').onclick = () => {
+  if (recordingIdx>0) { recordingIdx--; timings[recordingIdx]=null; setActive(recordingIdx); updateRecordingDisplay(); }
+};
+document.getElementById('recordStopBtn').onclick = () => { isRecording=false; audio.pause(); recordingDisplay.style.display='none'; recordStatus.textContent='중단됨'; };
+document.getElementById('recordSaveBtn').onclick = () => { saveTimings(); renderScripture(); recordStatus.textContent='저장되었습니다'; };
+document.getElementById('recordClearBtn').onclick = () => {
+  if (confirm('자동 타이밍으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
+    timings = (AUTO_TIMINGS && AUTO_TIMINGS.length===allWords.length) ? AUTO_TIMINGS.slice() : new Array(allWords.length).fill(null);
+    localStorage.removeItem(STORAGE_KEY); recordingIdx=0; recordingDisplay.style.display='none'; renderScripture(); recordStatus.textContent='초기화되었습니다';
+  }
+};
+
+function recordCurrentTime() {
+  if (!isRecording || recordingIdx >= allWords.length) return;
+  timings[recordingIdx] = audio.currentTime;
+  const wordEl = document.querySelector(`.word[data-global="${recordingIdx}"]`);
+  if (wordEl) {
+    wordEl.classList.add('has-timing');
+    const ex = wordEl.querySelector('.timestamp'), ts = audio.currentTime.toFixed(2)+'s';
+    if (ex) ex.textContent=ts; else wordEl.insertAdjacentHTML('beforeend',`<span class="timestamp">${ts}</span>`);
+  }
+  recordingIdx++;
+  setActive(recordingIdx < allWords.length ? recordingIdx : recordingIdx-1);
+  updateRecordingDisplay();
+  if (recordingIdx >= allWords.length) { isRecording=false; audio.pause(); recordStatus.innerHTML='<strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "저장" 버튼을 누르세요'; }
+}
+function saveTimings() { localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); }
+
+// ============================================================
+// 받아쓰기 모드
+// ============================================================
+document.getElementById('dictationToggleBtn').onclick = () => {
+  isDictation = !isDictation;
+  document.getElementById('dictationToggleBtn').textContent = isDictation ? '받아쓰기 종료' : '받아쓰기 시작';
+  document.getElementById('dictationToggleBtn').classList.toggle('primary', isDictation);
+  document.getElementById('dictationStatus').textContent = isDictation ? '단어가 가려졌습니다. 마우스를 올려 확인하세요.' : '받아쓰기 종료됨';
+  renderScripture();
+};
+document.getElementById('dictationRevealBtn').onclick = () => {
+  document.querySelectorAll('.word').forEach(el => el.classList.add('revealed'));
+};
+const dictStyle = document.createElement('style');
+dictStyle.textContent = `.dictation-mode .word .greek{filter:blur(8px);transition:filter .4s}.dictation-mode .word:hover .greek,.dictation-mode .word.revealed .greek,.dictation-mode .word.active .greek{filter:blur(0)}`;
+document.head.appendChild(dictStyle);
+
+// ============================================================
+// 모드 탭
+// ============================================================
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.mode-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.mode+'Panel').classList.add('active');
+    if (tab.dataset.mode !== 'auto') stopSync();
+    if (tab.dataset.mode !== 'record') isRecording = false;
+    if (tab.dataset.mode !== 'learn') { setWordByWord(false); if (wordPlayTimer) clearTimeout(wordPlayTimer); }
+  };
+});
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.speed);
+  };
+});
+
+// ============================================================
+// 파일 업로드
+// ============================================================
+document.getElementById('audioFile').addEventListener('change', e => {
+  const file = e.target.files[0]; if (!file) return;
+  audio.src = URL.createObjectURL(file);
+  const area = document.getElementById('uploadArea');
+  area.classList.add('has-file');
+  area.querySelector('.upload-text').innerHTML = `<span style="color:var(--gold)">✓ ${file.name}</span>`;
+  document.getElementById('fileInfo').textContent = '음성 파일 로드 완료';
+});
+
+// ============================================================
+// 키보드
+// ============================================================
+document.addEventListener('keydown', e => {
+  if (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if (document.getElementById('modal').classList.contains('show')) { if(e.key==='Escape') closeModal(); return; }
+  if (e.code==='Space') {
+    e.preventDefault();
+    if (isRecording) recordCurrentTime();
+    else if (isWordByWord) playCurrentWord();
+    else { if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause(); }
+    return;
+  }
+  if (e.code==='Backspace'&&isRecording) { e.preventDefault(); document.getElementById('recordUndoBtn').click(); return; }
+  switch(e.key) {
+    case 'ArrowRight': case 'l': if(currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); break;
+    case 'ArrowLeft': case 'h': if(currentWordIdx>0) setActive(currentWordIdx-1); break;
+    case 'r': case 'R': setActive(0); audio.currentTime=0; break;
+    case 'Escape': closeModal(); break;
+  }
+});
+
+// ============================================================
+// SRT 가져오기
+// ============================================================
+function parseSrtTimestamp(ts) { const [hms,ms]=ts.replace(',','.').split('.'); const [h,m,s]=hms.split(':').map(Number); return h*3600+m*60+s+parseFloat('0.'+(ms||'0')); }
+document.getElementById('srtFile').addEventListener('change', e => {
+  const file=e.target.files[0]; if(!file) return;
+  const statusEl=document.getElementById('srtStatus');
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const blocks=ev.target.result.trim().split(/\r?\n\s*\r?\n/);
+    const entries=[];
+    for (const block of blocks) { const lines=block.trim().split(/\r?\n/); const tl=lines.find(l=>l.includes('-->')); if(!tl) continue; const m=tl.match(/(\d{2}:\d{2}:\d{2}[,\.]\d{3})/); if(m) entries.push(parseSrtTimestamp(m[1])); }
+    if (entries.length===0) { statusEl.style.display='block'; statusEl.textContent='⚠ SRT 파싱 실패'; return; }
+    if (entries.length>=allWords.length) { for(let i=0;i<allWords.length;i++) timings[i]=entries[i]; }
+    else { timings=allWords.map((_,i)=>{ const r=i/Math.max(allWords.length-1,1),si=r*(entries.length-1),lo=Math.floor(si),hi=Math.min(lo+1,entries.length-1); return entries[lo]+(entries[hi]-entries[lo])*(si-lo); }); }
+    saveTimings(); renderScripture();
+    statusEl.style.display='block';
+    statusEl.innerHTML=`<strong style="color:var(--success)">SRT 가져오기 완료!</strong> ${entries.length}개 → ${allWords.length}개 매핑`;
+  };
+  reader.readAsText(file,'UTF-8');
+});
+
+// ============================================================
+// 자동 타이밍 감지 (WebAudio)
+// ============================================================
+document.getElementById('silenceThreshold').oninput = function() { document.getElementById('thresholdValue').textContent=this.value; };
+document.getElementById('autoDetectBtn').onclick = async () => {
+  const statusEl=document.getElementById('autoDetectStatus');
+  statusEl.style.display='block'; statusEl.textContent='오디오 분석 중... (수초 소요)';
+  const src=audio.src||audio.currentSrc;
+  if (!src) { statusEl.textContent='오디오 파일을 먼저 로드하세요'; return; }
+  try {
+    const response=await fetch(src); const arrayBuffer=await response.arrayBuffer();
+    const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const audioBuffer=await audioCtx.decodeAudioData(arrayBuffer);
+    const numCh=audioBuffer.numberOfChannels,len=audioBuffer.length,sampleRate=audioBuffer.sampleRate;
+    const mixed=new Float32Array(len);
+    for (let c=0;c<numCh;c++){const ch=audioBuffer.getChannelData(c);for(let i=0;i<len;i++) mixed[i]+=ch[i]/numCh;}
+    const frameSize=Math.floor(sampleRate*0.02);const frames=[];
+    for (let i=0;i<mixed.length;i+=frameSize){let sum=0;const end=Math.min(i+frameSize,mixed.length);for(let j=i;j<end;j++) sum+=mixed[j]*mixed[j];frames.push(Math.sqrt(sum/(end-i)));}
+    const sw=3;const smoothed=frames.map((_,i)=>{let s=0,cnt=0;for(let j=Math.max(0,i-sw);j<=Math.min(frames.length-1,i+sw);j++){s+=frames[j];cnt++;}return s/cnt;});
+    const maxRMS=Math.max(...smoothed);const pct=parseFloat(document.getElementById('silenceThreshold').value);const threshold=maxRMS*(pct/100);
+    const minGapFrames=Math.floor(0.15/0.02),minSilenceFrames=Math.floor(0.08/0.02);
+    const onsets=[];let inSpeech=false,silenceCount=0,lastOnsetFrame=-minGapFrames;
+    for (let i=0;i<smoothed.length;i++){
+      if(!inSpeech&&smoothed[i]>threshold&&(i-lastOnsetFrame)>=minGapFrames){onsets.push(i*frameSize/sampleRate);lastOnsetFrame=i;inSpeech=true;silenceCount=0;}
+      else if(inSpeech&&smoothed[i]<=threshold){silenceCount++;if(silenceCount>=minSilenceFrames){inSpeech=false;silenceCount=0;}}
+      else if(inSpeech) silenceCount=0;
+    }
+    audioCtx.close();
+    const ratio=onsets.length/allWords.length;
+    const qm=ratio>=0.85&&ratio<=1.2?`<span style="color:var(--success)">✓ 양호</span>`:ratio<0.5?`<span style="color:var(--warn)">⚠ 감도 높이세요</span>`:ratio>1.5?`<span style="color:var(--warn)">⚠ 감도 낮추세요</span>`:`<span style="color:var(--warn)">△ 수동 조정 권장</span>`;
+    statusEl.innerHTML=`감지 ${onsets.length}개 / 단어 ${allWords.length}개 · ${qm}`;
+    if (onsets.length===0){statusEl.textContent='감지 실패 — 감도를 높여보세요';return;}
+    if (onsets.length>=allWords.length){for(let i=0;i<allWords.length;i++) timings[i]=onsets[i];}
+    else{timings=allWords.map((_,i)=>{const r=i/Math.max(allWords.length-1,1),si=r*(onsets.length-1),lo=Math.floor(si),hi=Math.min(lo+1,onsets.length-1);return onsets[lo]+(onsets[hi]-onsets[lo])*(si-lo);});}
+    saveTimings();renderScripture();
+    statusEl.innerHTML+=`<br><strong style="color:var(--gold)">저장 완료!</strong> ⏺ 수동 녹화로 미세 조정 가능`;
+  } catch(err){statusEl.textContent=err.name==='TypeError'?'⚠ 로컬 파일 제한 — GitHub Pages에서 실행하세요':'오류: '+err.message;}
+};
+
+// ============================================================
+// 초기화
+// ============================================================
+renderScripture();
+</script>
+</body>
+</html>
