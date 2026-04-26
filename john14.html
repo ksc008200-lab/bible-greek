@@ -654,6 +654,7 @@ Object.keys(verses).forEach(k => {
   });
 });
 
+const STORAGE_KEY = 'john14-timings';
 let timings = new Array(allWords.length).fill(null);
 if (AUTO_TIMINGS && AUTO_TIMINGS.length === allWords.length) {
   timings = AUTO_TIMINGS.slice();

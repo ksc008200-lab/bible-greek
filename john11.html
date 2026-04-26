@@ -531,7 +531,8 @@ Object.keys(verses).forEach(k => {
   });
 });
 
-let timings = AUTO_TIMINGS.slice();
+const STORAGE_KEY = 'john11-timings';
+let timings = AUTO_TIMINGS ? AUTO_TIMINGS.slice() : new Array(allWords.length).fill(null);
 (function() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return;
