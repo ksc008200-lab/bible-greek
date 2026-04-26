@@ -502,11 +502,18 @@ Object.keys(verses).forEach(k => {
 });
 
 let timings = AUTO_TIMINGS.slice();
+const _AT_HASH = AUTO_TIMINGS ? AUTO_TIMINGS.length + '_' + AUTO_TIMINGS[0] : 'null';
 (function() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return;
   try {
     const parsed = JSON.parse(saved);
+    const savedHash = localStorage.getItem(STORAGE_KEY + '_hash');
+    if (savedHash !== _AT_HASH) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_KEY + '_hash');
+      return;
+    }
     if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
       timings = parsed;
   } catch(e) {}
@@ -739,7 +746,7 @@ document.getElementById('recordSaveBtn').onclick = () => { saveTimings(); render
 document.getElementById('recordClearBtn').onclick = () => {
   if (confirm('자동 타이밍으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
     timings = AUTO_TIMINGS.slice();
-    localStorage.removeItem(STORAGE_KEY); recordingIdx=0; recordingDisplay.style.display='none'; renderScripture(); recordStatus.textContent='초기화되었습니다';
+    localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + '_hash'); recordingIdx=0; recordingDisplay.style.display='none'; renderScripture(); recordStatus.textContent='초기화되었습니다';
   }
 };
 
@@ -757,7 +764,7 @@ function recordCurrentTime() {
   updateRecordingDisplay();
   if (recordingIdx >= allWords.length) { isRecording=false; audio.pause(); recordStatus.innerHTML='<strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "저장" 버튼을 누르세요'; }
 }
-function saveTimings() { localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); }
+function saveTimings() { localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); localStorage.setItem(STORAGE_KEY + '_hash', _AT_HASH); }
 
 // ============================================================
 // 받아쓰기 모드
