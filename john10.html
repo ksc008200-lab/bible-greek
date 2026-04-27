@@ -179,11 +179,11 @@
     <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
     <label class="upload-area has-file" id="uploadArea">
       <input type="file" id="audioFile" accept="audio/*">
-      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 04John10.mp3 자동 재생</div>
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 john10-2729.mp3 자동 재생</div>
       <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 (필수!)</div>
       <div class="file-info" id="fileInfo">🎯 53개 단어가 음성과 정밀 매칭됨</div>
     </label>
-    <audio id="audio" controls src="04John10.mp3" preload="auto"></audio>
+    <audio id="audio" controls src="john10-2729.mp3" preload="auto"></audio>
   </div>
 
   <!-- 절 선택 -->
@@ -492,10 +492,10 @@ const verses = {
 // ============================================================
 // 상태 & 타이밍
 // ============================================================
-const STORAGE_KEY = 'bible_john10_2729_v1';
+const STORAGE_KEY = 'bible_john10_2729_v2';
 
-// AUTO_TIMINGS — Whisper AI 기반 (04John10.mp3, 요10:27-29 구간 262~292초)
-const AUTO_TIMINGS = [262.72,262.9,263.52,263.84,264.36,265.2,265.5,265.78,266.68,267.5,268.22,268.68,269.34,270.32,271.14,271.72,272.16,272.54,272.86,273.06,273.34,273.6,274.74,275.04,275.26,275.42,276.12,276.38,276.82,277.0,277.94,278.22,278.4,279.2,279.68,280.06,282.02,283.0,283.72,283.92,284.2,285.0,285.52,286.52,286.74,287.22,287.8,288.68,289.82,289.98,291.28,291.7,292.12];
+// AUTO_TIMINGS — Whisper AI 기반 (john10-2729.mp3, 262초 offset 차감)
+const AUTO_TIMINGS = [0.72,0.9,1.52,1.84,2.36,3.2,3.5,3.78,4.68,5.5,6.22,6.68,7.34,8.32,9.14,9.72,10.16,10.54,10.86,11.06,11.34,11.6,12.74,13.04,13.26,13.42,14.12,14.38,14.82,15.0,15.94,16.22,16.4,17.2,17.68,18.06,20.02,21.0,21.72,21.92,22.2,23.0,23.52,24.52,24.74,25.22,25.8,26.68,27.82,27.98,29.28,29.7,30.12];
 
 const allWords = [];
 Object.keys(verses).forEach(k => {
@@ -666,12 +666,12 @@ function playCurrentWord() {
 
 document.getElementById('learnPlayBtn').onclick = () => {
   setWordByWord(false);
-  if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause();
+  if (audio.paused) { audio.play().catch(()=>{}); } else audio.pause();
 };
 document.getElementById('learnWordBtn').onclick = () => setWordByWord(!isWordByWord);
 document.getElementById('learnPrevBtn').onclick = () => { if (currentWordIdx > 0) setActive(currentWordIdx-1); };
 document.getElementById('learnNextBtn').onclick = () => { if (currentWordIdx < allWords.length-1) setActive(currentWordIdx+1); };
-document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=0; };
+document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=firstTiming(); };
 
 // ============================================================
 // 오디오 동기화
@@ -688,15 +688,19 @@ function syncAudio() {
   if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
 }
 function stopSync() { if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF = null; } }
+audio.addEventListener('play', () => { stopSync(); syncAudio(); });
+audio.addEventListener('pause', () => { stopSync(); });
+audio.addEventListener('ended', () => { stopSync(); });
 
 // ============================================================
 // 자동 모드
 // ============================================================
+function firstTiming() { return timings.find(t=>t!==null) ?? 0; }
 document.getElementById('autoPlayBtn').onclick = () => {
   if (!audio.src) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
-  setActive(0); audio.currentTime=0; audio.play().catch(()=>{});
+  setActive(0); audio.currentTime=firstTiming();
   document.getElementById('autoStatus').textContent='▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다';
-  syncAudio();
+  audio.play().catch(()=>{});
 };
 document.getElementById('autoStopBtn').onclick = () => { stopSync(); if (!audio.paused) audio.pause(); document.getElementById('autoStatus').textContent='정지됨'; };
 document.getElementById('sampleTimingBtn').onclick = () => {
@@ -733,7 +737,7 @@ function updateRecordingDisplay() {
 
 document.getElementById('recordStartBtn').onclick = () => {
   if (!audio.src && !audio.currentSrc) { recordStatus.textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
-  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=0; setActive(0); renderScripture(); }
+  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=firstTiming(); setActive(0); renderScripture(); }
   isRecording=true; recordingDisplay.style.display='block'; updateRecordingDisplay();
   audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
 };
@@ -837,7 +841,7 @@ document.addEventListener('keydown', e => {
   switch(e.key) {
     case 'ArrowRight': case 'l': if(currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); break;
     case 'ArrowLeft': case 'h': if(currentWordIdx>0) setActive(currentWordIdx-1); break;
-    case 'r': case 'R': setActive(0); audio.currentTime=0; break;
+    case 'r': case 'R': setActive(0); audio.currentTime=firstTiming(); break;
     case 'Escape': closeModal(); break;
   }
 });

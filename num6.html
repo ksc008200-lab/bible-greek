@@ -199,11 +199,11 @@
     <h3>♪ 히브리어 원어 낭독 · 타이밍 기록 지원</h3>
     <label class="upload-area has-file" id="uploadArea">
       <input type="file" id="audioFile" accept="audio/*">
-      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 t0406.mp3 자동 재생</div>
+      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 num6-blessing.mp3 자동 재생</div>
       <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 · "⏺ 타이밍" 탭에서 단어별 타이밍 녹화 가능</div>
       <div class="file-info" id="fileInfo">🎯 23개 단어가 음성과 매칭됨 (민6:24–27 구간)</div>
     </label>
-    <audio id="audio" controls src="t0406.mp3" preload="auto" style="width:100%;margin-top:10px;filter:sepia(.6) hue-rotate(340deg) saturate(.7)"></audio>
+    <audio id="audio" controls src="num6-blessing.mp3" preload="auto" style="width:100%;margin-top:10px;filter:sepia(.6) hue-rotate(340deg) saturate(.7)"></audio>
   </div>
 
   <div class="verse-nav" id="verseNav">
@@ -364,10 +364,10 @@
 </div>
 
 <script>
-const STORAGE_KEY = "num6_timings_v1";
+const STORAGE_KEY = "num6_timings_v3";
 
-// AUTO_TIMINGS — Whisper AI 기반 정밀 타이밍 (23단어, t0406.mp3 민6:24-27 구간)
-const AUTO_TIMINGS = [206.56,207.4,208.48,210.3,210.82,211.52,212.08,212.7,214.68,215.28,215.94,216.42,217.36,218.2,218.6,219.94,220.44,220.72,221.16,221.42,221.68,222.38,223.44];
+// AUTO_TIMINGS — Whisper AI 기반 (num6-blessing.mp3, 206초 offset 차감)
+const AUTO_TIMINGS = [0.56,1.4,2.48,4.3,4.82,5.52,6.08,6.7,8.68,9.28,9.94,10.42,11.36,12.2,12.6,13.94,14.44,14.72,15.16,15.42,15.68,16.38,17.44];
 let currentVerse = "all";
 let currentWordIdx = 0;
 
@@ -625,11 +625,11 @@ function playCurrentWord() {
   }, (nextT-startT)*1000);
 }
 
-document.getElementById("learnPlayBtn").onclick = () => { setWordByWord(false); if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause(); };
+document.getElementById("learnPlayBtn").onclick = () => { setWordByWord(false); if (audio.paused) { audio.play().catch(()=>{}); } else audio.pause(); };
 document.getElementById("learnWordBtn").onclick = () => setWordByWord(!isWordByWord);
 document.getElementById("learnPrevBtn").onclick = () => { if (currentWordIdx>0) setActive(currentWordIdx-1); };
 document.getElementById("learnNextBtn").onclick = () => { if (currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); };
-document.getElementById("learnResetBtn").onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=0; };
+document.getElementById("learnResetBtn").onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=firstTiming(); };
 
 function syncAudio() {
   const t = audio.currentTime, dur = audio.duration||1;
@@ -643,18 +643,22 @@ function syncAudio() {
   if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
 }
 function stopSync() { if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF=null; } }
+audio.addEventListener("play", () => { stopSync(); syncAudio(); });
+audio.addEventListener("pause", () => { stopSync(); });
+audio.addEventListener("ended", () => { stopSync(); });
 
+function firstTiming() { return timings.find(t=>t!==null) ?? 0; }
 function startAuto() {
   if (!timings.some(t=>t!==null)) { document.getElementById("autoStatus").textContent="⚠ 타이밍 없음 — '샘플 타이밍' 또는 '⏺ 타이밍' 탭에서 먼저 기록하세요"; return; }
-  audio.currentTime=0; audio.play().catch(()=>{});
+  audio.currentTime=firstTiming();
   document.getElementById("autoStatus").textContent="▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다";
-  syncAudio();
+  audio.play().catch(()=>{});
 }
 function stopAuto() { stopSync(); if (audio.src&&!audio.paused) audio.pause(); document.getElementById("autoStatus").textContent="정지됨"; }
 
 document.getElementById("autoPlayBtn").onclick = startAuto;
 document.getElementById("autoStopBtn").onclick = stopAuto;
-document.getElementById("autoResetBtn").onclick = () => { stopAuto(); setActive(0); audio.currentTime=0; document.getElementById("autoStatus").textContent="처음으로 돌아왔습니다"; };
+document.getElementById("autoResetBtn").onclick = () => { stopAuto(); setActive(0); audio.currentTime=firstTiming(); document.getElementById("autoStatus").textContent="처음으로 돌아왔습니다"; };
 document.getElementById("sampleTimingBtn").onclick = () => {
   if (!audio.duration) { document.getElementById("autoStatus").textContent="⚠ 음성 파일을 먼저 올려주세요"; return; }
   const step = audio.duration/allWords.length;
@@ -681,7 +685,7 @@ function updateRecordingDisplay() {
 
 document.getElementById("recordStartBtn").onclick = () => {
   if (!audio.src) { recordStatus.textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
-  if (!isRecording&&recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=0; setActive(0); renderScripture(); }
+  if (!isRecording&&recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=firstTiming(); setActive(0); renderScripture(); }
   isRecording=true; recordingDisplay.style.display='block'; updateRecordingDisplay();
   audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
 };
@@ -730,12 +734,12 @@ document.getElementById("audioFile").addEventListener("change", e => {
 document.addEventListener("keydown", e => {
   if (e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA") return;
   if (document.getElementById("modal").classList.contains("show")) { if(e.key==="Escape") closeModal(); return; }
-  if (e.code==="Space") { e.preventDefault(); if(isRecording) recordCurrentTime(); else if(isWordByWord) playCurrentWord(); else { if(audio.paused){audio.play().catch(()=>{});syncAudio();}else audio.pause(); } return; }
+  if (e.code==="Space") { e.preventDefault(); if(isRecording) recordCurrentTime(); else if(isWordByWord) playCurrentWord(); else { if(audio.paused){audio.play().catch(()=>{});}else audio.pause(); } return; }
   if (e.code==="Backspace"&&isRecording) { e.preventDefault(); document.getElementById("recordUndoBtn").click(); return; }
   switch(e.key) {
     case "ArrowRight":case "l": if(currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); break;
     case "ArrowLeft":case "h": if(currentWordIdx>0) setActive(currentWordIdx-1); break;
-    case "r":case "R": setActive(0); audio.currentTime=0; break;
+    case "r":case "R": setActive(0); audio.currentTime=firstTiming(); break;
     case "Escape": closeModal(); break;
   }
 });
