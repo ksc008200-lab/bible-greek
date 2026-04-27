@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ:1-11 — 로마서 8:1-11 · 성령 안의 삶</title>
+<title>ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ — 로마서 8장 · 1-11절 & 29-39절</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
@@ -169,17 +169,23 @@
 
   <header>
     <div class="subtitle">Πρὸς Ῥωμαίους · 로마서</div>
-    <h1>ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ:1–11</h1>
-    <div class="h1-ko">성령 안의 삶 · Life in the Spirit</div>
-    <div class="reference">로마서 8:1–11 · NA28 헬라어 원문 · 단어별 문법 분석</div>
+    <h1>ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ</h1>
+    <div class="h1-ko">성령 안의 삶 · 하나님의 사랑 · Life in the Spirit</div>
+    <div class="reference">로마서 8:1–11 &amp; 29–39 · NA28 헬라어 원문 · 단어별 문법 분석</div>
   </header>
+
+  <!-- 섹션 선택 -->
+  <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap">
+    <button class="section-btn active" data-sec="v1" onclick="switchSection('v1')" style="font-family:'Cormorant Garamond',serif;background:linear-gradient(180deg,rgba(200,154,154,.25),rgba(201,169,92,.08));border:1px solid var(--rose);color:var(--parchment);padding:10px 22px;font-size:14px;letter-spacing:2px;cursor:pointer;border-radius:2px">✝ 1–11절 · 성령 안의 삶</button>
+    <button class="section-btn" data-sec="v29" onclick="switchSection('v29')" style="font-family:'Cormorant Garamond',serif;background:rgba(0,0,0,.25);border:1px solid rgba(201,169,92,.2);color:var(--ink);padding:10px 22px;font-size:14px;letter-spacing:2px;cursor:pointer;border-radius:2px">♥ 29–39절 · 하나님의 사랑</button>
+  </div>
 
   <!-- 음성 패널 -->
   <div class="audio-panel">
-    <h3>♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
+    <h3 id="audioPanelTitle">♪ 원어민 헬라어 낭독 · Whisper AI 정밀 매칭</h3>
     <label class="upload-area has-file" id="uploadArea">
       <input type="file" id="audioFile" accept="audio/*">
-      <div class="upload-text" style="color:var(--success)">✓ 같은 폴더의 06Roma08.mp3 자동 재생</div>
+      <div class="upload-text" style="color:var(--success)" id="audioFileLabel">✓ 같은 폴더의 06Roma08.mp3 자동 재생</div>
       <div class="upload-hint">HTML 파일과 MP3를 <strong>같은 폴더에</strong> 두시면 됩니다 (필수!)</div>
       <div class="file-info" id="fileInfo"></div>
     </label>
@@ -357,7 +363,7 @@
         <span class="card-icon">&#128293;</span>
         <div class="card-title">로마서 8:1-11</div>
         <div class="card-subtitle">ΠΡΟΣ ΡΩΜΑΙΟΥΣ Ηʹ</div>
-        <div class="card-description">성령 안의 삶 · 헬라어 원어 분석</div>
+        <div class="card-description">성령 안의 삶 / 하나님의 사랑 · 1-11 &amp; 29-39절</div>
       </div>
       <a class="chapter-card" href="psalm23.html">
         <span class="card-icon">&#127807;</span>
@@ -409,14 +415,18 @@
 </div>
 
 <script>
-// AUTO_TIMINGS: Whisper AI 기반 (06Roma08.mp3, v1-11)
+// AUTO_TIMINGS_V1: Whisper AI 기반 (06Roma08.mp3, v1-11)
 // v1-v8: 2.88s-77.2s (Whisper 앵커 기반) | v9-v11: 77.44s-169.0s (보간)
-const AUTO_TIMINGS = [2.88,3.5,4.11,4.73,5.35,5.97,6.58,7.2,7.44,8.02,8.6,9.19,9.77,10.35,10.93,11.51,12.1,12.68,13.26,13.84,14.43,15.01,15.59,16.17,16.75,17.34,17.92,18.5,18.76,19.36,19.97,20.57,21.18,21.78,22.39,22.99,23.6,24.2,24.81,25.41,26.02,26.62,27.23,27.83,28.44,29.04,29.65,30.25,30.86,31.46,32.07,32.67,33.28,33.88,34.49,35.09,35.7,36.3,36.62,37.21,37.8,38.4,38.99,39.58,40.17,40.76,41.36,41.95,42.54,43.13,43.72,44.32,44.91,45.5,45.86,46.34,46.82,47.29,47.77,48.25,48.72,49.2,49.68,50.16,50.64,51.11,51.59,52.07,52.54,53.02,53.5,53.84,54.47,55.1,55.72,56.35,56.98,57.61,58.23,58.86,59.49,60.12,60.74,61.37,62.0,62.38,62.92,63.46,64.01,64.55,65.09,65.63,66.18,66.72,67.26,67.8,68.35,68.89,69.43,69.97,70.52,71.06,71.6,71.98,72.56,73.14,73.72,74.3,74.88,75.46,76.04,76.62,77.2,77.44,78.69,79.95,81.2,82.46,83.71,84.97,86.22,87.47,88.73,89.98,91.24,92.49,93.75,95.0,96.25,97.51,98.76,100.02,101.27,102.52,103.78,105.03,106.29,107.54,108.8,110.05,111.3,112.56,113.81,115.07,116.32,117.58,118.83,120.08,121.34,122.59,123.85,125.1,126.36,127.61,128.86,130.12,131.37,132.63,133.88,135.14,136.39,137.64,138.9,140.15,141.41,142.66,143.92,145.17,146.42,147.68,148.93,150.19,151.44,152.69,153.95,155.2,156.46,157.71,158.97,160.22,161.47,162.73,163.98,165.24,166.49,167.75,169.0];
-const STORAGE_KEY = 'rom8-timings';
+const AUTO_TIMINGS_V1 = [2.88,3.5,4.11,4.73,5.35,5.97,6.58,7.2,7.44,8.02,8.6,9.19,9.77,10.35,10.93,11.51,12.1,12.68,13.26,13.84,14.43,15.01,15.59,16.17,16.75,17.34,17.92,18.5,18.76,19.36,19.97,20.57,21.18,21.78,22.39,22.99,23.6,24.2,24.81,25.41,26.02,26.62,27.23,27.83,28.44,29.04,29.65,30.25,30.86,31.46,32.07,32.67,33.28,33.88,34.49,35.09,35.7,36.3,36.62,37.21,37.8,38.4,38.99,39.58,40.17,40.76,41.36,41.95,42.54,43.13,43.72,44.32,44.91,45.5,45.86,46.34,46.82,47.29,47.77,48.25,48.72,49.2,49.68,50.16,50.64,51.11,51.59,52.07,52.54,53.02,53.5,53.84,54.47,55.1,55.72,56.35,56.98,57.61,58.23,58.86,59.49,60.12,60.74,61.37,62.0,62.38,62.92,63.46,64.01,64.55,65.09,65.63,66.18,66.72,67.26,67.8,68.35,68.89,69.43,69.97,70.52,71.06,71.6,71.98,72.56,73.14,73.72,74.3,74.88,75.46,76.04,76.62,77.2,77.44,78.69,79.95,81.2,82.46,83.71,84.97,86.22,87.47,88.73,89.98,91.24,92.49,93.75,95.0,96.25,97.51,98.76,100.02,101.27,102.52,103.78,105.03,106.29,107.54,108.8,110.05,111.3,112.56,113.81,115.07,116.32,117.58,118.83,120.08,121.34,122.59,123.85,125.1,126.36,127.61,128.86,130.12,131.37,132.63,133.88,135.14,136.39,137.64,138.9,140.15,141.41,142.66,143.92,145.17,146.42,147.68,148.93,150.19,151.44,152.69,153.95,155.2,156.46,157.71,158.97,160.22,161.47,162.73,163.98,165.24,166.49,167.75,169.0];
+const STORAGE_KEY_V1 = 'rom8-v1-timings';
+const STORAGE_KEY_V29 = 'rom8-v29-timings';
+let STORAGE_KEY = STORAGE_KEY_V1;
+// AUTO_TIMINGS_V29: Whisper AI 기반 (roma08_v29-39.mp3 0s=298s of original)
+const AUTO_TIMINGS_V29 = [2.0,2.19,2.39,2.58,2.78,2.97,3.17,3.36,3.56,3.75,3.94,4.14,4.33,4.53,4.72,4.92,5.11,5.31,5.5,6.24,6.96,7.68,8.4,9.12,9.85,10.57,11.29,12.01,12.73,13.45,14.17,14.89,15.62,16.34,17.06,17.78,18.5,19.06,19.6,20.13,20.67,21.21,21.74,22.28,22.82,23.35,23.89,24.43,24.96,25.5,25.78,26.34,26.9,27.45,28.01,28.57,29.13,29.69,30.24,30.8,31.36,31.92,32.48,33.04,33.59,34.15,34.71,35.27,35.83,36.38,36.94,37.5,38.24,39.26,39.9,40.72,41.64,42.48,43.34,43.8,44.64,45.16,46.06,46.54,47.38,48.12,49.0,49.64,50.34,50.48,52.0,52.55,53.1,53.65,54.2,54.75,55.3,55.85,56.4,56.95,57.5,58.05,62.0,62.65,63.3,63.95,64.6,65.25,65.9,66.55,67.2,67.85,68.5,69.15,69.8,70.45,71.1,71.75,72.4,73.05,73.7,74.35,75.0,76.0,76.58,77.17,77.75,78.33,78.92,79.5,80.08,80.67,81.25,81.83,82.42,83.0,83.08,83.2,83.76,84.68,84.86,85.88,86.33,86.78,87.98,89.08,89.62,90.34,90.66,91.32,92.14,92.58,93.2,93.88,94.74,95.14,96.08,96.58,97.64,98.14,98.66,99.46,101.44,101.97,102.49,103.02,103.54,104.07,104.59,105.12,105.64,106.17,106.69,107.22,107.75,108.27,108.8,109.32,109.85,110.37,110.9,111.42,111.95,112.47,113.0];
 // ============================================================
 // 로마서 8:1-11 (NA28)  총 207 단어
 // ============================================================
-const verses = {
+const verses_v1 = {
   1:{
     reference:"로마서 8:1",
     gk:"Οὐδὲν ἄρα νῦν κατάκριμα τοῖς ἐν Χριστῷ Ἰησοῦ.",
@@ -928,51 +938,351 @@ const verses = {
   }
 };
 
-const allWords = [];
-Object.keys(verses).forEach(k => {
-  verses[k].words.forEach((w, i) => {
-    allWords.push({ verseKey: k, wordIdx: i, ...w });
-  });
-});
+// ============================================================
+// 로마서 8:29-39 (NA28)  총 185 단어
+// ============================================================
+const verses_v29 = {
+  29:{
+    reference:"로마서 8:29",
+    gk:"ὅτι οὓς προέγνω, καὶ προώρισεν συμμόρφους τῆς εἰκόνος τοῦ υἱοῦ αὐτοῦ, εἰς τὸ εἶναι αὐτὸν πρωτότοκον ἐν πολλοῖς ἀδελφοῖς·",
+    translation:"하나님이 미리 아신 자들을 또한 그 아들의 형상을 본받게 하기 위하여 미리 정하셨으니 이는 그로 많은 형제 중에서 맏아들이 되게 하려 하심이니라",
+    kjv:"For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren.",
+    esv:"For those whom he foreknew he also predestined to be conformed to the image of his Son, in order that he might be the firstborn among many brothers.",
+    words:[
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"for",pos:"접속사",parsing:"원인접속사",lemma:"ὅτι",strongs:"G3754",meaning:"왜냐하면. v28의 이유 설명.",note:""},
+      {gk:"οὓς",translit:"hous",ko:"후스",gloss:"whom",pos:"관계대명사",parsing:"Accusative masculine plural",lemma:"ὅς",strongs:"G3739",isKey:true,meaning:"~을(관계절). 하나님의 예지·예정의 대상.",note:"v29-30에서 반복되는 '황금사슬'의 연결고리."},
+      {gk:"προέγνω",translit:"proegnō",ko:"프로에그노",gloss:"foreknew",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"προγινώσκω",strongs:"G4267",isKey:true,meaning:"미리 알다. 단순한 예지가 아닌 언약적 관계의 선택.",note:"πρό(미리)+γινώσκω(알다). 관계적 지식."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"προώρισεν",translit:"proōrisen",ko:"프로오리센",gloss:"predestined",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"προορίζω",strongs:"G4309",isKey:true,meaning:"미리 정하다.",note:"πρό(미리)+ὁρίζω(경계짓다). 엡 1:5,11과 동일."},
+      {gk:"συμμόρφους",translit:"symmorphous",ko:"쉼모르푸스",gloss:"conformed",pos:"형용사",parsing:"Accusative masculine plural",lemma:"σύμμορφος",strongs:"G4832",isKey:true,meaning:"같은 형상이 되게. 그리스도의 형상을 닮음.",note:"σύν(함께)+μορφή(형상). 빌 3:21 연결."},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",meaning:"~의.",note:""},
+      {gk:"εἰκόνος",translit:"eikonos",ko:"에이코노스",gloss:"image",pos:"명사",parsing:"Genitive feminine singular",lemma:"εἰκών",strongs:"G1504",isKey:true,meaning:"형상. 그리스도는 하나님의 형상(고후 4:4, 골 1:15).",note:"창 1:26의 εἰκών과 연결."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"~의.",note:""},
+      {gk:"υἱοῦ",translit:"huiou",ko:"휘우",gloss:"Son",pos:"명사",parsing:"Genitive masculine singular",lemma:"υἱός",strongs:"G5207",isKey:true,meaning:"아들.",note:""},
+      {gk:"αὐτοῦ",translit:"autou",ko:"아우투",gloss:"his",pos:"대명사",parsing:"Genitive masculine singular",lemma:"αὐτός",strongs:"G846",meaning:"그의(하나님의).",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"so that",pos:"전치사",parsing:"대격지배",lemma:"εἰς",strongs:"G1519",meaning:"~하기 위하여.",note:""},
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"Accusative neuter singular",lemma:"ὁ",strongs:"G3588",meaning:"부정사구를 이끄는 관사.",note:""},
+      {gk:"εἶναι",translit:"einai",ko:"에이나이",gloss:"to be",pos:"동사",parsing:"Present Active Infinitive",lemma:"εἰμί",strongs:"G1510",meaning:"~이 되게 하려 함.",note:""},
+      {gk:"αὐτὸν",translit:"auton",ko:"아우톤",gloss:"him",pos:"대명사",parsing:"Accusative masculine singular",lemma:"αὐτός",strongs:"G846",meaning:"그(그리스도)를.",note:""},
+      {gk:"πρωτότοκον",translit:"prōtotokon",ko:"프로토토콘",gloss:"firstborn",pos:"형용사",parsing:"Accusative masculine singular",lemma:"πρωτότοκος",strongs:"G4416",isKey:true,meaning:"맏아들. 탁월함과 우선성.",note:"골 1:15,18 참조."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"among",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",meaning:"~중에.",note:""},
+      {gk:"πολλοῖς",translit:"pollois",ko:"폴로이스",gloss:"many",pos:"형용사",parsing:"Dative masculine plural",lemma:"πολύς",strongs:"G4183",meaning:"많은.",note:""},
+      {gk:"ἀδελφοῖς",translit:"adelphois",ko:"아델포이스",gloss:"brothers",pos:"명사",parsing:"Dative masculine plural",lemma:"ἀδελφός",strongs:"G80",isKey:true,meaning:"형제들. 신자들이 그리스도와 형제.",note:""}
+    ]
+  },
+  30:{
+    reference:"로마서 8:30",
+    gk:"οὓς δὲ προώρισεν, τούτους καὶ ἐκάλεσεν· καὶ οὓς ἐκάλεσεν, τούτους καὶ ἐδικαίωσεν· οὓς δὲ ἐδικαίωσεν, τούτους καὶ ἐδόξασεν.",
+    translation:"또 미리 정하신 그들을 또한 부르시고 부르신 그들을 또한 의롭다 하시고 의롭다 하신 그들을 또한 영화롭게 하셨느니라",
+    kjv:"Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.",
+    esv:"And those whom he predestined he also called, and those whom he called he also justified, and those whom he justified he also glorified.",
+    words:[
+      {gk:"οὓς",translit:"hous",ko:"후스",gloss:"whom",pos:"관계대명사",parsing:"Accusative masculine plural",lemma:"ὅς",strongs:"G3739",isKey:true,meaning:"~을. 황금사슬 연결.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"and",pos:"접속사",parsing:"연결접속사",lemma:"δέ",strongs:"G1161",meaning:"그리고.",note:""},
+      {gk:"προώρισεν",translit:"proōrisen",ko:"프로오리센",gloss:"predestined",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"προορίζω",strongs:"G4309",isKey:true,meaning:"미리 정하다.",note:""},
+      {gk:"τούτους",translit:"toutous",ko:"투투스",gloss:"these",pos:"대명사",parsing:"Accusative masculine plural",lemma:"οὗτος",strongs:"G3778",meaning:"그들을.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"ἐκάλεσεν",translit:"ekalesen",ko:"에칼레센",gloss:"called",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"καλέω",strongs:"G2564",isKey:true,meaning:"부르셨다. 효력있는 부름.",note:"단순 초청이 아닌 구원에 이르는 내적 부름(롬 1:7)."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"그리고.",note:""},
+      {gk:"οὓς",translit:"hous",ko:"후스",gloss:"whom",pos:"관계대명사",parsing:"Accusative masculine plural",lemma:"ὅς",strongs:"G3739",meaning:"~을.",note:""},
+      {gk:"ἐκάλεσεν",translit:"ekalesen",ko:"에칼레센",gloss:"called",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"καλέω",strongs:"G2564",meaning:"부르신.",note:""},
+      {gk:"τούτους",translit:"toutous",ko:"투투스",gloss:"these",pos:"대명사",parsing:"Accusative masculine plural",lemma:"οὗτος",strongs:"G3778",meaning:"그들을.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"ἐδικαίωσεν",translit:"edikaiōsen",ko:"에디카이오센",gloss:"justified",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"δικαιόω",strongs:"G1344",isKey:true,meaning:"의롭다 하셨다. 법정적 선언.",note:"롬 3:24-26의 핵심 동사. 과거 부정과거 = 단번에 완료된 칭의."},
+      {gk:"οὓς",translit:"hous",ko:"후스",gloss:"whom",pos:"관계대명사",parsing:"Accusative masculine plural",lemma:"ὅς",strongs:"G3739",meaning:"~을.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"and",pos:"접속사",parsing:"연결접속사",lemma:"δέ",strongs:"G1161",meaning:"그리고.",note:""},
+      {gk:"ἐδικαίωσεν",translit:"edikaiōsen",ko:"에디카이오센",gloss:"justified",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"δικαιόω",strongs:"G1344",meaning:"의롭다 하신.",note:""},
+      {gk:"τούτους",translit:"toutous",ko:"투투스",gloss:"these",pos:"대명사",parsing:"Accusative masculine plural",lemma:"οὗτος",strongs:"G3778",meaning:"그들을.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"ἐδόξασεν",translit:"edoxasen",ko:"에독사센",gloss:"glorified",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"δοξάζω",strongs:"G1392",isKey:true,meaning:"영화롭게 하셨다. 미래 영광이 이미 확정.",note:"예언적 과거(prophetic aorist). 하나님 관점에서 확정된 사실."}
+    ]
+  },
+  31:{
+    reference:"로마서 8:31",
+    gk:"Τί οὖν ἐροῦμεν πρὸς ταῦτα; εἰ ὁ θεὸς ὑπὲρ ἡμῶν, τίς καθ' ἡμῶν;",
+    translation:"그런즉 이 일에 대하여 우리가 무슨 말 하리요 만일 하나님이 우리를 위하시면 누가 우리를 대적하리요",
+    kjv:"What shall we then say to these things? If God be for us, who can be against us?",
+    esv:"What then shall we say to these things? If God is for us, who can be against us?",
+    words:[
+      {gk:"Τί",translit:"Ti",ko:"티",gloss:"what",pos:"의문대명사",parsing:"Accusative neuter singular",lemma:"τίς",strongs:"G5101",meaning:"무엇을.",note:""},
+      {gk:"οὖν",translit:"oun",ko:"운",gloss:"then",pos:"접속사",parsing:"추론불변사",lemma:"οὖν",strongs:"G3767",meaning:"그런즉. 앞 논증의 결론.",note:""},
+      {gk:"ἐροῦμεν",translit:"eroumen",ko:"에루멘",gloss:"shall we say",pos:"동사",parsing:"Future Active Indicative 1복수",lemma:"λέγω",strongs:"G3004",meaning:"우리가 말하겠는가.",note:"롬 4:1, 6:1과 같은 수사적 질문 패턴."},
+      {gk:"πρὸς",translit:"pros",ko:"프로스",gloss:"to",pos:"전치사",parsing:"대격지배",lemma:"πρός",strongs:"G4314",meaning:"~에 대하여.",note:""},
+      {gk:"ταῦτα",translit:"tauta",ko:"타우타",gloss:"these things",pos:"대명사",parsing:"Accusative neuter plural",lemma:"οὗτος",strongs:"G3778",meaning:"이것들(v28-30).",note:""},
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",isKey:true,meaning:"만약. 사실 조건문.",note:"1급 조건문 = '하나님이 우리 편이심'은 사실."},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"θεὸς",translit:"theos",ko:"데오스",gloss:"God",pos:"명사",parsing:"Nominative masculine singular",lemma:"θεός",strongs:"G2316",isKey:true,meaning:"하나님이.",note:""},
+      {gk:"ὑπὲρ",translit:"hyper",ko:"휘페르",gloss:"for",pos:"전치사",parsing:"소유격지배",lemma:"ὑπέρ",strongs:"G5228",isKey:true,meaning:"우리를 위하여/우리 편.",note:"v32,34와 반복."},
+      {gk:"ἡμῶν",translit:"hēmōn",ko:"헤몬",gloss:"us",pos:"대명사",parsing:"Genitive 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리.",note:""},
+      {gk:"τίς",translit:"tis",ko:"티스",gloss:"who",pos:"의문대명사",parsing:"Nominative masculine singular",lemma:"τίς",strongs:"G5101",isKey:true,meaning:"누가.",note:""},
+      {gk:"καθ'",translit:"kath'",ko:"카트",gloss:"against",pos:"전치사",parsing:"κατά+소유격",lemma:"κατά",strongs:"G2596",isKey:true,meaning:"~을 반대하여.",note:"법정 고소의 언어."},
+      {gk:"ἡμῶν",translit:"hēmōn",ko:"헤몬",gloss:"us",pos:"대명사",parsing:"Genitive 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리를.",note:""}
+    ]
+  },
+  32:{
+    reference:"로마서 8:32",
+    gk:"ὅς γε τοῦ ἰδίου υἱοῦ οὐκ ἐφείσατο, ἀλλὰ ὑπὲρ ἡμῶν πάντων παρέδωκεν αὐτόν, πῶς οὐχὶ καὶ σὺν αὐτῷ τὰ πάντα ἡμῖν χαρίσεται;",
+    translation:"자기 아들을 아끼지 아니하시고 우리 모든 사람을 위하여 내주신 이가 어찌 그 아들과 함께 모든 것을 우리에게 주시지 아니하겠느냐",
+    kjv:"He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?",
+    esv:"He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?",
+    words:[
+      {gk:"ὅς",translit:"hos",ko:"호스",gloss:"he who",pos:"관계대명사",parsing:"Nominative masculine singular",lemma:"ὅς",strongs:"G3739",meaning:"~하신 분이.",note:""},
+      {gk:"γε",translit:"ge",ko:"게",gloss:"indeed",pos:"불변사",parsing:"강조불변사",lemma:"γε",strongs:"G1065",meaning:"실로/심지어.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"ἰδίου",translit:"idiou",ko:"이디우",gloss:"own",pos:"형용사",parsing:"Genitive masculine singular",lemma:"ἴδιος",strongs:"G2398",isKey:true,meaning:"자기 자신의. 외아들의 독특한 관계.",note:"창 22:16의 이삭 사건과 평행."},
+      {gk:"υἱοῦ",translit:"huiou",ko:"휘우",gloss:"Son",pos:"명사",parsing:"Genitive masculine singular",lemma:"υἱός",strongs:"G5207",isKey:true,meaning:"아들.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정부사",lemma:"οὐ",strongs:"G3756",meaning:"~않으셨다.",note:""},
+      {gk:"ἐφείσατο",translit:"epheisato",ko:"에페이사토",gloss:"spared",pos:"동사",parsing:"Aorist Middle Indicative 3단수",lemma:"φείδομαι",strongs:"G5339",isKey:true,meaning:"아끼다. '아끼지 않으셨다'.",note:"창 22:12 LXX와 동일 동사. 이삭 희생의 성취."},
+      {gk:"ἀλλὰ",translit:"alla",ko:"알라",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"ἀλλά",strongs:"G235",meaning:"오히려.",note:""},
+      {gk:"ὑπὲρ",translit:"hyper",ko:"휘페르",gloss:"for",pos:"전치사",parsing:"소유격지배",lemma:"ὑπέρ",strongs:"G5228",isKey:true,meaning:"~을 위하여. 대속적 의미.",note:""},
+      {gk:"ἡμῶν",translit:"hēmōn",ko:"헤몬",gloss:"us",pos:"대명사",parsing:"Genitive 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리.",note:""},
+      {gk:"πάντων",translit:"pantōn",ko:"판톤",gloss:"all",pos:"형용사",parsing:"Genitive masculine plural",lemma:"πᾶς",strongs:"G3956",meaning:"모든 사람을.",note:""},
+      {gk:"παρέδωκεν",translit:"paredōken",ko:"파레도켄",gloss:"delivered up",pos:"동사",parsing:"Aorist Active Indicative 3단수",lemma:"παραδίδωμι",strongs:"G3860",isKey:true,meaning:"내어 주셨다. 수난 언어.",note:"요 3:16, 갈 2:20, 롬 4:25와 같은 동사."},
+      {gk:"αὐτόν",translit:"auton",ko:"아우톤",gloss:"him",pos:"대명사",parsing:"Accusative masculine singular",lemma:"αὐτός",strongs:"G846",meaning:"그(아들)를.",note:""},
+      {gk:"πῶς",translit:"pōs",ko:"포스",gloss:"how",pos:"부사",parsing:"의문부사",lemma:"πῶς",strongs:"G4459",meaning:"어찌.",note:""},
+      {gk:"οὐχὶ",translit:"ouchi",ko:"우키",gloss:"not",pos:"부사",parsing:"강조부정부사",lemma:"οὐχί",strongs:"G3780",meaning:"아니하겠느냐.",note:"수사적 질문 = '반드시 주신다'."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"첨가접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"σὺν",translit:"syn",ko:"쉰",gloss:"with",pos:"전치사",parsing:"여격지배",lemma:"σύν",strongs:"G4862",isKey:true,meaning:"함께. 그리스도와의 연합.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"him",pos:"대명사",parsing:"Dative masculine singular",lemma:"αὐτός",strongs:"G846",meaning:"그(그리스도)와 함께.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"Accusative neuter plural",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"πάντα",translit:"panta",ko:"판타",gloss:"all things",pos:"형용사",parsing:"Accusative neuter plural",lemma:"πᾶς",strongs:"G3956",isKey:true,meaning:"모든 것을.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"us",pos:"대명사",parsing:"Dative 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리에게.",note:""},
+      {gk:"χαρίσεται",translit:"charisetai",ko:"카리세타이",gloss:"will give",pos:"동사",parsing:"Future Middle Indicative 3단수",lemma:"χαρίζομαι",strongs:"G5483",isKey:true,meaning:"은혜로 주시다.",note:"χάρις(은혜)에서. 값없이 주시는 은혜의 선물."}
+    ]
+  },
+  33:{
+    reference:"로마서 8:33",
+    gk:"τίς ἐγκαλέσει κατὰ ἐκλεκτῶν θεοῦ; θεὸς ὁ δικαιῶν·",
+    translation:"누가 능히 하나님께서 택하신 자들을 고발하리요 의롭다 하신 이는 하나님이시니",
+    kjv:"Who shall lay any thing to the charge of God's elect? It is God that justifieth.",
+    esv:"Who shall bring any charge against God's elect? It is God who justifies.",
+    words:[
+      {gk:"τίς",translit:"tis",ko:"티스",gloss:"who",pos:"의문대명사",parsing:"Nominative masculine singular",lemma:"τίς",strongs:"G5101",meaning:"누가.",note:""},
+      {gk:"ἐγκαλέσει",translit:"enkalesei",ko:"엥칼레세이",gloss:"will bring charges",pos:"동사",parsing:"Future Active Indicative 3단수",lemma:"ἐγκαλέω",strongs:"G1458",isKey:true,meaning:"고발하다. 법정에서 기소하다.",note:"사탄이 고발자(계 12:10)이나 하나님이 의롭다 선언하심."},
+      {gk:"κατὰ",translit:"kata",ko:"카타",gloss:"against",pos:"전치사",parsing:"소유격지배",lemma:"κατά",strongs:"G2596",meaning:"~을 반대하여.",note:""},
+      {gk:"ἐκλεκτῶν",translit:"eklektōn",ko:"에클렉톤",gloss:"elect",pos:"형용사",parsing:"Genitive masculine plural",lemma:"ἐκλεκτός",strongs:"G1588",isKey:true,meaning:"선택받은 자들.",note:"ἐκλέγω(선택하다)에서."},
+      {gk:"θεοῦ",translit:"theou",ko:"데우",gloss:"of God",pos:"명사",parsing:"Genitive masculine singular",lemma:"θεός",strongs:"G2316",meaning:"하나님의.",note:""},
+      {gk:"θεὸς",translit:"theos",ko:"데오스",gloss:"God",pos:"명사",parsing:"Nominative masculine singular",lemma:"θεός",strongs:"G2316",isKey:true,meaning:"하나님이시니.",note:"재판장이 의롭다 선언하시면 어떤 고소도 무효."},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one who",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"~하시는 분.",note:""},
+      {gk:"δικαιῶν",translit:"dikaiōn",ko:"디카이온",gloss:"justifying",pos:"분사",parsing:"Present Active Participle Nominative masculine singular",lemma:"δικαιόω",strongs:"G1344",isKey:true,meaning:"의롭다 하시는. 현재 지속적 칭의.",note:"현재분사 = 계속적으로 의롭다 선언하심."}
+    ]
+  },
+  34:{
+    reference:"로마서 8:34",
+    gk:"τίς ὁ κατακρίνων; Χριστὸς Ἰησοῦς ὁ ἀποθανών, μᾶλλον δὲ ἐγερθείς, ὃς καί ἐστιν ἐν δεξιᾷ τοῦ θεοῦ, ὃς καὶ ἐντυγχάνει ὑπὲρ ἡμῶν.",
+    translation:"누가 정죄하리요 죽으실 뿐 아니라 다시 살아나신 이는 그리스도 예수시니 그는 하나님 우편에 계신 자요 우리를 위하여 간구하시는 자시니라",
+    kjv:"Who is he that condemneth? It is Christ that died, yea rather, that is risen again, who is even at the right hand of God, who also maketh intercession for us.",
+    esv:"Who is to condemn? Christ Jesus is the one who died—more than that, who was raised—who is at the right hand of God, who indeed is interceding for us.",
+    words:[
+      {gk:"τίς",translit:"tis",ko:"티스",gloss:"who",pos:"의문대명사",parsing:"Nominative masculine singular",lemma:"τίς",strongs:"G5101",meaning:"누가.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"~하는 자.",note:""},
+      {gk:"κατακρίνων",translit:"katakrinōn",ko:"카타크리논",gloss:"condemning",pos:"분사",parsing:"Present Active Participle Nominative masculine singular",lemma:"κατακρίνω",strongs:"G2632",isKey:true,meaning:"정죄하는 자. v1의 κατάκριμα와 연결.",note:"v1 '정죄함이 없다'의 선언이 여기서 재확인."},
+      {gk:"Χριστὸς",translit:"Christos",ko:"크리스토스",gloss:"Christ",pos:"고유명사",parsing:"Nominative masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,meaning:"그리스도.",note:""},
+      {gk:"Ἰησοῦς",translit:"Iēsous",ko:"예수스",gloss:"Jesus",pos:"고유명사",parsing:"Nominative masculine singular",lemma:"Ἰησοῦς",strongs:"G2424",isKey:true,meaning:"예수.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one who",pos:"관사",parsing:"Nominative masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"~하신 분.",note:""},
+      {gk:"ἀποθανών",translit:"apothanōn",ko:"아포다논",gloss:"who died",pos:"분사",parsing:"Aorist Active Participle Nominative masculine singular",lemma:"ἀποθνήσκω",strongs:"G599",isKey:true,meaning:"죽으신. 대속적 죽음.",note:"과거분사 = 역사적 사실."},
+      {gk:"μᾶλλον",translit:"mallon",ko:"말론",gloss:"more than that",pos:"부사",parsing:"비교부사",lemma:"μᾶλλον",strongs:"G3123",meaning:"더욱이.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"대조접속사",lemma:"δέ",strongs:"G1161",meaning:"오히려.",note:""},
+      {gk:"ἐγερθείς",translit:"egertheis",ko:"에게르데이스",gloss:"having been raised",pos:"분사",parsing:"Aorist Passive Participle Nominative masculine singular",lemma:"ἐγείρω",strongs:"G1453",isKey:true,meaning:"부활하신.",note:"수동태 = 하나님께서 일으키심. 롬 4:25 연결."},
+      {gk:"ὃς",translit:"hos",ko:"호스",gloss:"who",pos:"관계대명사",parsing:"Nominative masculine singular",lemma:"ὅς",strongs:"G3739",meaning:"그분은.",note:""},
+      {gk:"καί",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"첨가접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"ἐστιν",translit:"estin",ko:"에스틴",gloss:"is",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"εἰμί",strongs:"G1510",meaning:"계십니다(현재).",note:"현재 시제 = 지금도 계심."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"at",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",meaning:"~에.",note:""},
+      {gk:"δεξιᾷ",translit:"dexia",ko:"덱시아",gloss:"right hand",pos:"명사",parsing:"Dative feminine singular",lemma:"δεξιά",strongs:"G1188",isKey:true,meaning:"오른편. 최고 권위의 자리.",note:"시 110:1 인용. 그리스도의 높임과 통치."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"θεοῦ",translit:"theou",ko:"데우",gloss:"God",pos:"명사",parsing:"Genitive masculine singular",lemma:"θεός",strongs:"G2316",meaning:"하나님의.",note:""},
+      {gk:"ὃς",translit:"hos",ko:"호스",gloss:"who",pos:"관계대명사",parsing:"Nominative masculine singular",lemma:"ὅς",strongs:"G3739",meaning:"그분은.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",meaning:"또한.",note:""},
+      {gk:"ἐντυγχάνει",translit:"entygchanei",ko:"엔튕카네이",gloss:"intercedes",pos:"동사",parsing:"Present Active Indicative 3단수",lemma:"ἐντυγχάνω",strongs:"G1793",isKey:true,meaning:"중보하다. 지금도 간구하심.",note:"현재 시제 = 지속적 중보. 히 7:25, 롬 8:26의 성령 중보와 쌍."},
+      {gk:"ὑπὲρ",translit:"hyper",ko:"휘페르",gloss:"for",pos:"전치사",parsing:"소유격지배",lemma:"ὑπέρ",strongs:"G5228",meaning:"~을 위하여.",note:""},
+      {gk:"ἡμῶν",translit:"hēmōn",ko:"헤몬",gloss:"us",pos:"대명사",parsing:"Genitive 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리를.",note:""}
+    ]
+  },
+  35:{
+    reference:"로마서 8:35",
+    gk:"τίς ἡμᾶς χωρίσει ἀπὸ τῆς ἀγάπης τοῦ Χριστοῦ; θλῖψις ἢ στενοχωρία ἢ διωγμὸς ἢ λιμὸς ἢ γυμνότης ἢ κίνδυνος ἢ μάχαιρα;",
+    translation:"누가 우리를 그리스도의 사랑에서 끊으리요 환난이나 곤고나 박해나 기근이나 적신이나 위험이나 칼이랴",
+    kjv:"Who shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?",
+    esv:"Who shall separate us from the love of Christ? Shall tribulation, or distress, or persecution, or famine, or nakedness, or danger, or sword?",
+    words:[
+      {gk:"τίς",translit:"tis",ko:"티스",gloss:"who",pos:"의문대명사",parsing:"Nominative masculine singular",lemma:"τίς",strongs:"G5101",meaning:"누가.",note:""},
+      {gk:"ἡμᾶς",translit:"hēmas",ko:"헤마스",gloss:"us",pos:"대명사",parsing:"Accusative 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리를.",note:""},
+      {gk:"χωρίσει",translit:"chōrisei",ko:"코리세이",gloss:"will separate",pos:"동사",parsing:"Future Active Indicative 3단수",lemma:"χωρίζω",strongs:"G5563",isKey:true,meaning:"끊다/분리하다.",note:"v39에서 반복. 아무것도 끊을 수 없음이 결론."},
+      {gk:"ἀπὸ",translit:"apo",ko:"아포",gloss:"from",pos:"전치사",parsing:"소유격지배",lemma:"ἀπό",strongs:"G575",meaning:"~에서.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"ἀγάπης",translit:"agapēs",ko:"아가페스",gloss:"love",pos:"명사",parsing:"Genitive feminine singular",lemma:"ἀγάπη",strongs:"G26",isKey:true,meaning:"사랑. 그리스도의 사랑.",note:"조건 없는 언약적 사랑."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"Χριστοῦ",translit:"Christou",ko:"크리스투",gloss:"Christ",pos:"고유명사",parsing:"Genitive masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,meaning:"그리스도의.",note:""},
+      {gk:"θλῖψις",translit:"thlipsis",ko:"들립시스",gloss:"tribulation",pos:"명사",parsing:"Nominative feminine singular",lemma:"θλῖψις",strongs:"G2347",isKey:true,meaning:"환난.",note:"7가지 시련 목록 시작."},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"στενοχωρία",translit:"stenochōria",ko:"스테노코리아",gloss:"distress",pos:"명사",parsing:"Nominative feminine singular",lemma:"στενοχωρία",strongs:"G4730",isKey:true,meaning:"곤고. 탈출구 없는 고통.",note:"στενός(좁은)+χώρα(공간)."},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"διωγμὸς",translit:"diōgmos",ko:"디옥모스",gloss:"persecution",pos:"명사",parsing:"Nominative masculine singular",lemma:"διωγμός",strongs:"G1375",isKey:true,meaning:"박해.",note:""},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"λιμὸς",translit:"limos",ko:"리모스",gloss:"famine",pos:"명사",parsing:"Nominative masculine singular",lemma:"λιμός",strongs:"G3042",meaning:"기근.",note:""},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"γυμνότης",translit:"gymnotēs",ko:"귐노테스",gloss:"nakedness",pos:"명사",parsing:"Nominative feminine singular",lemma:"γυμνότης",strongs:"G1132",meaning:"적신(赤身)/가난.",note:""},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"κίνδυνος",translit:"kindynos",ko:"킨뒤노스",gloss:"danger",pos:"명사",parsing:"Nominative masculine singular",lemma:"κίνδυνος",strongs:"G2794",meaning:"위험.",note:""},
+      {gk:"ἢ",translit:"ē",ko:"에",gloss:"or",pos:"접속사",parsing:"선택접속사",lemma:"ἤ",strongs:"G2228",meaning:"~이나.",note:""},
+      {gk:"μάχαιρα",translit:"machaira",ko:"마카이라",gloss:"sword",pos:"명사",parsing:"Nominative feminine singular",lemma:"μάχαιρα",strongs:"G3162",isKey:true,meaning:"칼. 폭력적 죽음.",note:"v36의 '도살당함'과 연결."}
+    ]
+  },
+  36:{
+    reference:"로마서 8:36",
+    gk:"καθὼς γέγραπται ὅτι Ἕνεκεν σοῦ θανατούμεθα ὅλην τὴν ἡμέραν, ἐλογίσθημεν ὡς πρόβατα σφαγῆς.",
+    translation:"기록된 바 우리가 종일 주를 위하여 죽임을 당하게 되며 도살 당할 양 같이 여김을 받았나이다 함과 같으니라",
+    kjv:"As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter.",
+    esv:"As it is written, \"For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.\"",
+    words:[
+      {gk:"καθὼς",translit:"kathōs",ko:"카도스",gloss:"as",pos:"접속사",parsing:"비교접속사",lemma:"καθώς",strongs:"G2531",meaning:"기록된 것과 같이.",note:""},
+      {gk:"γέγραπται",translit:"gegraptai",ko:"게그랍타이",gloss:"it is written",pos:"동사",parsing:"Perfect Passive Indicative 3단수",lemma:"γράφω",strongs:"G1125",isKey:true,meaning:"기록되어 있다. 현재 유효한 성경의 권위.",note:"완료형 = 한번 기록된 것이 지금도 유효. 시 44:22(LXX) 인용."},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"인용접속사",lemma:"ὅτι",strongs:"G3754",meaning:"(인용).",note:""},
+      {gk:"Ἕνεκεν",translit:"Heneken",ko:"헤네켄",gloss:"for the sake of",pos:"전치사",parsing:"소유격지배",lemma:"ἕνεκεν",strongs:"G1752",isKey:true,meaning:"~을 위하여. 주를 위해 죽임 당함.",note:""},
+      {gk:"σοῦ",translit:"sou",ko:"수",gloss:"you",pos:"대명사",parsing:"Genitive 2단수",lemma:"σύ",strongs:"G4771",meaning:"주님 당신을 위하여.",note:"시 44:22 직접 인용."},
+      {gk:"θανατούμεθα",translit:"thanatoumetha",ko:"다나투메다",gloss:"we are being killed",pos:"동사",parsing:"Present Passive Indicative 1복수",lemma:"θανατόω",strongs:"G2289",isKey:true,meaning:"죽임을 당하다. 현재 지속적.",note:"현재형 = 계속적 박해 상황."},
+      {gk:"ὅλην",translit:"holēn",ko:"홀렌",gloss:"all",pos:"형용사",parsing:"Accusative feminine singular",lemma:"ὅλος",strongs:"G3650",meaning:"온.",note:""},
+      {gk:"τὴν",translit:"tēn",ko:"텐",gloss:"the",pos:"관사",parsing:"Accusative feminine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"ἡμέραν",translit:"hēmeran",ko:"헤메란",gloss:"day",pos:"명사",parsing:"Accusative feminine singular",lemma:"ἡμέρα",strongs:"G2250",meaning:"날. 종일.",note:""},
+      {gk:"ἐλογίσθημεν",translit:"elogisthēmen",ko:"엘로기스데멘",gloss:"we are reckoned",pos:"동사",parsing:"Aorist Passive Indicative 1복수",lemma:"λογίζομαι",strongs:"G3049",isKey:true,meaning:"여겨지다/간주되다.",note:"롬 4장의 핵심 동사(의로 여기심)와 같은 단어."},
+      {gk:"ὡς",translit:"hōs",ko:"호스",gloss:"as",pos:"접속사",parsing:"비교접속사",lemma:"ὡς",strongs:"G5613",meaning:"~처럼.",note:""},
+      {gk:"πρόβατα",translit:"probata",ko:"프로바타",gloss:"sheep",pos:"명사",parsing:"Nominative neuter plural",lemma:"πρόβατον",strongs:"G4263",isKey:true,meaning:"양. 도살될 양.",note:"그리스도도 양 같이 도살당하심(사 53:7)."},
+      {gk:"σφαγῆς",translit:"sphagēs",ko:"스파게스",gloss:"slaughter",pos:"명사",parsing:"Genitive feminine singular",lemma:"σφαγή",strongs:"G4967",isKey:true,meaning:"도살.",note:""}
+    ]
+  },
+  37:{
+    reference:"로마서 8:37",
+    gk:"ἀλλ' ἐν τούτοις πᾶσιν ὑπερνικῶμεν διὰ τοῦ ἀγαπήσαντος ἡμᾶς.",
+    translation:"그러나 이 모든 일에 우리를 사랑하시는 이로 말미암아 우리가 넉넉히 이기느니라",
+    kjv:"Nay, in all these things we are more than conquerors through him that loved us.",
+    esv:"No, in all these things we are more than conquerors through him who loved us.",
+    words:[
+      {gk:"ἀλλ'",translit:"all'",ko:"알르",gloss:"but",pos:"접속사",parsing:"강한대조접속사",lemma:"ἀλλά",strongs:"G235",isKey:true,meaning:"오히려! 강한 반전.",note:"v35-36의 고난 목록을 강하게 역전."},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",meaning:"~안에서.",note:""},
+      {gk:"τούτοις",translit:"toutois",ko:"투토이스",gloss:"these things",pos:"대명사",parsing:"Dative neuter plural",lemma:"οὗτος",strongs:"G3778",meaning:"이 모든 것들 안에서.",note:"v35의 7가지 시련."},
+      {gk:"πᾶσιν",translit:"pasin",ko:"파신",gloss:"all",pos:"형용사",parsing:"Dative neuter plural",lemma:"πᾶς",strongs:"G3956",meaning:"모든.",note:""},
+      {gk:"ὑπερνικῶμεν",translit:"hypernikōmen",ko:"휘페르니코멘",gloss:"we overwhelmingly conquer",pos:"동사",parsing:"Present Active Indicative 1복수",lemma:"ὑπερνικάω",strongs:"G5245",isKey:true,meaning:"넉넉히 이기다. '초과 정복'.",note:"NT 유일어. ὑπέρ(넘어서)+νικάω(이기다) = 압도적 승리자."},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"through",pos:"전치사",parsing:"소유격지배",lemma:"διά",strongs:"G1223",meaning:"~을 통하여.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"the one",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"~하신 분을 통하여.",note:""},
+      {gk:"ἀγαπήσαντος",translit:"agapēsantos",ko:"아가페산토스",gloss:"who loved",pos:"분사",parsing:"Aorist Active Participle Genitive masculine singular",lemma:"ἀγαπάω",strongs:"G25",isKey:true,meaning:"사랑하신 분. 십자가의 사랑.",note:"과거분사 = 십자가의 사랑이 근거. 갈 2:20 연결."},
+      {gk:"ἡμᾶς",translit:"hēmas",ko:"헤마스",gloss:"us",pos:"대명사",parsing:"Accusative 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리를.",note:""}
+    ]
+  },
+  38:{
+    reference:"로마서 8:38",
+    gk:"πέπεισμαι γὰρ ὅτι οὔτε θάνατος οὔτε ζωή, οὔτε ἄγγελοι οὔτε ἀρχαί, οὔτε ἐνεστῶτα οὔτε μέλλοντα οὔτε δυνάμεις,",
+    translation:"내가 확신하노니 사망이나 생명이나 천사들이나 권세자들이나 현재 일이나 장래 일이나 능력이나",
+    kjv:"For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,",
+    esv:"For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers,",
+    words:[
+      {gk:"πέπεισμαι",translit:"pepeismai",ko:"페페이스마이",gloss:"I am convinced",pos:"동사",parsing:"Perfect Passive Indicative 1단수",lemma:"πείθω",strongs:"G3982",isKey:true,meaning:"확신한다. 완전하고 확고한 확신.",note:"완료형 수동 = '설득되어 있는 상태'. 확정적 확신."},
+      {gk:"γὰρ",translit:"gar",ko:"가르",gloss:"for",pos:"접속사",parsing:"이유접속사",lemma:"γάρ",strongs:"G1063",meaning:"왜냐하면. v37의 근거.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"명사절접속사",lemma:"ὅτι",strongs:"G3754",meaning:"(내용).",note:""},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"neither",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",isKey:true,meaning:"~도 아니고.",note:"8번 반복. 어떤 것도 사랑에서 끊을 수 없음."},
+      {gk:"θάνατος",translit:"thanatos",ko:"다나토스",gloss:"death",pos:"명사",parsing:"Nominative masculine singular",lemma:"θάνατος",strongs:"G2288",isKey:true,meaning:"죽음.",note:"가장 두려운 것부터 시작."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"ζωή",translit:"zōē",ko:"조에",gloss:"life",pos:"명사",parsing:"Nominative feminine singular",lemma:"ζωή",strongs:"G2222",isKey:true,meaning:"생명. 삶의 유혹과 욕망도.",note:""},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"ἄγγελοι",translit:"angeloi",ko:"앙겔로이",gloss:"angels",pos:"명사",parsing:"Nominative masculine plural",lemma:"ἄγγελος",strongs:"G32",isKey:true,meaning:"천사들/영적 존재들.",note:"선한 천사든 타락한 천사든."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"ἀρχαί",translit:"archai",ko:"아르카이",gloss:"rulers",pos:"명사",parsing:"Nominative feminine plural",lemma:"ἀρχή",strongs:"G746",isKey:true,meaning:"권세들/통치자들. 영적 세력.",note:"엡 6:12 영적 세력들."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"ἐνεστῶτα",translit:"enestōta",ko:"에네스토타",gloss:"things present",pos:"분사",parsing:"Perfect Active Participle Nominative neuter plural",lemma:"ἐνίστημι",strongs:"G1764",isKey:true,meaning:"현재 일들.",note:"완료분사 = '이미 임해 있는 것들'."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"μέλλοντα",translit:"mellonta",ko:"멜론타",gloss:"things to come",pos:"분사",parsing:"Present Active Participle Nominative neuter plural",lemma:"μέλλω",strongs:"G3195",isKey:true,meaning:"장래 일들.",note:""},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"δυνάμεις",translit:"dynameis",ko:"뒤나메이스",gloss:"powers",pos:"명사",parsing:"Nominative feminine plural",lemma:"δύναμις",strongs:"G1411",isKey:true,meaning:"능력들/세력들.",note:"엡 1:21, 골 1:16 참조."}
+    ]
+  },
+  39:{
+    reference:"로마서 8:39",
+    gk:"οὔτε ὕψος οὔτε βάθος οὔτε τις κτίσις ἑτέρα δυνήσεται ἡμᾶς χωρίσαι ἀπὸ τῆς ἀγάπης τοῦ θεοῦ τῆς ἐν Χριστῷ Ἰησοῦ τῷ κυρίῳ ἡμῶν.",
+    translation:"높음이나 깊음이나 다른 어떤 피조물이라도 우리를 우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라",
+    kjv:"Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.",
+    esv:"nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.",
+    words:[
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"ὕψος",translit:"hypsos",ko:"휩소스",gloss:"height",pos:"명사",parsing:"Nominative neuter singular",lemma:"ὕψος",strongs:"G5311",isKey:true,meaning:"높음. 천체의 높이.",note:"천문학 용어. 어떤 우주적 높이도 끊을 수 없음."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"βάθος",translit:"bathos",ko:"바도스",gloss:"depth",pos:"명사",parsing:"Nominative neuter singular",lemma:"βάθος",strongs:"G899",isKey:true,meaning:"깊음. 지하/심연.",note:"ὕψος와 쌍. 우주의 모든 차원."},
+      {gk:"οὔτε",translit:"oute",ko:"우테",gloss:"nor",pos:"접속사",parsing:"부정연결접속사",lemma:"οὔτε",strongs:"G3777",meaning:"~도 아니고.",note:""},
+      {gk:"τις",translit:"tis",ko:"티스",gloss:"any",pos:"대명사",parsing:"Nominative feminine singular",lemma:"τις",strongs:"G5100",meaning:"어떤.",note:""},
+      {gk:"κτίσις",translit:"ktisis",ko:"크티시스",gloss:"creature",pos:"명사",parsing:"Nominative feminine singular",lemma:"κτίσις",strongs:"G2937",isKey:true,meaning:"피조물. 모든 피조 존재.",note:"v22의 κτίσις와 같은 단어. 우주 전체를 포괄하는 결론."},
+      {gk:"ἑτέρα",translit:"hetera",ko:"헤테라",gloss:"other",pos:"형용사",parsing:"Nominative feminine singular",lemma:"ἕτερος",strongs:"G2087",meaning:"다른 어떤.",note:""},
+      {gk:"δυνήσεται",translit:"dynēsetai",ko:"뒤네세타이",gloss:"will be able",pos:"동사",parsing:"Future Middle Indicative 3단수",lemma:"δύναμαι",strongs:"G1410",isKey:true,meaning:"~할 수 있다. 미래 시제 = 영원한 확신.",note:"아무 능력도 끊지 못함."},
+      {gk:"ἡμᾶς",translit:"hēmas",ko:"헤마스",gloss:"us",pos:"대명사",parsing:"Accusative 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리를.",note:""},
+      {gk:"χωρίσαι",translit:"chōrisai",ko:"코리사이",gloss:"to separate",pos:"동사",parsing:"Aorist Active Infinitive",lemma:"χωρίζω",strongs:"G5563",isKey:true,meaning:"끊다. v35와 같은 동사.",note:"v35의 질문에 대한 최종 답: 아무것도 끊을 수 없다."},
+      {gk:"ἀπὸ",translit:"apo",ko:"아포",gloss:"from",pos:"전치사",parsing:"소유격지배",lemma:"ἀπό",strongs:"G575",meaning:"~에서.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"ἀγάπης",translit:"agapēs",ko:"아가페스",gloss:"love",pos:"명사",parsing:"Genitive feminine singular",lemma:"ἀγάπη",strongs:"G26",isKey:true,meaning:"사랑.",note:"롬 8장의 마지막 핵심 단어. 8장 전체의 정점."},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of",pos:"관사",parsing:"Genitive masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"θεοῦ",translit:"theou",ko:"데우",gloss:"God",pos:"명사",parsing:"Genitive masculine singular",lemma:"θεός",strongs:"G2316",isKey:true,meaning:"하나님의 사랑.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"the",pos:"관사",parsing:"Genitive feminine singular",lemma:"ὁ",strongs:"G3588",meaning:"~안에 있는.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"여격지배",lemma:"ἐν",strongs:"G1722",meaning:"~안에.",note:""},
+      {gk:"Χριστῷ",translit:"Christō",ko:"크리스토",gloss:"Christ",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Χριστός",strongs:"G5547",isKey:true,meaning:"그리스도.",note:""},
+      {gk:"Ἰησοῦ",translit:"Iēsou",ko:"예수",gloss:"Jesus",pos:"고유명사",parsing:"Dative masculine singular",lemma:"Ἰησοῦς",strongs:"G2424",isKey:true,meaning:"예수.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"Dative masculine singular",lemma:"ὁ",strongs:"G3588",meaning:"그.",note:""},
+      {gk:"κυρίῳ",translit:"kyriō",ko:"퀴리오",gloss:"Lord",pos:"명사",parsing:"Dative masculine singular",lemma:"κύριος",strongs:"G2962",isKey:true,meaning:"주님.",note:"롬 8장의 마지막 칭호. 주 예수 안에 있는 하나님의 사랑이 결론."},
+      {gk:"ἡμῶν",translit:"hēmōn",ko:"헤몬",gloss:"our",pos:"대명사",parsing:"Genitive 1복수",lemma:"ἐγώ",strongs:"G1473",meaning:"우리의.",note:""}
+    ]
+  }
+};
 
-let timings = new Array(allWords.length).fill(null);
-if (AUTO_TIMINGS && AUTO_TIMINGS.length === allWords.length) {
-  timings = AUTO_TIMINGS.slice();
-}
-// AUTO_TIMINGS 버전 해시 — 변경 시 localStorage 자동 클리어
-const _AT_HASH = AUTO_TIMINGS ? AUTO_TIMINGS.length + '_' + AUTO_TIMINGS[0] : 'null';
-(function() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (!saved) return;
+// ============================================================
+// 섹션 데이터
+// ============================================================
+const SECTION_DATA = {
+  v1: { verses: verses_v1, autoTimings: AUTO_TIMINGS_V1, storageKey: STORAGE_KEY_V1, audioSrc: '06Roma08.mp3', label: '1–11절', verseKeys: [1,2,3,4,5,6,7,8,9,10,11] },
+  v29: { verses: verses_v29, autoTimings: AUTO_TIMINGS_V29, storageKey: STORAGE_KEY_V29, audioSrc: 'roma08_v29-39.mp3', label: '29–39절', verseKeys: [29,30,31,32,33,34,35,36,37,38,39] }
+};
+let currentSectionKey = 'v1';
+
+const allWords = [];
+let timings = [];
+
+function buildSection(key) {
+  currentSectionKey = key;
+  STORAGE_KEY = SECTION_DATA[key].storageKey;
+  allWords.length = 0;
+  const sect = SECTION_DATA[key];
+  Object.keys(sect.verses).forEach(k => {
+    sect.verses[k].words.forEach((w, i) => {
+      allWords.push({ verseKey: k, wordIdx: i, ...w });
+    });
+  });
+  const at = sect.autoTimings;
+  timings = (at && at.length === allWords.length) ? at.slice() : new Array(allWords.length).fill(null);
+  // load from localStorage
   try {
-    const parsed = JSON.parse(saved);
-    const savedHash = localStorage.getItem(STORAGE_KEY + '_hash');
-    if (savedHash !== _AT_HASH) {
-      localStorage.removeItem(STORAGE_KEY);
-      localStorage.removeItem(STORAGE_KEY + '_hash');
-      return;
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      const savedHash = localStorage.getItem(STORAGE_KEY + '_hash');
+      const atHash = at ? at.length + '_' + at[0] : 'null';
+      if (savedHash === atHash && Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
+        parsed.forEach((t, i) => { if (t !== null) timings[i] = t; });
     }
-    if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
-      timings = parsed;
   } catch(e) {}
-})();
+}
+
+buildSection('v1');
 
 let currentVerse = 'all';
+const audio = document.getElementById('audio');
 let currentWordIdx = 0;
 let autoSyncRAF = null;
 let isDictation = false;
 let isRecording = false;
 let recordingIdx = 0;
-const audio = document.getElementById('audio');
-
 // ============================================================
 // 렌더링
 // ============================================================
 function renderScripture() {
   const card = document.getElementById('scriptureCard');
-  const keys = currentVerse === 'all' ? Object.keys(verses) : [String(currentVerse)];
-  card.innerHTML = keys.filter(k => verses[k]).map(k => {
-    const v = verses[k];
+  const sectVerses = SECTION_DATA[currentSectionKey].verses;
+  const keys = currentVerse === 'all' ? Object.keys(sectVerses) : [String(currentVerse)];
+  card.innerHTML = keys.filter(k => sectVerses[k]).map(k => {
+    const v = sectVerses[k];
     const wordsHtml = v.words.map((w, wi) => {
       const globalIdx = allWords.findIndex(a => a.verseKey === k && a.wordIdx === wi);
       const keyClass = w.isKey ? ' key-word' : '';
@@ -1023,6 +1333,47 @@ function setActive(idx) {
     document.getElementById('autoGloss').textContent = w.gloss;
     document.getElementById('progressBar').style.width = ((idx+1)/allWords.length*100)+'%';
   }
+}
+
+
+// ============================================================
+// 섹션 전환 (1-11절 ↔ 29-39절)
+// ============================================================
+function switchSection(key) {
+  if (key === currentSectionKey) return;
+  stopSync();
+  audio.pause();
+  buildSection(key);
+  currentVerse = 'all';
+  currentWordIdx = 0;
+  recordingIdx = 0;
+  isRecording = false;
+
+  // Update audio source
+  audio.src = SECTION_DATA[key].audioSrc;
+  audio.load();
+
+  // Update audio label
+  const labels = { v1: '✓ 같은 폴더의 06Roma08.mp3 자동 재생', v29: '✓ 같은 폴더의 roma08_v29-39.mp3 자동 재생' };
+  document.getElementById('audioFileLabel').textContent = labels[key];
+
+  // Update section buttons
+  document.querySelectorAll('.section-btn').forEach(b => {
+    const isActive = b.dataset.sec === key;
+    b.classList.toggle('active', isActive);
+    b.style.background = isActive ? 'linear-gradient(180deg,rgba(200,154,154,.25),rgba(201,169,92,.08))' : 'rgba(0,0,0,.25)';
+    b.style.borderColor = isActive ? 'var(--rose)' : 'rgba(201,169,92,.2)';
+    b.style.color = isActive ? 'var(--parchment)' : 'var(--ink)';
+  });
+
+  // Update verse nav
+  const sect = SECTION_DATA[key];
+  const verseNav = document.getElementById('verseNav');
+  const allLabel = key === 'v1' ? '전체 (1–11)' : '전체 (29–39)';
+  verseNav.innerHTML = `<button onclick="filterVerse('all')" class="active" data-v="all">${allLabel}</button>` +
+    sect.verseKeys.map(k => `<button onclick="filterVerse(${k})" data-v="${k}">${k}절</button>`).join('');
+
+  renderScripture();
 }
 
 function filterVerse(v) {
@@ -1187,7 +1538,7 @@ document.getElementById('recordStopBtn').onclick = () => { isRecording=false; au
 document.getElementById('recordSaveBtn').onclick = () => { saveTimings(); renderScripture(); recordStatus.textContent='저장되었습니다'; };
 document.getElementById('recordClearBtn').onclick = () => {
   if (confirm('자동 타이밍으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
-    timings = (AUTO_TIMINGS && AUTO_TIMINGS.length===allWords.length) ? AUTO_TIMINGS.slice() : new Array(allWords.length).fill(null);
+    const _at = SECTION_DATA[currentSectionKey].autoTimings; timings = (_at && _at.length===allWords.length) ? _at.slice() : new Array(allWords.length).fill(null);
     localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + '_hash'); recordingIdx=0; recordingDisplay.style.display='none'; renderScripture(); recordStatus.textContent='초기화되었습니다';
   }
 };
@@ -1206,7 +1557,7 @@ function recordCurrentTime() {
   updateRecordingDisplay();
   if (recordingIdx >= allWords.length) { isRecording=false; audio.pause(); recordStatus.innerHTML='<strong style="color:var(--success)">모든 타이밍 기록 완료!</strong> "저장" 버튼을 누르세요'; }
 }
-function saveTimings() { localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); localStorage.setItem(STORAGE_KEY + '_hash', _AT_HASH); }
+function saveTimings() { const at=SECTION_DATA[currentSectionKey].autoTimings; const h=at?at.length+'_'+at[0]:'null'; localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); localStorage.setItem(STORAGE_KEY+'_hash', h); }
 
 // ============================================================
 // 받아쓰기 모드
