@@ -1101,12 +1101,12 @@ function playCurrentWord() {
 
 document.getElementById('learnPlayBtn').onclick = () => {
   setWordByWord(false);
-  if (audio.paused) { audio.play().catch(()=>{}); syncAudio(); } else audio.pause();
+  if (audio.paused) { audio.play().catch(()=>{}); } else audio.pause();
 };
 document.getElementById('learnWordBtn').onclick = () => setWordByWord(!isWordByWord);
 document.getElementById('learnPrevBtn').onclick = () => { if (currentWordIdx > 0) setActive(currentWordIdx-1); };
 document.getElementById('learnNextBtn').onclick = () => { if (currentWordIdx < allWords.length-1) setActive(currentWordIdx+1); };
-document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=0; };
+document.getElementById('learnResetBtn').onclick = () => { setWordByWord(false); setActive(0); audio.currentTime=firstTiming(); };
 
 // ============================================================
 // 오디오 동기화
@@ -1123,15 +1123,19 @@ function syncAudio() {
   if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
 }
 function stopSync() { if (autoSyncRAF) { cancelAnimationFrame(autoSyncRAF); autoSyncRAF = null; } }
+function firstTiming() { return timings.find(t=>t!==null) ?? 0; }
+audio.addEventListener('play', () => { stopSync(); syncAudio(); });
+audio.addEventListener('pause', () => { stopSync(); });
+audio.addEventListener('ended', () => { stopSync(); });
 
 // ============================================================
 // 자동 모드
 // ============================================================
 document.getElementById('autoPlayBtn').onclick = () => {
   if (!audio.src) { document.getElementById('autoStatus').textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
-  setActive(0); audio.currentTime=0; audio.play().catch(()=>{});
+  setActive(0); audio.currentTime=firstTiming();
   document.getElementById('autoStatus').textContent='▶ 재생 중 — 음성에 맞춰 단어가 강조됩니다';
-  syncAudio();
+  audio.play().catch(()=>{});
 };
 document.getElementById('autoStopBtn').onclick = () => { stopSync(); if (!audio.paused) audio.pause(); document.getElementById('autoStatus').textContent='정지됨'; };
 document.getElementById('sampleTimingBtn').onclick = () => {
@@ -1168,7 +1172,7 @@ function updateRecordingDisplay() {
 
 document.getElementById('recordStartBtn').onclick = () => {
   if (!audio.src && !audio.currentSrc) { recordStatus.textContent='⚠ 음성 파일을 먼저 올려주세요'; return; }
-  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=0; setActive(0); renderScripture(); }
+  if (!isRecording && recordingIdx===0) { timings=new Array(allWords.length).fill(null); audio.currentTime=firstTiming(); setActive(0); renderScripture(); }
   isRecording=true; recordingDisplay.style.display='block'; updateRecordingDisplay();
   audio.play().catch(()=>{}); recordStatus.innerHTML='🔴 <strong>녹화 중</strong> — 단어 들릴 때 <kbd>Space</kbd> 누르세요';
 };
@@ -1272,7 +1276,7 @@ document.addEventListener('keydown', e => {
   switch(e.key) {
     case 'ArrowRight': case 'l': if(currentWordIdx<allWords.length-1) setActive(currentWordIdx+1); break;
     case 'ArrowLeft': case 'h': if(currentWordIdx>0) setActive(currentWordIdx-1); break;
-    case 'r': case 'R': setActive(0); audio.currentTime=0; break;
+    case 'r': case 'R': setActive(0); audio.currentTime=firstTiming(); break;
     case 'Escape': closeModal(); break;
   }
 });
