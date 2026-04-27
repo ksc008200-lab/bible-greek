@@ -1697,23 +1697,23 @@ verseOrder.forEach(vNum => {
 const AUTO_TIMINGS = [2.26, 2.945, 3.629, 4.314, 4.999, 5.684, 6.368, 7.053, 7.738, 8.422, 9.107, 9.792, 10.476, 11.161, 11.846, 12.531, 13.215, 13.9, 14.494, 15.089, 15.683, 16.277, 16.871, 17.466, 18.06, 18.85, 19.64, 20.43, 21.22, 22.01, 22.8, 23.59, 24.38, 25.17, 25.96, 26.75, 27.54, 28.302, 29.063, 29.825, 30.587, 31.348, 32.11, 32.872, 33.633, 34.395, 35.157, 35.918, 36.68, 37.371, 38.062, 38.752, 39.443, 40.134, 40.825, 41.515, 42.206, 42.897, 43.588, 44.278, 44.969, 45.66, 46.482, 47.305, 48.127, 48.95, 49.773, 50.595, 51.418, 52.24, 53.136, 54.031, 54.927, 55.823, 56.719, 57.614, 58.51, 59.406, 60.301, 61.197, 62.093, 62.989, 63.884, 64.78, 65.471, 66.162, 66.853, 67.544, 68.235, 68.925, 69.616, 70.307, 70.998, 71.689, 72.38, 73.288, 74.195, 75.103, 76.011, 76.918, 77.826, 78.734, 79.642, 80.549, 81.457, 82.365, 83.272, 84.18, 84.904, 85.628, 86.351, 87.075, 87.799, 88.523, 89.246, 89.97, 90.694, 91.418, 92.141, 92.865, 93.589, 94.312, 95.036, 95.76, 96.568, 97.376, 98.184, 98.992, 99.8, 100.608, 101.416, 102.224, 103.032, 103.84, 104.633, 105.426, 106.219, 107.013, 107.806, 108.599, 109.392, 110.185, 110.978, 111.771, 112.564, 113.358, 114.151, 114.944, 115.737, 116.53, 117.367, 118.204, 119.041, 119.877, 120.714, 121.551, 122.388, 123.225, 124.062, 124.899, 125.736, 126.572, 127.409, 128.246, 129.083, 129.92, 130.833, 131.745, 132.658, 133.57, 134.483, 135.396, 136.308, 137.221, 138.133, 139.046, 139.959, 140.871, 141.784, 142.697, 143.609, 144.522, 145.434, 146.347, 147.26, 148.172, 149.085, 149.997, 150.91, 151.755, 152.601, 153.446, 154.292, 155.137, 155.983, 156.828, 157.674, 158.519, 159.365, 160.21, 161.055, 161.901, 162.746, 163.592, 164.437, 165.283, 166.128, 166.974, 167.819, 168.665, 169.51, 170.343, 171.175, 172.007, 172.84, 173.672, 174.505, 175.338, 176.17, 177.002, 177.835, 178.667, 179.5, 180.319, 181.139, 181.958, 182.777, 183.597, 184.416, 185.235, 186.055, 186.874, 187.693, 188.513, 189.332, 190.151, 190.971, 191.79, 192.819, 193.849, 194.878, 195.907, 196.937, 197.966, 198.995, 200.025, 201.054, 202.083, 203.113, 204.142, 205.171, 206.201];  // Whisper AI 정밀 매칭 v3 (14-18절 수동 앵커 매핑)
 const STORAGE_KEY = 'bible_john_1_18_timings_v4';  // 252단어 v3
 let timings = AUTO_TIMINGS.slice();  // Whisper AI 기반 정밀 타이밍 (기본값)
-const saved = localStorage.getItem(STORAGE_KEY);
-if (saved) {
+// AUTO_TIMINGS 버전 해시 — 변경 시 localStorage 자동 클리어
+const _AT_HASH = AUTO_TIMINGS ? AUTO_TIMINGS.length + '_' + AUTO_TIMINGS[0] : 'null';
+(function() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
   try {
     const parsed = JSON.parse(saved);
-    // 유효성 검사: 배열이고, 길이 맞고, 유효한 값이 하나라도 있을 때만 사용
-    if (Array.isArray(parsed) && 
-        parsed.length === allWords.length && 
-        parsed.some(t => typeof t === 'number' && t >= 0)) {
-      timings = parsed;
-    } else {
-      // 유효하지 않으면 저장소 정리
+    const savedHash = localStorage.getItem(STORAGE_KEY + '_hash');
+    if (savedHash !== _AT_HASH) {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_KEY + '_hash');
+      return;
     }
-  } catch(e) {
-    localStorage.removeItem(STORAGE_KEY);
-  }
-}
+    if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
+      timings = parsed;
+  } catch(e) {}
+})();
 
 let currentIdx = 0;
 let currentMode = 'learn';
@@ -2138,7 +2138,7 @@ document.getElementById('recordSaveBtn').addEventListener('click', () => {
 document.getElementById('recordClearBtn').addEventListener('click', () => {
   if (confirm('자동 타이밍(Whisper AI 기반)으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
     timings = AUTO_TIMINGS.slice();
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + '_hash');
     recordingIdx = 0;
     if (recordingDisplay) recordingDisplay.style.display = 'none';
     renderScripture();
@@ -2147,7 +2147,7 @@ document.getElementById('recordClearBtn').addEventListener('click', () => {
 });
 
 function saveTimings() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(timings));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); localStorage.setItem(STORAGE_KEY + '_hash', _AT_HASH);
 }
 
 // ============================================

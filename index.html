@@ -1583,23 +1583,23 @@ verseOrder.forEach(vNum => {
 const AUTO_TIMINGS = [3.71, 4.347, 4.985, 5.622, 6.259, 6.897, 7.534, 8.172, 8.809, 9.446, 10.084, 10.721, 11.358, 11.996, 12.633, 13.271, 13.908, 14.545, 15.183, 15.82, 16.404, 16.989, 17.573, 18.157, 18.741, 19.326, 19.91, 20.494, 21.079, 21.663, 22.247, 22.831, 23.416, 24.0, 24.584, 25.169, 25.753, 26.337, 26.921, 27.506, 28.09, 28.674, 29.259, 29.843, 30.427, 31.011, 31.596, 32.18, 32.793, 33.406, 34.019, 34.632, 35.245, 35.858, 36.471, 37.084, 37.697, 38.31, 38.923, 39.536, 40.149, 40.762, 41.375, 41.988, 42.601, 43.214, 43.827, 44.44, 45.204, 45.969, 46.733, 47.497, 48.262, 49.026, 49.791, 50.555, 51.319, 52.084, 52.848, 53.612, 54.377, 55.141, 55.905, 56.67, 57.434, 58.199, 58.963, 59.727, 60.492, 61.256, 62.02, 62.785, 63.549, 64.313, 65.078, 65.842, 66.607, 67.371, 68.135, 68.9, 69.664, 70.428, 71.193, 71.957, 72.721, 73.486, 74.25, 75.015, 75.779, 76.543, 77.308, 78.072, 78.836, 79.601, 80.365, 81.129, 81.894, 82.658, 83.423, 84.187, 84.951, 85.716, 86.48, 87.562, 88.645, 89.728, 90.81, 91.892, 92.975, 94.058, 95.14, 96.061, 96.983, 97.904, 98.826, 99.747, 100.668, 101.59, 102.511, 103.433, 104.041, 104.65, 105.259, 105.868, 106.477, 107.085, 107.694, 108.303, 108.912, 109.521, 110.129, 110.738, 111.347, 111.956, 112.565, 113.174, 113.782, 114.391, 115.0, 115.76, 116.52, 117.28, 118.04, 118.8, 119.56, 120.32, 121.08, 121.84, 122.6, 123.36, 124.12, 124.88, 125.64, 126.4, 127.16, 127.92, 128.68, 129.44, 130.2, 130.96, 131.72, 132.34, 132.961, 133.581, 134.201, 134.821, 135.442, 136.062, 136.682, 137.303, 137.923, 138.543, 139.163, 139.784];
 const STORAGE_KEY = 'bible_1cor_13_full_timings_v3'; // v2: 1절 시작 시점 보정 (3.71s)
 let timings = AUTO_TIMINGS.slice();  // Whisper AI 기반 정밀 타이밍 (기본값)
-const saved = localStorage.getItem(STORAGE_KEY);
-if (saved) {
+// AUTO_TIMINGS 버전 해시 — 변경 시 localStorage 자동 클리어
+const _AT_HASH = AUTO_TIMINGS ? AUTO_TIMINGS.length + '_' + AUTO_TIMINGS[0] : 'null';
+(function() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
   try {
     const parsed = JSON.parse(saved);
-    // 유효성 검사: 배열이고, 길이 맞고, 유효한 값이 하나라도 있을 때만 사용
-    if (Array.isArray(parsed) && 
-        parsed.length === allWords.length && 
-        parsed.some(t => typeof t === 'number' && t >= 0)) {
-      timings = parsed;
-    } else {
-      // 유효하지 않으면 저장소 정리
+    const savedHash = localStorage.getItem(STORAGE_KEY + '_hash');
+    if (savedHash !== _AT_HASH) {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_KEY + '_hash');
+      return;
     }
-  } catch(e) {
-    localStorage.removeItem(STORAGE_KEY);
-  }
-}
+    if (Array.isArray(parsed) && parsed.length === allWords.length && parsed.some(t => typeof t === 'number' && t >= 0))
+      timings = parsed;
+  } catch(e) {}
+})();
 
 let currentIdx = 0;
 let currentMode = 'learn';
@@ -2024,7 +2024,7 @@ document.getElementById('recordSaveBtn').addEventListener('click', () => {
 document.getElementById('recordClearBtn').addEventListener('click', () => {
   if (confirm('자동 타이밍(Whisper AI 기반)으로 되돌릴까요?\n직접 녹화한 타이밍은 모두 삭제됩니다.')) {
     timings = AUTO_TIMINGS.slice();
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + '_hash');
     recordingIdx = 0;
     if (recordingDisplay) recordingDisplay.style.display = 'none';
     renderScripture();
@@ -2033,7 +2033,7 @@ document.getElementById('recordClearBtn').addEventListener('click', () => {
 });
 
 function saveTimings() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(timings));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(timings)); localStorage.setItem(STORAGE_KEY + '_hash', _AT_HASH);
 }
 
 // ============================================
