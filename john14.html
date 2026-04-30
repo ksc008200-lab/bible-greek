@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΔ:23-27 — 요한복음 14:23-27 · 평화의 약속</title>
+<title>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΔʹ:1-27 — 요한복음 14:1-27 · 길과 진리와 생명</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
@@ -169,9 +169,9 @@
 
   <header>
     <div class="subtitle">Κατὰ Ἰωάννην · 요한복음</div>
-    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΑ:27–29</h1>
-    <div class="h1-ko">나의 양은 내 음성을 들으며</div>
-    <div class="reference">요한복음 14:23–27 · NA28 헬라어 원문 · 단어별 문법 분석</div>
+    <h1>ΚΑΤΑ ΙΩΑΝΝΗΝ ΙΔʹ:1–27</h1>
+    <div class="h1-ko">길이요 진리요 생명이니</div>
+    <div class="reference">요한복음 14:1–27 · NA28 헬라어 원문 · 단어별 문법 분석</div>
   </header>
 
   <!-- 음성 패널 -->
@@ -187,11 +187,35 @@
   </div>
 
   <!-- 절 선택 -->
-  <div class="verse-nav" id="verseNav">
-    <button onclick="filterVerse('all')" class="active" data-v="all">전체 (27–29)</button>
+    <div class="verse-nav" id="verseNav">
+    <button onclick="filterVerse('all')" class="active" data-v="all">전체</button>
+    <button onclick="filterVerse(1)" data-v="1">1절</button>
+    <button onclick="filterVerse(2)" data-v="2">2절</button>
+    <button onclick="filterVerse(3)" data-v="3">3절</button>
+    <button onclick="filterVerse(4)" data-v="4">4절</button>
+    <button onclick="filterVerse(5)" data-v="5">5절</button>
+    <button onclick="filterVerse(6)" data-v="6">6절</button>
+    <button onclick="filterVerse(7)" data-v="7">7절</button>
+    <button onclick="filterVerse(8)" data-v="8">8절</button>
+    <button onclick="filterVerse(9)" data-v="9">9절</button>
+    <button onclick="filterVerse(10)" data-v="10">10절</button>
+    <button onclick="filterVerse(11)" data-v="11">11절</button>
+    <button onclick="filterVerse(12)" data-v="12">12절</button>
+    <button onclick="filterVerse(13)" data-v="13">13절</button>
+    <button onclick="filterVerse(14)" data-v="14">14절</button>
+    <button onclick="filterVerse(15)" data-v="15">15절</button>
+    <button onclick="filterVerse(16)" data-v="16">16절</button>
+    <button onclick="filterVerse(17)" data-v="17">17절</button>
+    <button onclick="filterVerse(18)" data-v="18">18절</button>
+    <button onclick="filterVerse(19)" data-v="19">19절</button>
+    <button onclick="filterVerse(20)" data-v="20">20절</button>
+    <button onclick="filterVerse(21)" data-v="21">21절</button>
+    <button onclick="filterVerse(22)" data-v="22">22절</button>
+    <button onclick="filterVerse(23)" data-v="23">23절</button>
+    <button onclick="filterVerse(24)" data-v="24">24절</button>
+    <button onclick="filterVerse(25)" data-v="25">25절</button>
+    <button onclick="filterVerse(26)" data-v="26">26절</button>
     <button onclick="filterVerse(27)" data-v="27">27절</button>
-    <button onclick="filterVerse(28)" data-v="28">28절</button>
-    <button onclick="filterVerse(29)" data-v="29">29절</button>
   </div>
 
   <!-- 통계 -->
@@ -392,11 +416,565 @@
 // AUTO_TIMINGS: Whisper AI 기반 단어별 타이밍 (04John14.mp3, v23-27)
 // v23(28): 229.24s-248.42s | v24(22): 248.96s-257.10s | v25(6): 258.30s-261.40s
 // v26(27): 262.40s-272.80s | v27(23): 272.80s-302.00s
-const AUTO_TIMINGS = [229.24,229.95,230.66,231.37,232.08,232.79,233.5,234.21,234.92,235.63,236.34,237.05,237.76,238.47,239.19,239.9,240.61,241.32,242.03,242.74,243.45,244.16,244.87,245.58,246.29,247.0,247.71,248.42,248.96,249.35,249.74,250.12,250.51,250.9,251.29,251.67,252.06,252.45,252.84,253.22,253.61,254.0,254.39,254.77,255.16,255.55,255.94,256.32,256.71,257.1,258.3,258.92,259.54,260.16,260.78,261.4,262.4,262.8,263.2,263.6,264.0,264.4,264.8,265.2,265.6,266.0,266.4,266.8,267.2,267.6,268.0,268.4,268.8,269.2,269.6,270.0,270.4,270.8,271.2,271.6,272.0,272.4,272.8,272.8,274.13,275.45,276.78,278.11,279.44,280.76,282.09,283.42,284.75,286.07,287.4,288.73,290.05,291.38,292.71,294.04,295.36,296.69,298.02,299.35,300.67,302.0];
+const AUTO_TIMINGS = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,229.24,229.95,230.66,231.37,232.08,232.79,233.5,234.21,234.92,235.63,236.34,237.05,237.76,238.47,239.19,239.9,240.61,241.32,242.03,242.74,243.45,244.16,244.87,245.58,246.29,247.0,247.71,248.42,248.96,249.35,249.74,250.12,250.51,250.9,251.29,251.67,252.06,252.45,252.84,253.22,253.61,254.0,254.39,254.77,255.16,255.55,255.94,256.32,256.71,257.1,258.3,258.92,259.54,260.16,260.78,261.4,262.4,262.8,263.2,263.6,264.0,264.4,264.8,265.2,265.6,266.0,266.4,266.8,267.2,267.6,268.0,268.4,268.8,269.2,269.6,270.0,270.4,270.8,271.2,271.6,272.0,272.4,272.8,272.8,274.13,275.45,276.78,278.11,279.44,280.76,282.09,283.42,284.75,286.07,287.4,288.73,290.05,291.38,292.71,294.04,295.36,296.69,298.02,299.35,300.67,302.0];
 // ============================================================
-// 요한복음 14:23–27 (NA28 기반)
+// 요한복음 14:1–27 (NA28 기반)
 // ============================================================
 const verses = {
+  1:{
+    reference:"요한복음 14:1",
+    gk:"Μὴ ταρασσέσθω ὑμῶν ἡ καρδία· πιστεύετε εἰς τὸν θεόν, καὶ εἰς ἐμὲ πιστεύετε.",
+    translation:"너희는 마음에 근심하지 말라 하나님을 믿으니 또 나를 믿으라",
+    words:[
+      {gk:"Μὴ",translit:"Mē",ko:"메",gloss:"do not",pos:"부사",parsing:"금지 불변화사",lemma:"μή",strongs:"G3361",isKey:false,meaning:"~하지 말라. 명령의 금지.",note:""},
+      {gk:"ταρασσέσθω",translit:"tarassesthō",ko:"타라세스토",gloss:"let be troubled",pos:"동사",parsing:"Present Passive Imperative 3sg",lemma:"ταράσσω",strongs:"G5015",isKey:true,meaning:"근심하지 말라. 수동태 명령—마음이 흔들리게 내버려 두지 말라. 고별 강화(14-17장)의 첫 말씀.",note:"3인칭 명령법: '마음이 흔들리게 하지 말라'는 강한 위로의 명령."},
+      {gk:"ὑμῶν",translit:"hymōn",ko:"휘몬",gloss:"your",pos:"대명사",parsing:"속격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희의.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"καρδία",translit:"kardia",ko:"카르디아",gloss:"heart",pos:"명사",parsing:"주격 여성 단수",lemma:"καρδία",strongs:"G2588",isKey:true,meaning:"마음. 영어 cardiac(심장)의 어원. 헬라어에서 카르디아는 감정·의지·지성의 중심.",note:""},
+      {gk:"πιστεύετε",translit:"pisteuete",ko:"피스튜에테",gloss:"believe",pos:"동사",parsing:"Present Active Imperative/Indicative 2pl",lemma:"πιστεύω",strongs:"G4100",isKey:true,meaning:"믿으라 / 믿고 있다. 형태가 명령법·직설법 모두 가능—'하나님을 믿고 있으니, 나도 믿으라'는 해석이 가장 자연스러움.",note:"헬라어 중의성이 신학적으로 풍부한 의미를 만들어냄."},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"in",pos:"전치사",parsing:"전치사+대격",lemma:"εἰς",strongs:"G1519",isKey:false,meaning:"~을 향한, ~에 대한.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"θεόν",translit:"theon",ko:"테온",gloss:"God",pos:"명사",parsing:"대격 남성 단수",lemma:"θεός",strongs:"G2316",isKey:false,meaning:"하나님을.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"또한.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"in",pos:"전치사",parsing:"전치사+대격",lemma:"εἰς",strongs:"G1519",isKey:false,meaning:"~을 향한.",note:""},
+      {gk:"ἐμὲ",translit:"eme",ko:"에메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"πιστεύετε",translit:"pisteuete",ko:"피스튜에테",gloss:"believe",pos:"동사",parsing:"Present Active Imperative 2pl",lemma:"πιστεύω",strongs:"G4100",isKey:false,meaning:"믿으라.",note:""}
+    ]
+  },
+  2:{
+    reference:"요한복음 14:2",
+    gk:"ἐν τῇ οἰκίᾳ τοῦ πατρός μου μοναὶ πολλαί εἰσιν· εἰ δὲ μή, εἶπον ἂν ὑμῖν ὅτι πορεύομαι ἑτοιμάσαι τόπον ὑμῖν·",
+    translation:"내 아버지 집에 거할 곳이 많도다 그렇지 않으면 너희에게 일렀으리라 내가 너희를 위하여 거처를 예비하러 가노니",
+    words:[
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"τῇ",translit:"tē",ko:"테",gloss:"the",pos:"관사",parsing:"여격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"οἰκίᾳ",translit:"oikia",ko:"오이키아",gloss:"house",pos:"명사",parsing:"여격 여성 단수",lemma:"οἰκία",strongs:"G3614",isKey:true,meaning:"집에. 아버지의 집—천국, 하나님의 처소.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"of the",pos:"관사",parsing:"속격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατρός",translit:"patros",ko:"파트로스",gloss:"Father",pos:"명사",parsing:"속격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지의.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"μοναὶ",translit:"monai",ko:"모나이",gloss:"dwelling places",pos:"명사",parsing:"주격 여성 복수",lemma:"μονή",strongs:"G3438",isKey:true,meaning:"거처들. μένω(거하다)에서 파생. '처소' '방' '거할 곳'. 영구적 거주 공간.",note:"v23에서 동일 어근 '거처를 삼다(μονήν ποιεῖν)' 재등장."},
+      {gk:"πολλαί",translit:"pollai",ko:"폴라이",gloss:"many",pos:"형용사",parsing:"주격 여성 복수",lemma:"πολύς",strongs:"G4183",isKey:false,meaning:"많은.",note:""},
+      {gk:"εἰσιν",translit:"eisin",ko:"에이신",gloss:"are",pos:"동사",parsing:"Present Active Indicative 3pl",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"있다.",note:""},
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"",isKey:false,meaning:"만약.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"and",pos:"접속사",parsing:"후치접속사",lemma:"δέ",strongs:"G1161",isKey:false,meaning:"그런데.",note:""},
+      {gk:"μή",translit:"mē",ko:"메",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"μή",strongs:"G3361",isKey:false,meaning:"아니라면. εἰ δὲ μή = 그렇지 않으면.",note:""},
+      {gk:"εἶπον",translit:"eipon",ko:"에이폰",gloss:"I would have told",pos:"동사",parsing:"Aorist Active Indicative 1sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"내가 말했을 것이다. 반사실적 조건.",note:""},
+      {gk:"ἂν",translit:"an",ko:"안",gloss:"would",pos:"불변화사",parsing:"조건 불변화사",lemma:"ἄν",strongs:"G302",isKey:false,meaning:"~했을 것이다.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"to you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희에게.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"~라고.",note:""},
+      {gk:"πορεύομαι",translit:"poreuomai",ko:"포류오마이",gloss:"I am going",pos:"동사",parsing:"Present Middle Indicative 1sg",lemma:"πορεύομαι",strongs:"G4198",isKey:false,meaning:"가다.",note:""},
+      {gk:"ἑτοιμάσαι",translit:"hetoimasai",ko:"헤토이마사이",gloss:"to prepare",pos:"동사",parsing:"Aorist Active Infinitive",lemma:"ἑτοιμάζω",strongs:"G2090",isKey:true,meaning:"예비하려고. 목적의 부정사. 예수님의 죽음과 부활이 처소 예비의 수단.",note:""},
+      {gk:"τόπον",translit:"topon",ko:"토폰",gloss:"a place",pos:"명사",parsing:"대격 남성 단수",lemma:"τόπος",strongs:"G5117",isKey:false,meaning:"장소를, 처소를.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"for you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희를 위해.",note:""}
+    ]
+  },
+  3:{
+    reference:"요한복음 14:3",
+    gk:"καὶ ἐὰν πορευθῶ καὶ ἑτοιμάσω τόπον ὑμῖν, πάλιν ἔρχομαι καὶ παραλήμψομαι ὑμᾶς πρὸς ἐμαυτόν, ἵνα ὅπου εἰμὶ ἐγὼ καὶ ὑμεῖς ἦτε.",
+    translation:"가서 너희를 위하여 거처를 예비하면 내가 다시 와서 너희를 내게로 영접하여 나 있는 곳에 너희도 있게 하리라",
+    words:[
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἐὰν",translit:"ean",ko:"에안",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"ἐάν",strongs:"G1437",isKey:false,meaning:"만약 ~하면.",note:""},
+      {gk:"πορευθῶ",translit:"poreuthō",ko:"포류토",gloss:"I go",pos:"동사",parsing:"Aorist Passive Subjunctive 1sg",lemma:"πορεύομαι",strongs:"G4198",isKey:false,meaning:"내가 가서.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἑτοιμάσω",translit:"hetoimasō",ko:"헤토이마소",gloss:"prepare",pos:"동사",parsing:"Aorist Active Subjunctive 1sg",lemma:"ἑτοιμάζω",strongs:"G2090",isKey:false,meaning:"예비하면.",note:""},
+      {gk:"τόπον",translit:"topon",ko:"토폰",gloss:"a place",pos:"명사",parsing:"대격 남성 단수",lemma:"τόπος",strongs:"G5117",isKey:false,meaning:"처소를.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"for you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희를 위해.",note:""},
+      {gk:"πάλιν",translit:"palin",ko:"팔린",gloss:"again",pos:"부사",parsing:"부사",lemma:"πάλιν",strongs:"G3825",isKey:false,meaning:"다시.",note:""},
+      {gk:"ἔρχομαι",translit:"erchomai",ko:"에르코마이",gloss:"I am coming",pos:"동사",parsing:"Present Middle Indicative 1sg",lemma:"ἔρχομαι",strongs:"G2064",isKey:true,meaning:"내가 온다. 재림의 약속. 현재형으로 미래의 확실성을 표현.",note:"재림 교리의 근거 구절."},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"παραλήμψομαι",translit:"paralēmpsomai",ko:"파라렘프소마이",gloss:"I will receive",pos:"동사",parsing:"Future Middle Indicative 1sg",lemma:"παραλαμβάνω",strongs:"G3880",isKey:true,meaning:"영접할 것이다. παρά(곁으로)+λαμβάνω(데려오다)=곁으로 데려오다.",note:""},
+      {gk:"ὑμᾶς",translit:"hymas",ko:"휘마스",gloss:"you",pos:"대명사",parsing:"대격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희를.",note:""},
+      {gk:"πρὸς",translit:"pros",ko:"프로스",gloss:"to",pos:"전치사",parsing:"전치사+대격",lemma:"πρός",strongs:"",isKey:false,meaning:"~에게로.",note:""},
+      {gk:"ἐμαυτόν",translit:"emauton",ko:"에마우톤",gloss:"myself",pos:"대명사",parsing:"대격 남성 1단수 재귀대명사",lemma:"ἐμαυτοῦ",strongs:"G1683",isKey:false,meaning:"내게로.",note:""},
+      {gk:"ἵνα",translit:"hina",ko:"히나",gloss:"so that",pos:"접속사",parsing:"목적접속사",lemma:"ἵνα",strongs:"G2443",isKey:false,meaning:"~하기 위해.",note:""},
+      {gk:"ὅπου",translit:"hopou",ko:"호푸",gloss:"where",pos:"부사",parsing:"장소 관계부사",lemma:"ὅπου",strongs:"G3699",isKey:false,meaning:"~있는 곳에.",note:""},
+      {gk:"εἰμὶ",translit:"eimi",ko:"에이미",gloss:"I am",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"내가 있는.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"또한.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희도.",note:""},
+      {gk:"ἦτε",translit:"ēte",ko:"에테",gloss:"may be",pos:"동사",parsing:"Present Active Subjunctive 2pl",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"있게 하려 함이라.",note:""}
+    ]
+  },
+  4:{
+    reference:"요한복음 14:4",
+    gk:"καὶ ὅπου ἐγὼ ὑπάγω οἴδατε τὴν ὁδόν.",
+    translation:"내가 어디로 가는지 그 길을 너희가 아느니라",
+    words:[
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὅπου",translit:"hopou",ko:"호푸",gloss:"where",pos:"부사",parsing:"장소 관계부사",lemma:"ὅπου",strongs:"G3699",isKey:false,meaning:"어디로.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ὑπάγω",translit:"hypagō",ko:"휘파고",gloss:"go",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"ὑπάγω",strongs:"G5217",isKey:false,meaning:"가는지.",note:""},
+      {gk:"οἴδατε",translit:"oidate",ko:"오이다테",gloss:"you know",pos:"동사",parsing:"Perfect Active Indicative 2pl",lemma:"οἶδα",strongs:"G1492",isKey:true,meaning:"너희가 안다. 완료형—이미 알고 있다는 확신. v5에서 도마가 반박함.",note:""},
+      {gk:"τὴν",translit:"tēn",ko:"텐",gloss:"the",pos:"관사",parsing:"대격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ὁδόν",translit:"hodon",ko:"호돈",gloss:"way",pos:"명사",parsing:"대격 여성 단수",lemma:"ὁδός",strongs:"G3598",isKey:true,meaning:"길을. v6에서 예수님이 '나는 길이다'라고 선언하실 준비.",note:""}
+    ]
+  },
+  5:{
+    reference:"요한복음 14:5",
+    gk:"λέγει αὐτῷ Θωμᾶς· κύριε, οὐκ οἴδαμεν ποῦ ὑπάγεις· πῶς δυνάμεθα τὴν ὁδὸν εἰδέναι;",
+    translation:"도마가 이르되 주여 주께서 어디로 가시는지 우리가 알지 못하거늘 그 길을 어찌 알겠사옵나이까",
+    words:[
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"says",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말한다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"Θωμᾶς",translit:"Thōmas",ko:"토마스",gloss:"Thomas",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Θωμᾶς",strongs:"G2381",isKey:true,meaning:"도마. 쌍둥이(아람어). 의심 많은 제자로 알려졌지만, 실제로는 솔직하고 직접적인 질문을 던짐.",note:""},
+      {gk:"κύριε",translit:"kyrie",ko:"퀴리에",gloss:"Lord",pos:"명사",parsing:"호격 남성 단수",lemma:"κύριος",strongs:"G2962",isKey:false,meaning:"주님.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"모른다.",note:""},
+      {gk:"οἴδαμεν",translit:"oidamen",ko:"오이다멘",gloss:"we know",pos:"동사",parsing:"Perfect Active Indicative 1pl",lemma:"οἶδα",strongs:"G1492",isKey:false,meaning:"우리는 알지 못합니다.",note:""},
+      {gk:"ποῦ",translit:"pou",ko:"푸",gloss:"where",pos:"부사",parsing:"의문 부사",lemma:"ποῦ",strongs:"G4226",isKey:false,meaning:"어디로.",note:""},
+      {gk:"ὑπάγεις",translit:"hypageis",ko:"휘파게이스",gloss:"you go",pos:"동사",parsing:"Present Active Indicative 2sg",lemma:"ὑπάγω",strongs:"G5217",isKey:false,meaning:"가십니까.",note:""},
+      {gk:"πῶς",translit:"pōs",ko:"포스",gloss:"how",pos:"부사",parsing:"의문 부사",lemma:"πῶς",strongs:"G4459",isKey:false,meaning:"어떻게.",note:""},
+      {gk:"δυνάμεθα",translit:"dynametha",ko:"뒤나메다",gloss:"are we able",pos:"동사",parsing:"Present Middle Indicative 1pl",lemma:"δύναμαι",strongs:"G1410",isKey:false,meaning:"우리가 할 수 있습니까.",note:""},
+      {gk:"τὴν",translit:"tēn",ko:"텐",gloss:"the",pos:"관사",parsing:"대격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ὁδὸν",translit:"hodon",ko:"호돈",gloss:"way",pos:"명사",parsing:"대격 여성 단수",lemma:"ὁδός",strongs:"G3598",isKey:false,meaning:"길을.",note:""},
+      {gk:"εἰδέναι",translit:"eidenai",ko:"에이데나이",gloss:"to know",pos:"동사",parsing:"Perfect Active Infinitive",lemma:"οἶδα",strongs:"G1492",isKey:false,meaning:"알겠습니까. 완료 부정사.",note:""}
+    ]
+  },
+  6:{
+    reference:"요한복음 14:6",
+    gk:"λέγει αὐτῷ ὁ Ἰησοῦς· ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή· οὐδεὶς ἔρχεται πρὸς τὸν πατέρα εἰ μὴ δι᾽ ἐμοῦ.",
+    translation:"예수께서 이르시되 내가 곧 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라",
+    words:[
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"says",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말씀하신다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"Ἰησοῦς",translit:"Iēsous",ko:"예수스",gloss:"Jesus",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Ἰησοῦς",strongs:"G2424",isKey:false,meaning:"예수님이.",note:""},
+      {gk:"ἐγώ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:true,meaning:"나. 강조적 1인칭—요한복음의 7대 ἐγώ εἰμι 선언 중 세 번째.",note:""},
+      {gk:"εἰμι",translit:"eimi",ko:"에이미",gloss:"am",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"εἰμί",strongs:"G1510",isKey:true,meaning:"~이다. ἐγώ εἰμι = 출3:14의 하나님 자기 계시와 연결.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ὁδὸς",translit:"hodos",ko:"호도스",gloss:"way",pos:"명사",parsing:"주격 여성 단수",lemma:"ὁδός",strongs:"G3598",isKey:true,meaning:"길. 목적지로 가는 경로이자 예수님 자신. 초대교회가 '길(ἡ ὁδός)'이라 불린 이유(행9:2).",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἀλήθεια",translit:"alētheia",ko:"알레테이아",gloss:"truth",pos:"명사",parsing:"주격 여성 단수",lemma:"ἀλήθεια",strongs:"G225",isKey:true,meaning:"진리. ἀ(부정)+λανθάνω(숨다)=숨겨지지 않은 것, 드러난 실재. 하나님의 본성 그 자체.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἡ",translit:"hē",ko:"헤",gloss:"the",pos:"관사",parsing:"주격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ζωή",translit:"zōē",ko:"조에",gloss:"life",pos:"명사",parsing:"주격 여성 단수",lemma:"ζωή",strongs:"G2222",isKey:true,meaning:"생명. βίος(생물학적 생명)와 구별되는 신적 생명. 요1:4 '그 안에 생명이 있었으니'.",note:""},
+      {gk:"οὐδεὶς",translit:"oudeis",ko:"우데이스",gloss:"no one",pos:"대명사",parsing:"주격 남성 단수",lemma:"οὐδείς",strongs:"G3762",isKey:true,meaning:"아무도 없다. 절대적 배타성—예수님만이 유일한 길.",note:""},
+      {gk:"ἔρχεται",translit:"erchetai",ko:"에르케타이",gloss:"comes",pos:"동사",parsing:"Present Middle Indicative 3sg",lemma:"ἔρχομαι",strongs:"G2064",isKey:false,meaning:"온다.",note:""},
+      {gk:"πρὸς",translit:"pros",ko:"프로스",gloss:"to",pos:"전치사",parsing:"전치사+대격",lemma:"πρός",strongs:"G4314",isKey:false,meaning:"~에게로.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께.",note:""},
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"except",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",isKey:false,meaning:"~이 아니면. εἰ μή = ~을 제외하고.",note:""},
+      {gk:"μὴ",translit:"mē",ko:"메",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"μή",strongs:"G3361",isKey:false,meaning:"~아니면.",note:""},
+      {gk:"δι᾽",translit:"di'",ko:"디",gloss:"through",pos:"전치사",parsing:"전치사+속격(축약)",lemma:"διά",strongs:"G1223",isKey:false,meaning:"~을 통해서.",note:""},
+      {gk:"ἐμοῦ",translit:"emou",ko:"에무",gloss:"me",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를 통해서만.",note:""}
+    ]
+  },
+  7:{
+    reference:"요한복음 14:7",
+    gk:"εἰ ἐγνώκατέ με, καὶ τὸν πατέρα μου ἂν ᾔδειτε· καὶ ἀπ᾽ ἄρτι γινώσκετε αὐτὸν καὶ ἑωράκατε αὐτόν.",
+    translation:"너희가 나를 알았더라면 내 아버지도 알았으리로다 이제부터는 너희가 그를 알았고 또 보았느니라",
+    words:[
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"G1487",isKey:false,meaning:"만약.",note:""},
+      {gk:"ἐγνώκατέ",translit:"egnōkate",ko:"에그노카테",gloss:"you had known",pos:"동사",parsing:"Perfect Active Indicative 2pl",lemma:"γινώσκω",strongs:"G1097",isKey:true,meaning:"알았더라면. 완료형으로 참된 앎. γινώσκω=관계적·경험적 지식.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"also",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"또한.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지를.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"ἂν",translit:"an",ko:"안",gloss:"would",pos:"불변화사",parsing:"조건 불변화사",lemma:"ἄν",strongs:"G302",isKey:false,meaning:"~했을 것이다.",note:""},
+      {gk:"ᾔδειτε",translit:"ēdeite",ko:"에데이테",gloss:"you would have known",pos:"동사",parsing:"Pluperfect Active Indicative 2pl",lemma:"οἶδα",strongs:"G1492",isKey:false,meaning:"알았으리로다. 과거완료.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἀπ᾽",translit:"ap'",ko:"아프",gloss:"from",pos:"전치사",parsing:"전치사+속격(축약)",lemma:"ἀπό",strongs:"G575",isKey:false,meaning:"~부터.",note:""},
+      {gk:"ἄρτι",translit:"arti",ko:"아르티",gloss:"now",pos:"부사",parsing:"시간 부사",lemma:"ἄρτι",strongs:"G737",isKey:true,meaning:"지금 이제. 전환점—이 순간부터. '이제부터는'.",note:""},
+      {gk:"γινώσκετε",translit:"ginōskete",ko:"기노스케테",gloss:"you know",pos:"동사",parsing:"Present Active Indicative 2pl",lemma:"γινώσκω",strongs:"G1097",isKey:false,meaning:"알고 있다.",note:""},
+      {gk:"αὐτὸν",translit:"auton",ko:"아우톤",gloss:"him",pos:"대명사",parsing:"대격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그를.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἑωράκατε",translit:"heōrakate",ko:"헤오라카테",gloss:"you have seen",pos:"동사",parsing:"Perfect Active Indicative 2pl",lemma:"ὁράω",strongs:"G3708",isKey:true,meaning:"보았다. 완료형—예수님을 본 것이 곧 아버지를 본 것.",note:""},
+      {gk:"αὐτόν",translit:"auton",ko:"아우톤",gloss:"him",pos:"대명사",parsing:"대격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그를.",note:""}
+    ]
+  },
+  8:{
+    reference:"요한복음 14:8",
+    gk:"λέγει αὐτῷ Φίλιππος· κύριε, δεῖξον ἡμῖν τὸν πατέρα, καὶ ἀρκεῖ ἡμῖν.",
+    translation:"빌립이 이르되 주여 아버지를 우리에게 보여 주옵소서 그리하면 족하겠나이다",
+    words:[
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"says",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말한다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"Φίλιππος",translit:"Philippos",ko:"필립포스",gloss:"Philip",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Φίλιππος",strongs:"G5376",isKey:true,meaning:"빌립. 헬라어 이름, φίλος(친구)+ἵππος(말)='말을 좋아하는 자'.",note:""},
+      {gk:"κύριε",translit:"kyrie",ko:"퀴리에",gloss:"Lord",pos:"명사",parsing:"호격 남성 단수",lemma:"κύριος",strongs:"G2962",isKey:false,meaning:"주님.",note:""},
+      {gk:"δεῖξον",translit:"deixon",ko:"데익손",gloss:"show",pos:"동사",parsing:"Aorist Active Imperative 2sg",lemma:"δείκνυμι",strongs:"G1166",isKey:true,meaning:"보여 주소서. 명령형—구약의 모세 요청(출33:18)과 유사.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"to us",pos:"대명사",parsing:"여격 1복수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"우리에게.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지를.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그러면.",note:""},
+      {gk:"ἀρκεῖ",translit:"arkei",ko:"아르케이",gloss:"it is enough",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"ἀρκέω",strongs:"G714",isKey:false,meaning:"족합니다, 충분합니다.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"for us",pos:"대명사",parsing:"여격 1복수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"우리에게.",note:""}
+    ]
+  },
+  9:{
+    reference:"요한복음 14:9",
+    gk:"λέγει αὐτῷ ὁ Ἰησοῦς· τοσοῦτον χρόνον μεθ᾽ ὑμῶν εἰμι καὶ οὐκ ἔγνωκάς με, Φίλιππε; ὁ ἑωρακὼς ἐμὲ ἑώρακεν τὸν πατέρα· πῶς σὺ λέγεις· δεῖξον ἡμῖν τὸν πατέρα;",
+    translation:"예수께서 이르시되 빌립아 내가 이렇게 오래 너희와 함께 있으되 네가 나를 알지 못하느냐 나를 본 자는 아버지를 보았거늘 어찌하여 아버지를 보이라 하느냐",
+    words:[
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"says",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말씀하신다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"Ἰησοῦς",translit:"Iēsous",ko:"예수스",gloss:"Jesus",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Ἰησοῦς",strongs:"G2424",isKey:false,meaning:"예수님이.",note:""},
+      {gk:"τοσοῦτον",translit:"tosouton",ko:"토수톤",gloss:"so long",pos:"대명사",parsing:"대격 중성 단수",lemma:"τοσοῦτος",strongs:"G5118",isKey:false,meaning:"이렇게 오랜.",note:""},
+      {gk:"χρόνον",translit:"chronon",ko:"크로논",gloss:"time",pos:"명사",parsing:"대격 남성 단수",lemma:"χρόνος",strongs:"G5550",isKey:false,meaning:"시간 동안. 영어 chronology의 어원.",note:""},
+      {gk:"μεθ᾽",translit:"meth'",ko:"메트",gloss:"with",pos:"전치사",parsing:"전치사+속격(축약)",lemma:"μετά",strongs:"G3326",isKey:false,meaning:"함께.",note:""},
+      {gk:"ὑμῶν",translit:"hymōn",ko:"휘몬",gloss:"you",pos:"대명사",parsing:"속격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희와.",note:""},
+      {gk:"εἰμι",translit:"eimi",ko:"에이미",gloss:"I am",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"있다.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and yet",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그런데도.",note:""},
+      {gk:"οὐκ",translit:"ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"않느냐.",note:""},
+      {gk:"ἔγνωκάς",translit:"egnōkas",ko:"에그노카스",gloss:"you have known",pos:"동사",parsing:"Perfect Active Indicative 2sg",lemma:"γινώσκω",strongs:"G1097",isKey:true,meaning:"알지 못하느냐. 완료형—오랜 동행 끝에도 참된 앎이 없음에 대한 놀라움.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"Φίλιππε",translit:"Philippe",ko:"필립페",gloss:"Philip",pos:"고유명사",parsing:"호격 남성 단수",lemma:"Φίλιππος",strongs:"G5376",isKey:false,meaning:"빌립아. 직접 이름 호칭.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἑωρακὼς",translit:"heōrakōs",ko:"헤오라코스",gloss:"having seen",pos:"동사",parsing:"Perfect Active Participle 주격 남성 단수",lemma:"ὁράω",strongs:"G3708",isKey:true,meaning:"본 자. 완료 분사—예수님을 본 것의 영구적 결과.",note:""},
+      {gk:"ἐμὲ",translit:"eme",ko:"에메",gloss:"me",pos:"대명사",parsing:"대격 1단수(강조)",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"ἑώρακεν",translit:"heōraken",ko:"헤오라켄",gloss:"has seen",pos:"동사",parsing:"Perfect Active Indicative 3sg",lemma:"ὁράω",strongs:"G3708",isKey:true,meaning:"보았다. 완료형—예수님을 보는 것=아버지를 보는 것. 예수님의 신성 선언.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지를.",note:""},
+      {gk:"πῶς",translit:"pōs",ko:"포스",gloss:"how",pos:"부사",parsing:"의문 부사",lemma:"πῶς",strongs:"G4459",isKey:false,meaning:"어찌하여.",note:""},
+      {gk:"σὺ",translit:"sy",ko:"쉬",gloss:"you",pos:"대명사",parsing:"주격 2단수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"네가. 강조적.",note:""},
+      {gk:"λέγεις",translit:"legeis",ko:"레게이스",gloss:"say",pos:"동사",parsing:"Present Active Indicative 2sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말하느냐.",note:""},
+      {gk:"δεῖξον",translit:"deixon",ko:"데익손",gloss:"show",pos:"동사",parsing:"Aorist Active Imperative 2sg",lemma:"δείκνυμι",strongs:"G1166",isKey:false,meaning:"보이라.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"us",pos:"대명사",parsing:"여격 1복수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"우리에게.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지를.",note:""}
+    ]
+  },
+  10:{
+    reference:"요한복음 14:10",
+    gk:"οὐ πιστεύεις ὅτι ἐγὼ ἐν τῷ πατρὶ καὶ ὁ πατὴρ ἐν ἐμοί ἐστιν; τὰ ῥήματα ἃ ἐγὼ λέγω ὑμῖν ἀπ᾽ ἐμαυτοῦ οὐ λέγω· ὁ δὲ πατὴρ ἐν ἐμοὶ μένων ποιεῖ τὰ ἔργα αὐτοῦ.",
+    translation:"내가 아버지 안에 있고 아버지께서 내 안에 계신 것을 네가 믿지 아니하느냐 내가 너희에게 이르는 말은 스스로 하는 것이 아니라 아버지께서 내 안에 계셔서 그의 일을 하시는 것이라",
+    words:[
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"~않느냐.",note:""},
+      {gk:"πιστεύεις",translit:"pisteueis",ko:"피스튜에이스",gloss:"do you believe",pos:"동사",parsing:"Present Active Indicative 2sg",lemma:"πιστεύω",strongs:"G4100",isKey:false,meaning:"믿지 않느냐.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"~임을.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:true,meaning:"안에. 상호 내주(mutual indwelling)—삼위일체의 페리코레시스(perichoresis).",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατρὶ",translit:"patri",ko:"파트리",gloss:"Father",pos:"명사",parsing:"여격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지 안에.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατὴρ",translit:"patēr",ko:"파테르",gloss:"Father",pos:"명사",parsing:"주격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께서.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"ἐμοί",translit:"emoi",ko:"에모이",gloss:"me",pos:"대명사",parsing:"여격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내 안에.",note:""},
+      {gk:"ἐστιν",translit:"estin",ko:"에스틴",gloss:"is",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"계신다.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"대격 중성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ῥήματα",translit:"rhēmata",ko:"레마타",gloss:"words",pos:"명사",parsing:"대격 중성 복수",lemma:"ῥῆμα",strongs:"G4487",isKey:true,meaning:"말씀들을. ῥῆμα=발화된 말, 특정 발언. λόγος(말씀, 로고스)와 구별.",note:""},
+      {gk:"ἃ",translit:"ha",ko:"하",gloss:"which",pos:"대명사",parsing:"대격 중성 복수 관계대명사",lemma:"ὅς",strongs:"G3739",isKey:false,meaning:"~하는.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"λέγω",translit:"legō",ko:"레고",gloss:"speak",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말하는.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"to you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희에게.",note:""},
+      {gk:"ἀπ᾽",translit:"ap'",ko:"아프",gloss:"from",pos:"전치사",parsing:"전치사+속격(축약)",lemma:"ἀπό",strongs:"G575",isKey:false,meaning:"~로부터.",note:""},
+      {gk:"ἐμαυτοῦ",translit:"emautou",ko:"에마우투",gloss:"myself",pos:"대명사",parsing:"속격 1단수 재귀대명사",lemma:"ἐμαυτοῦ",strongs:"G1683",isKey:false,meaning:"스스로.",note:""},
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"",isKey:false,meaning:"하지 않는다.",note:""},
+      {gk:"λέγω",translit:"legō",ko:"레고",gloss:"I speak",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말한다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"후치접속사",lemma:"δέ",strongs:"",isKey:false,meaning:"그런데.",note:""},
+      {gk:"πατὴρ",translit:"patēr",ko:"파테르",gloss:"Father",pos:"명사",parsing:"주격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께서.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"ἐμοὶ",translit:"emoi",ko:"에모이",gloss:"me",pos:"대명사",parsing:"여격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내 안에.",note:""},
+      {gk:"μένων",translit:"menōn",ko:"메논",gloss:"abiding",pos:"동사",parsing:"현재 능동 분사 주격 남성 단수",lemma:"μένω",strongs:"G3306",isKey:true,meaning:"거하시며. μένω=머물다. 요한복음의 핵심 단어.",note:""},
+      {gk:"ποιεῖ",translit:"poiei",ko:"포이에이",gloss:"does",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"ποιέω",strongs:"G4160",isKey:false,meaning:"행하신다.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"대격 중성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἔργα",translit:"erga",ko:"에르가",gloss:"works",pos:"명사",parsing:"대격 중성 복수",lemma:"ἔργον",strongs:"G2041",isKey:true,meaning:"일들을. 예수님의 기적과 가르침은 아버지의 일.",note:""},
+      {gk:"αὐτοῦ",translit:"autou",ko:"아우투",gloss:"his",pos:"대명사",parsing:"속격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그의.",note:""}
+    ]
+  },
+  11:{
+    reference:"요한복음 14:11",
+    gk:"πιστεύετέ μοι ὅτι ἐγὼ ἐν τῷ πατρὶ καὶ ὁ πατὴρ ἐν ἐμοί· εἰ δὲ μή, διὰ τὰ ἔργα αὐτὰ πιστεύετε.",
+    translation:"내가 아버지 안에 있고 아버지께서 내 안에 계심을 믿으라 그렇지 못하겠거든 행하는 그 일로 말미암아 나를 믿으라",
+    words:[
+      {gk:"πιστεύετέ",translit:"pisteuete",ko:"피스튜에테",gloss:"believe",pos:"동사",parsing:"Present Active Imperative 2pl",lemma:"πιστεύω",strongs:"G4100",isKey:true,meaning:"믿으라. 명령형—적극적 믿음 촉구.",note:""},
+      {gk:"μοι",translit:"moi",ko:"모이",gloss:"me",pos:"대명사",parsing:"여격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"~임을.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"안에.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατρὶ",translit:"patri",ko:"파트리",gloss:"Father",pos:"명사",parsing:"여격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지 안에.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατὴρ",translit:"patēr",ko:"파테르",gloss:"Father",pos:"명사",parsing:"주격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께서.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"안에.",note:""},
+      {gk:"ἐμοί",translit:"emoi",ko:"에모이",gloss:"me",pos:"대명사",parsing:"여격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내 안에.",note:""},
+      {gk:"εἰ",translit:"ei",ko:"에이",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"εἰ",strongs:"",isKey:false,meaning:"만약.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"후치접속사",lemma:"δέ",strongs:"G1161",isKey:false,meaning:"그러나.",note:""},
+      {gk:"μή",translit:"mē",ko:"메",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"μή",strongs:"G3361",isKey:false,meaning:"아니라면.",note:""},
+      {gk:"διὰ",translit:"dia",ko:"디아",gloss:"because of",pos:"전치사",parsing:"전치사+대격",lemma:"διά",strongs:"G1223",isKey:false,meaning:"~로 말미암아.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"대격 중성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἔργα",translit:"erga",ko:"에르가",gloss:"works",pos:"명사",parsing:"대격 중성 복수",lemma:"ἔργον",strongs:"G2041",isKey:false,meaning:"일들로.",note:""},
+      {gk:"αὐτὰ",translit:"auta",ko:"아우타",gloss:"themselves",pos:"대명사",parsing:"대격 중성 복수",lemma:"αὐτός",strongs:"",isKey:false,meaning:"그 자체로. 행위 자체가 증거.",note:""},
+      {gk:"πιστεύετε",translit:"pisteuete",ko:"피스튜에테",gloss:"believe",pos:"동사",parsing:"Present Active Imperative 2pl",lemma:"πιστεύω",strongs:"G4100",isKey:false,meaning:"믿으라.",note:""}
+    ]
+  },
+  12:{
+    reference:"요한복음 14:12",
+    gk:"ἀμὴν ἀμὴν λέγω ὑμῖν, ὁ πιστεύων εἰς ἐμὲ τὰ ἔργα ἃ ἐγὼ ποιῶ κἀκεῖνος ποιήσει, καὶ μείζονα τούτων ποιήσει, ὅτι ἐγὼ πρὸς τὸν πατέρα πορεύομαι.",
+    translation:"내가 진실로 진실로 너희에게 이르노니 나를 믿는 자는 내가 하는 일을 그도 할 것이요 또한 그보다 큰 일도 하리니 이는 내가 아버지께로 감이라",
+    words:[
+      {gk:"ἀμὴν",translit:"amēn",ko:"아멘",gloss:"truly",pos:"불변화사",parsing:"히브리어 차용어",lemma:"ἀμήν",strongs:"G281",isKey:true,meaning:"진실로. 히브리어 אָמֵן(아멘)—'확실하다, 신뢰할 수 있다'. 요한복음에서 항상 ἀμὴν ἀμήν (이중 사용)으로 특별한 강조.",note:""},
+      {gk:"ἀμὴν",translit:"amēn",ko:"아멘",gloss:"truly",pos:"불변화사",parsing:"히브리어 차용어",lemma:"ἀμήν",strongs:"G281",isKey:false,meaning:"진실로. 요한복음 특유의 이중 아멘.",note:""},
+      {gk:"λέγω",translit:"legō",ko:"레고",gloss:"I say",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"이르노니.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"to you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희에게.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πιστεύων",translit:"pisteuōn",ko:"피스튜온",gloss:"believing",pos:"동사",parsing:"Present Active Participle 주격 남성 단수",lemma:"πιστεύω",strongs:"G4100",isKey:true,meaning:"믿는 자. 현재 분사—지속적·능동적 믿음을 가진 사람.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"in",pos:"전치사",parsing:"전치사+대격",lemma:"εἰς",strongs:"G1519",isKey:false,meaning:"~을 향한.",note:""},
+      {gk:"ἐμὲ",translit:"eme",ko:"에메",gloss:"me",pos:"대명사",parsing:"대격 1단수(강조)",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"τὰ",translit:"ta",ko:"타",gloss:"the",pos:"관사",parsing:"대격 중성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἔργα",translit:"erga",ko:"에르가",gloss:"works",pos:"명사",parsing:"대격 중성 복수",lemma:"ἔργον",strongs:"G2041",isKey:true,meaning:"일들을. ἔργον=행위, 사역. 예수님의 이적과 사역.",note:""},
+      {gk:"ἃ",translit:"ha",ko:"하",gloss:"which",pos:"대명사",parsing:"대격 중성 복수 관계대명사",lemma:"ὅς",strongs:"G3739",isKey:false,meaning:"내가 하는.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ποιῶ",translit:"poiō",ko:"포이오",gloss:"do",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"ποιέω",strongs:"G4160",isKey:false,meaning:"행하는.",note:""},
+      {gk:"κἀκεῖνος",translit:"kakeinos",ko:"카케이노스",gloss:"that one also",pos:"대명사",parsing:"주격 남성 단수(καὶ+ἐκεῖνος 결합)",lemma:"ἐκεῖνος",strongs:"G1565",isKey:false,meaning:"그도 또한. 카이+에케이노스의 결합형.",note:""},
+      {gk:"ποιήσει",translit:"poiēsei",ko:"포이에세이",gloss:"will do",pos:"동사",parsing:"Future Active Indicative 3sg",lemma:"ποιέω",strongs:"G4160",isKey:false,meaning:"할 것이다.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"μείζονα",translit:"meizona",ko:"메이조나",gloss:"greater",pos:"형용사",parsing:"대격 중성 복수 비교급",lemma:"μέγας",strongs:"G3173",isKey:true,meaning:"더 큰 것들을. 비교급—예수님보다 더 큰 이적? 아니, 범위와 영향력의 측면에서(오순절 이후 온 세계로 확산).",note:""},
+      {gk:"τούτων",translit:"toutōn",ko:"투톤",gloss:"than these",pos:"대명사",parsing:"속격 중성 복수",lemma:"οὗτος",strongs:"G3778",isKey:false,meaning:"이것들보다.",note:""},
+      {gk:"ποιήσει",translit:"poiēsei",ko:"포이에세이",gloss:"will do",pos:"동사",parsing:"Future Active Indicative 3sg",lemma:"ποιέω",strongs:"G4160",isKey:false,meaning:"할 것이다.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"because",pos:"접속사",parsing:"이유접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"왜냐하면.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"πρὸς",translit:"pros",ko:"프로스",gloss:"to",pos:"전치사",parsing:"전치사+대격",lemma:"πρός",strongs:"G4314",isKey:false,meaning:"~에게로.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께.",note:""},
+      {gk:"πορεύομαι",translit:"poreuomai",ko:"포류오마이",gloss:"I am going",pos:"동사",parsing:"Present Middle Indicative 1sg",lemma:"πορεύομαι",strongs:"G4198",isKey:false,meaning:"간다. 예수님의 승천이 성령 강림의 전제.",note:""}
+    ]
+  },
+  13:{
+    reference:"요한복음 14:13",
+    gk:"καὶ ὅ τι ἂν αἰτήσητε ἐν τῷ ὀνόματί μου τοῦτο ποιήσω, ἵνα δοξασθῇ ὁ πατὴρ ἐν τῷ υἱῷ.",
+    translation:"너희가 내 이름으로 무엇을 구하든지 내가 행하리니 이는 아버지로 하여금 아들로 말미암아 영광을 받으시게 하려 함이라",
+    words:[
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὅ",translit:"ho",ko:"호",gloss:"whatever",pos:"대명사",parsing:"대격 중성 단수 관계대명사",lemma:"ὅς",strongs:"G3739",isKey:false,meaning:"무엇이든.",note:""},
+      {gk:"τι",translit:"ti",ko:"티",gloss:"anything",pos:"대명사",parsing:"대격 중성 단수 부정대명사",lemma:"τις",strongs:"G5100",isKey:false,meaning:"무엇을. ὅ τι=무엇이든지.",note:""},
+      {gk:"ἂν",translit:"an",ko:"안",gloss:"ever",pos:"불변화사",parsing:"불확정 불변화사",lemma:"ἄν",strongs:"G302",isKey:false,meaning:"~든지.",note:""},
+      {gk:"αἰτήσητε",translit:"aitēsēte",ko:"아이테세테",gloss:"you ask",pos:"동사",parsing:"Aorist Active Subjunctive 2pl",lemma:"αἰτέω",strongs:"G154",isKey:true,meaning:"구하다. 기도의 핵심 동사. 접속법으로 어떤 상황에서도의 보편성.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에서.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 중성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ὀνόματί",translit:"onomati",ko:"오노마티",gloss:"name",pos:"명사",parsing:"여격 중성 단수",lemma:"ὄνομα",strongs:"G3686",isKey:true,meaning:"이름으로. '내 이름으로'=예수님의 권위와 성품 안에서, 그분의 뜻과 일치하여 구하는 것.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"τοῦτο",translit:"touto",ko:"투토",gloss:"this",pos:"대명사",parsing:"대격 중성 단수",lemma:"οὗτος",strongs:"G3778",isKey:false,meaning:"이것을.",note:""},
+      {gk:"ποιήσω",translit:"poiēsō",ko:"포이에소",gloss:"I will do",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ποιέω",strongs:"G4160",isKey:true,meaning:"내가 행하리라. 예수님 자신이 직접 응답하심—중보자로서의 역할.",note:""},
+      {gk:"ἵνα",translit:"hina",ko:"히나",gloss:"so that",pos:"접속사",parsing:"목적접속사",lemma:"ἵνα",strongs:"G2443",isKey:false,meaning:"~하기 위해서.",note:""},
+      {gk:"δοξασθῇ",translit:"doxasthē",ko:"독사스테",gloss:"may be glorified",pos:"동사",parsing:"Aorist Passive Subjunctive 3sg",lemma:"δοξάζω",strongs:"G1392",isKey:true,meaning:"영광을 받으시도록. 수동태—기도 응답의 궁극 목적은 하나님의 영광.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατὴρ",translit:"patēr",ko:"파테르",gloss:"Father",pos:"명사",parsing:"주격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께서.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에서.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"υἱῷ",translit:"huiō",ko:"휘오",gloss:"Son",pos:"명사",parsing:"여격 남성 단수",lemma:"υἱός",strongs:"G5207",isKey:false,meaning:"아들 안에서. 아들을 통해 아버지께 영광이 돌아감.",note:""}
+    ]
+  },
+  14:{
+    reference:"요한복음 14:14",
+    gk:"ἐάν τι αἰτήσητέ με ἐν τῷ ὀνόματί μου ἐγὼ ποιήσω.",
+    translation:"내 이름으로 무엇이든지 내게 구하면 내가 행하리라",
+    words:[
+      {gk:"ἐάν",translit:"ean",ko:"에안",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"ἐάν",strongs:"G1437",isKey:false,meaning:"만약 ~하면.",note:""},
+      {gk:"τι",translit:"ti",ko:"티",gloss:"anything",pos:"대명사",parsing:"대격 중성 단수 부정대명사",lemma:"τις",strongs:"G5100",isKey:false,meaning:"무엇이든지.",note:""},
+      {gk:"αἰτήσητέ",translit:"aitēsēte",ko:"아이테세테",gloss:"you ask",pos:"동사",parsing:"Aorist Active Subjunctive 2pl",lemma:"αἰτέω",strongs:"G154",isKey:false,meaning:"구하면. v13의 기도 약속을 반복·강조.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:true,meaning:"내게. 예수님 자신에게 직접 구하라.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에서.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 중성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ὀνόματί",translit:"onomati",ko:"오노마티",gloss:"name",pos:"명사",parsing:"여격 중성 단수",lemma:"ὄνομα",strongs:"G3686",isKey:false,meaning:"이름으로.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:true,meaning:"내가. 강조—예수님 자신이 직접 행하심.",note:""},
+      {gk:"ποιήσω",translit:"poiēsō",ko:"포이에소",gloss:"will do",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ποιέω",strongs:"G4160",isKey:false,meaning:"행하리라.",note:""}
+    ]
+  },
+  15:{
+    reference:"요한복음 14:15",
+    gk:"ἐὰν ἀγαπᾶτέ με, τὰς ἐντολάς τὰς ἐμὰς τηρήσετε·",
+    translation:"너희가 나를 사랑하면 나의 계명을 지키리라",
+    words:[
+      {gk:"ἐὰν",translit:"ean",ko:"에안",gloss:"if",pos:"접속사",parsing:"조건접속사",lemma:"ἐάν",strongs:"G1437",isKey:false,meaning:"만약 ~하면.",note:""},
+      {gk:"ἀγαπᾶτέ",translit:"agapate",ko:"아가파테",gloss:"you love",pos:"동사",parsing:"Present Active Subjunctive/Indicative 2pl",lemma:"ἀγαπάω",strongs:"G25",isKey:true,meaning:"사랑하면. v21·23에서 반복되는 핵심 주제—사랑과 순종의 불가분성.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"τὰς",translit:"tas",ko:"타스",gloss:"the",pos:"관사",parsing:"대격 여성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἐντολάς",translit:"entolas",ko:"엔톨라스",gloss:"commandments",pos:"명사",parsing:"대격 여성 복수",lemma:"ἐντολή",strongs:"G1785",isKey:true,meaning:"계명들을. ἐντέλλομαι(명하다)에서 파생. 요한복음에서 핵심은 사랑의 계명(13:34-35).",note:""},
+      {gk:"τὰς",translit:"tas",ko:"타스",gloss:"the",pos:"관사",parsing:"대격 여성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἐμὰς",translit:"emas",ko:"에마스",gloss:"my",pos:"대명사",parsing:"대격 여성 복수 소유형용사",lemma:"ἐμός",strongs:"G1699",isKey:false,meaning:"나의. 강조적 소유형용사.",note:""},
+      {gk:"τηρήσετε",translit:"tērēsete",ko:"테레세테",gloss:"you will keep",pos:"동사",parsing:"Future Active Indicative 2pl",lemma:"τηρέω",strongs:"G5083",isKey:true,meaning:"지키리라. v21·23에서도 반복. 사랑=순종의 구체적 표현.",note:""}
+    ]
+  },
+  16:{
+    reference:"요한복음 14:16",
+    gk:"κἀγὼ ἐρωτήσω τὸν πατέρα καὶ ἄλλον παράκλητον δώσει ὑμῖν ἵνα μεθ᾽ ὑμῶν εἰς τὸν αἰῶνα ᾖ,",
+    translation:"내가 아버지께 구하겠으니 그가 또 다른 보혜사를 너희에게 주사 영원토록 너희와 함께 있게 하리니",
+    words:[
+      {gk:"κἀγὼ",translit:"kagō",ko:"카고",gloss:"and I",pos:"대명사",parsing:"주격 1단수(καὶ+ἐγώ 결합)",lemma:"ἐγώ",strongs:"G2504",isKey:false,meaning:"그리고 나도.",note:""},
+      {gk:"ἐρωτήσω",translit:"erōtēsō",ko:"에로테소",gloss:"will ask",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ἐρωτάω",strongs:"G2065",isKey:true,meaning:"구하겠다. 아들이 아버지께 드리는 중보 기도—삼위일체적 역할 분담.",note:"αἰτέω(아랫사람이 구함)보다 격이 대등한 관계에서의 요청."},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατέρα",translit:"patera",ko:"파테라",gloss:"Father",pos:"명사",parsing:"대격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἄλλον",translit:"allon",ko:"알론",gloss:"another",pos:"형용사",parsing:"대격 남성 단수",lemma:"ἄλλος",strongs:"G243",isKey:true,meaning:"다른(동종의). ἄλλος=같은 종류의 다른 분. ἕτερος(다른 종류)와 구별—예수님과 동일한 성품의 또 다른 분.",note:""},
+      {gk:"παράκλητον",translit:"paraklēton",ko:"파라클레톤",gloss:"Advocate",pos:"명사",parsing:"대격 남성 단수",lemma:"παράκλητος",strongs:"G3875",isKey:true,meaning:"보혜사. παρά(곁에)+καλέω(부르다)=곁에서 돕도록 부름받은 자. '위로자, 변호인, 도움이'. 성령의 고유 칭호.",note:"법정 용어: 피고인 옆에서 변론하는 변호사."},
+      {gk:"δώσει",translit:"dōsei",ko:"도세이",gloss:"will give",pos:"동사",parsing:"Future Active Indicative 3sg",lemma:"δίδωμι",strongs:"G1325",isKey:false,meaning:"주실 것이다.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"to you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희에게.",note:""},
+      {gk:"ἵνα",translit:"hina",ko:"히나",gloss:"so that",pos:"접속사",parsing:"목적접속사",lemma:"ἵνα",strongs:"G2443",isKey:false,meaning:"~하게 하려고.",note:""},
+      {gk:"μεθ᾽",translit:"meth'",ko:"메트",gloss:"with",pos:"전치사",parsing:"전치사+속격(축약)",lemma:"μετά",strongs:"G3326",isKey:false,meaning:"함께.",note:""},
+      {gk:"ὑμῶν",translit:"hymōn",ko:"휘몬",gloss:"you",pos:"대명사",parsing:"속격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희와.",note:""},
+      {gk:"εἰς",translit:"eis",ko:"에이스",gloss:"into",pos:"전치사",parsing:"전치사+대격",lemma:"εἰς",strongs:"G1519",isKey:false,meaning:"~까지.",note:""},
+      {gk:"τὸν",translit:"ton",ko:"톤",gloss:"the",pos:"관사",parsing:"대격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"αἰῶνα",translit:"aiōna",ko:"아이오나",gloss:"age",pos:"명사",parsing:"대격 남성 단수",lemma:"αἰών",strongs:"G165",isKey:true,meaning:"영원히. εἰς τὸν αἰῶνα=영원히. 성령은 잠시 머무는 것이 아니라 영원히 함께 하심.",note:""},
+      {gk:"ᾖ",translit:"ē",ko:"에",gloss:"may be",pos:"동사",parsing:"Present Active Subjunctive 3sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"있게 하려 하심이라.",note:""}
+    ]
+  },
+  17:{
+    reference:"요한복음 14:17",
+    gk:"τὸ πνεῦμα τῆς ἀληθείας, ὃ ὁ κόσμος οὐ δύναται λαβεῖν, ὅτι οὐ θεωρεῖ αὐτὸ οὐδὲ γινώσκει· ὑμεῖς γινώσκετε αὐτό, ὅτι παρ᾽ ὑμῖν μένει καὶ ἐν ὑμῖν ἔσται.",
+    translation:"그는 진리의 영이라 세상은 능히 그를 받지 못하나니 이는 그를 보지도 못하고 알지도 못함이라 그러나 너희는 그를 아나니 그는 너희와 함께 거하심이요 또 너희 속에 계시겠음이라",
+    words:[
+      {gk:"τὸ",translit:"to",ko:"토",gloss:"the",pos:"관사",parsing:"주격 중성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πνεῦμα",translit:"pneuma",ko:"프뉴마",gloss:"Spirit",pos:"명사",parsing:"주격 중성 단수",lemma:"πνεῦμα",strongs:"G4151",isKey:true,meaning:"영. πνέω(불다, 숨쉬다)에서 파생. 성령—하나님의 숨결, 바람. 영어 pneumatic의 어원.",note:""},
+      {gk:"τῆς",translit:"tēs",ko:"테스",gloss:"of the",pos:"관사",parsing:"속격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἀληθείας",translit:"alētheias",ko:"알레테이아스",gloss:"truth",pos:"명사",parsing:"속격 여성 단수",lemma:"ἀλήθεια",strongs:"G225",isKey:true,meaning:"진리의. '진리의 영'—v6 '나는 진리'와 연결. 성령과 예수님의 동일한 본질.",note:""},
+      {gk:"ὃ",translit:"ho",ko:"호",gloss:"whom",pos:"대명사",parsing:"대격 중성 단수 관계대명사",lemma:"ὅς",strongs:"G3739",isKey:false,meaning:"그를.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"κόσμος",translit:"kosmos",ko:"코스모스",gloss:"world",pos:"명사",parsing:"주격 남성 단수",lemma:"κόσμος",strongs:"G2889",isKey:true,meaning:"세상. 요한복음에서 κόσμος=하나님을 거부하는 영역·인류.",note:""},
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"않는다.",note:""},
+      {gk:"δύναται",translit:"dynatai",ko:"뒤나타이",gloss:"is able",pos:"동사",parsing:"Present Middle Indicative 3sg",lemma:"δύναμαι",strongs:"G1410",isKey:false,meaning:"할 수 없다.",note:""},
+      {gk:"λαβεῖν",translit:"labein",ko:"라베인",gloss:"to receive",pos:"동사",parsing:"Aorist Active Infinitive",lemma:"λαμβάνω",strongs:"G2983",isKey:false,meaning:"받지. 세상은 성령을 받을 능력이 없음.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"because",pos:"접속사",parsing:"이유접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"왜냐하면.",note:""},
+      {gk:"οὐ",translit:"ou",ko:"우",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"보지 않으며.",note:""},
+      {gk:"θεωρεῖ",translit:"theōrei",ko:"테오레이",gloss:"sees",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"θεωρέω",strongs:"G2334",isKey:false,meaning:"바라보다. θεωρία(이론·관조)의 어근. 영적 통찰의 부재.",note:""},
+      {gk:"αὐτὸ",translit:"auto",ko:"아우토",gloss:"it",pos:"대명사",parsing:"대격 중성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그를.",note:""},
+      {gk:"οὐδὲ",translit:"oude",ko:"우데",gloss:"nor",pos:"접속사",parsing:"부정 등위접속사",lemma:"οὐδέ",strongs:"G3761",isKey:false,meaning:"또한 ~않는다.",note:""},
+      {gk:"γινώσκει",translit:"ginōskei",ko:"기노스케이",gloss:"knows",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"γινώσκω",strongs:"G1097",isKey:false,meaning:"알지도 못한다.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"그러나 너희는. 강조적 대조.",note:""},
+      {gk:"γινώσκετε",translit:"ginōskete",ko:"기노스케테",gloss:"know",pos:"동사",parsing:"Present Active Indicative 2pl",lemma:"γινώσκω",strongs:"G1097",isKey:true,meaning:"안다. 세상과 제자들의 극명한 대조—성령을 알아보는 자와 모르는 자.",note:""},
+      {gk:"αὐτό",translit:"auto",ko:"아우토",gloss:"him",pos:"대명사",parsing:"대격 중성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그를.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"because",pos:"접속사",parsing:"이유접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"왜냐하면.",note:""},
+      {gk:"παρ᾽",translit:"par'",ko:"파르",gloss:"with",pos:"전치사",parsing:"전치사+여격(축약)",lemma:"παρά",strongs:"G3844",isKey:false,meaning:"~곁에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희와 함께.",note:""},
+      {gk:"μένει",translit:"menei",ko:"메네이",gloss:"abides",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"μένω",strongs:"G3306",isKey:true,meaning:"거하신다. μένω=요한복음 핵심 동사. 영구적·친밀한 내주.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희 안에.",note:""},
+      {gk:"ἔσται",translit:"estai",ko:"에스타이",gloss:"will be",pos:"동사",parsing:"Future Middle Indicative 3sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"계실 것이다.",note:""}
+    ]
+  },
+  18:{
+    reference:"요한복음 14:18",
+    gk:"Οὐκ ἀφήσω ὑμᾶς ὀρφανούς· ἔρχομαι πρὸς ὑμᾶς.",
+    translation:"내가 너희를 고아와 같이 버려두지 아니하고 너희에게로 오리라",
+    words:[
+      {gk:"Οὐκ",translit:"Ouk",ko:"우크",gloss:"not",pos:"부사",parsing:"부정 불변화사",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"아니하리라.",note:""},
+      {gk:"ἀφήσω",translit:"aphēsō",ko:"아페소",gloss:"I will leave",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ἀφίημι",strongs:"G863",isKey:true,meaning:"버려두지 않겠다. ἀφίημι=놓아두다, 떠나다. 예수님의 확고한 약속.",note:""},
+      {gk:"ὑμᾶς",translit:"hymas",ko:"휘마스",gloss:"you",pos:"대명사",parsing:"대격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희를.",note:""},
+      {gk:"ὀρφανούς",translit:"orphanous",ko:"오르파누스",gloss:"orphans",pos:"형용사",parsing:"대격 남성 복수",lemma:"ὀρφανός",strongs:"G3737",isKey:true,meaning:"고아로. 영어 orphan의 어원. 보호자 없이 홀로 남겨진 상태—예수님은 제자들을 고아처럼 버려두지 않으심.",note:""},
+      {gk:"ἔρχομαι",translit:"erchomai",ko:"에르코마이",gloss:"I am coming",pos:"동사",parsing:"Present Middle Indicative 1sg",lemma:"ἔρχομαι",strongs:"G2064",isKey:true,meaning:"오리라. 현재형으로 미래의 확실한 약속—성령 강림, 부활 현현, 재림 모두 가리킬 수 있음.",note:""},
+      {gk:"πρὸς",translit:"pros",ko:"프로스",gloss:"to",pos:"전치사",parsing:"전치사+대격",lemma:"πρός",strongs:"G4314",isKey:false,meaning:"~에게로.",note:""},
+      {gk:"ὑμᾶς",translit:"hymas",ko:"휘마스",gloss:"you",pos:"대명사",parsing:"대격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희에게.",note:""}
+    ]
+  },
+  19:{
+    reference:"요한복음 14:19",
+    gk:"ἔτι μικρὸν καὶ ὁ κόσμος με οὐκέτι θεωρεῖ, ὑμεῖς δὲ θεωρεῖτέ με, ὅτι ἐγὼ ζῶ καὶ ὑμεῖς ζήσετε.",
+    translation:"조금 있으면 세상은 다시 나를 보지 못할 것이로되 너희는 나를 보리니 이는 내가 살아 있고 너희도 살겠음이라",
+    words:[
+      {gk:"ἔτι",translit:"eti",ko:"에티",gloss:"still",pos:"부사",parsing:"시간 부사",lemma:"ἔτι",strongs:"G2089",isKey:false,meaning:"아직도.",note:""},
+      {gk:"μικρὸν",translit:"mikron",ko:"미크론",gloss:"a little",pos:"형용사",parsing:"대격 중성 단수(부사적)",lemma:"μικρός",strongs:"G3397",isKey:false,meaning:"조금. μικρόν=잠깐, 아주 짧은 시간. 영어 micro의 어원.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and then",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그러면.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"κόσμος",translit:"kosmos",ko:"코스모스",gloss:"world",pos:"명사",parsing:"주격 남성 단수",lemma:"κόσμος",strongs:"G2889",isKey:false,meaning:"세상은.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"οὐκέτι",translit:"ouketi",ko:"우케티",gloss:"no longer",pos:"부사",parsing:"복합 부정 부사",lemma:"οὐκέτι",strongs:"G3765",isKey:false,meaning:"더 이상 ~않는다.",note:""},
+      {gk:"θεωρεῖ",translit:"theōrei",ko:"테오레이",gloss:"sees",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"θεωρέω",strongs:"G2334",isKey:false,meaning:"보지 못한다.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"그러나 너희는. 강조적 대조.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"but",pos:"접속사",parsing:"후치접속사",lemma:"δέ",strongs:"G1161",isKey:false,meaning:"그러나.",note:""},
+      {gk:"θεωρεῖτέ",translit:"theōreite",ko:"테오레이테",gloss:"will see",pos:"동사",parsing:"Present Active Indicative 2pl",lemma:"θεωρέω",strongs:"G2334",isKey:true,meaning:"볼 것이다. 세상과 제자들의 극명한 대조—부활 이후에도 제자들은 예수님을 볼 수 있음(성령으로).",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"because",pos:"접속사",parsing:"이유접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"왜냐하면.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ζῶ",translit:"zō",ko:"조",gloss:"live",pos:"동사",parsing:"Present Active Indicative 1sg",lemma:"ζάω",strongs:"G2198",isKey:true,meaning:"살아 있다. 예수님의 부활 생명—죽음을 이기신 영원한 생명.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희도.",note:""},
+      {gk:"ζήσετε",translit:"zēsete",ko:"제세테",gloss:"will live",pos:"동사",parsing:"Future Active Indicative 2pl",lemma:"ζάω",strongs:"G2198",isKey:true,meaning:"살겠음이라. 예수님의 부활 생명이 신자들에게도 전달됨—영적 연합.",note:""}
+    ]
+  },
+  20:{
+    reference:"요한복음 14:20",
+    gk:"ἐν ἐκείνῃ τῇ ἡμέρᾳ γνώσεσθε ὑμεῖς ὅτι ἐγὼ ἐν τῷ πατρί μου καὶ ὑμεῖς ἐν ἐμοὶ κἀγὼ ἐν ὑμῖν.",
+    translation:"그 날에는 내가 아버지 안에, 너희가 내 안에, 내가 너희 안에 있는 것을 너희가 알리라",
+    words:[
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~에.",note:""},
+      {gk:"ἐκείνῃ",translit:"ekeinē",ko:"에케이네",gloss:"that",pos:"대명사",parsing:"여격 여성 단수 지시대명사",lemma:"ἐκεῖνος",strongs:"G1565",isKey:false,meaning:"그.",note:""},
+      {gk:"τῇ",translit:"tē",ko:"테",gloss:"the",pos:"관사",parsing:"여격 여성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἡμέρᾳ",translit:"hēmera",ko:"헤메라",gloss:"day",pos:"명사",parsing:"여격 여성 단수",lemma:"ἡμέρα",strongs:"G2250",isKey:true,meaning:"날에. '그 날'—부활 후, 성령 강림 후. 새로운 이해가 열리는 계시의 날.",note:""},
+      {gk:"γνώσεσθε",translit:"gnōsesthe",ko:"그노세스테",gloss:"you will know",pos:"동사",parsing:"Future Middle Indicative 2pl",lemma:"γινώσκω",strongs:"G1097",isKey:true,meaning:"알게 될 것이다. 지금은 이해 못해도, 그 날에는 완전히 알게 됨.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희가.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"~임을.",note:""},
+      {gk:"ἐγὼ",translit:"egō",ko:"에고",gloss:"I",pos:"대명사",parsing:"주격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내가.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:true,meaning:"안에. 삼중 상호 내주: 예수님↔아버지, 신자↔예수님. 페리코레시스(perichoresis).",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατρί",translit:"patri",ko:"파트리",gloss:"Father",pos:"명사",parsing:"여격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지 안에.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ὑμεῖς",translit:"hymeis",ko:"휘메이스",gloss:"you",pos:"대명사",parsing:"주격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희가.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"ἐμοὶ",translit:"emoi",ko:"에모이",gloss:"me",pos:"대명사",parsing:"여격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내 안에.",note:""},
+      {gk:"κἀγὼ",translit:"kagō",ko:"카고",gloss:"and I",pos:"대명사",parsing:"주격 1단수(καὶ+ἐγώ 결합)",lemma:"ἐγώ",strongs:"G2504",isKey:false,meaning:"그리고 내가.",note:""},
+      {gk:"ἐν",translit:"en",ko:"엔",gloss:"in",pos:"전치사",parsing:"전치사+여격",lemma:"ἐν",strongs:"G1722",isKey:false,meaning:"~안에.",note:""},
+      {gk:"ὑμῖν",translit:"hymin",ko:"휘민",gloss:"you",pos:"대명사",parsing:"여격 2복수",lemma:"σύ",strongs:"G4771",isKey:false,meaning:"너희 안에 있음을.",note:""}
+    ]
+  },
+  21:{
+    reference:"요한복음 14:21",
+    gk:"ὁ ἔχων τὰς ἐντολάς μου καὶ τηρῶν αὐτάς, ἐκεῖνός ἐστιν ὁ ἀγαπῶν με· ὁ δὲ ἀγαπῶν με ἀγαπηθήσεται ὑπὸ τοῦ πατρός μου, κἀγὼ ἀγαπήσω αὐτὸν καὶ ἐμφανίσω αὐτῷ ἐμαυτόν.",
+    translation:"나의 계명을 지키는 자라야 나를 사랑하는 자니 나를 사랑하는 자는 내 아버지께 사랑을 받을 것이요 나도 그를 사랑하여 그에게 나를 나타내리라",
+    words:[
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"~하는 자.",note:""},
+      {gk:"ἔχων",translit:"echōn",ko:"에콘",gloss:"having",pos:"동사",parsing:"Present Active Participle 주격 남성 단수",lemma:"ἔχω",strongs:"G2192",isKey:false,meaning:"가진 자. 현재 분사—지속적 소유.",note:""},
+      {gk:"τὰς",translit:"tas",ko:"타스",gloss:"the",pos:"관사",parsing:"대격 여성 복수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἐντολάς",translit:"entolas",ko:"엔톨라스",gloss:"commandments",pos:"명사",parsing:"대격 여성 복수",lemma:"ἐντολή",strongs:"G1785",isKey:false,meaning:"계명들을.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나의.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"τηρῶν",translit:"tērōn",ko:"테론",gloss:"keeping",pos:"동사",parsing:"Present Active Participle 주격 남성 단수",lemma:"τηρέω",strongs:"G5083",isKey:true,meaning:"지키는 자. 소유(ἔχων)와 준수(τηρῶν)—마음과 행동 모두를 포함.",note:""},
+      {gk:"αὐτάς",translit:"autas",ko:"아우타스",gloss:"them",pos:"대명사",parsing:"대격 여성 3복수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그것들을.",note:""},
+      {gk:"ἐκεῖνός",translit:"ekeinos",ko:"에케이노스",gloss:"that one",pos:"대명사",parsing:"주격 남성 단수 지시대명사",lemma:"ἐκεῖνος",strongs:"G1565",isKey:false,meaning:"그가. 강조적 지시.",note:""},
+      {gk:"ἐστιν",translit:"estin",ko:"에스틴",gloss:"is",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"εἰμί",strongs:"G1510",isKey:false,meaning:"~이다.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"ἀγαπῶν",translit:"agapōn",ko:"아가폰",gloss:"loving",pos:"동사",parsing:"Present Active Participle 주격 남성 단수",lemma:"ἀγαπάω",strongs:"G25",isKey:true,meaning:"사랑하는 자. 삼중 반복—아버지의 사랑→예수님의 사랑→자기 계시로 이어지는 사랑의 연쇄.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the one",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"δὲ",translit:"de",ko:"데",gloss:"and",pos:"접속사",parsing:"후치접속사",lemma:"δέ",strongs:"G1161",isKey:false,meaning:"그런데.",note:""},
+      {gk:"ἀγαπῶν",translit:"agapōn",ko:"아가폰",gloss:"loving",pos:"동사",parsing:"Present Active Participle 주격 남성 단수",lemma:"ἀγαπάω",strongs:"G25",isKey:false,meaning:"사랑하는 자.",note:""},
+      {gk:"με",translit:"me",ko:"메",gloss:"me",pos:"대명사",parsing:"대격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"나를.",note:""},
+      {gk:"ἀγαπηθήσεται",translit:"agapēthēsetai",ko:"아가페테세타이",gloss:"will be loved",pos:"동사",parsing:"Future Passive Indicative 3sg",lemma:"ἀγαπάω",strongs:"G25",isKey:true,meaning:"사랑받을 것이다. 수동태—아버지의 사랑을 받게 됨. 신적 사랑의 수혜자가 됨.",note:""},
+      {gk:"ὑπὸ",translit:"hypo",ko:"휘포",gloss:"by",pos:"전치사",parsing:"전치사+속격",lemma:"ὑπό",strongs:"G5259",isKey:false,meaning:"~으로부터.",note:""},
+      {gk:"τοῦ",translit:"tou",ko:"투",gloss:"the",pos:"관사",parsing:"속격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"πατρός",translit:"patros",ko:"파트로스",gloss:"Father",pos:"명사",parsing:"속격 남성 단수",lemma:"πατήρ",strongs:"G3962",isKey:false,meaning:"아버지께.",note:""},
+      {gk:"μου",translit:"mou",ko:"무",gloss:"my",pos:"대명사",parsing:"속격 1단수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"내.",note:""},
+      {gk:"κἀγὼ",translit:"kagō",ko:"카고",gloss:"and I",pos:"대명사",parsing:"주격 1단수(καὶ+ἐγώ 결합)",lemma:"ἐγώ",strongs:"G2504",isKey:false,meaning:"그리고 나도.",note:""},
+      {gk:"ἀγαπήσω",translit:"agapēsō",ko:"아가페소",gloss:"will love",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ἀγαπάω",strongs:"G25",isKey:false,meaning:"사랑할 것이다.",note:""},
+      {gk:"αὐτὸν",translit:"auton",ko:"아우톤",gloss:"him",pos:"대명사",parsing:"대격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그를.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"ἐμφανίσω",translit:"emphanisō",ko:"엠파니소",gloss:"will reveal",pos:"동사",parsing:"Future Active Indicative 1sg",lemma:"ἐμφανίζω",strongs:"G1718",isKey:true,meaning:"나타낼 것이다. ἐν(안에)+φαίνω(빛나다)=나타내다, 드러내다. 자기 계시—예수님이 친히 자신을 알게 하심.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"ἐμαυτόν",translit:"emauton",ko:"에마우톤",gloss:"myself",pos:"대명사",parsing:"대격 남성 1단수 재귀대명사",lemma:"ἐμαυτοῦ",strongs:"G1683",isKey:false,meaning:"나 자신을.",note:""}
+    ]
+  },
+  22:{
+    reference:"요한복음 14:22",
+    gk:"λέγει αὐτῷ Ἰούδας, οὐχ ὁ Ἰσκαριώτης· κύριε, τί γέγονεν ὅτι ἡμῖν μέλλεις ἐμφανίζειν σεαυτὸν καὶ οὐχὶ τῷ κόσμῳ;",
+    translation:"가룟인 아닌 유다가 이르되 주여 어찌하여 자신을 우리에게는 나타내시고 세상에게는 아니하려 하시나이까",
+    words:[
+      {gk:"λέγει",translit:"legei",ko:"레게이",gloss:"says",pos:"동사",parsing:"Present Active Indicative 3sg",lemma:"λέγω",strongs:"G3004",isKey:false,meaning:"말한다.",note:""},
+      {gk:"αὐτῷ",translit:"autō",ko:"아우토",gloss:"to him",pos:"대명사",parsing:"여격 남성 3단수",lemma:"αὐτός",strongs:"G846",isKey:false,meaning:"그에게.",note:""},
+      {gk:"Ἰούδας",translit:"Ioudas",ko:"유다스",gloss:"Judas",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Ἰούδας",strongs:"G2455",isKey:true,meaning:"유다. 가룟 유다와 구별된 '다른 유다'—시몬의 아들(눅6:16, 행1:13). 이스라엘 지파 이름에서 유래.",note:""},
+      {gk:"οὐχ",translit:"ouch",ko:"우크",gloss:"not",pos:"부사",parsing:"부정 불변화사(자음 앞 οὐκ 변형)",lemma:"οὐ",strongs:"G3756",isKey:false,meaning:"~아닌.",note:""},
+      {gk:"ὁ",translit:"ho",ko:"호",gloss:"the",pos:"관사",parsing:"주격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"Ἰσκαριώτης",translit:"Iskariōtēs",ko:"이스카리오테스",gloss:"Iscariot",pos:"고유명사",parsing:"주격 남성 단수",lemma:"Ἰσκαριώτης",strongs:"G2469",isKey:true,meaning:"가룟. '이스가리옷'—Kerioth 출신(?). 배신자 유다를 식별하기 위해 추가한 수식어.",note:""},
+      {gk:"κύριε",translit:"kyrie",ko:"퀴리에",gloss:"Lord",pos:"명사",parsing:"호격 남성 단수",lemma:"κύριος",strongs:"G2962",isKey:false,meaning:"주님.",note:""},
+      {gk:"τί",translit:"ti",ko:"티",gloss:"why",pos:"대명사",parsing:"주격 중성 단수 의문대명사",lemma:"τίς",strongs:"G5101",isKey:false,meaning:"왜, 어찌하여.",note:""},
+      {gk:"γέγονεν",translit:"gegonen",ko:"게고넨",gloss:"has happened",pos:"동사",parsing:"Perfect Active Indicative 3sg",lemma:"γίνομαι",strongs:"G1096",isKey:false,meaning:"된 것입니까. 완료형—어떻게 이렇게 된 것입니까.",note:""},
+      {gk:"ὅτι",translit:"hoti",ko:"호티",gloss:"that",pos:"접속사",parsing:"종속접속사",lemma:"ὅτι",strongs:"G3754",isKey:false,meaning:"~한다는 것이.",note:""},
+      {gk:"ἡμῖν",translit:"hēmin",ko:"헤민",gloss:"to us",pos:"대명사",parsing:"여격 1복수",lemma:"ἐγώ",strongs:"G1473",isKey:false,meaning:"우리에게.",note:""},
+      {gk:"μέλλεις",translit:"melleis",ko:"멜레이스",gloss:"you are about",pos:"동사",parsing:"Present Active Indicative 2sg",lemma:"μέλλω",strongs:"G3195",isKey:false,meaning:"하려고 하십니까.",note:""},
+      {gk:"ἐμφανίζειν",translit:"emphanizein",ko:"엠파니제인",gloss:"to reveal",pos:"동사",parsing:"Present Active Infinitive",lemma:"ἐμφανίζω",strongs:"G1718",isKey:true,meaning:"나타내시다. v21의 ἐμφανίσω(나타낼 것이다)의 부정사형—유다가 예수님의 약속(v21)을 되물음.",note:""},
+      {gk:"σεαυτὸν",translit:"seauton",ko:"세아우톤",gloss:"yourself",pos:"대명사",parsing:"대격 남성 2단수 재귀대명사",lemma:"σεαυτοῦ",strongs:"G4572",isKey:false,meaning:"자신을.",note:""},
+      {gk:"καὶ",translit:"kai",ko:"카이",gloss:"and",pos:"접속사",parsing:"등위접속사",lemma:"καί",strongs:"G2532",isKey:false,meaning:"그리고.",note:""},
+      {gk:"οὐχὶ",translit:"ouchi",ko:"우키",gloss:"not",pos:"부사",parsing:"강조 부정 부사",lemma:"οὐχί",strongs:"G3780",isKey:false,meaning:"아니하시나이까. 강조적 부정.",note:""},
+      {gk:"τῷ",translit:"tō",ko:"토",gloss:"the",pos:"관사",parsing:"여격 남성 단수",lemma:"ὁ",strongs:"G3588",isKey:false,meaning:"정관사.",note:""},
+      {gk:"κόσμῳ",translit:"kosmō",ko:"코스모",gloss:"world",pos:"명사",parsing:"여격 남성 단수",lemma:"κόσμος",strongs:"G2889",isKey:true,meaning:"세상에게는. 유다의 세속적 메시아 기대—예수님이 공개적으로 온 세상에 나타나실 것이라는 기대.",note:""}
+    ]
+  },
   23:{
     reference:"요한복음 14:23",
     gk:"ἀπεκρίθη Ἰησοῦς καὶ εἶπεν αὐτῷ· ἐάν τις ἀγαπᾷ με τὸν λόγον μου τηρήσει, καὶ ὁ πατήρ μου ἀγαπήσει αὐτόν, καὶ πρὸς αὐτὸν ἐλευσόμεθα καὶ μονὴν παρ' αὐτῷ ποιησόμεθα.",
@@ -669,7 +1247,7 @@ if (AUTO_TIMINGS && AUTO_TIMINGS.length === allWords.length) {
   timings = AUTO_TIMINGS.slice();
 }
 // AUTO_TIMINGS 버전 해시 — 변경 시 localStorage 자동 클리어
-const _AT_HASH = AUTO_TIMINGS ? AUTO_TIMINGS.length + '_' + AUTO_TIMINGS[0] : 'null';
+const _AT_HASH = 'john14-v2-full';
 (function() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return;
