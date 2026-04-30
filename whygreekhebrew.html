@@ -440,6 +440,19 @@
     .compare-table{font-size:12px}
     .compare-table th,.compare-table td{padding:8px 10px}
   }
+  /* ── 다른 성경 본문 카드 ── */
+  .more-chapters{margin-top:50px;padding-top:30px;border-top:1px solid rgba(201,169,92,.15)}
+  .more-chapters-title{text-align:center;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-dim,#8a7f6e);margin-bottom:20px}
+  .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  .chapter-card{display:block;text-decoration:none;background:rgba(0,0,0,.2);border:1px solid rgba(201,169,92,.12);border-radius:4px;padding:16px 14px;transition:all .3s;text-align:center;color:inherit}
+  .chapter-card:hover{background:rgba(201,169,92,.08);border-color:rgba(201,169,92,.3);transform:translateY(-2px)}
+  .chapter-card.current{border-color:rgba(200,154,154,.35);background:rgba(200,154,154,.06);cursor:default}
+  .card-icon{font-size:22px;display:block;margin-bottom:8px}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:15px;color:#f3ead5;margin-bottom:4px}
+  .card-title-en{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:#c9a95c;margin-bottom:6px;letter-spacing:0.5px;opacity:0.85}
+  .card-subtitle{font-family:'Cardo',serif;font-size:11px;color:#8a7f6e;margin-bottom:4px}
+  .card-description{font-family:'Noto Serif KR',serif;font-size:11px;color:#8a7f6e;line-height:1.4}
+  .desc-en{display:inline-block;margin-top:4px;font-family:'EB Garamond',serif;font-style:italic;font-size:11px;color:#8a7f6e;opacity:0.9;line-height:1.4}
 </style>
 </head>
 <body>
@@ -1070,6 +1083,108 @@
       히브리어가 하나님의 이야기를 살아있는 행동으로 전하고,<br>
       헬라어가 그 이야기의 의미를 온 세상에 정밀하게 전달했습니다.<br>
       두 언어는 하나의 계시를 위해 역사 속에서 준비된 그릇입니다.
+    </div>
+  </div>
+
+  <!-- 다른 성경 본문 -->
+  <div class="more-chapters">
+    <div class="more-chapters-title">📖 다른 중요 성경 본문 · Other Important Passages</div>
+    <div class="chapters-grid">
+      <a href="matt5.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🕊️</span>
+        <div class="card-title">마태복음 5:1-16</div>
+        <div class="card-title-en">Matthew 5:1-16</div>
+        <div class="card-subtitle">팔복과 소금과 빛 · Beatitudes</div>
+        <div class="card-description">심령이 가난한 자는 복이 있나니<br><span class="desc-en">Blessed are the poor in spirit</span></div>
+      </a>
+      <a href="john1.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">✝️</span>
+        <div class="card-title">요한복음 1:1-18</div>
+        <div class="card-title-en">John 1:1-18</div>
+        <div class="card-subtitle">로고스 · The Logos</div>
+        <div class="card-description">태초에 말씀이 계시니라<br><span class="desc-en">In the beginning was the Word</span></div>
+      </a>
+      <a href="john10.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🐏</span>
+        <div class="card-title">요한복음 10:27-29</div>
+        <div class="card-title-en">John 10:27-29</div>
+        <div class="card-subtitle">내 양은 · My Sheep</div>
+        <div class="card-description">내 양은 내 음성을 들으며<br><span class="desc-en">My sheep hear my voice</span></div>
+      </a>
+      <a href="john11.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">✝</span>
+        <div class="card-title">요한복음 11:1-27</div>
+        <div class="card-title-en">John 11:1-27</div>
+        <div class="card-subtitle">나사로와 부활 · Lazarus</div>
+        <div class="card-description">나는 부활이요 생명이니<br><span class="desc-en">I am the resurrection and the life</span></div>
+      </a>
+      <a href="john14.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🕊️</span>
+        <div class="card-title">요한복음 14:1-27</div>
+        <div class="card-title-en">John 14:1-27</div>
+        <div class="card-subtitle">길과 진리와 생명 · Way Truth Life</div>
+        <div class="card-description">내가 곧 길이요 진리요 생명이니<br><span class="desc-en">I am the way the truth and the life</span></div>
+      </a>
+      <a href="romans8.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🔥</span>
+        <div class="card-title">로마서 8장 전체</div>
+        <div class="card-title-en">Romans 8 (full)</div>
+        <div class="card-subtitle">성령 안의 삶 · Life in the Spirit</div>
+        <div class="card-description">그리스도 안에 정죄함이 없나니<br><span class="desc-en">No condemnation for those in Christ</span></div>
+      </a>
+      <a href="index.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🌹</span>
+        <div class="card-title">고린도전서 13장</div>
+        <div class="card-title-en">1 Corinthians 13</div>
+        <div class="card-subtitle">사랑장 · The Love Chapter</div>
+        <div class="card-description">믿음·소망·사랑, 그 중 제일은 사랑<br><span class="desc-en">Faith, Hope, Love — the greatest is Love</span></div>
+      </a>
+      <a href="ephe1.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">✉️</span>
+        <div class="card-title">에베소서 1장 전체</div>
+        <div class="card-title-en">Ephesians 1 (full)</div>
+        <div class="card-subtitle">신령한 복의 송영 · Spiritual Blessings</div>
+        <div class="card-description">그리스도 안에서 모든 신령한 복<br><span class="desc-en">Every spiritual blessing in Christ</span></div>
+      </a>
+      <a href="phil2.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🌟</span>
+        <div class="card-title">빌립보서 2:1-11</div>
+        <div class="card-title-en">Philippians 2:1-11</div>
+        <div class="card-subtitle">그리스도의 마음 · Carmen Christi</div>
+        <div class="card-description">그리스도 예수의 마음을 품으라<br><span class="desc-en">Have this mind in Christ Jesus</span></div>
+      </a>
+      <a href="num6.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">✋</span>
+        <div class="card-title">민수기 6:24-27</div>
+        <div class="card-title-en">Numbers 6:24-27</div>
+        <div class="card-subtitle">아론의 축복 · Aaronic Blessing</div>
+        <div class="card-description">여호와는 네게 복을 주시고<br><span class="desc-en">The LORD bless you and keep you</span></div>
+      </a>
+      <a href="psalm1.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🌿</span>
+        <div class="card-title">시편 1편</div>
+        <div class="card-title-en">Psalm 1</div>
+        <div class="card-subtitle">복 있는 사람 · The Blessed Man</div>
+        <div class="card-description">여호와의 율법을 즐거워하는 자<br><span class="desc-en">Blessed is the one who delights in the law</span></div>
+      </a>
+      <a href="psalm23.html" class="chapter-card" target="_blank" rel="noopener">
+        <span class="card-icon">🐑</span>
+        <div class="card-title">시편 23편</div>
+        <div class="card-title-en">Psalm 23</div>
+        <div class="card-subtitle">선한 목자 · The Good Shepherd</div>
+        <div class="card-description">여호와는 나의 목자시니<br><span class="desc-en">The LORD is my shepherd</span></div>
+      </a>
+      <div class="chapter-card current">
+        <span class="card-icon">📖</span>
+        <div class="card-title">원어 해설</div>
+        <div class="card-title-en">Why Greek &amp; Hebrew</div>
+        <div class="card-subtitle">원어의 이유 · 문자·문법·문화</div>
+        <div class="card-description">성경이 이 두 언어로 기록된 이유<br><span class="desc-en">The languages of divine revelation</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:25px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:#8a7f6e;letter-spacing:1px;opacity:0.7">
+      더 많은 본문은 순차적으로 추가될 예정입니다<br>
+      <span style="font-size:10px;opacity:0.8">More passages will be added progressively</span>
     </div>
   </div>
 
