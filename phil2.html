@@ -1004,8 +1004,8 @@ function syncAudio() {
   document.getElementById('progressBar').style.width = `${t/dur*100}%`;
   let activeIdx = currentWordIdx;
   for (let i = 0; i < allWords.length; i++) {
-    if (timings[i] !== null && t >= timings[i]) activeIdx = i;
-    else if (timings[i] !== null && t < timings[i]) break;
+    if (timings[i] !== null && t + 0.5 >= timings[i]) activeIdx = i;
+    else if (timings[i] !== null && t + 0.5 < timings[i]) break;
   }
   if (activeIdx !== currentWordIdx) setActive(activeIdx);
   if (!audio.paused && !audio.ended) autoSyncRAF = requestAnimationFrame(syncAudio);
