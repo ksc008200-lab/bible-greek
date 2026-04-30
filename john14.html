@@ -1296,8 +1296,8 @@ function renderScripture() {
       <div class="verse" id="verse-${k}">${wordsHtml}</div>
       <div class="translation">
         <div class="translation-ko">${v.translation}</div>
-        <div class="translation-nkjv"><span class="version-label">KJV</span>${v.kjv}</div>
-        <div class="translation-esv"><span class="version-label">ESV</span>${v.esv}</div>
+        ${v.kjv ? `<div class="translation-nkjv"><span class="version-label">KJV</span>${v.kjv}</div>` : ''}
+        ${v.esv ? `<div class="translation-esv"><span class="version-label">ESV</span>${v.esv}</div>` : ''}
       </div>
     </div>`;
   }).join('');
@@ -1336,6 +1336,12 @@ function filterVerse(v) {
   currentVerse = v;
   document.querySelectorAll('.verse-nav button').forEach(b => b.classList.toggle('active', b.dataset.v == v));
   renderScripture();
+  if (v !== 'all') {
+    setTimeout(() => {
+      const el = document.getElementById('verse-block-' + v);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
 }
 
 function clickWord(idx) {
