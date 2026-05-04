@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בִּנְיָנִים — 히브리어 동사 7 빈얀 활용표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;700&family=Noto+Serif+Hebrew:wght@400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121620;
+    --bg-2:#181e2c;
+    --ink:#e8e0d3;
+    --ink-dim:#7a8090;
+    --gold:#c9a95c;
+    --gold-bright:#e8c878;
+    --green:#2a6aaa;
+    --green-bright:#5a9acc;
+    --rose:#8ab0d8;
+    --parchment:#f3ead5;
+    --shadow:rgba(0,0,0,.5);
+    --success:#6fa8d8;
+    --warn:#e8a878;
+    --sky:#a8c8e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'EB Garamond','Noto Serif KR',serif;
+    background:radial-gradient(ellipse at top,#1a2040 0%,var(--bg) 60%),var(--bg);
+    color:var(--ink);min-height:100vh;padding:25px 15px;position:relative;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%,rgba(42,106,170,.06) 0%,transparent 40%),
+      radial-gradient(circle at 80% 80%,rgba(201,169,92,.05) 0%,transparent 45%);
+    pointer-events:none;z-index:0;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    opacity:.4;pointer-events:none;z-index:1;
+  }
+  .container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+
+  header{
+    text-align:center;margin-bottom:25px;padding-bottom:20px;
+    border-bottom:1px solid rgba(42,106,170,.2);position:relative;
+  }
+  header::after{
+    content:"✦";position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);
+    background:var(--bg);color:var(--rose);padding:0 15px;font-size:14px;
+  }
+  .back-link{
+    display:inline-block;font-family:'Noto Serif KR',serif;font-size:11px;
+    color:var(--ink-dim);text-decoration:none;letter-spacing:2.5px;text-transform:uppercase;
+    margin-bottom:18px;padding:6px 14px;border:1px solid rgba(255,255,255,.06);
+    border-radius:3px;transition:all .25s;
+  }
+  .back-link:hover{color:var(--gold);border-color:rgba(201,169,92,.3)}
+  .subtitle{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:13px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--rose);margin-bottom:8px;
+  }
+  h1{
+    font-family:'Noto Serif Hebrew','Cormorant Garamond',serif;
+    font-weight:500;font-size:clamp(28px,4.5vw,42px);
+    color:var(--parchment);letter-spacing:2px;direction:rtl;
+  }
+  .h1-ko{
+    font-family:'Noto Serif KR',serif;font-size:18px;
+    color:var(--rose);margin-top:6px;letter-spacing:2px;
+  }
+  .reference{font-family:'Noto Serif KR',serif;color:var(--ink-dim);font-size:14px;margin-top:8px;line-height:1.6}
+
+  .scripture-card{
+    background:linear-gradient(145deg,#1a2030 0%,#121620 100%);
+    border:1px solid rgba(42,106,170,.2);border-radius:2px;
+    padding:35px 30px;box-shadow:0 20px 60px var(--shadow),inset 0 1px 0 rgba(255,255,255,.03);
+    margin-bottom:22px;position:relative;
+  }
+  .scripture-card::before{
+    content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;
+    border:1px solid rgba(42,106,170,.08);pointer-events:none;
+  }
+  .scripture-card > *{position:relative;z-index:1}
+
+  .section-title{
+    font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:5px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:22px;
+    text-align:center;font-weight:500;position:relative;padding-bottom:12px;
+  }
+  .section-title::after{
+    content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+    width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .section-subtitle{
+    font-family:'Noto Serif KR',serif;font-size:13px;color:var(--ink-dim);
+    text-align:center;margin-bottom:20px;line-height:1.7;
+  }
+
+  .intro-text{
+    font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.9;color:var(--ink);
+    text-align:center;
+  }
+  .intro-text strong{color:var(--gold-bright)}
+  .intro-hebrew{font-family:'Noto Serif Hebrew',serif;font-size:22px;color:var(--gold-bright);direction:rtl;display:inline-block;margin:0 4px}
+
+  .root-display{
+    text-align:center;padding:18px 20px;margin:18px 0 5px;
+    background:rgba(0,0,0,.3);border:1px solid rgba(201,169,92,.2);border-radius:3px;
+  }
+  .root-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+  .root-letters{font-family:'Noto Serif Hebrew',serif;font-size:46px;color:var(--gold-bright);direction:rtl;letter-spacing:8px;text-shadow:0 0 25px rgba(232,200,120,.3);line-height:1.2}
+  .root-meaning{font-family:'Noto Serif KR',serif;font-size:14px;color:var(--ink);margin-top:6px}
+  .root-meaning em{color:var(--rose);font-family:'Cormorant Garamond',serif;font-style:italic}
+
+  /* Paradigm overview table */
+  .paradigm-wrap{overflow-x:auto;margin-bottom:6px;border-radius:3px;-webkit-overflow-scrolling:touch}
+  table.paradigm{
+    width:100%;border-collapse:collapse;background:rgba(0,0,0,.25);
+    font-family:'Noto Serif Hebrew','Times New Roman',serif;
+    min-width:780px;
+  }
+  table.paradigm th, table.paradigm td{
+    padding:12px 10px;text-align:center;border:1px solid rgba(42,106,170,.18);
+    vertical-align:middle;
+  }
+  table.paradigm thead th{
+    font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--gold);font-weight:500;
+    background:linear-gradient(180deg,rgba(201,169,92,.1),rgba(0,0,0,.3));
+    direction:ltr;
+  }
+  table.paradigm tbody tr:nth-child(odd){background:rgba(42,106,170,.04)}
+  table.paradigm tbody tr:hover{background:rgba(138,176,216,.08)}
+  table.paradigm .stem-name{
+    font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:1.5px;
+    color:var(--rose);text-align:right;padding-right:14px;direction:ltr;
+    font-weight:600;background:rgba(0,0,0,.25);min-width:80px;
+  }
+  table.paradigm .stem-name small{display:block;font-size:10px;color:var(--ink-dim);font-weight:400;letter-spacing:1px;margin-top:2px;font-style:italic}
+  table.paradigm .heb{font-size:22px;color:var(--parchment);direction:rtl;line-height:1.4}
+  table.paradigm .translit{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:11px;color:var(--ink-dim);margin-top:3px;direction:ltr;
+  }
+  table.paradigm .empty{color:var(--ink-dim);font-size:18px;font-family:'Cormorant Garamond',serif;font-style:italic;direction:ltr}
+
+  /* Stem detail tabs */
+  .stem-tabs{
+    display:flex;background:rgba(0,0,0,.3);border:1px solid rgba(42,106,170,.25);
+    border-radius:2px;margin-bottom:20px;overflow-x:auto;flex-wrap:nowrap;
+    scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  }
+  .stem-tab{
+    flex:1 0 auto;min-width:90px;padding:14px 10px;text-align:center;cursor:pointer;
+    font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:1.8px;
+    text-transform:uppercase;color:var(--ink-dim);transition:all .3s;
+    border-right:1px solid rgba(42,106,170,.12);user-select:none;
+  }
+  .stem-tab:last-child{border-right:none}
+  .stem-tab:hover{color:var(--ink);background:rgba(42,106,170,.05)}
+  .stem-tab.active{
+    background:linear-gradient(180deg,rgba(138,176,216,.22),rgba(42,106,170,.05));
+    color:var(--gold-bright);box-shadow:inset 0 -2px 0 var(--green);font-weight:600;
+  }
+  .stem-tab small{display:block;font-size:9px;color:var(--rose);letter-spacing:1px;margin-top:3px;text-transform:none;font-family:'Noto Serif KR',serif;font-style:normal}
+
+  .stem-panel{display:none;animation:fadeIn .3s}
+  .stem-panel.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  .stem-meaning{
+    padding:14px 18px;background:rgba(0,0,0,.25);border-left:3px solid var(--green);
+    margin-bottom:20px;font-family:'Noto Serif KR',serif;font-size:14px;
+    line-height:1.8;color:var(--ink);border-radius:2px;
+  }
+  .stem-meaning strong{color:var(--gold-bright);font-family:'Cormorant Garamond',serif;letter-spacing:1px}
+  .stem-meaning .heb-inline{font-family:'Noto Serif Hebrew',serif;font-size:18px;color:var(--rose);direction:rtl;display:inline-block}
+  .stem-meaning .example{display:block;margin-top:8px;font-size:13px;color:var(--ink-dim);font-style:italic;padding-left:10px;border-left:1px dashed rgba(138,176,216,.2)}
+
+  /* Conjugation grid */
+  .conj-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:14px;
+  }
+  .conj-card{
+    background:rgba(0,0,0,.3);border:1px solid rgba(42,106,170,.18);
+    border-radius:3px;padding:18px 16px;
+  }
+  .conj-card-title{
+    font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:14px;text-align:center;
+    padding-bottom:8px;border-bottom:1px dashed rgba(201,169,92,.2);font-weight:500;
+  }
+  .conj-card-title small{display:block;color:var(--ink-dim);font-size:10px;letter-spacing:2px;margin-top:3px;text-transform:none}
+  .conj-row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;
+    padding:7px 4px;border-bottom:1px solid rgba(42,106,170,.08);
+  }
+  .conj-row:last-child{border-bottom:none}
+  .conj-row .person{
+    font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:1.5px;
+    color:var(--rose);min-width:50px;direction:ltr;
+  }
+  .conj-row .heb-form{
+    font-family:'Noto Serif Hebrew',serif;font-size:21px;color:var(--parchment);
+    direction:rtl;text-align:center;line-height:1.3;
+  }
+  .conj-row .meaning{
+    font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);
+    text-align:right;direction:ltr;letter-spacing:0.3px;
+  }
+
+  /* Non-finite forms strip — 각 항목을 박스 카드로 */
+  .nonfinite-strip{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;
+    margin-top:18px;
+  }
+  .nonfinite-item{
+    text-align:center;padding:16px 14px;
+    background:linear-gradient(145deg,rgba(201,169,92,.08) 0%,rgba(0,0,0,.25) 100%);
+    border:1px solid rgba(201,169,92,.25);border-radius:4px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.03);
+    transition:all .25s;position:relative;
+  }
+  .nonfinite-item::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:.5;
+  }
+  .nonfinite-item:hover{
+    transform:translateY(-2px);border-color:var(--gold);
+    box-shadow:0 12px 28px rgba(201,169,92,.15);
+  }
+  .nonfinite-label{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed rgba(201,169,92,.2)}
+  .nonfinite-heb{font-family:'Noto Serif Hebrew',serif;font-size:26px;color:var(--gold-bright);direction:rtl;line-height:1.3;text-shadow:0 0 18px rgba(232,200,120,.2)}
+  .nonfinite-translit{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--rose);margin-top:4px}
+  .nonfinite-meaning{font-family:'Noto Serif KR',serif;font-size:11px;color:var(--ink-dim);margin-top:4px}
+
+  /* Weak verbs note */
+  .weak-list{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;
+  }
+  .weak-card{
+    background:rgba(0,0,0,.25);border:1px solid rgba(42,106,170,.15);
+    border-left:3px solid var(--green);border-radius:2px;padding:16px 18px;
+  }
+  .weak-title{
+    font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:2px;
+    color:var(--gold-bright);margin-bottom:8px;font-weight:600;
+  }
+  .weak-title .heb-inline{font-family:'Noto Serif Hebrew',serif;font-size:18px;color:var(--rose);direction:rtl;display:inline-block;margin:0 2px}
+  .weak-desc{font-family:'Noto Serif KR',serif;font-size:13px;line-height:1.7;color:var(--ink)}
+  .weak-desc em{color:var(--rose);font-style:normal;font-family:'Cormorant Garamond',serif}
+
+  /* Chapter navigation grid (matched to other pages) */
+  .more-chapters{margin-top:50px;padding-top:30px;border-top:1px solid rgba(42,106,170,.15)}
+  .more-chapters-title{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:25px;text-align:center;position:relative}
+  .more-chapters-title::before,.more-chapters-title::after{content:"";display:inline-block;width:40px;height:1px;background:rgba(42,106,170,.3);vertical-align:middle;margin:0 18px}
+  .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+  .chapter-card{
+    background:linear-gradient(145deg,#1a2030 0%,#121620 100%);
+    border:1px solid rgba(42,106,170,.18);border-radius:3px;
+    padding:22px 18px;cursor:pointer;transition:all .3s;
+    text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;
+  }
+  .chapter-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
+  .chapter-card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 15px 35px rgba(42,106,170,.15)}
+  .chapter-card:hover::before{opacity:1}
+  .chapter-card.current{border-color:var(--green);background:linear-gradient(145deg,#1a2a40 0%,#141e30 100%)}
+  .chapter-card.current::after{content:"현재";position:absolute;top:8px;right:10px;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:2px;color:var(--rose);padding:2px 8px;border:1px solid var(--green);border-radius:2px}
+  .card-icon{font-size:32px;margin-bottom:8px;display:block}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--parchment);margin-bottom:3px;letter-spacing:1px}
+  .card-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:13px;margin-bottom:10px}
+  .card-description{font-family:'Noto Serif KR',serif;color:var(--ink);font-size:12px;line-height:1.5;opacity:.85}
+  .card-title-en{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--gold);margin-bottom:6px;letter-spacing:0.5px;opacity:0.85}
+  a.chapter-card{text-decoration:none!important;color:inherit}
+
+  .footer-note{
+    text-align:center;margin-top:30px;padding:18px;
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:12px;color:var(--ink-dim);letter-spacing:1px;
+  }
+
+  @media(max-width:640px){
+    .scripture-card{padding:25px 16px}
+    h1{font-size:32px}
+    .root-letters{font-size:36px;letter-spacing:6px}
+    .conj-grid{grid-template-columns:1fr}
+    .stem-tab{min-width:75px;font-size:11px;padding:10px 6px}
+    .chapters-grid{grid-template-columns:1fr 1fr}
+    .chapter-card{padding:15px 12px}
+    table.paradigm .heb{font-size:18px}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <a href="index.html" class="back-link">← 홈으로</a>
+    <div class="subtitle">Hebrew Verb Paradigms · 7 בִּנְיָנִים</div>
+    <h1>בִּנְיָנִים</h1>
+    <div class="h1-ko">히브리어 동사 활용표</div>
+    <div class="reference">표준 강동사 קָטַל 기준 · 7개 빈얀 × 5개 형태 · 인칭별 전체 활용</div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="scripture-card">
+    <div class="section-title">서론 · 빈얀 시스템</div>
+    <div class="intro-text">
+      히브리어 동사는 보통 <strong>3자음 어근</strong>(<span class="intro-hebrew">שֹׁרֶשׁ</span>, 쇼레쉬)으로 구성되며,
+      이 어근을 <strong>7가지 패턴</strong>(<span class="intro-hebrew">בִּנְיָנִים</span>, 빈야님)에 끼워넣어 의미를 변화시킵니다.<br>
+      같은 어근이 <em style="color:var(--rose);font-style:normal">"능동·수동·강조·사역·재귀"</em> 등으로 변형되는 것이 핵심입니다.
+    </div>
+    <div class="root-display">
+      <div class="root-label">기준 어근 · Root</div>
+      <div class="root-letters">ק · ט · ל</div>
+      <div class="root-meaning">q–ṭ–l · <em>"죽이다 · to kill"</em> (전통 교재 표준 강동사)</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: OVERVIEW TABLE -->
+  <div class="scripture-card">
+    <div class="section-title">Ⅰ. 7 빈얀 · 핵심 형태 종합표</div>
+    <div class="section-subtitle">각 빈얀별 5개 핵심 형태(완료·미완료·명령·부정사연계형·분사) 한눈에 보기</div>
+    <div class="paradigm-wrap">
+      <table class="paradigm">
+        <thead>
+          <tr>
+            <th>Stem · 의미</th>
+            <th>Perfect 3ms<br><small style="font-size:9px;color:var(--ink-dim)">완료 (그가 ~했다)</small></th>
+            <th>Imperfect 3ms<br><small style="font-size:9px;color:var(--ink-dim)">미완료 (그가 ~할 것이다)</small></th>
+            <th>Imperative ms<br><small style="font-size:9px;color:var(--ink-dim)">명령 (~하라)</small></th>
+            <th>Inf. Construct<br><small style="font-size:9px;color:var(--ink-dim)">부정사연계형</small></th>
+            <th>Active Ptc.<br><small style="font-size:9px;color:var(--ink-dim)">능동분사</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="stem-name">Qal<small>능동·단순</small></td>
+            <td><div class="heb">קָטַל</div><div class="translit">qāṭal</div></td>
+            <td><div class="heb">יִקְטֹל</div><div class="translit">yiqṭōl</div></td>
+            <td><div class="heb">קְטֹל</div><div class="translit">qǝṭōl</div></td>
+            <td><div class="heb">קְטֹל</div><div class="translit">qǝṭōl</div></td>
+            <td><div class="heb">קֹטֵל</div><div class="translit">qōṭēl</div></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Niphal<small>수동·재귀</small></td>
+            <td><div class="heb">נִקְטַל</div><div class="translit">niqṭal</div></td>
+            <td><div class="heb">יִקָּטֵל</div><div class="translit">yiqqāṭēl</div></td>
+            <td><div class="heb">הִקָּטֵל</div><div class="translit">hiqqāṭēl</div></td>
+            <td><div class="heb">הִקָּטֵל</div><div class="translit">hiqqāṭēl</div></td>
+            <td><div class="heb">נִקְטָל</div><div class="translit">niqṭāl</div></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Piel<small>강조 능동</small></td>
+            <td><div class="heb">קִטֵּל</div><div class="translit">qiṭṭēl</div></td>
+            <td><div class="heb">יְקַטֵּל</div><div class="translit">yǝqaṭṭēl</div></td>
+            <td><div class="heb">קַטֵּל</div><div class="translit">qaṭṭēl</div></td>
+            <td><div class="heb">קַטֵּל</div><div class="translit">qaṭṭēl</div></td>
+            <td><div class="heb">מְקַטֵּל</div><div class="translit">mǝqaṭṭēl</div></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Pual<small>강조 수동</small></td>
+            <td><div class="heb">קֻטַּל</div><div class="translit">quṭṭal</div></td>
+            <td><div class="heb">יְקֻטַּל</div><div class="translit">yǝquṭṭal</div></td>
+            <td><div class="empty">— 없음 —</div></td>
+            <td><div class="empty">— 드묾 —</div></td>
+            <td><div class="heb">מְקֻטָּל</div><div class="translit">mǝquṭṭāl</div><small style="font-size:9px;color:var(--ink-dim);font-style:italic">(수동분사)</small></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Hiphil<small>사역 능동</small></td>
+            <td><div class="heb">הִקְטִיל</div><div class="translit">hiqṭîl</div></td>
+            <td><div class="heb">יַקְטִיל</div><div class="translit">yaqṭîl</div></td>
+            <td><div class="heb">הַקְטֵל</div><div class="translit">haqṭēl</div></td>
+            <td><div class="heb">הַקְטִיל</div><div class="translit">haqṭîl</div></td>
+            <td><div class="heb">מַקְטִיל</div><div class="translit">maqṭîl</div></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Hophal<small>사역 수동</small></td>
+            <td><div class="heb">הָקְטַל</div><div class="translit">hoqṭal</div></td>
+            <td><div class="heb">יָקְטַל</div><div class="translit">yoqṭal</div></td>
+            <td><div class="empty">— 없음 —</div></td>
+            <td><div class="empty">— 드묾 —</div></td>
+            <td><div class="heb">מָקְטָל</div><div class="translit">moqṭāl</div></td>
+          </tr>
+          <tr>
+            <td class="stem-name">Hithpael<small>강조 재귀</small></td>
+            <td><div class="heb">הִתְקַטֵּל</div><div class="translit">hiṯqaṭṭēl</div></td>
+            <td><div class="heb">יִתְקַטֵּל</div><div class="translit">yiṯqaṭṭēl</div></td>
+            <td><div class="heb">הִתְקַטֵּל</div><div class="translit">hiṯqaṭṭēl</div></td>
+            <td><div class="heb">הִתְקַטֵּל</div><div class="translit">hiṯqaṭṭēl</div></td>
+            <td><div class="heb">מִתְקַטֵּל</div><div class="translit">miṯqaṭṭēl</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--ink-dim);margin-top:12px;">
+      ※ 모바일은 좌우 스크롤로 표 전체 보기
+    </div>
+  </div>
+
+  <!-- SECTION 2: STEM DETAILS -->
+  <div class="scripture-card">
+    <div class="section-title">Ⅱ. 빈얀별 상세 활용 · 인칭별 전체</div>
+    <div class="section-subtitle">탭을 눌러 각 빈얀의 완료(Perfect)·미완료(Imperfect) 인칭별 활용을 보세요</div>
+
+    <div class="stem-tabs" id="stemTabs">
+      <div class="stem-tab active" data-stem="qal">Qal<small>능동·단순</small></div>
+      <div class="stem-tab" data-stem="niphal">Niphal<small>수동·재귀</small></div>
+      <div class="stem-tab" data-stem="piel">Piel<small>강조 능동</small></div>
+      <div class="stem-tab" data-stem="pual">Pual<small>강조 수동</small></div>
+      <div class="stem-tab" data-stem="hiphil">Hiphil<small>사역 능동</small></div>
+      <div class="stem-tab" data-stem="hophal">Hophal<small>사역 수동</small></div>
+      <div class="stem-tab" data-stem="hithpael">Hithpael<small>강조 재귀</small></div>
+    </div>
+
+    <!-- QAL -->
+    <div class="stem-panel active" id="panel-qal">
+      <div class="stem-meaning">
+        <strong>Qal · קַל</strong> ("가벼운 줄기") — 가장 기본적인 <strong>능동 단순</strong> 의미.
+        주어가 행위를 직접 수행. 어떤 동사든 가장 먼저 만나는 형태.
+        <span class="example">예: <span class="heb-inline">קָטַל אֶת הָאִישׁ</span> "그가 그 사람을 죽였다"</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect <small>그가/너희가 ~했다</small></div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">קָטַל</span><span class="meaning">그(남)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">קָטְלָה</span><span class="meaning">그(여)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">קָטַלְתָּ</span><span class="meaning">너(남)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">קָטַלְתְּ</span><span class="meaning">너(여)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">קָטַלְתִּי</span><span class="meaning">나는 죽였다</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">קָטְלוּ</span><span class="meaning">그들은 죽였다</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">קְטַלְתֶּם</span><span class="meaning">너희(남)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">2fp</span><span class="heb-form">קְטַלְתֶּן</span><span class="meaning">너희(여)는 죽였다</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">קָטַלְנוּ</span><span class="meaning">우리는 죽였다</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect <small>그가/너희가 ~할 것이다</small></div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יִקְטֹל</span><span class="meaning">그(남)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תִּקְטֹל</span><span class="meaning">그(여)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תִּקְטֹל</span><span class="meaning">너(남)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">תִּקְטְלִי</span><span class="meaning">너(여)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אֶקְטֹל</span><span class="meaning">나는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יִקְטְלוּ</span><span class="meaning">그들(남)은 죽일 것</span></div>
+          <div class="conj-row"><span class="person">3fp</span><span class="heb-form">תִּקְטֹלְנָה</span><span class="meaning">그들(여)은 죽일 것</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">תִּקְטְלוּ</span><span class="meaning">너희(남)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">2fp</span><span class="heb-form">תִּקְטֹלְנָה</span><span class="meaning">너희(여)는 죽일 것</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נִקְטֹל</span><span class="meaning">우리는 죽일 것</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item">
+          <div class="nonfinite-label">Imperative ms</div>
+          <div class="nonfinite-heb">קְטֹל</div>
+          <div class="nonfinite-translit">qǝṭōl</div>
+          <div class="nonfinite-meaning">죽여라!</div>
+        </div>
+        <div class="nonfinite-item">
+          <div class="nonfinite-label">Inf. Absolute</div>
+          <div class="nonfinite-heb">קָטוֹל</div>
+          <div class="nonfinite-translit">qāṭôl</div>
+          <div class="nonfinite-meaning">부정사절대형</div>
+        </div>
+        <div class="nonfinite-item">
+          <div class="nonfinite-label">Inf. Construct</div>
+          <div class="nonfinite-heb">קְטֹל</div>
+          <div class="nonfinite-translit">qǝṭōl</div>
+          <div class="nonfinite-meaning">죽이는 것 (전치사 결합)</div>
+        </div>
+        <div class="nonfinite-item">
+          <div class="nonfinite-label">Active Ptc.</div>
+          <div class="nonfinite-heb">קֹטֵל</div>
+          <div class="nonfinite-translit">qōṭēl</div>
+          <div class="nonfinite-meaning">죽이는 자</div>
+        </div>
+        <div class="nonfinite-item">
+          <div class="nonfinite-label">Passive Ptc.</div>
+          <div class="nonfinite-heb">קָטוּל</div>
+          <div class="nonfinite-translit">qāṭûl</div>
+          <div class="nonfinite-meaning">죽임을 당한</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIPHAL -->
+    <div class="stem-panel" id="panel-niphal">
+      <div class="stem-meaning">
+        <strong>Niphal · נִפְעַל</strong> — Qal의 <strong>수동</strong> 또는 <strong>재귀</strong>.
+        접두사 <span class="heb-inline">נ־</span>(완료) / 다게쉬 강세(미완료)가 표지.
+        <span class="example">예: <span class="heb-inline">נִקְטַל</span> "그가 죽임을 당했다" / "그가 스스로 죽었다"</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">נִקְטַל</span><span class="meaning">niqṭal</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">נִקְטְלָה</span><span class="meaning">niqṭǝlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">נִקְטַלְתָּ</span><span class="meaning">niqṭáltā</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">נִקְטַלְתְּ</span><span class="meaning">niqṭalt</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">נִקְטַלְתִּי</span><span class="meaning">niqṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">נִקְטְלוּ</span><span class="meaning">niqṭǝlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">נִקְטַלְתֶּם</span><span class="meaning">niqṭaltém</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נִקְטַלְנוּ</span><span class="meaning">niqṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יִקָּטֵל</span><span class="meaning">yiqqāṭēl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תִּקָּטֵל</span><span class="meaning">tiqqāṭēl</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תִּקָּטֵל</span><span class="meaning">tiqqāṭēl</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">תִּקָּטְלִי</span><span class="meaning">tiqqāṭǝlî</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אֶקָּטֵל</span><span class="meaning">ʾeqqāṭēl</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יִקָּטְלוּ</span><span class="meaning">yiqqāṭǝlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">תִּקָּטְלוּ</span><span class="meaning">tiqqāṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נִקָּטֵל</span><span class="meaning">niqqāṭēl</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative ms</div><div class="nonfinite-heb">הִקָּטֵל</div><div class="nonfinite-translit">hiqqāṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Construct</div><div class="nonfinite-heb">הִקָּטֵל</div><div class="nonfinite-translit">hiqqāṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Absolute</div><div class="nonfinite-heb">נִקְטֹל</div><div class="nonfinite-translit">niqṭōl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">נִקְטָל</div><div class="nonfinite-translit">niqṭāl</div><div class="nonfinite-meaning">죽임을 당하는</div></div>
+      </div>
+    </div>
+
+    <!-- PIEL -->
+    <div class="stem-panel" id="panel-piel">
+      <div class="stem-meaning">
+        <strong>Piel · פִּעֵל</strong> — <strong>강조</strong>·<strong>반복</strong>·<strong>사역화(factitive)</strong> 능동.
+        가운데 자음에 다게쉬(중복)가 특징. Qal에 비해 의미가 격렬·집중적.
+        <span class="example">예: Qal <span class="heb-inline">שָׁבַר</span>(부수다) → Piel <span class="heb-inline">שִׁבֵּר</span>(산산조각 내다)</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">קִטֵּל</span><span class="meaning">qiṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">קִטְּלָה</span><span class="meaning">qiṭṭǝlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">קִטַּלְתָּ</span><span class="meaning">qiṭṭáltā</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">קִטַּלְתְּ</span><span class="meaning">qiṭṭalt</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">קִטַּלְתִּי</span><span class="meaning">qiṭṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">קִטְּלוּ</span><span class="meaning">qiṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">קִטַּלְתֶּם</span><span class="meaning">qiṭṭaltém</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">קִטַּלְנוּ</span><span class="meaning">qiṭṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יְקַטֵּל</span><span class="meaning">yǝqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תְּקַטֵּל</span><span class="meaning">tǝqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תְּקַטֵּל</span><span class="meaning">tǝqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">תְּקַטְּלִי</span><span class="meaning">tǝqaṭṭǝlî</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אֲקַטֵּל</span><span class="meaning">ʾăqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יְקַטְּלוּ</span><span class="meaning">yǝqaṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">תְּקַטְּלוּ</span><span class="meaning">tǝqaṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נְקַטֵּל</span><span class="meaning">nǝqaṭṭēl</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative ms</div><div class="nonfinite-heb">קַטֵּל</div><div class="nonfinite-translit">qaṭṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Construct</div><div class="nonfinite-heb">קַטֵּל</div><div class="nonfinite-translit">qaṭṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Absolute</div><div class="nonfinite-heb">קַטֹּל</div><div class="nonfinite-translit">qaṭṭōl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">מְקַטֵּל</div><div class="nonfinite-translit">mǝqaṭṭēl</div><div class="nonfinite-meaning">맹렬히 죽이는 자</div></div>
+      </div>
+    </div>
+
+    <!-- PUAL -->
+    <div class="stem-panel" id="panel-pual">
+      <div class="stem-meaning">
+        <strong>Pual · פֻּעַל</strong> — Piel의 <strong>수동</strong>. 첫 자음에 큐부츠(<span class="heb-inline">ֻ</span>) 모음, 가운데 다게쉬.
+        명령형·부정사는 거의 사용되지 않고 분사 형태로 자주 등장.
+        <span class="example">예: <span class="heb-inline">קֻטַּל</span> "그가 (집요하게) 죽임을 당했다"</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">קֻטַּל</span><span class="meaning">quṭṭal</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">קֻטְּלָה</span><span class="meaning">quṭṭǝlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">קֻטַּלְתָּ</span><span class="meaning">quṭṭáltā</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">קֻטַּלְתִּי</span><span class="meaning">quṭṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">קֻטְּלוּ</span><span class="meaning">quṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">קֻטַּלְנוּ</span><span class="meaning">quṭṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יְקֻטַּל</span><span class="meaning">yǝquṭṭal</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תְּקֻטַּל</span><span class="meaning">tǝquṭṭal</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תְּקֻטַּל</span><span class="meaning">tǝquṭṭal</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אֲקֻטַּל</span><span class="meaning">ʾăquṭṭal</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יְקֻטְּלוּ</span><span class="meaning">yǝquṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נְקֻטַּל</span><span class="meaning">nǝquṭṭal</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative</div><div class="nonfinite-heb" style="color:var(--ink-dim);font-size:18px">— 없음 —</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Construct</div><div class="nonfinite-heb" style="color:var(--ink-dim);font-size:18px">— 드묾 —</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">מְקֻטָּל</div><div class="nonfinite-translit">mǝquṭṭāl</div><div class="nonfinite-meaning">집요히 죽임당하는</div></div>
+      </div>
+    </div>
+
+    <!-- HIPHIL -->
+    <div class="stem-panel" id="panel-hiphil">
+      <div class="stem-meaning">
+        <strong>Hiphil · הִפְעִיל</strong> — <strong>사역</strong>(causative) 능동. "~하게 하다 / ~시키다".
+        접두사 <span class="heb-inline">הִ־</span>, 둘째 모음 <span class="heb-inline">־ִי</span>(히렉-요드)이 표지.
+        <span class="example">예: Qal <span class="heb-inline">בָּא</span>(오다) → Hiphil <span class="heb-inline">הֵבִיא</span>(데려오다)</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">הִקְטִיל</span><span class="meaning">hiqṭîl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">הִקְטִילָה</span><span class="meaning">hiqṭîlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">הִקְטַלְתָּ</span><span class="meaning">hiqṭáltā</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">הִקְטַלְתְּ</span><span class="meaning">hiqṭalt</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">הִקְטַלְתִּי</span><span class="meaning">hiqṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">הִקְטִילוּ</span><span class="meaning">hiqṭîlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">הִקְטַלְתֶּם</span><span class="meaning">hiqṭaltém</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">הִקְטַלְנוּ</span><span class="meaning">hiqṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יַקְטִיל</span><span class="meaning">yaqṭîl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תַּקְטִיל</span><span class="meaning">taqṭîl</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תַּקְטִיל</span><span class="meaning">taqṭîl</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">תַּקְטִילִי</span><span class="meaning">taqṭîlî</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אַקְטִיל</span><span class="meaning">ʾaqṭîl</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יַקְטִילוּ</span><span class="meaning">yaqṭîlû</span></div>
+          <div class="conj-row"><span class="person">2mp</span><span class="heb-form">תַּקְטִילוּ</span><span class="meaning">taqṭîlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נַקְטִיל</span><span class="meaning">naqṭîl</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative ms</div><div class="nonfinite-heb">הַקְטֵל</div><div class="nonfinite-translit">haqṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Construct</div><div class="nonfinite-heb">הַקְטִיל</div><div class="nonfinite-translit">haqṭîl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Absolute</div><div class="nonfinite-heb">הַקְטֵל</div><div class="nonfinite-translit">haqṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">מַקְטִיל</div><div class="nonfinite-translit">maqṭîl</div><div class="nonfinite-meaning">죽이게 하는 자</div></div>
+      </div>
+    </div>
+
+    <!-- HOPHAL -->
+    <div class="stem-panel" id="panel-hophal">
+      <div class="stem-meaning">
+        <strong>Hophal · הָפְעַל</strong> — Hiphil의 <strong>수동</strong>. "~하게 함을 당하다".
+        접두사 <span class="heb-inline">הָ־</span> / <span class="heb-inline">הֻ־</span>(카메츠-하툽 또는 큐부츠) 표지.
+        <span class="example">예: <span class="heb-inline">הָקְטַל</span> "그가 죽임을 당하게 되었다 (강제로)"</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">הָקְטַל</span><span class="meaning">hoqṭal</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">הָקְטְלָה</span><span class="meaning">hoqṭǝlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">הָקְטַלְתָּ</span><span class="meaning">hoqṭáltā</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">הָקְטַלְתִּי</span><span class="meaning">hoqṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">הָקְטְלוּ</span><span class="meaning">hoqṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">הָקְטַלְנוּ</span><span class="meaning">hoqṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יָקְטַל</span><span class="meaning">yoqṭal</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תָּקְטַל</span><span class="meaning">toqṭal</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תָּקְטַל</span><span class="meaning">toqṭal</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אָקְטַל</span><span class="meaning">ʾoqṭal</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יָקְטְלוּ</span><span class="meaning">yoqṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נָקְטַל</span><span class="meaning">noqṭal</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative</div><div class="nonfinite-heb" style="color:var(--ink-dim);font-size:18px">— 없음 —</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Absolute</div><div class="nonfinite-heb">הָקְטֵל</div><div class="nonfinite-translit">hoqṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">מָקְטָל</div><div class="nonfinite-translit">moqṭāl</div><div class="nonfinite-meaning">죽임을 당하게 된</div></div>
+      </div>
+    </div>
+
+    <!-- HITHPAEL -->
+    <div class="stem-panel" id="panel-hithpael">
+      <div class="stem-meaning">
+        <strong>Hithpael · הִתְפַּעֵל</strong> — <strong>강조 재귀</strong>·<strong>상호</strong>·<strong>의태(pretend)</strong>.
+        접두사 <span class="heb-inline">הִתְ־</span>, 가운데 다게쉬 표지. "스스로를 ~하다 / ~인 척하다".
+        <span class="example">예: <span class="heb-inline">הִתְקַדֵּשׁ</span> "스스로를 거룩하게 하다" / Hith. <span class="heb-inline">הִתְנַבֵּא</span> "예언자처럼 행동하다"</span>
+      </div>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <div class="conj-card-title">완료 · Perfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">הִתְקַטֵּל</span><span class="meaning">hiṯqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">הִתְקַטְּלָה</span><span class="meaning">hiṯqaṭṭǝlā</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">הִתְקַטַּלְתָּ</span><span class="meaning">hiṯqaṭṭáltā</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">הִתְקַטַּלְתְּ</span><span class="meaning">hiṯqaṭṭalt</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">הִתְקַטַּלְתִּי</span><span class="meaning">hiṯqaṭṭáltî</span></div>
+          <div class="conj-row"><span class="person">3cp</span><span class="heb-form">הִתְקַטְּלוּ</span><span class="meaning">hiṯqaṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">הִתְקַטַּלְנוּ</span><span class="meaning">hiṯqaṭṭálnû</span></div>
+        </div>
+        <div class="conj-card">
+          <div class="conj-card-title">미완료 · Imperfect</div>
+          <div class="conj-row"><span class="person">3ms</span><span class="heb-form">יִתְקַטֵּל</span><span class="meaning">yiṯqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3fs</span><span class="heb-form">תִּתְקַטֵּל</span><span class="meaning">tiṯqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">2ms</span><span class="heb-form">תִּתְקַטֵּל</span><span class="meaning">tiṯqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">2fs</span><span class="heb-form">תִּתְקַטְּלִי</span><span class="meaning">tiṯqaṭṭǝlî</span></div>
+          <div class="conj-row"><span class="person">1cs</span><span class="heb-form">אֶתְקַטֵּל</span><span class="meaning">ʾeṯqaṭṭēl</span></div>
+          <div class="conj-row"><span class="person">3mp</span><span class="heb-form">יִתְקַטְּלוּ</span><span class="meaning">yiṯqaṭṭǝlû</span></div>
+          <div class="conj-row"><span class="person">1cp</span><span class="heb-form">נִתְקַטֵּל</span><span class="meaning">niṯqaṭṭēl</span></div>
+        </div>
+      </div>
+      <div class="nonfinite-strip">
+        <div class="nonfinite-item"><div class="nonfinite-label">Imperative ms</div><div class="nonfinite-heb">הִתְקַטֵּל</div><div class="nonfinite-translit">hiṯqaṭṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Inf. Construct</div><div class="nonfinite-heb">הִתְקַטֵּל</div><div class="nonfinite-translit">hiṯqaṭṭēl</div></div>
+        <div class="nonfinite-item"><div class="nonfinite-label">Participle</div><div class="nonfinite-heb">מִתְקַטֵּל</div><div class="nonfinite-translit">miṯqaṭṭēl</div><div class="nonfinite-meaning">스스로 죽이는 자</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: WEAK VERBS NOTE -->
+  <div class="scripture-card">
+    <div class="section-title">Ⅲ. 약동사(Weak Verbs) 간단 분류</div>
+    <div class="section-subtitle">3자음 어근 중 후음문자(אהחע) 또는 약자음(נ ו י)이 포함된 동사는 표준 패턴에서 변형됩니다</div>
+    <div class="weak-list">
+      <div class="weak-card">
+        <div class="weak-title">Ⅰ-Guttural · 첫 자음 후음 <span class="heb-inline">(אהחע)</span></div>
+        <div class="weak-desc">예: <em>עָמַד</em>(서다). 후음 아래 단순 슈와(<span class="heb-inline">ְ</span>) 대신 <em>합성 슈와</em> 사용. 미완료 첫 모음 변화.</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Ⅱ-Guttural · 가운데 후음</div>
+        <div class="weak-desc">예: <em>בָּחַר</em>(택하다). Piel·Pual·Hith.에서 <em>다게쉬 불가</em> → 보상 모음 연장(전종양).</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Ⅲ-Guttural / Ⅲ-He · 끝 후음/<span class="heb-inline">ה</span></div>
+        <div class="weak-desc">예: <em>שָׁמַע</em>(듣다), <em>בָּנָה</em>(짓다). 끝 음절 모음·자음 탈락이 빈번. <span class="heb-inline">ה</span> 동사는 별도 패러다임.</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Ⅰ-Nun · 첫 자음 <span class="heb-inline">נ</span></div>
+        <div class="weak-desc">예: <em>נָפַל</em>(떨어지다). 미완료에서 <em>נ 동화</em> → 다게쉬로 흡수. (예: יִפֹּל "그가 떨어질 것")</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Ⅰ-Yod / Ⅰ-Waw · 첫 자음 <span class="heb-inline">י</span>·<span class="heb-inline">ו</span></div>
+        <div class="weak-desc">예: <em>יָשַׁב</em>(앉다), <em>יָדַע</em>(알다). 미완료에서 첫 자음 탈락 빈번. (예: יֵשֵׁב)</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Hollow · 가운데 <span class="heb-inline">ו</span>·<span class="heb-inline">י</span></div>
+        <div class="weak-desc">예: <em>קָם</em>(일어나다, 어근 קום), <em>שָׁר</em>(노래하다, 어근 שיר). 가운데 자음이 모음으로 변하는 <em>이중자음 동사</em>.</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Geminate · 둘째=셋째 동일 <span class="heb-inline">(ב.ב)</span></div>
+        <div class="weak-desc">예: <em>סָבַב</em>(돌다). 둘째·셋째 자음이 같음 → 다게쉬로 합쳐지거나 변칙 활용.</div>
+      </div>
+      <div class="weak-card">
+        <div class="weak-title">Ⅲ-Aleph · 끝 자음 <span class="heb-inline">א</span></div>
+        <div class="weak-desc">예: <em>מָצָא</em>(찾다). 끝 <span class="heb-inline">א</span> 묵음화 → 앞 모음 연장. 시제·인칭 결합 시 모음 변화.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="more-chapters">
+    <div class="more-chapters-title">다른 장 보기</div>
+    <div class="chapters-grid">
+      <a href="psalm1.html" class="chapter-card">
+        <span class="card-icon">✡</span>
+        <div class="card-title">תְּהִלִּים א׳</div>
+        <div class="card-title-en">Psalm 1</div>
+        <div class="card-subtitle">시편 1편</div>
+        <div class="card-description">복 있는 사람의 길 — 토라를 묵상하는 의인</div>
+      </a>
+      <a href="psalm23.html" class="chapter-card">
+        <span class="card-icon">✡</span>
+        <div class="card-title">תְּהִלִּים כ״ג</div>
+        <div class="card-title-en">Psalm 23</div>
+        <div class="card-subtitle">시편 23편</div>
+        <div class="card-description">여호와는 나의 목자 — 영혼을 소생시키는 시</div>
+      </a>
+      <a href="num6.html" class="chapter-card">
+        <span class="card-icon">✡</span>
+        <div class="card-title">בְּמִדְבַּר ו׳</div>
+        <div class="card-title-en">Numbers 6</div>
+        <div class="card-subtitle">민수기 6장</div>
+        <div class="card-description">아론의 축복 — 여호와는 네게 복을 주시고 지키시기를</div>
+      </a>
+      <div class="chapter-card current">
+        <span class="card-icon">📖</span>
+        <div class="card-title">בִּנְיָנִים</div>
+        <div class="card-title-en">Verb Paradigms</div>
+        <div class="card-subtitle">동사 활용표</div>
+        <div class="card-description">7 빈얀 종합 패러다임 + 인칭별 활용</div>
+      </div>
+      <a href="whygreekhebrew.html" class="chapter-card">
+        <span class="card-icon">❦</span>
+        <div class="card-title">원어의 이유</div>
+        <div class="card-title-en">Why Greek &amp; Hebrew</div>
+        <div class="card-subtitle">서론</div>
+        <div class="card-description">왜 히브리어와 헬라어를 공부해야 하는가</div>
+      </a>
+      <a href="index.html" class="chapter-card">
+        <span class="card-icon">❦</span>
+        <div class="card-title">ΑΓΑΠΗ</div>
+        <div class="card-title-en">1 Corinthians 13</div>
+        <div class="card-subtitle">고린도전서 13장 · 사랑장</div>
+        <div class="card-description">홈으로 — 사랑의 노래</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    ✦ 본 표는 표준 강동사 קָטַל 기준 패러다임입니다 · 약동사는 후음문자/약자음에 따라 변형됩니다 ✦
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const tabs = document.querySelectorAll('.stem-tab');
+  const panels = document.querySelectorAll('.stem-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const stem = tab.dataset.stem;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const panel = document.getElementById('panel-' + stem);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
